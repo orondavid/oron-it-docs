@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../squid-reverse-proxy/">
+        <link rel="prev" href="../vim-guide/">
       
-      
-        <link rel="next" href="../vim-guide/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>הסבר לפקודות Squid - התיעוד של אורון</title>
+        <title>פקודות בסיסיות ב־NANO - התיעוד של אורון</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#squid-reverse-proxy" class="md-skip">
+        <a href="#nano" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר לפקודות Squid
+              פקודות בסיסיות ב־NANO
             
           </span>
         </div>
@@ -347,32 +345,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר לפקודות Squid
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../squid-explained/" class="md-nav__link">
         
   
   
@@ -383,104 +359,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      עדכון המערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      גיבוי הקובץ המקורי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      עריכת קובץ הקונפיגורציה
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="עריכת קובץ הקונפיגורציה">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסבר על ההגדרות בקובץ:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      הפעלת השירות מחדש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3128-ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתיחת פורט 3128 בחומת האש (UFW)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squid_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקת לוגים של Squid
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -511,10 +389,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../nano-guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    פקודות בסיסיות ב־NANO
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -525,6 +425,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      פתיחת קובץ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      כתיבה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שמירה ויציאה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      עריכה ופקודות שימושיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      קיצורים מוצגים בתחתית העורך
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -558,16 +523,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      עדכון המערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Squid
+      פתיחת קובץ
     </span>
   </a>
   
@@ -576,7 +532,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      גיבוי הקובץ המקורי
+      כתיבה
     </span>
   </a>
   
@@ -585,49 +541,25 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      עריכת קובץ הקונפיגורציה
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="עריכת קובץ הקונפיגורציה">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסבר על ההגדרות בקובץ:
+      שמירה ויציאה
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      עריכה ופקודות שימושיות
+    </span>
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      הפעלת השירות מחדש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3128-ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתיחת פורט 3128 בחומת האש (UFW)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squid_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקת לוגים של Squid
+      קיצורים מוצגים בתחתית העורך
     </span>
   </a>
   
@@ -649,85 +581,38 @@
 
 
 
-<h1 id="squid-reverse-proxy">הסבר לפקודות התקנת Squid Reverse Proxy</h1>
-<p>עמוד זה מסביר את משמעות כל פקודה במדריך התקנת Squid כ־Reverse Proxy.</p>
+<h1 id="nano">פקודות בסיסיות בעורך NANO</h1>
+<p><code>nano</code> הוא עורך טקסט פשוט ונוח במיוחד למתחילים.</p>
 <hr />
-<h2 id="_1">עדכון המערכת</h2>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
+<h2 id="_1">פתיחת קובץ</h2>
+<pre><code class="language-bash">nano filename.txt
 </code></pre>
-<ul>
-<li><code>sudo</code> – מריץ את הפקודה עם הרשאות root</li>
-<li><code>apt update</code> – רענון רשימת החבילות</li>
-<li><code>apt upgrade -y</code> – שדרוג כל החבילות באופן אוטומטי</li>
-</ul>
 <hr />
-<h2 id="squid">התקנת Squid</h2>
-<pre><code class="language-bash">sudo apt install squid -y
-</code></pre>
+<h2 id="_2">כתיבה</h2>
 <ul>
-<li>מתקין את חבילת Squid – שרת proxy נפוץ</li>
+<li>פשוט מתחילים להקליד</li>
+<li>השתמש בחצים לזוז בין שורות</li>
 </ul>
 <hr />
-<h2 id="_2">גיבוי הקובץ המקורי</h2>
-<pre><code class="language-bash">sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak
-</code></pre>
+<h2 id="_3">שמירה ויציאה</h2>
 <ul>
-<li>יוצר עותק גיבוי של קובץ ההגדרות לפני ביצוע שינויים</li>
+<li><code>Ctrl + O</code> – שמירה (write out)</li>
+<li><code>Enter</code> – לאשר שם קובץ</li>
+<li><code>Ctrl + X</code> – יציאה</li>
 </ul>
 <hr />
-<h2 id="_3">עריכת קובץ הקונפיגורציה</h2>
-<pre><code class="language-bash">sudo nano /etc/squid/squid.conf
-</code></pre>
+<h2 id="_4">עריכה ופקודות שימושיות</h2>
 <ul>
-<li>פותח את הקובץ לעריכה בעורך טקסט <code>nano</code></li>
+<li><code>Ctrl + K</code> – מחיקת שורה</li>
+<li><code>Ctrl + U</code> – הדבקה</li>
+<li><code>Ctrl + W</code> – חיפוש</li>
+<li><code>Ctrl + C</code> – מידע על מיקום הסמן</li>
+<li><code>Ctrl + G</code> – עזרה</li>
 </ul>
 <hr />
-<h3 id="_4">הסבר על ההגדרות בקובץ:</h3>
-<pre><code class="language-text">http_port 3128 accel vhost allow-direct
-</code></pre>
+<h2 id="_5">קיצורים מוצגים בתחתית העורך</h2>
 <ul>
-<li>מגדיר את הפורט ש־Squid יאזין עליו כ־Reverse Proxy</li>
-</ul>
-<pre><code class="language-text">cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
-</code></pre>
-<ul>
-<li>מגדיר את שרת היעד שאליו מועברת התעבורה</li>
-</ul>
-<pre><code class="language-text">acl our_sites dstdomain yourdomain.com
-</code></pre>
-<ul>
-<li>יוצר ACL (רשימת בקרת גישה) שמאפשרת גישה לדומיין מסוים</li>
-</ul>
-<pre><code class="language-text">http_access allow our_sites
-</code></pre>
-<ul>
-<li>מתיר גישה על סמך הכלל שנקבע למעלה</li>
-</ul>
-<hr />
-<h2 id="_5">הפעלת השירות מחדש</h2>
-<pre><code class="language-bash">sudo systemctl restart squid
-</code></pre>
-<ul>
-<li>מפעיל מחדש את שירות Squid עם ההגדרות החדשות</li>
-</ul>
-<pre><code class="language-bash">sudo systemctl status squid
-</code></pre>
-<ul>
-<li>מציג את סטטוס השירות: האם פעיל, שגיאות, וכו’</li>
-</ul>
-<hr />
-<h2 id="3128-ufw">פתיחת פורט 3128 בחומת האש (UFW)</h2>
-<pre><code class="language-bash">sudo ufw allow 3128/tcp
-</code></pre>
-<ul>
-<li>מאפשר חיבורים לפורט 3128 בפרוטוקול TCP</li>
-</ul>
-<hr />
-<h2 id="squid_1">בדיקת לוגים של Squid</h2>
-<pre><code class="language-bash">sudo tail -f /var/log/squid/access.log
-</code></pre>
-<ul>
-<li>מציג את השורות האחרונות בקובץ לוג הפעולות של Squid בזמן אמת</li>
+<li>סימן <code>^</code> מציין Ctrl</li>
 </ul>
 
 
