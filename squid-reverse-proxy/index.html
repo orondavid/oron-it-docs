@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../advanced-tools/">
+        <link rel="prev" href="../web-server-explained/">
       
-      
-        <link rel="next" href="../web-server-explained/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>התקנת שרת ווב על אובונטו - התיעוד של אורון</title>
+        <title>התקנת Squid Reverse Proxy - התיעוד של אורון</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu-server" class="md-skip">
+        <a href="#squid-reverse-proxy-ubuntu-server" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת שרת ווב על אובונטו
+              התקנת Squid Reverse Proxy
             
           </span>
         </div>
@@ -325,32 +323,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת שרת ווב על אובונטו
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../web-server-ubuntu/" class="md-nav__link">
         
   
   
@@ -361,89 +337,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: עדכון מערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת Apache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-80-443" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: פתיחת פורט 80 ו-443 בחומת האש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: בדיקת גישה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-php" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5 (אופציונלי): התקנת PHP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 (אופציונלי): התקנת MySQL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיום
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -474,10 +367,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../squid-reverse-proxy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    התקנת Squid Reverse Proxy
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -488,6 +403,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: עדכון המערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-squid" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: התקנת Squid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: גיבוי הקובץ המקורי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: עריכת קובץ הקונפיגורציה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: הפעלת השירות מחדש
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-3128" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6 (אופציונלי): פתיחת פורט 3128
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -521,25 +519,25 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 1: עדכון מערכת
+      שלב 1: עדכון המערכת
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-apache" class="md-nav__link">
+  <a href="#2-squid" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 2: התקנת Apache
+      שלב 2: התקנת Squid
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-80-443" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 3: פתיחת פורט 80 ו-443 בחומת האש
+      שלב 3: גיבוי הקובץ המקורי
     </span>
   </a>
   
@@ -548,25 +546,25 @@
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 4: בדיקת גישה
+      שלב 4: עריכת קובץ הקונפיגורציה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-php" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 5 (אופציונלי): התקנת PHP
+      שלב 5: הפעלת השירות מחדש
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-mysql" class="md-nav__link">
+  <a href="#6-3128" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 6 (אופציונלי): התקנת MySQL
+      שלב 6 (אופציונלי): פתיחת פורט 3128
     </span>
   </a>
   
@@ -597,51 +595,50 @@
 
 
 
-<h1 id="ubuntu-server">מדריך התקנת שרת ווב על Ubuntu Server</h1>
-<p>מדריך זה מיועד להתקנה בסיסית של שרת ווב (Apache) על מערכת Ubuntu Server עדכנית.</p>
+<h1 id="squid-reverse-proxy-ubuntu-server">התקנת Squid Reverse Proxy על Ubuntu Server</h1>
+<p>מדריך זה יסביר כיצד להתקין ולהגדיר את Squid כ־Reverse Proxy.</p>
 <hr />
-<h2 id="1">שלב 1: עדכון מערכת</h2>
+<h2 id="1">שלב 1: עדכון המערכת</h2>
 <pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
 </code></pre>
 <hr />
-<h2 id="2-apache">שלב 2: התקנת Apache</h2>
-<pre><code class="language-bash">sudo apt install apache2 -y
-</code></pre>
-<p>בדוק ש-Apache פועל:</p>
-<pre><code class="language-bash">sudo systemctl status apache2
+<h2 id="2-squid">שלב 2: התקנת Squid</h2>
+<pre><code class="language-bash">sudo apt install squid -y
 </code></pre>
 <hr />
-<h2 id="3-80-443">שלב 3: פתיחת פורט 80 ו-443 בחומת האש</h2>
-<p>אם UFW פעיל:</p>
-<pre><code class="language-bash">sudo ufw allow 'Apache Full'
-</code></pre>
-<p>בדוק את מצב החומת אש:</p>
-<pre><code class="language-bash">sudo ufw status
+<h2 id="3">שלב 3: גיבוי הקובץ המקורי</h2>
+<pre><code class="language-bash">sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak
 </code></pre>
 <hr />
-<h2 id="4">שלב 4: בדיקת גישה</h2>
-<p>פתח דפדפן והכנס את כתובת ה-IP של השרת:<br />
-<code>http://&lt;כתובת-IP&gt;</code><br />
-אם Apache מותקן כראוי, תראה דף ברירת מחדל.</p>
-<hr />
-<h2 id="5-php">שלב 5 (אופציונלי): התקנת PHP</h2>
-<pre><code class="language-bash">sudo apt install php libapache2-mod-php -y
+<h2 id="4">שלב 4: עריכת קובץ הקונפיגורציה</h2>
+<pre><code class="language-bash">sudo nano /etc/squid/squid.conf
 </code></pre>
-<p>צור קובץ בדיקה:</p>
-<pre><code class="language-bash">echo &quot;&lt;?php phpinfo(); ?&gt;&quot; | sudo tee /var/www/html/info.php
+<p>מחק את תוכן הקובץ והדבק את זה (דוגמה בסיסית ל־Reverse Proxy):</p>
+<pre><code>http_port 3128 accel vhost allow-direct
+cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
+acl our_sites dstdomain yourdomain.com
+http_access allow our_sites
 </code></pre>
-<p>גש אליו דרך:<br />
-<code>http://&lt;כתובת-IP&gt;/info.php</code></p>
+<blockquote>
+<p>החלף את <code>192.168.1.100</code> בכתובת השרת שאליו תרצה להפנות<br />
+והחלף <code>yourdomain.com</code> בשם הדומיין החיצוני שלך</p>
+</blockquote>
 <hr />
-<h2 id="6-mysql">שלב 6 (אופציונלי): התקנת MySQL</h2>
-<pre><code class="language-bash">sudo apt install mysql-server -y
-sudo mysql_secure_installation
+<h2 id="5">שלב 5: הפעלת השירות מחדש</h2>
+<pre><code class="language-bash">sudo systemctl restart squid
+</code></pre>
+<p>בדיקת מצב השירות:</p>
+<pre><code class="language-bash">sudo systemctl status squid
+</code></pre>
+<hr />
+<h2 id="6-3128">שלב 6 (אופציונלי): פתיחת פורט 3128</h2>
+<pre><code class="language-bash">sudo ufw allow 3128/tcp
 </code></pre>
 <hr />
 <h2 id="_1">סיום</h2>
-<p>שרת הווב שלך מוכן לפעולה!<br />
-מומלץ להסיר את קובץ info.php לאחר הבדיקה:</p>
-<pre><code class="language-bash">sudo rm /var/www/html/info.php
+<p>כעת Squid יאזין על פורט 3128 ויפעל כ־Reverse Proxy לכתובת שהוגדרה.<br />
+מומלץ לבדוק את הלוגים הראשונים:</p>
+<pre><code class="language-bash">sudo tail -f /var/log/squid/access.log
 </code></pre>
 
 
