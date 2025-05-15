@@ -689,23 +689,23 @@
 <p>מדריך זה מיועד להתקנה בסיסית של שרת ווב (Apache) על מערכת Ubuntu Server עדכנית.</p>
 <hr />
 <h2 id="1">שלב 1: עדכון מערכת</h2>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
 <hr />
 <h2 id="2-apache">שלב 2: התקנת Apache</h2>
-<pre><code class="language-bash">sudo apt install apache2 -y
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
+</code></pre></div>
 <p>בדוק ש-Apache פועל:</p>
-<pre><code class="language-bash">sudo systemctl status apache2
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
+</code></pre></div>
 <hr />
 <h2 id="3-80-443">שלב 3: פתיחת פורט 80 ו-443 בחומת האש</h2>
 <p>אם UFW פעיל:</p>
-<pre><code class="language-bash">sudo ufw allow 'Apache Full'
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Apache Full&#39;</span>
+</code></pre></div>
 <p>בדוק את מצב החומת אש:</p>
-<pre><code class="language-bash">sudo ufw status
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status
+</code></pre></div>
 <hr />
 <h2 id="4">שלב 4: בדיקת גישה</h2>
 <p>פתח דפדפן והכנס את כתובת ה-IP של השרת:<br />
@@ -713,24 +713,24 @@
 אם Apache מותקן כראוי, תראה דף ברירת מחדל.</p>
 <hr />
 <h2 id="5-php">שלב 5 (אופציונלי): התקנת PHP</h2>
-<pre><code class="language-bash">sudo apt install php libapache2-mod-php -y
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php<span class="w"> </span>libapache2-mod-php<span class="w"> </span>-y
+</code></pre></div>
 <p>צור קובץ בדיקה:</p>
-<pre><code class="language-bash">echo &quot;&lt;?php phpinfo(); ?&gt;&quot; | sudo tee /var/www/html/info.php
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;?php phpinfo(); ?&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/var/www/html/info.php
+</code></pre></div>
 <p>גש אליו דרך:<br />
 <code>http://&lt;כתובת-IP&gt;/info.php</code></p>
 <hr />
 <h2 id="6-mysql">שלב 6 (אופציונלי): התקנת MySQL</h2>
-<pre><code class="language-bash">sudo apt install mysql-server -y
-sudo mysql_secure_installation
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server<span class="w"> </span>-y
+sudo<span class="w"> </span>mysql_secure_installation
+</code></pre></div>
 <hr />
 <h2 id="_1">סיום</h2>
 <p>שרת הווב שלך מוכן לפעולה!<br />
-מומלץ להסיר את קובץ info.php לאחר הבדיקה:</p>
-<pre><code class="language-bash">sudo rm /var/www/html/info.php
-</code></pre>
+מומלץ להסיר את קובץ info.php לאחר הבדיקה:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>/var/www/html/info.php
+</code></pre></div></p>
 
 
 

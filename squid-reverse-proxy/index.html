@@ -689,47 +689,47 @@
 <p>מדריך זה יסביר כיצד להתקין ולהגדיר את Squid כ־Reverse Proxy.</p>
 <hr />
 <h2 id="1">שלב 1: עדכון המערכת</h2>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
 <hr />
 <h2 id="2-squid">שלב 2: התקנת Squid</h2>
-<pre><code class="language-bash">sudo apt install squid -y
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>squid<span class="w"> </span>-y
+</code></pre></div>
 <hr />
 <h2 id="3">שלב 3: גיבוי הקובץ המקורי</h2>
-<pre><code class="language-bash">sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/squid/squid.conf<span class="w"> </span>/etc/squid/squid.conf.bak
+</code></pre></div>
 <hr />
 <h2 id="4">שלב 4: עריכת קובץ הקונפיגורציה</h2>
-<pre><code class="language-bash">sudo nano /etc/squid/squid.conf
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/squid.conf
+</code></pre></div>
 <p>מחק את תוכן הקובץ והדבק את זה (דוגמה בסיסית ל־Reverse Proxy):</p>
-<pre><code>http_port 3128 accel vhost allow-direct
+<div class="highlight"><pre><span></span><code>http_port 3128 accel vhost allow-direct
 cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
 acl our_sites dstdomain yourdomain.com
 http_access allow our_sites
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>החלף את <code>192.168.1.100</code> בכתובת השרת שאליו תרצה להפנות<br />
 והחלף <code>yourdomain.com</code> בשם הדומיין החיצוני שלך</p>
 </blockquote>
 <hr />
 <h2 id="5">שלב 5: הפעלת השירות מחדש</h2>
-<pre><code class="language-bash">sudo systemctl restart squid
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>squid
+</code></pre></div>
 <p>בדיקת מצב השירות:</p>
-<pre><code class="language-bash">sudo systemctl status squid
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>squid
+</code></pre></div>
 <hr />
 <h2 id="6-3128">שלב 6 (אופציונלי): פתיחת פורט 3128</h2>
-<pre><code class="language-bash">sudo ufw allow 3128/tcp
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3128</span>/tcp
+</code></pre></div>
 <hr />
 <h2 id="_1">סיום</h2>
 <p>כעת Squid יאזין על פורט 3128 ויפעל כ־Reverse Proxy לכתובת שהוגדרה.<br />
 מומלץ לבדוק את הלוגים הראשונים:</p>
-<pre><code class="language-bash">sudo tail -f /var/log/squid/access.log
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/squid/access.log
+</code></pre></div>
 
 
 

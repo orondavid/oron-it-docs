@@ -784,33 +784,33 @@
 <hr />
 <h2 id="powershell-windows">🪟 PowerShell (Windows)</h2>
 <h3 id="_2">🔹 בדיקת אנטי־וירוס</h3>
-<pre><code class="language-powershell">Get-MpComputerStatus | Select AMServiceEnabled, AntispywareEnabled, RealTimeProtectionEnabled
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-MpComputerStatus</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">AMServiceEnabled</span><span class="p">,</span> <span class="n">AntispywareEnabled</span><span class="p">,</span> <span class="n">RealTimeProtectionEnabled</span>
+</code></pre></div>
 <h3 id="30">🔹 מחשבים לא פעילים 30 יום בדומיין</h3>
-<pre><code class="language-powershell">Search-ADAccount -ComputersOnly -AccountInactive -TimeSpan 30.00:00:00 | Select Name
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">Search-ADAccount</span> <span class="n">-ComputersOnly</span> <span class="n">-AccountInactive</span> <span class="n">-TimeSpan</span> <span class="n">30</span><span class="p">.</span><span class="n">00</span><span class="p">:</span><span class="n">00</span><span class="p">:</span><span class="n">00</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">Name</span>
+</code></pre></div>
 <h3 id="_3">🔹 הפקת דוח מערכת</h3>
-<pre><code class="language-powershell">Get-ComputerInfo | Out-File C:\system_info.txt
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ComputerInfo</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">C</span><span class="p">:\</span><span class="n">system_info</span><span class="p">.</span><span class="n">txt</span>
+</code></pre></div>
 <h3 id="_4">🔹 ניקוי הגדרות רשת</h3>
-<pre><code class="language-powershell">ipconfig /flushdns
-netsh winsock reset
-netsh int ip reset
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ipconfig</span> <span class="p">/</span><span class="n">flushdns</span>
+<span class="n">netsh</span> <span class="n">winsock</span> <span class="n">reset</span>
+<span class="n">netsh</span> <span class="n">int</span> <span class="n">ip</span> <span class="n">reset</span>
+</code></pre></div>
 <hr />
 <h2 id="bash-linux">🐧 Bash (Linux)</h2>
 <h3 id="_5">🔹 גיבוי תיקיות</h3>
-<pre><code class="language-bash">tar -czvf backup_$(date +%F).tar.gz /etc /home /var/www
-</code></pre>
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-czvf<span class="w"> </span>backup_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>.tar.gz<span class="w"> </span>/etc<span class="w"> </span>/home<span class="w"> </span>/var/www
+</code></pre></div>
 <h3 id="_6">🔹 התרעה על שטח דיסק</h3>
-<pre><code class="language-bash">df -h | mail -s &quot;Disk Report&quot; admin@domain.com
-</code></pre>
+<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>mail<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;Disk Report&quot;</span><span class="w"> </span>admin@domain.com
+</code></pre></div>
 <h3 id="cpu">🔹 איתור עומס CPU</h3>
-<pre><code class="language-bash">ps -eo pid,comm,%cpu --sort=-%cpu | head
-</code></pre>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-eo<span class="w"> </span>pid,comm,%cpu<span class="w"> </span>--sort<span class="o">=</span>-%cpu<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+</code></pre></div>
 <h3 id="_7">🔹 מעקב לוגים בזמן אמת</h3>
-<pre><code class="language-bash">tail -f /var/log/syslog
-</code></pre>
+<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/syslog
+</code></pre></div>
 <hr />
 <h2 id="_8">🎯 שימושים נפוצים</h2>
 <ul>

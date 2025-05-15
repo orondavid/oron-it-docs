@@ -719,8 +719,8 @@
 <p>עמוד זה מסביר את משמעות כל פקודה במדריך התקנת Squid כ־Reverse Proxy.</p>
 <hr />
 <h2 id="_1">עדכון המערכת</h2>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
 <ul>
 <li><code>sudo</code> – מריץ את הפקודה עם הרשאות root</li>
 <li><code>apt update</code> – רענון רשימת החבילות</li>
@@ -728,70 +728,62 @@
 </ul>
 <hr />
 <h2 id="squid">התקנת Squid</h2>
-<pre><code class="language-bash">sudo apt install squid -y
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>squid<span class="w"> </span>-y
+</code></pre></div>
 <ul>
 <li>מתקין את חבילת Squid – שרת proxy נפוץ</li>
 </ul>
 <hr />
 <h2 id="_2">גיבוי הקובץ המקורי</h2>
-<pre><code class="language-bash">sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/squid/squid.conf<span class="w"> </span>/etc/squid/squid.conf.bak
+</code></pre></div>
 <ul>
 <li>יוצר עותק גיבוי של קובץ ההגדרות לפני ביצוע שינויים</li>
 </ul>
 <hr />
 <h2 id="_3">עריכת קובץ הקונפיגורציה</h2>
-<pre><code class="language-bash">sudo nano /etc/squid/squid.conf
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/squid.conf
+</code></pre></div>
 <ul>
 <li>פותח את הקובץ לעריכה בעורך טקסט <code>nano</code></li>
 </ul>
 <hr />
 <h3 id="_4">הסבר על ההגדרות בקובץ:</h3>
-<pre><code class="language-text">http_port 3128 accel vhost allow-direct
-</code></pre>
-<ul>
-<li>מגדיר את הפורט ש־Squid יאזין עליו כ־Reverse Proxy</li>
-</ul>
-<pre><code class="language-text">cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
-</code></pre>
-<ul>
-<li>מגדיר את שרת היעד שאליו מועברת התעבורה</li>
-</ul>
-<pre><code class="language-text">acl our_sites dstdomain yourdomain.com
-</code></pre>
-<ul>
-<li>יוצר ACL (רשימת בקרת גישה) שמאפשרת גישה לדומיין מסוים</li>
-</ul>
-<pre><code class="language-text">http_access allow our_sites
-</code></pre>
-<ul>
-<li>מתיר גישה על סמך הכלל שנקבע למעלה</li>
-</ul>
+<p><div class="highlight"><pre><span></span><code>http_port 3128 accel vhost allow-direct
+</code></pre></div>
+- מגדיר את הפורט ש־Squid יאזין עליו כ־Reverse Proxy</p>
+<p><div class="highlight"><pre><span></span><code>cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
+</code></pre></div>
+- מגדיר את שרת היעד שאליו מועברת התעבורה</p>
+<p><div class="highlight"><pre><span></span><code>acl our_sites dstdomain yourdomain.com
+</code></pre></div>
+- יוצר ACL (רשימת בקרת גישה) שמאפשרת גישה לדומיין מסוים</p>
+<p><div class="highlight"><pre><span></span><code>http_access allow our_sites
+</code></pre></div>
+- מתיר גישה על סמך הכלל שנקבע למעלה</p>
 <hr />
 <h2 id="_5">הפעלת השירות מחדש</h2>
-<pre><code class="language-bash">sudo systemctl restart squid
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>squid
+</code></pre></div>
 <ul>
 <li>מפעיל מחדש את שירות Squid עם ההגדרות החדשות</li>
 </ul>
-<pre><code class="language-bash">sudo systemctl status squid
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>squid
+</code></pre></div>
 <ul>
 <li>מציג את סטטוס השירות: האם פעיל, שגיאות, וכו’</li>
 </ul>
 <hr />
 <h2 id="3128-ufw">פתיחת פורט 3128 בחומת האש (UFW)</h2>
-<pre><code class="language-bash">sudo ufw allow 3128/tcp
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3128</span>/tcp
+</code></pre></div>
 <ul>
 <li>מאפשר חיבורים לפורט 3128 בפרוטוקול TCP</li>
 </ul>
 <hr />
 <h2 id="squid_1">בדיקת לוגים של Squid</h2>
-<pre><code class="language-bash">sudo tail -f /var/log/squid/access.log
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/squid/access.log
+</code></pre></div>
 <ul>
 <li>מציג את השורות האחרונות בקובץ לוג הפעולות של Squid בזמן אמת</li>
 </ul>
