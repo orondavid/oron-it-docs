@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../nano-guide/">
       
       
-        <link rel="next" href="../about/">
+        <link rel="next" href="../linux-explained/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>תקלות ופתרונות - התיעוד של אורון</title>
+        <title>פקודות בסיסיות בלינוקס - התיעוד של אורון</title>
       
     
     
@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              תקלות ופתרונות
+              פקודות בסיסיות בלינוקס
             
           </span>
         </div>
@@ -210,17 +215,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../issues/" class="md-nav__link">
         
   
   
@@ -231,7 +229,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -416,10 +413,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../linux-commands/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    פקודות בסיסיות בלינוקס
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -430,6 +449,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניווט בקבצים ותיקיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניהול קבצים ותיקיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרשאות וקבצים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקות מערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      רשת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debianubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניהול תוכנות (Debian/Ubuntu)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -473,6 +566,70 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניווט בקבצים ותיקיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניהול קבצים ותיקיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרשאות וקבצים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקות מערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      רשת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debianubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניהול תוכנות (Debian/Ubuntu)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -488,9 +645,48 @@
 
 
 
-  <h1>תקלות ופתרונות</h1>
-
-
+<h1 id="_1">פקודות לינוקס בסיסיות</h1>
+<p>מדריך זה מרכז את הפקודות הבסיסיות והשימושיות ביותר בלינוקס, במיוחד עבור טכנאים ומנהלי מערכות.</p>
+<hr />
+<h2 id="_2">ניווט בקבצים ותיקיות</h2>
+<pre><code class="language-bash">ls          # הצגת קבצים בתיקיה
+cd /path    # מעבר לתיקייה מסוימת
+pwd         # הצגת הנתיב הנוכחי
+</code></pre>
+<hr />
+<h2 id="_3">ניהול קבצים ותיקיות</h2>
+<pre><code class="language-bash">touch file.txt        # יצירת קובץ חדש
+mkdir folder          # יצירת תיקיה חדשה
+cp file1 file2        # העתקת קובץ
+mv file1 newname      # שינוי שם/העברת קובץ
+rm file.txt           # מחיקת קובץ
+rm -r folder          # מחיקת תיקיה עם תוכן
+</code></pre>
+<hr />
+<h2 id="_4">הרשאות וקבצים</h2>
+<pre><code class="language-bash">chmod 755 script.sh   # שינוי הרשאות
+chown user:user file  # שינוי בעלות
+</code></pre>
+<hr />
+<h2 id="_5">בדיקות מערכת</h2>
+<pre><code class="language-bash">df -h                 # הצגת מצב דיסק
+free -m              # זיכרון פנוי
+top                  # תהליכים פעילים
+uptime               # זמן פעילות מערכת
+</code></pre>
+<hr />
+<h2 id="_6">רשת</h2>
+<pre><code class="language-bash">ip a                 # תצוגת כתובות רשת
+ping 8.8.8.8         # בדיקת חיבור
+netstat -tulnp       # פתחים פתוחים
+</code></pre>
+<hr />
+<h2 id="debianubuntu">ניהול תוכנות (Debian/Ubuntu)</h2>
+<pre><code class="language-bash">sudo apt update
+sudo apt upgrade
+sudo apt install package
+sudo apt remove package
+</code></pre>
 
 
 
