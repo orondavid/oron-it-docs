@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../web-server-explained/">
+        <link rel="prev" href="../proxy-forward-install/">
       
       
-        <link rel="next" href="../squid-explained/">
+        <link rel="next" href="../linux-explained/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>התקנת Squid Reverse Proxy - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>הסבר לפקודות התקנת שרת פרוקסי קדמי עם Squid - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#squid-reverse-proxy-ubuntu-server" class="md-skip">
+        <a href="#squid" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת Squid Reverse Proxy
+              הסבר לפקודות התקנת שרת פרוקסי קדמי עם Squid
             
           </span>
         </div>
@@ -421,32 +421,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת Squid Reverse Proxy
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../squid-reverse-proxy/" class="md-nav__link">
         
   
   
@@ -457,89 +435,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: עדכון המערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: גיבוי הקובץ המקורי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: עריכת קובץ הקונפיגורציה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5: הפעלת השירות מחדש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-3128" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 (אופציונלי): פתיחת פורט 3128
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיום
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -614,10 +509,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../proxy-forward-explained/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    הסבר לפקודות התקנת שרת פרוקסי קדמי עם Squid
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -628,6 +545,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sudo-apt-update-sudo-apt-install-squid-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 sudo apt update &amp;&amp; sudo apt install squid -y
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudo-cp-etcsquidsquidconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 sudo cp /etc/squid/squid.conf ...
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-localnet-src-1921681024" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 acl localnet src 192.168.1.0/24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_access-allow-localnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 http_access allow localnet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_access-deny-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 http_access deny all
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemctl-restart-enable-squid" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 systemctl restart / enable squid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ufw-allow-3128tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 ufw allow 3128/tcp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curl-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 curl -x ...
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ טיפים:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -769,54 +787,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#sudo-apt-update-sudo-apt-install-squid-y" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 1: עדכון המערכת
+      🔹 sudo apt update &amp;&amp; sudo apt install squid -y
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-squid" class="md-nav__link">
+  <a href="#sudo-cp-etcsquidsquidconf" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 2: התקנת Squid
+      🔹 sudo cp /etc/squid/squid.conf ...
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#acl-localnet-src-1921681024" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 3: גיבוי הקובץ המקורי
+      🔹 acl localnet src 192.168.1.0/24
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#http_access-allow-localnet" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 4: עריכת קובץ הקונפיגורציה
+      🔹 http_access allow localnet
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#http_access-deny-all" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 5: הפעלת השירות מחדש
+      🔹 http_access deny all
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-3128" class="md-nav__link">
+  <a href="#systemctl-restart-enable-squid" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 6 (אופציונלי): פתיחת פורט 3128
+      🔹 systemctl restart / enable squid
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ufw-allow-3128tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 ufw allow 3128/tcp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curl-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 curl -x ...
     </span>
   </a>
   
@@ -825,7 +861,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      סיום
+      🛡️ טיפים:
     </span>
   </a>
   
@@ -847,51 +883,53 @@
 
 
 
-<h1 id="squid-reverse-proxy-ubuntu-server">התקנת Squid Reverse Proxy על Ubuntu Server</h1>
-<p>מדריך זה יסביר כיצד להתקין ולהגדיר את Squid כ־Reverse Proxy.</p>
+<h1 id="squid">הסבר לפקודות התקנת שרת פרוקסי קדמי עם Squid</h1>
 <hr />
-<h2 id="1">שלב 1: עדכון המערכת</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</code></pre></div>
+<h2 id="sudo-apt-update-sudo-apt-install-squid-y">🔹 <code>sudo apt update &amp;&amp; sudo apt install squid -y</code></h2>
+<ul>
+<li>מרענן את רשימת החבילות ומתקין את Squid – שרת פרוקסי נפוץ ויציב.</li>
+</ul>
 <hr />
-<h2 id="2-squid">שלב 2: התקנת Squid</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>squid<span class="w"> </span>-y
-</code></pre></div>
+<h2 id="sudo-cp-etcsquidsquidconf">🔹 <code>sudo cp /etc/squid/squid.conf ...</code></h2>
+<ul>
+<li>שורת גיבוי – תמיד חשוב לשמור את ההגדרות המקוריות לפני שינוי.</li>
+</ul>
 <hr />
-<h2 id="3">שלב 3: גיבוי הקובץ המקורי</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/squid/squid.conf<span class="w"> </span>/etc/squid/squid.conf.bak
-</code></pre></div>
+<h2 id="acl-localnet-src-1921681024">🔹 <code>acl localnet src 192.168.1.0/24</code></h2>
+<ul>
+<li>מגדיר את הרשת הפנימית שתורשה להשתמש בפרוקסי.</li>
+</ul>
 <hr />
-<h2 id="4">שלב 4: עריכת קובץ הקונפיגורציה</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/squid.conf
-</code></pre></div>
-<p>מחק את תוכן הקובץ והדבק את זה (דוגמה בסיסית ל־Reverse Proxy):</p>
-<div class="highlight"><pre><span></span><code>http_port 3128 accel vhost allow-direct
-cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
-acl our_sites dstdomain yourdomain.com
-http_access allow our_sites
-</code></pre></div>
-<blockquote>
-<p>החלף את <code>192.168.1.100</code> בכתובת השרת שאליו תרצה להפנות<br />
-והחלף <code>yourdomain.com</code> בשם הדומיין החיצוני שלך</p>
-</blockquote>
+<h2 id="http_access-allow-localnet">🔹 <code>http_access allow localnet</code></h2>
+<ul>
+<li>מאפשר לכתובות ברשת זו גישה לפרוקסי.</li>
+</ul>
 <hr />
-<h2 id="5">שלב 5: הפעלת השירות מחדש</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>squid
-</code></pre></div>
-<p>בדיקת מצב השירות:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>squid
-</code></pre></div>
+<h2 id="http_access-deny-all">🔹 <code>http_access deny all</code></h2>
+<ul>
+<li>חוסם כל דבר אחר – זהירות, חייב לבוא אחרי השורות שמתירות גישה.</li>
+</ul>
 <hr />
-<h2 id="6-3128">שלב 6 (אופציונלי): פתיחת פורט 3128</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3128</span>/tcp
-</code></pre></div>
+<h2 id="systemctl-restart-enable-squid">🔹 <code>systemctl restart / enable squid</code></h2>
+<ul>
+<li>הפעלה מחדש והגדרה לטעינה אוטומטית של השירות באתחול.</li>
+</ul>
 <hr />
-<h2 id="_1">סיום</h2>
-<p>כעת Squid יאזין על פורט 3128 ויפעל כ־Reverse Proxy לכתובת שהוגדרה.<br />
-מומלץ לבדוק את הלוגים הראשונים:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/squid/access.log
-</code></pre></div>
+<h2 id="ufw-allow-3128tcp">🔹 <code>ufw allow 3128/tcp</code></h2>
+<ul>
+<li>פתיחת פורט 3128 (ברירת מחדל של Squid) בחומת האש.</li>
+</ul>
+<hr />
+<h2 id="curl-x">🔹 <code>curl -x ...</code></h2>
+<ul>
+<li>בדיקה האם הפרוקסי מגיב ומעביר בקשות.</li>
+</ul>
+<hr />
+<h2 id="_1">🛡️ טיפים:</h2>
+<ul>
+<li>ניתן להוסיף אימות משתמשים או רישום לוגים מתקדם</li>
+<li>ניתן לסנן תכנים או לאפשר גישה רק לאתרים מסוימים</li>
+</ul>
 
 
 
