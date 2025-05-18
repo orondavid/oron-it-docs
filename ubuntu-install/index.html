@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../wireshark-guide/">
+        <link rel="prev" href="../sysinternals-tools/">
       
       
-        <link rel="next" href="../ubuntu-install/">
+        <link rel="next" href="../ubuntu-explained/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>מדריך Sysinternals - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>התקנת Ubuntu Server - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sysinternals-it" class="md-skip">
+        <a href="#ubuntu-server" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              מדריך Sysinternals
+              התקנת Ubuntu Server
             
           </span>
         </div>
@@ -311,6 +311,28 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../sysinternals-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך Sysinternals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -328,7 +350,7 @@
   
   
   <span class="md-ellipsis">
-    מדריך Sysinternals
+    התקנת Ubuntu Server
     
   </span>
   
@@ -341,7 +363,7 @@
   
   
   <span class="md-ellipsis">
-    מדריך Sysinternals
+    התקנת Ubuntu Server
     
   </span>
   
@@ -364,105 +386,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1-iso" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 התקנה / הפעלה
+      🟢 שלב 1: הורדת ISO
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#2-usb" class="md-nav__link">
     <span class="md-ellipsis">
-      🔧 כלים עיקריים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔧 כלים עיקריים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#process-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Explorer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#process-monitor-procmon" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Monitor (ProcMon)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Autoruns
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#psexec" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 PsExec
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tcpview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 TCPView
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rammap" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 RAMMap
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bginfo" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 BgInfo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ הערות חשובות
+      🟢 שלב 2: יצירת דיסק USB אתחול
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 שימושים נפוצים
+      🟢 שלב 3: אתחול והתקנה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 4: התחברות למערכת לאחר ההתקנה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 5: עדכון המערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 6: התקנת SSH (אם לא סומן בהתקנה)
     </span>
   </a>
   
@@ -472,28 +443,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ubuntu-install/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    התקנת Ubuntu Server
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -767,105 +716,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1-iso" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 התקנה / הפעלה
+      🟢 שלב 1: הורדת ISO
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#2-usb" class="md-nav__link">
     <span class="md-ellipsis">
-      🔧 כלים עיקריים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔧 כלים עיקריים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#process-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Explorer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#process-monitor-procmon" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Monitor (ProcMon)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Autoruns
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#psexec" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 PsExec
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tcpview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 TCPView
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rammap" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 RAMMap
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bginfo" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 BgInfo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ הערות חשובות
+      🟢 שלב 2: יצירת דיסק USB אתחול
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 שימושים נפוצים
+      🟢 שלב 3: אתחול והתקנה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 4: התחברות למערכת לאחר ההתקנה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 5: עדכון המערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 6: התקנת SSH (אם לא סומן בהתקנה)
     </span>
   </a>
   
@@ -887,109 +785,60 @@
 
 
 
-<h1 id="sysinternals-it">כלים חיוניים מ־Sysinternals – מדריך למנהלי IT</h1>
-<p>Sysinternals היא חבילת כלים של Microsoft לפתרון תקלות וניטור מתקדם במערכות Windows.<br />
-כל הכלים ניידים (Portable) וניתנים להרצה מיידית.</p>
+<h1 id="ubuntu-server">מדריך התקנת Ubuntu Server</h1>
+<p>מדריך זה יסביר כיצד להוריד, להכין ולהתקין מערכת הפעלה Ubuntu Server – כולל הכנה בסיסית לאחר ההתקנה.</p>
 <hr />
-<h2 id="_1">🔹 התקנה / הפעלה</h2>
-<p>ניתן להוריד את כל הכלים מכאן:
-<a href="https://docs.microsoft.com/en-us/sysinternals/">https://docs.microsoft.com/en-us/sysinternals/</a></p>
-<p>או להריץ ישירות מהאינטרנט:
-<div class="highlight"><pre><span></span><code><span class="se">\l</span>ive.sysinternals.com<span class="w">  </span>ools
-</code></pre></div></p>
-<hr />
-<h2 id="_2">🔧 כלים עיקריים</h2>
-<h3 id="process-explorer">🟢 Process Explorer</h3>
-<p>תחליף משודרג ל־Task Manager<br />
-- מציג את עץ התהליכים
-- בודק אילו קבצים פתוחים ע"י איזה תהליך
-- מאפשר לסגור תהליכים נעולים</p>
-<h3 id="process-monitor-procmon">🟢 Process Monitor (ProcMon)</h3>
+<h2 id="1-iso">🟢 שלב 1: הורדת ISO</h2>
 <ul>
-<li>מציג בזמן אמת כל גישה:</li>
-<li>לקבצים</li>
-<li>ל־Registry</li>
-<li>לרשת</li>
-<li>כלי עוצמתי לאיתור בעיות נסתרות (Permission Denied, File Not Found)</li>
-</ul>
-<h3 id="autoruns">🟢 Autoruns</h3>
-<ul>
-<li>מציג את כל מה שנטען באתחול</li>
-<li>כולל:</li>
-<li>תוכנות</li>
-<li>DLL-ים</li>
-<li>Scheduled Tasks</li>
-<li>תוספי דפדפן</li>
-<li>ניתן לבטל פריטים לא רצויים</li>
-</ul>
-<h3 id="psexec">🟢 PsExec</h3>
-<ul>
-<li>הרצת פקודה או תוכנה מרחוק (כולל על שרתים)
-<div class="highlight"><pre><span></span><code>psexec<span class="w"> </span><span class="se">\H</span>OST<span class="w"> </span>cmd
-</code></pre></div></li>
-</ul>
-<h3 id="tcpview">🟢 TCPView</h3>
-<ul>
-<li>מציג את כל החיבורים הפתוחים:</li>
-<li>פורטים</li>
-<li>פרוטוקולים</li>
-<li>תהליך אחראי</li>
-</ul>
-<h3 id="rammap">🟢 RAMMap</h3>
-<ul>
-<li>ניתוח מפורט של שימוש בזיכרון</li>
-<li>כולל חלוקה לפי עמודים, קבצים, מערכות</li>
-</ul>
-<h3 id="bginfo">🟢 BgInfo</h3>
-<ul>
-<li>מציג מידע על שולחן העבודה (IP, שם מחשב, דומיין ועוד)</li>
-<li>מצוין עבור סביבת ניהול עם הרבה תחנות</li>
+<li>
+<p>עבור לאתר הרשמי:<br />
+🔗 https://ubuntu.com/download/server</p>
+</li>
+<li>
+<p>הורד את הגרסה האחרונה של Ubuntu Server (לרוב LTS)</p>
+</li>
 </ul>
 <hr />
-<h2 id="_3">🛡️ הערות חשובות</h2>
+<h2 id="2-usb">🟢 שלב 2: יצירת דיסק USB אתחול</h2>
 <ul>
-<li>מומלץ להריץ כ־Administrator לקבלת תוצאה מלאה</li>
-<li>רבים מהכלים דורשים אישור UAC</li>
-<li>מומלץ לבדוק עדכונים – הכלים מתעדכנים תדיר</li>
+<li>הורד את <strong>Rufus</strong>: https://rufus.ie</li>
+<li>חבר דיסק און קי (לפחות 4GB)</li>
+<li>בחר את קובץ ה־ISO</li>
+<li>צור את הדיסק עם ברירת המחדל (GPT / UEFI או BIOS בהתאם למחשב)</li>
 </ul>
 <hr />
-<h2 id="_4">🧪 שימושים נפוצים</h2>
-<table>
-<thead>
-<tr>
-<th>משימה</th>
-<th>הכלי</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>מערכת איטית מאוד</td>
-<td>Process Explorer + ProcMon</td>
-</tr>
-<tr>
-<td>תוכנה לא עולה בלי סיבה</td>
-<td>Autoruns + Event Viewer</td>
-</tr>
-<tr>
-<td>לא יודעים מי תפס קובץ</td>
-<td>Process Explorer</td>
-</tr>
-<tr>
-<td>בדיקת נוזקה באתחול</td>
-<td>Autoruns</td>
-</tr>
-<tr>
-<td>ניטור הרשאות בקבצים</td>
-<td>ProcMon</td>
-</tr>
-<tr>
-<td>חקירת תקשורת</td>
-<td>TCPView</td>
-</tr>
-</tbody>
-</table>
+<h2 id="3">🟢 שלב 3: אתחול והתקנה</h2>
+<ol>
+<li>אתחל את המחשב מה־USB</li>
+<li>בחר שפה ואזור</li>
+<li>הגדר רשת (DHCP או IP סטטי)</li>
+<li>צור משתמש + סיסמה</li>
+<li>בחר דיסק להתקנה</li>
+<li>אשר והתחל בהתקנה</li>
+</ol>
 <hr />
-<p>Sysinternals הם "ארגז הכלים הסודי" של כל איש IT מקצועי.</p>
+<h2 id="4">🟢 שלב 4: התחברות למערכת לאחר ההתקנה</h2>
+<ul>
+<li>לאחר האתחול, היכנס עם המשתמש שיצרת</li>
+<li>תריץ:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>a
+</code></pre></div>
+<p>כדי לבדוק את כתובת ה-IP שלך<br />
+(כדי להתחבר מרחוק ב־SSH אם נדרש)</p>
+<hr />
+<h2 id="5">🟢 שלב 5: עדכון המערכת</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
+<hr />
+<h2 id="6-ssh">🟢 שלב 6: התקנת SSH (אם לא סומן בהתקנה)</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server<span class="w"> </span>-y
+</code></pre></div>
+<p>בדוק את השירות:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
+</code></pre></div>
+<hr />
+<p>כעת יש לך שרת Ubuntu בסיסי מוכן לשימוש.</p>
 
 
 
