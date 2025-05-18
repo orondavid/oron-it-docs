@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../sysinternals-tools/">
-      
-      
-        <link rel="next" href="../ubuntu-explained/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>התקנת Ubuntu Server - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu-server" class="md-skip">
+        <a href="#3-ubuntu-server-2204-lts" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת Ubuntu Server
+              שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS
             
           </span>
         </div>
@@ -333,32 +329,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת Ubuntu Server
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ubuntu-install/" class="md-nav__link">
         
   
   
@@ -369,53 +343,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-iso" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 1: הורדת ISO
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-usb" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 2: יצירת דיסק USB אתחול
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 3: אתחול והתקנה
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -689,27 +616,126 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-iso" class="md-nav__link">
+  <a href="#1-language" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 1: הורדת ISO
+      🟦 1. Language (שפה)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-usb" class="md-nav__link">
+  <a href="#2-keyboard-layout" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 2: יצירת דיסק USB אתחול
+      🟦 2. Keyboard Layout (פריסת מקלדת)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-installation-type" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 3: אתחול והתקנה
+      🟦 3. Installation Type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-network-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 4. Network Connections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-proxy-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 5. Proxy Address
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mirror-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 6. Mirror Address
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-installer-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 7. Installer Update
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-storage-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 8. Storage Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-profile-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 9. Profile Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ssh-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 10. SSH Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-featured-server-snaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 11. Featured Server Snaps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-confirm-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 12. Confirm Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-installation-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 13. Installation Progress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-reboot-and-remove-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 14. Reboot and Remove Media
     </span>
   </a>
   
@@ -731,37 +757,6 @@
 
 
 
-<h1 id="ubuntu-server">מדריך התקנת Ubuntu Server</h1>
-<p>מדריך זה יסביר כיצד להוריד, להכין ולהתקין מערכת הפעלה Ubuntu Server – כולל הכנה בסיסית לאחר ההתקנה.</p>
-<hr />
-<h2 id="1-iso">🟢 שלב 1: הורדת ISO</h2>
-<ul>
-<li>
-<p>עבור לאתר הרשמי:<br />
-🔗 https://ubuntu.com/download/server</p>
-</li>
-<li>
-<p>הורד את הגרסה האחרונה של Ubuntu Server (לרוב LTS)</p>
-</li>
-</ul>
-<hr />
-<h2 id="2-usb">🟢 שלב 2: יצירת דיסק USB אתחול</h2>
-<ul>
-<li>הורד את <strong>Rufus</strong>: https://rufus.ie</li>
-<li>חבר דיסק און קי (לפחות 4GB)</li>
-<li>בחר את קובץ ה־ISO</li>
-<li>צור את הדיסק עם ברירת המחדל (GPT / UEFI או BIOS בהתאם למחשב)</li>
-</ul>
-<hr />
-<h2 id="3">🟢 שלב 3: אתחול והתקנה</h2>
-<ol>
-<li>אתחל את המחשב מה־USB</li>
-<li>בחר שפה ואזור</li>
-<li>הגדר רשת (DHCP או IP סטטי)</li>
-<li>צור משתמש + סיסמה</li>
-<li>בחר דיסק להתקנה</li>
-<li>אשר והתחל בהתקנה</li>
-</ol>
 <h1 id="3-ubuntu-server-2204-lts">שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS</h1>
 <p>מדריך זה מתאר את כל השלבים המופיעים בתהליך ההתקנה של Ubuntu Server 22.04 LTS, עם הסברים לבחירות והמלצות.</p>
 <hr />
@@ -844,29 +839,7 @@
 <p>בסיום תראה הודעה להפעיל מחדש.<br />
 הסר את ה־USB או דיסק ההתקנה ולחץ Enter.</p>
 <hr />
-<h2 id="ubuntu-server_1">המערכת כעת מוכנה לאתחול ל־Ubuntu Server שהתקנת 🎉</h2>
-<h2 id="4">🟢 שלב 4: התחברות למערכת לאחר ההתקנה</h2>
-<ul>
-<li>לאחר האתחול, היכנס עם המשתמש שיצרת</li>
-<li>תריץ:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>a
-</code></pre></div>
-<p>כדי לבדוק את כתובת ה-IP שלך<br />
-(כדי להתחבר מרחוק ב־SSH אם נדרש)</p>
-<hr />
-<h2 id="5">🟢 שלב 5: עדכון המערכת</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</code></pre></div>
-<hr />
-<h2 id="6-ssh">🟢 שלב 6: התקנת SSH (אם לא סומן בהתקנה)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server<span class="w"> </span>-y
-</code></pre></div>
-<p>בדוק את השירות:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
-</code></pre></div>
-<hr />
-<p>כעת יש לך שרת Ubuntu בסיסי מוכן לשימוש.</p>
+<p>המערכת כעת מוכנה לאתחול ל־Ubuntu Server שהתקנת 🎉</p>
 
 
 
