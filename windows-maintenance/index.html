@@ -895,9 +895,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sfc-system-file-checker" class="md-nav__link">
+  <a href="#sfc-" class="md-nav__link">
     <span class="md-ellipsis">
-      SFC - System File Checker
+      SFC - סריקה ותיקון קבצי מערכת
     </span>
   </a>
   
@@ -920,7 +920,58 @@
         <li class="md-nav__item">
   <a href="#ssd-hdd" class="md-nav__link">
     <span class="md-ellipsis">
-      💽 זיהוי סוג הכונן (SSD או HDD)
+      💽 בדיקת סוג דיסק (SSD או HDD)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕒 מדידת זמן אתחול המערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speedtest-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 בדיקת מהירות אינטרנט (Speedtest CLI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📶 בדיקת מהירות אינטרנט (Speedtest CLI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלבים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 בדיקת פינג
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 סיכום
     </span>
   </a>
   
@@ -979,9 +1030,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sfc-system-file-checker" class="md-nav__link">
+  <a href="#sfc-" class="md-nav__link">
     <span class="md-ellipsis">
-      SFC - System File Checker
+      SFC - סריקה ותיקון קבצי מערכת
     </span>
   </a>
   
@@ -1004,7 +1055,58 @@
         <li class="md-nav__item">
   <a href="#ssd-hdd" class="md-nav__link">
     <span class="md-ellipsis">
-      💽 זיהוי סוג הכונן (SSD או HDD)
+      💽 בדיקת סוג דיסק (SSD או HDD)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕒 מדידת זמן אתחול המערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speedtest-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 בדיקת מהירות אינטרנט (Speedtest CLI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📶 בדיקת מהירות אינטרנט (Speedtest CLI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלבים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 בדיקת פינג
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 סיכום
     </span>
   </a>
   
@@ -1027,32 +1129,26 @@
 
 
 <h1 id="-windows-powershell">🔧 בדיקות תחזוקה וביצועים ב-Windows (PowerShell)</h1>
-<p>בדף זה מופיעות פקודות שימושיות לאבחון ותחזוקת מערכת הפעלה Windows באמצעות PowerShell. כל הפקודות מתועדות עם הסבר, שימושים ודוגמאות.</p>
+<p>בדף זה מופיעות פקודות שימושיות לאבחון ותחזוקת מערכת Windows באמצעות PowerShell. הפקודות כוללות בדיקות תקינות קבצים, זיהוי סוג דיסק, מדידת זמן אתחול ובדיקת מהירות אינטרנט. הפקודות באנגלית, וההסברים בעברית.</p>
 <hr />
 <h2 id="_1">🧪 בדיקת תקינות קבצי מערכת</h2>
-<h3 id="sfc-system-file-checker">SFC - System File Checker</h3>
-<p>סורקת את קבצי המערכת ומחליפה קבצים פגומים או חסרים בעותקים תקינים.</p>
+<h3 id="sfc-">SFC - סריקה ותיקון קבצי מערכת</h3>
 <div class="highlight"><pre><span></span><code><span class="n">sfc</span> <span class="p">/</span><span class="n">scannow</span>
 </code></pre></div>
+<p>פקודה זו סורקת את קבצי מערכת Windows ובודקת אם יש קבצים פגומים או חסרים. אם נמצאו – הם מוחלפים בעותקים תקינים מהמערכת.</p>
 <hr />
 <h3 id="dism-">DISM - תיקון תמונת מערכת</h3>
-<p>מתקן את תמונת המערכת (Windows Image) ש-SFC מסתמך עליה.</p>
 <div class="highlight"><pre><span></span><code><span class="n">DISM</span> <span class="p">/</span><span class="n">Online</span> <span class="p">/</span><span class="n">Cleanup-Image</span> <span class="p">/</span><span class="n">RestoreHealth</span>
 </code></pre></div>
+<p>משמשת לתיקון תמונת המערכת (Windows Image) במקרה ש־SFC לא מצליח לשחזר קבצים בגלל תמונה פגומה.</p>
 <hr />
-<h2 id="ssd-hdd">💽 זיהוי סוג הכונן (SSD או HDD)</h2>
-<p>מציג את רשימת הדיסקים הפיזיים ואת סוג המדיה שלהם.</p>
+<h2 id="ssd-hdd">💽 בדיקת סוג דיסק (SSD או HDD)</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-PhysicalDisk</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">FriendlyName</span><span class="p">,</span> <span class="n">MediaType</span><span class="p">,</span> <span class="n">Size</span>
 </code></pre></div>
+<p>מציג את הכוננים הפיזיים ומציין האם מדובר ב־SSD או HDD.</p>
 <hr />
-<h1 id="powershell-script-measure-boot-time-on-windows">??? PowerShell Script: Measure Boot Time on Windows</h1>
-<p>This script retrieves and displays boot performance metrics from the Windows Event Log using PowerShell. It provides:</p>
-<ul>
-<li>Total boot time</li>
-<li>Main path boot time</li>
-<li>Time to logon screen</li>
-</ul>
-<h2 id="powershell-script">? PowerShell Script</h2>
+<h2 id="_2">🕒 מדידת זמן אתחול המערכת</h2>
+<p>סקריפט שמושך את Event ID 100 מתוך יומן האתחול ומחשב את משך האתחול הכולל, את זמן הליבה ואת זמן ההגעה למסך הלוגין.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$event</span> <span class="p">=</span> <span class="nb">Get-WinEvent</span> <span class="n">-FilterHashtable</span> <span class="p">@{</span><span class="n">LogName</span><span class="p">=</span><span class="s1">&#39;Microsoft-Windows-Diagnostics-Performance/Operational&#39;</span><span class="p">;</span> <span class="n">Id</span><span class="p">=</span><span class="n">100</span><span class="p">}</span> <span class="n">-MaxEvents</span> <span class="n">1</span>
 <span class="nv">$props</span> <span class="p">=</span> <span class="nv">$event</span><span class="p">.</span><span class="n">Properties</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="p">}</span>
 
@@ -1064,46 +1160,43 @@
 <span class="nv">$mainSec</span>  <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$mainBootMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
 <span class="nv">$logonSec</span> <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$logonMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
 
-<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;??? Total Boot Time&quot;</span><span class="p">,</span> <span class="nv">$bootTimeMs</span><span class="p">,</span> <span class="nv">$bootSec</span><span class="p">)</span>
-<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;?? Main Path Boot Time&quot;</span><span class="p">,</span> <span class="nv">$mainBootMs</span><span class="p">,</span> <span class="nv">$mainSec</span><span class="p">)</span>
-<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;?? Time to Logon Screen&quot;</span><span class="p">,</span> <span class="nv">$logonMs</span><span class="p">,</span> <span class="nv">$logonSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🖥️ Total Boot Time&quot;</span><span class="p">,</span> <span class="nv">$bootTimeMs</span><span class="p">,</span> <span class="nv">$bootSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🔄 Main Path Boot Time&quot;</span><span class="p">,</span> <span class="nv">$mainBootMs</span><span class="p">,</span> <span class="nv">$mainSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🔐 Time to Logon Screen&quot;</span><span class="p">,</span> <span class="nv">$logonMs</span><span class="p">,</span> <span class="nv">$logonSec</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="example-output">?? Example Output</h2>
-<div class="highlight"><pre><span></span><code>??? Total Boot Time       :  32571 ms (~32.6 sec)
-?? Main Path Boot Time    :   6171 ms (~6.2 sec)
-?? Time to Logon Screen   :  26400 ms (~26.4 sec)
-</code></pre></div>
-<p>This script is useful for analyzing startup performance on Windows systems.</p>
-<div class="highlight"><pre><span></span><code>---
-
-## 📶 בדיקת מהירות אינטרנט
-
-### הורדת כלי Speedtest CLI (של Ookla)
-
-1. הורדה:  
-[לחץ להורדה](https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-win64.zip)
-
-2. חילוץ:  
-שמור את הקובץ `speedtest.exe` בתקייה כמו `C:\Tools\speedtest.exe`
-
-3. הרצה:
-```powershell
-C:\Tools\speedtest.exe
-</code></pre></div>
-<p>אם הוספת לתיקיית PATH:
+<p>דוגמה לפלט:
+<div class="highlight"><pre><span></span><code>🖥️ Total Boot Time       :  32571 ms (~32.6 sec)
+🔄 Main Path Boot Time    :   6171 ms (~6.2 sec)
+🔐 Time to Logon Screen   :  26400 ms (~26.4 sec)
+</code></pre></div></p>
+<hr />
+<h2 id="speedtest-cli">📶 בדיקת מהירות אינטרנט (Speedtest CLI)</h2>
+<h3 id="_3">שלבים:</h3>
+<ol>
+<li>
+<p>הורד את הכלי:
+   <a href="https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-win64.zip">לחץ כאן להורדה</a></p>
+</li>
+<li>
+<p>חלץ את הקובץ <code>speedtest.exe</code> מתוך הקובץ ZIP ושמור אותו בתיקיה לדוגמה <code>C:\Tools\</code>.</p>
+</li>
+<li>
+<p>הרץ את הפקודה:
+<div class="highlight"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Tools</span><span class="p">\</span><span class="n">speedtest</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>אם שמרת את הקובץ בתקייה שנמצאת ב־PATH:
 <div class="highlight"><pre><span></span><code><span class="n">speedtest</span>
 </code></pre></div></p>
 <hr />
-<h2 id="_2">🧩 פקודות נוספות</h2>
-<h3 id="_3">בדיקת פינג לשרת חיצוני:</h3>
+<h2 id="_4">🧩 בדיקת פינג</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">Test-Connection</span> <span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-Count</span> <span class="n">5</span>
 </code></pre></div>
+<p>בודק זמני תגובה משרת אינטרנט כדי לבדוק קישוריות וביצועים בסיסיים של הרשת.</p>
 <hr />
-<h2 id="_4">📝 סיכום</h2>
-<p>הפקודות בדף זה מסייעות ל:
-- תחזוקת מערכת Windows
-- בדיקת מהירות ותפקוד
-- זיהוי בעיות באתחול ובכוננים</p>
+<h2 id="_5">📝 סיכום</h2>
+<p>בדף זה מוצגים כלים שימושיים לניתוח תקינות מערכת Windows, מדידת זמן אתחול, בדיקת מהירות אינטרנט וזיהוי סוג דיסק – כל זאת באמצעות PowerShell.</p>
 
 
 
