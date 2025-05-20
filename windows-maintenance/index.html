@@ -977,6 +977,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#powershell-exe-ps2exe" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ פקודה לדוגמה:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1112,6 +1136,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#powershell-exe-ps2exe" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ פקודה לדוגמה:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1135,7 +1183,7 @@
 <h3 id="sfc-">SFC - סריקה ותיקון קבצי מערכת</h3>
 <div class="highlight"><pre><span></span><code><span class="n">sfc</span> <span class="p">/</span><span class="n">scannow</span>
 </code></pre></div>
-<p>פקודה זו סורקת את קבצי מערכת Windows ובודקת אם יש קבצים פגומים או חסרים. אם נמצאו – הם מוחלפים בעותקים תקינים מהמערכת.</p>
+<p>פקודה זו סורקת את קבצי מערכת Windows ובודקת אם יש קבצים פגומים או חסרים. אם נמצאו  ?הם מוחלפים בעותקים תקינים מהמערכת.</p>
 <hr />
 <h3 id="dism-">DISM - תיקון תמונת מערכת</h3>
 <div class="highlight"><pre><span></span><code><span class="n">DISM</span> <span class="p">/</span><span class="n">Online</span> <span class="p">/</span><span class="n">Cleanup-Image</span> <span class="p">/</span><span class="n">RestoreHealth</span>
@@ -1160,12 +1208,12 @@
 <span class="nv">$mainSec</span>  <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$mainBootMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
 <span class="nv">$logonSec</span> <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$logonMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
 
-<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🖥️ Total Boot Time&quot;</span><span class="p">,</span> <span class="nv">$bootTimeMs</span><span class="p">,</span> <span class="nv">$bootSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🖥 ?Total Boot Time&quot;</span><span class="p">,</span> <span class="nv">$bootTimeMs</span><span class="p">,</span> <span class="nv">$bootSec</span><span class="p">)</span>
 <span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🔄 Main Path Boot Time&quot;</span><span class="p">,</span> <span class="nv">$mainBootMs</span><span class="p">,</span> <span class="nv">$mainSec</span><span class="p">)</span>
 <span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🔐 Time to Logon Screen&quot;</span><span class="p">,</span> <span class="nv">$logonMs</span><span class="p">,</span> <span class="nv">$logonSec</span><span class="p">)</span>
 </code></pre></div>
 <p>דוגמה לפלט:
-<div class="highlight"><pre><span></span><code>🖥️ Total Boot Time       :  32571 ms (~32.6 sec)
+<div class="highlight"><pre><span></span><code>🖥 ?Total Boot Time       :  32571 ms (~32.6 sec)
 🔄 Main Path Boot Time    :   6171 ms (~6.2 sec)
 🔐 Time to Logon Screen   :  26400 ms (~26.4 sec)
 </code></pre></div></p>
@@ -1196,7 +1244,40 @@
 <p>בודק זמני תגובה משרת אינטרנט כדי לבדוק קישוריות וביצועים בסיסיים של הרשת.</p>
 <hr />
 <h2 id="_5">📝 סיכום</h2>
-<p>בדף זה מוצגים כלים שימושיים לניתוח תקינות מערכת Windows, מדידת זמן אתחול, בדיקת מהירות אינטרנט וזיהוי סוג דיסק – כל זאת באמצעות PowerShell.</p>
+<p>בדף זה מוצגים כלים שימושיים לניתוח תקינות מערכת Windows, מדידת זמן אתחול, בדיקת מהירות אינטרנט וזיהוי סוג דיסק  ?כל זאת באמצעות PowerShell.</p>
+<hr />
+<hr />
+<h2 id="powershell-exe-ps2exe">🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE</h2>
+<p>הכלי <code>PS2EXE</code> מאפשר להמיר סקריפט PowerShell (קובץ <code>.ps1</code>) לקובץ הרצה עצמאי (<code>.exe</code>) שניתן להפעיל בלחיצה כפולה – גם עם ממשק משתמש (GUI).</p>
+<h3 id="_6">✅ פקודה לדוגמה:</h3>
+<p>```powershell
+Invoke-ps2exe -InputFile "C:\PS\boot-info-gui.ps1" -OutputFile "C:\PS\boot-info.exe" -NoConsole</p>
+<table>
+<thead>
+<tr>
+<th>פרמטר</th>
+<th>תיאור</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Invoke-ps2exe</code></td>
+<td>הפקודה שמבצעת את ההמרה</td>
+</tr>
+<tr>
+<td><code>-InputFile</code></td>
+<td>הנתיב לקובץ ה־PowerShell המקורי (<code>.ps1</code>)</td>
+</tr>
+<tr>
+<td><code>-OutputFile</code></td>
+<td>הנתיב לקובץ ה־<code>.exe</code> שיווצר</td>
+</tr>
+<tr>
+<td><code>-NoConsole</code></td>
+<td>מייצר קובץ GUI ללא פתיחת חלון קונסול (Console)</td>
+</tr>
+</tbody>
+</table>
 
 
 
