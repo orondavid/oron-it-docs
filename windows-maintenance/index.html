@@ -938,30 +938,6 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📶 בדיקת מהירות אינטרנט
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📶 בדיקת מהירות אינטרנט">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#speedtest-cli-ookla" class="md-nav__link">
-    <span class="md-ellipsis">
-      הורדת כלי Speedtest CLI (של Ookla)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
       🧩 פקודות נוספות
     </span>
   </a>
@@ -970,7 +946,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       בדיקת פינג לשרת חיצוני:
     </span>
@@ -984,7 +960,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       📝 סיכום
     </span>
@@ -1088,30 +1064,6 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📶 בדיקת מהירות אינטרנט
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📶 בדיקת מהירות אינטרנט">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#speedtest-cli-ookla" class="md-nav__link">
-    <span class="md-ellipsis">
-      הורדת כלי Speedtest CLI (של Ookla)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
       🧩 פקודות נוספות
     </span>
   </a>
@@ -1120,7 +1072,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       בדיקת פינג לשרת חיצוני:
     </span>
@@ -1134,7 +1086,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       📝 סיכום
     </span>
@@ -1179,45 +1131,43 @@
 <hr />
 <h2 id="_2">🕒 בדיקת זמן אתחול המערכת</h2>
 <p>סקריפט שמוציא את משך זמן האתחול בפירוט:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$event</span> <span class="p">=</span> <span class="nb">Get-WinEvent</span> <span class="n">-FilterHashtable</span> <span class="p">@{</span><span class="n">LogName</span><span class="p">=</span><span class="s1">&#39;Microsoft-Windows-Diagnostics-Performance/Operational&#39;</span><span class="p">;</span> <span class="n">Id</span><span class="p">=</span><span class="n">100</span><span class="p">}</span> <span class="n">-MaxEvents</span> <span class="n">1</span>
-<span class="nv">$props</span> <span class="p">=</span> <span class="nv">$event</span><span class="p">.</span><span class="n">Properties</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="p">}</span>
+<p>$event = Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Diagnostics-Performance/Operational'; Id=100} -MaxEvents 1
+$props = $event.Properties | ForEach-Object { $_.Value }</p>
+<p>$bootTimeMs = [int]$props[5]
+$mainBootMs = [int]$props[6]
+$logonMs    = [int]$props[19]</p>
+<p>$bootSec  = [math]::Round($bootTimeMs / 1000, 1)
+$mainSec  = [math]::Round($mainBootMs / 1000, 1)
+$logonSec = [math]::Round($logonMs / 1000, 1)</p>
+<p>Write-Host ("{0,-25}: {1,6} ms (~{2} sec)" -f "??? Total Boot Time", $bootTimeMs, $bootSec)
+Write-Host ("{0,-25}: {1,6} ms (~{2} sec)" -f "?? Main Path Boot Time", $mainBootMs, $mainSec)
+Write-Host ("{0,-25}: {1,6} ms (~{2} sec)" -f "?? Time to Logon Screen", $logonMs, $logonSec)</p>
+<div class="highlight"><pre><span></span><code>---
 
-<span class="nv">$bootTimeMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">5</span><span class="p">]</span>
-<span class="nv">$mainBootMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">6</span><span class="p">]</span>
-<span class="nv">$logonMs</span>    <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">19</span><span class="p">]</span>
+## 📶 בדיקת מהירות אינטרנט
 
-<span class="nb">Write-Host</span> <span class="s2">&quot;🖥️ זמן אתחול כולל      : $bootTimeMs ms  (~</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$bootTimeMs</span><span class="p">/</span><span class="n">1000</span><span class="p">,</span><span class="n">1</span><span class="p">))</span><span class="s2"> שניות)&quot;</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;🔄 זמן מסלול ראשי     : $mainBootMs ms  (~</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$mainBootMs</span><span class="p">/</span><span class="n">1000</span><span class="p">,</span><span class="n">1</span><span class="p">))</span><span class="s2"> שניות)&quot;</span>
-<span class="nb">Write-Host</span> <span class="s2">&quot;🔐 זמן עד מסך לוגין   : $logonMs ms     (~</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$logonMs</span><span class="p">/</span><span class="n">1000</span><span class="p">,</span><span class="n">1</span><span class="p">))</span><span class="s2"> שניות)&quot;</span>
+### הורדת כלי Speedtest CLI (של Ookla)
+
+1. הורדה:  
+[לחץ להורדה](https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-win64.zip)
+
+2. חילוץ:  
+שמור את הקובץ `speedtest.exe` בתקייה כמו `C:\Tools\speedtest.exe`
+
+3. הרצה:
+```powershell
+C:\Tools\speedtest.exe
 </code></pre></div>
-<hr />
-<h2 id="_3">📶 בדיקת מהירות אינטרנט</h2>
-<h3 id="speedtest-cli-ookla">הורדת כלי Speedtest CLI (של Ookla)</h3>
-<ol>
-<li>
-<p>הורדה:<br />
-<a href="https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-win64.zip">לחץ להורדה</a></p>
-</li>
-<li>
-<p>חילוץ:<br />
-שמור את הקובץ <code>speedtest.exe</code> בתקייה כמו <code>C:\Tools\speedtest.exe</code></p>
-</li>
-<li>
-<p>הרצה:
-<div class="highlight"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Tools</span><span class="p">\</span><span class="n">speedtest</span><span class="p">.</span><span class="n">exe</span>
-</code></pre></div></p>
-</li>
-</ol>
 <p>אם הוספת לתיקיית PATH:
 <div class="highlight"><pre><span></span><code><span class="n">speedtest</span>
 </code></pre></div></p>
 <hr />
-<h2 id="_4">🧩 פקודות נוספות</h2>
-<h3 id="_5">בדיקת פינג לשרת חיצוני:</h3>
+<h2 id="_3">🧩 פקודות נוספות</h2>
+<h3 id="_4">בדיקת פינג לשרת חיצוני:</h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Test-Connection</span> <span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-Count</span> <span class="n">5</span>
 </code></pre></div>
 <hr />
-<h2 id="_6">📝 סיכום</h2>
+<h2 id="_5">📝 סיכום</h2>
 <p>הפקודות בדף זה מסייעות ל:
 - תחזוקת מערכת Windows
 - בדיקת מהירות ותפקוד
