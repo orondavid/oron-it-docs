@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../it-scripts/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>פקודות תחזוקת וינדוס - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-ubuntu-server-2204-lts" class="md-skip">
+        <a href="#-windows-powershell" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS
+              פקודות תחזוקת וינדוס
             
           </span>
         </div>
@@ -767,18 +769,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -794,7 +798,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             סקריפטים ופקודות
@@ -828,10 +832,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../windows-maintenance/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    פקודות תחזוקת וינדוס
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -842,6 +868,134 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 בדיקת תקינות קבצי מערכת
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 בדיקת תקינות קבצי מערכת">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sfc-system-file-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFC - System File Checker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dism-" class="md-nav__link">
+    <span class="md-ellipsis">
+      DISM - תיקון תמונת מערכת
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssd-hdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      💽 זיהוי סוג הכונן (SSD או HDD)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕒 בדיקת זמן אתחול המערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 בדיקת מהירות אינטרנט
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📶 בדיקת מהירות אינטרנט">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speedtest-cli-ookla" class="md-nav__link">
+    <span class="md-ellipsis">
+      הורדת כלי Speedtest CLI (של Ookla)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 פקודות נוספות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 פקודות נוספות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת פינג לשרת חיצוני:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 סיכום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -881,126 +1035,108 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-language" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 1. Language (שפה)
+      🧪 בדיקת תקינות קבצי מערכת
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 בדיקת תקינות קבצי מערכת">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sfc-system-file-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFC - System File Checker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dism-" class="md-nav__link">
+    <span class="md-ellipsis">
+      DISM - תיקון תמונת מערכת
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssd-hdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      💽 זיהוי סוג הכונן (SSD או HDD)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-keyboard-layout" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 2. Keyboard Layout (פריסת מקלדת)
+      🕒 בדיקת זמן אתחול המערכת
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-installation-type" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 3. Installation Type
+      📶 בדיקת מהירות אינטרנט
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📶 בדיקת מהירות אינטרנט">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speedtest-cli-ookla" class="md-nav__link">
+    <span class="md-ellipsis">
+      הורדת כלי Speedtest CLI (של Ookla)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4-network-connections" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 4. Network Connections
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-proxy-address" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 5. Proxy Address
+      🧩 פקודות נוספות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 פקודות נוספות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת פינג לשרת חיצוני:
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mirror-address" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 6. Mirror Address
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-installer-update" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 7. Installer Update
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-storage-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 8. Storage Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-profile-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 9. Profile Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-ssh-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 10. SSH Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-featured-server-snaps" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 11. Featured Server Snaps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-confirm-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 12. Confirm Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-installation-progress" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 13. Installation Progress
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-reboot-and-remove-media" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 14. Reboot and Remove Media
+      📝 סיכום
     </span>
   </a>
   
@@ -1022,89 +1158,70 @@
 
 
 
-<h1 id="3-ubuntu-server-2204-lts">שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS</h1>
-<p>מדריך זה מתאר את כל השלבים המופיעים בתהליך ההתקנה של Ubuntu Server 22.04 LTS, עם הסברים לבחירות והמלצות.</p>
+<h1 id="-windows-powershell">🔧 בדיקות תחזוקה וביצועים ב-Windows (PowerShell)</h1>
+<p>בדף זה מופיעות פקודות שימושיות לאבחון ותחזוקת מערכת הפעלה Windows באמצעות PowerShell. כל הפקודות מתועדות עם הסבר, שימושים ודוגמאות.</p>
 <hr />
-<h2 id="1-language">🟦 1. Language (שפה)</h2>
-<p>בחר את השפה שבה תוצג ההתקנה.<br />
-<strong>מומלץ:</strong> English</p>
+<h2 id="_1">🧪 בדיקת תקינות קבצי מערכת</h2>
+<h3 id="sfc-system-file-checker">SFC - System File Checker</h3>
+<p>סורקת את קבצי המערכת ומחליפה קבצים פגומים או חסרים בעותקים תקינים.</p>
+<div class="highlight"><pre><span></span><code><span class="n">sfc</span> <span class="p">/</span><span class="n">scannow</span>
+</code></pre></div>
 <hr />
-<h2 id="2-keyboard-layout">🟦 2. Keyboard Layout (פריסת מקלדת)</h2>
-<p>בחר את פריסת המקלדת שלך. תוכל גם לבדוק את הפריסה.<br />
-<strong>לדוברי עברית:</strong> Hebrew</p>
+<h3 id="dism-">DISM - תיקון תמונת מערכת</h3>
+<p>מתקן את תמונת המערכת (Windows Image) ש-SFC מסתמך עליה.</p>
+<div class="highlight"><pre><span></span><code><span class="n">DISM</span> <span class="p">/</span><span class="n">Online</span> <span class="p">/</span><span class="n">Cleanup-Image</span> <span class="p">/</span><span class="n">RestoreHealth</span>
+</code></pre></div>
 <hr />
-<h2 id="3-installation-type">🟦 3. Installation Type</h2>
-<p>בחר את סוג ההתקנה:</p>
-<ul>
-<li><strong>Ubuntu Server</strong> – התקנה מלאה</li>
-<li><strong>Ubuntu Server (minimized)</strong> – התקנה מינימלית</li>
-</ul>
-<p><strong>מומלץ:</strong> Ubuntu Server</p>
+<h2 id="ssd-hdd">💽 זיהוי סוג הכונן (SSD או HDD)</h2>
+<p>מציג את רשימת הדיסקים הפיזיים ואת סוג המדיה שלהם.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-PhysicalDisk</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">FriendlyName</span><span class="p">,</span> <span class="n">MediaType</span><span class="p">,</span> <span class="n">Size</span>
+</code></pre></div>
 <hr />
-<h2 id="4-network-connections">🟦 4. Network Connections</h2>
-<p>המערכת תנסה להגדיר רשת אוטומטית (DHCP).<br />
-תוכל לבחור "Edit IPv4" להגדרת IP סטטי.<br />
-<strong>מומלץ:</strong> אם מדובר בשרת קבוע – הגדר IP ידני.</p>
+<h2 id="_2">🕒 בדיקת זמן אתחול המערכת</h2>
+<p>סקריפט שמוציא את משך זמן האתחול בפירוט:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$event</span> <span class="p">=</span> <span class="nb">Get-WinEvent</span> <span class="n">-FilterHashtable</span> <span class="p">@{</span><span class="n">LogName</span><span class="p">=</span><span class="s1">&#39;Microsoft-Windows-Diagnostics-Performance/Operational&#39;</span><span class="p">;</span> <span class="n">Id</span><span class="p">=</span><span class="n">100</span><span class="p">}</span> <span class="n">-MaxEvents</span> <span class="n">1</span>
+<span class="nv">$props</span> <span class="p">=</span> <span class="nv">$event</span><span class="p">.</span><span class="n">Properties</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="p">}</span>
+
+<span class="nv">$bootTimeMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">5</span><span class="p">]</span>
+<span class="nv">$mainBootMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">6</span><span class="p">]</span>
+<span class="nv">$logonMs</span>    <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">19</span><span class="p">]</span>
+
+<span class="nb">Write-Host</span> <span class="s2">&quot;🖥️ זמן אתחול כולל      : $bootTimeMs ms  (~</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$bootTimeMs</span><span class="p">/</span><span class="n">1000</span><span class="p">,</span><span class="n">1</span><span class="p">))</span><span class="s2"> שניות)&quot;</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;🔄 זמן מסלול ראשי     : $mainBootMs ms  (~</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$mainBootMs</span><span class="p">/</span><span class="n">1000</span><span class="p">,</span><span class="n">1</span><span class="p">))</span><span class="s2"> שניות)&quot;</span>
+<span class="nb">Write-Host</span> <span class="s2">&quot;🔐 זמן עד מסך לוגין   : $logonMs ms     (~</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$logonMs</span><span class="p">/</span><span class="n">1000</span><span class="p">,</span><span class="n">1</span><span class="p">))</span><span class="s2"> שניות)&quot;</span>
+</code></pre></div>
 <hr />
-<h2 id="5-proxy-address">🟦 5. Proxy Address</h2>
-<p>אם הרשת שלך משתמשת ב־Proxy – הזן כאן.<br />
-אם לא – השאר ריק ולחץ Enter.</p>
+<h2 id="_3">📶 בדיקת מהירות אינטרנט</h2>
+<h3 id="speedtest-cli-ookla">הורדת כלי Speedtest CLI (של Ookla)</h3>
+<ol>
+<li>
+<p>הורדה:<br />
+<a href="https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-win64.zip">לחץ להורדה</a></p>
+</li>
+<li>
+<p>חילוץ:<br />
+שמור את הקובץ <code>speedtest.exe</code> בתקייה כמו <code>C:\Tools\speedtest.exe</code></p>
+</li>
+<li>
+<p>הרצה:
+<div class="highlight"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Tools</span><span class="p">\</span><span class="n">speedtest</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>אם הוספת לתיקיית PATH:
+<div class="highlight"><pre><span></span><code><span class="n">speedtest</span>
+</code></pre></div></p>
 <hr />
-<h2 id="6-mirror-address">🟦 6. Mirror Address</h2>
-<p>כתובת שרת להורדת חבילות.<br />
-<strong>ברירת מחדל:</strong> נשארת כפי שהיא (מומלץ).</p>
+<h2 id="_4">🧩 פקודות נוספות</h2>
+<h3 id="_5">בדיקת פינג לשרת חיצוני:</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Test-Connection</span> <span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-Count</span> <span class="n">5</span>
+</code></pre></div>
 <hr />
-<h2 id="7-installer-update">🟦 7. Installer Update</h2>
-<p>אם קיימת גרסת מתקין חדשה – תתבקש לעדכן.<br />
-<strong>מומלץ:</strong> לאשר את העדכון לפני ההתקנה.</p>
-<hr />
-<h2 id="8-storage-configuration">🟦 8. Storage Configuration</h2>
-<p>כאן תבחר איך לפרוס את הדיסק:</p>
-<ul>
-<li><strong>Use an entire disk</strong> – כל הדיסק יוקצה למערכת</li>
-<li><strong>Custom storage layout</strong> – לפריסה ידנית (מחיצות)</li>
-</ul>
-<p><strong>מומלץ למתחילים:</strong> Use an entire disk<br />
-<strong>שימו לב:</strong> כל הדיסק יפורמט!</p>
-<hr />
-<h2 id="9-profile-setup">🟦 9. Profile Setup</h2>
-<p>הזן פרטי משתמש:</p>
-<ul>
-<li><strong>Your name</strong></li>
-<li><strong>Your server’s name</strong> (hostname)</li>
-<li><strong>Username</strong></li>
-<li><strong>Password</strong></li>
-</ul>
-<hr />
-<h2 id="10-ssh-setup">🟦 10. SSH Setup</h2>
-<p>תשאל אם להתקין OpenSSH Server:</p>
-<ul>
-<li>אפשר בחירת מפתחות או חיבור רגיל</li>
-</ul>
-<p><strong>מומלץ:</strong> סמן התקנת OpenSSH server (לגישה מרחוק)</p>
-<hr />
-<h2 id="11-featured-server-snaps">🟦 11. Featured Server Snaps</h2>
-<p>רשימת Snap packages שאפשר להתקין:</p>
-<ul>
-<li>Docker</li>
-<li>Nextcloud</li>
-<li>MicroK8s ועוד...</li>
-</ul>
-<p><strong>אם אינך בטוח:</strong> לחץ Enter כדי לדלג.</p>
-<hr />
-<h2 id="12-confirm-installation">🟦 12. Confirm Installation</h2>
-<p>לאחר אישור כל ההגדרות – תתבקש לאשר ולהתחיל את ההתקנה.<br />
-<strong>זה הזמן האחרון לבטל!</strong></p>
-<hr />
-<h2 id="13-installation-progress">🟦 13. Installation Progress</h2>
-<p>תהליך ההתקנה יתחיל.<br />
-משך זמן: בין 5–15 דקות, תלוי במחשב.</p>
-<hr />
-<h2 id="14-reboot-and-remove-media">🟦 14. Reboot and Remove Media</h2>
-<p>בסיום תראה הודעה להפעיל מחדש.<br />
-הסר את ה־USB או דיסק ההתקנה ולחץ Enter.</p>
-<hr />
-<p>המערכת כעת מוכנה לאתחול ל־Ubuntu Server שהתקנת 🎉</p>
+<h2 id="_6">📝 סיכום</h2>
+<p>הפקודות בדף זה מסייעות ל:
+- תחזוקת מערכת Windows
+- בדיקת מהירות ותפקוד
+- זיהוי בעיות באתחול ובכוננים</p>
 
 
 
