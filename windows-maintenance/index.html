@@ -926,48 +926,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🕒 בדיקת זמן אתחול המערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 פקודות נוספות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧩 פקודות נוספות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקת פינג לשרת חיצוני:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      📝 סיכום
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1052,48 +1010,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🕒 בדיקת זמן אתחול המערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 פקודות נוספות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧩 פקודות נוספות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקת פינג לשרת חיצוני:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      📝 סיכום
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1129,19 +1045,35 @@
 <div class="highlight"><pre><span></span><code><span class="nb">Get-PhysicalDisk</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">FriendlyName</span><span class="p">,</span> <span class="n">MediaType</span><span class="p">,</span> <span class="n">Size</span>
 </code></pre></div>
 <hr />
-<h2 id="_2">🕒 בדיקת זמן אתחול המערכת</h2>
-<p>סקריפט שמוציא את משך זמן האתחול בפירוט:</p>
-<p>$event = Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Diagnostics-Performance/Operational'; Id=100} -MaxEvents 1
-$props = $event.Properties | ForEach-Object { $_.Value }</p>
-<p>$bootTimeMs = [int]$props[5]
-$mainBootMs = [int]$props[6]
-$logonMs    = [int]$props[19]</p>
-<p>$bootSec  = [math]::Round($bootTimeMs / 1000, 1)
-$mainSec  = [math]::Round($mainBootMs / 1000, 1)
-$logonSec = [math]::Round($logonMs / 1000, 1)</p>
-<p>Write-Host ("{0,-25}: {1,6} ms (~{2} sec)" -f "??? Total Boot Time", $bootTimeMs, $bootSec)
-Write-Host ("{0,-25}: {1,6} ms (~{2} sec)" -f "?? Main Path Boot Time", $mainBootMs, $mainSec)
-Write-Host ("{0,-25}: {1,6} ms (~{2} sec)" -f "?? Time to Logon Screen", $logonMs, $logonSec)</p>
+<h1 id="powershell-script-measure-boot-time-on-windows">??? PowerShell Script: Measure Boot Time on Windows</h1>
+<p>This script retrieves and displays boot performance metrics from the Windows Event Log using PowerShell. It provides:</p>
+<ul>
+<li>Total boot time</li>
+<li>Main path boot time</li>
+<li>Time to logon screen</li>
+</ul>
+<h2 id="powershell-script">? PowerShell Script</h2>
+<div class="highlight"><pre><span></span><code><span class="nv">$event</span> <span class="p">=</span> <span class="nb">Get-WinEvent</span> <span class="n">-FilterHashtable</span> <span class="p">@{</span><span class="n">LogName</span><span class="p">=</span><span class="s1">&#39;Microsoft-Windows-Diagnostics-Performance/Operational&#39;</span><span class="p">;</span> <span class="n">Id</span><span class="p">=</span><span class="n">100</span><span class="p">}</span> <span class="n">-MaxEvents</span> <span class="n">1</span>
+<span class="nv">$props</span> <span class="p">=</span> <span class="nv">$event</span><span class="p">.</span><span class="n">Properties</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="p">}</span>
+
+<span class="nv">$bootTimeMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">5</span><span class="p">]</span>
+<span class="nv">$mainBootMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">6</span><span class="p">]</span>
+<span class="nv">$logonMs</span>    <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">19</span><span class="p">]</span>
+
+<span class="nv">$bootSec</span>  <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$bootTimeMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
+<span class="nv">$mainSec</span>  <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$mainBootMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
+<span class="nv">$logonSec</span> <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$logonMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
+
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;??? Total Boot Time&quot;</span><span class="p">,</span> <span class="nv">$bootTimeMs</span><span class="p">,</span> <span class="nv">$bootSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;?? Main Path Boot Time&quot;</span><span class="p">,</span> <span class="nv">$mainBootMs</span><span class="p">,</span> <span class="nv">$mainSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;?? Time to Logon Screen&quot;</span><span class="p">,</span> <span class="nv">$logonMs</span><span class="p">,</span> <span class="nv">$logonSec</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="example-output">?? Example Output</h2>
+<div class="highlight"><pre><span></span><code>??? Total Boot Time       :  32571 ms (~32.6 sec)
+?? Main Path Boot Time    :   6171 ms (~6.2 sec)
+?? Time to Logon Screen   :  26400 ms (~26.4 sec)
+</code></pre></div>
+<p>This script is useful for analyzing startup performance on Windows systems.</p>
 <div class="highlight"><pre><span></span><code>---
 
 ## 📶 בדיקת מהירות אינטרנט
@@ -1162,12 +1094,12 @@ C:\Tools\speedtest.exe
 <div class="highlight"><pre><span></span><code><span class="n">speedtest</span>
 </code></pre></div></p>
 <hr />
-<h2 id="_3">🧩 פקודות נוספות</h2>
-<h3 id="_4">בדיקת פינג לשרת חיצוני:</h3>
+<h2 id="_2">🧩 פקודות נוספות</h2>
+<h3 id="_3">בדיקת פינג לשרת חיצוני:</h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Test-Connection</span> <span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-Count</span> <span class="n">5</span>
 </code></pre></div>
 <hr />
-<h2 id="_5">📝 סיכום</h2>
+<h2 id="_4">📝 סיכום</h2>
 <p>הפקודות בדף זה מסייעות ל:
 - תחזוקת מערכת Windows
 - בדיקת מהירות ותפקוד
