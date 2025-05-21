@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../windows-maintenance/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך מלא לניתוח איתחול מחשב - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-ubuntu-server-2204-lts" class="md-skip">
+        <a href="#windows-performance-analyzer-wpa" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS
+              מדריך מלא לניתוח איתחול מחשב
             
           </span>
         </div>
@@ -767,18 +769,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -786,7 +790,7 @@
   
   
   <span class="md-ellipsis">
-    סקריפטים ופקודות
+    סקריפטים כלים ופקודות
     
   </span>
   
@@ -794,10 +798,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            סקריפטים ופקודות
+            סקריפטים כלים ופקודות
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -847,6 +851,200 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    מדריך מלא לניתוח איתחול מחשב
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך מלא לניתוח איתחול מחשב
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-windows-performance-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 1: התקנת הכלי Windows Performance Toolkit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-boot-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 2: הפעלת הקלטה לאתחול (Boot Trace)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-windows-performance-analyzer-wpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 3: פתיחת Windows Performance Analyzer (WPA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 4: הוספת גרפים חיוניים לניתוח
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ שלב 4: הוספת גרפים חיוניים לניתוח">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      הוסף את הגרפים הבאים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 5: ניתוח תוצאות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ שלב 5: ניתוח תוצאות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boot Phases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-usage-precise" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Usage (Precise)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-usage-by-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk Usage by Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 6: מסקנות ופעולות מומלצות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ טיפים נוספים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 לשילוב באתר
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -881,126 +1079,129 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-language" class="md-nav__link">
+  <a href="#1-windows-performance-toolkit" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 1. Language (שפה)
+      ✅ שלב 1: התקנת הכלי Windows Performance Toolkit
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-keyboard-layout" class="md-nav__link">
+  <a href="#2-boot-trace" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 2. Keyboard Layout (פריסת מקלדת)
+      ✅ שלב 2: הפעלת הקלטה לאתחול (Boot Trace)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-installation-type" class="md-nav__link">
+  <a href="#3-windows-performance-analyzer-wpa" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 3. Installation Type
+      ✅ שלב 3: פתיחת Windows Performance Analyzer (WPA)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-network-connections" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 4. Network Connections
+      ✅ שלב 4: הוספת גרפים חיוניים לניתוח
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ שלב 4: הוספת גרפים חיוניים לניתוח">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      הוסף את הגרפים הבאים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 5: ניתוח תוצאות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ שלב 5: ניתוח תוצאות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boot Phases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu-usage-precise" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU Usage (Precise)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk-usage-by-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disk Usage by Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ שלב 6: מסקנות ופעולות מומלצות
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-proxy-address" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 5. Proxy Address
+      ✅ טיפים נוספים
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-mirror-address" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      🟦 6. Mirror Address
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-installer-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 7. Installer Update
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-storage-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 8. Storage Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-profile-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 9. Profile Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-ssh-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 10. SSH Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-featured-server-snaps" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 11. Featured Server Snaps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-confirm-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 12. Confirm Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-installation-progress" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 13. Installation Progress
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-reboot-and-remove-media" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟦 14. Reboot and Remove Media
+      🌐 לשילוב באתר
     </span>
   </a>
   
@@ -1022,89 +1223,111 @@
 
 
 
-<h1 id="3-ubuntu-server-2204-lts">שלב 3 – התקנה מפורטת של Ubuntu Server 22.04 LTS</h1>
-<p>מדריך זה מתאר את כל השלבים המופיעים בתהליך ההתקנה של Ubuntu Server 22.04 LTS, עם הסברים לבחירות והמלצות.</p>
+<h1 id="windows-performance-analyzer-wpa">מדריך מלא לניתוח אתחול עם Windows Performance Analyzer (WPA)</h1>
+<p>מדריך זה מספק תהליך שלם מהתקנת הכלים הדרושים ועד לניתוח מדויק של תהליך האתחול במערכת Windows, באמצעות הכלי Windows Performance Analyzer.</p>
 <hr />
-<h2 id="1-language">🟦 1. Language (שפה)</h2>
-<p>בחר את השפה שבה תוצג ההתקנה.<br />
-<strong>מומלץ:</strong> English</p>
+<h2 id="1-windows-performance-toolkit">✅ שלב 1: התקנת הכלי Windows Performance Toolkit</h2>
+<ol>
+<li>הורד את Windows ADK מאתר מיקרוסופט:</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install">Windows ADK Download</a></p>
+</li>
+<li>
+<p>במהלך ההתקנה:</p>
+</li>
+<li>סמ״ן <strong>"Windows Performance Toolkit"</strong> בלבד.</li>
+<li>אין צורך בכלי הפצה אחרים (Deployment Tools וכו').</li>
+</ol>
 <hr />
-<h2 id="2-keyboard-layout">🟦 2. Keyboard Layout (פריסת מקלדת)</h2>
-<p>בחר את פריסת המקלדת שלך. תוכל גם לבדוק את הפריסה.<br />
-<strong>לדוברי עברית:</strong> Hebrew</p>
+<h2 id="2-boot-trace">✅ שלב 2: הפעלת הקלטה לאתחול (Boot Trace)</h2>
+<p>פתח חלון CMD כמנהל מערכת (Run as Administrator) והרץ:</p>
+<div class="highlight"><pre><span></span><code>xbootmgr -trace boot -prepSystem -postBootDelay 60 -resultPath C:\BootTrace
+</code></pre></div>
+<blockquote>
+<p>הפקודה תבצע אתחול מחדש לצורך איסוף נתונים.</p>
+</blockquote>
+<p><strong>הסבר הפרמטרים:</strong>
+- <code>-trace boot</code>: הקלטת אתחול
+- <code>-prepSystem</code>: הכנת המערכת לקליטה
+- <code>-postBootDelay 60</code>: המתנה של 60 שניות אחרי האתחול לאיסוף נתונים נוספים
+- <code>-resultPath</code>: התיקיה בה ישמרו הקבצים (ניתן לשנות)</p>
 <hr />
-<h2 id="3-installation-type">🟦 3. Installation Type</h2>
-<p>בחר את סוג ההתקנה:</p>
+<h2 id="3-windows-performance-analyzer-wpa">✅ שלב 3: פתיחת Windows Performance Analyzer (WPA)</h2>
+<ol>
+<li>פתח את התוכנה "Windows Performance Analyzer" מהתפריט Start.</li>
+<li>בחר "File &gt; Open..."</li>
+<li>טען את קובץ <code>.etl</code> שנוצר בנתיב:
+   <div class="highlight"><pre><span></span><code>C:\BootTrace\boot_BASE+CSWITCH_1.etl
+</code></pre></div></li>
+</ol>
+<hr />
+<h2 id="4">✅ שלב 4: הוספת גרפים חיוניים לניתוח</h2>
+<p>בתוך WPA, בתפריט הצדדי "Graph Explorer":</p>
+<h3 id="_1">הוסף את הגרפים הבאים:</h3>
 <ul>
-<li><strong>Ubuntu Server</strong> – התקנה מלאה</li>
-<li><strong>Ubuntu Server (minimized)</strong> – התקנה מינימלית</li>
+<li><strong>Boot Phases</strong> – להציג שלבי אתחול (PreSession, Session, Winlogon וכו')</li>
+<li><strong>CPU Usage (Precise)</strong> – לזהות תהליכים שצורכים מעבד</li>
+<li><strong>Disk Usage by Process</strong> – לראות מי מעמיס על הדיסק</li>
+<li><strong>Services</strong> – לראות אילו שירותים התחילו וכמה זמן לקח להם</li>
+<li><strong>MainPathBoot</strong> / <strong>PostBoot</strong> (אם זמינים) – זמן אתחול עיקרי ואחריו</li>
 </ul>
-<p><strong>מומלץ:</strong> Ubuntu Server</p>
+<p>ניתן להוסיף גרפים ע״י גרירה לחלון המרכזי או באמצעות לחצן ימני &gt; Add Graph to Analysis View.</p>
 <hr />
-<h2 id="4-network-connections">🟦 4. Network Connections</h2>
-<p>המערכת תנסה להגדיר רשת אוטומטית (DHCP).<br />
-תוכל לבחור "Edit IPv4" להגדרת IP סטטי.<br />
-<strong>מומלץ:</strong> אם מדובר בשרת קבוע – הגדר IP ידני.</p>
-<hr />
-<h2 id="5-proxy-address">🟦 5. Proxy Address</h2>
-<p>אם הרשת שלך משתמשת ב־Proxy – הזן כאן.<br />
-אם לא – השאר ריק ולחץ Enter.</p>
-<hr />
-<h2 id="6-mirror-address">🟦 6. Mirror Address</h2>
-<p>כתובת שרת להורדת חבילות.<br />
-<strong>ברירת מחדל:</strong> נשארת כפי שהיא (מומלץ).</p>
-<hr />
-<h2 id="7-installer-update">🟦 7. Installer Update</h2>
-<p>אם קיימת גרסת מתקין חדשה – תתבקש לעדכן.<br />
-<strong>מומלץ:</strong> לאשר את העדכון לפני ההתקנה.</p>
-<hr />
-<h2 id="8-storage-configuration">🟦 8. Storage Configuration</h2>
-<p>כאן תבחר איך לפרוס את הדיסק:</p>
+<h2 id="5">✅ שלב 5: ניתוח תוצאות</h2>
+<h3 id="boot-phases">Boot Phases</h3>
 <ul>
-<li><strong>Use an entire disk</strong> – כל הדיסק יוקצה למערכת</li>
-<li><strong>Custom storage layout</strong> – לפריסה ידנית (מחיצות)</li>
+<li>גרף צבעוני המציג את שלבי האתחול.</li>
+<li>זיהוי של שלב שנמשך זמן רב (למשל Post Boot שנשאר "תקוע") יכול להצביע על בעיה בתהליך אתחול או שירות שלא הסתיים.</li>
 </ul>
-<p><strong>מומלץ למתחילים:</strong> Use an entire disk<br />
-<strong>שימו לב:</strong> כל הדיסק יפורמט!</p>
-<hr />
-<h2 id="9-profile-setup">🟦 9. Profile Setup</h2>
-<p>הזן פרטי משתמש:</p>
+<h3 id="cpu-usage-precise">CPU Usage (Precise)</h3>
 <ul>
-<li><strong>Your name</strong></li>
-<li><strong>Your server’s name</strong> (hostname)</li>
-<li><strong>Username</strong></li>
-<li><strong>Password</strong></li>
+<li>מציג את כל התהליכים שפעלו בזמן האתחול.</li>
+<li>מזהים תהליכים עם "Weight" ו-"Count" גבוהים כצרכני מעבד עיקריים.</li>
 </ul>
-<hr />
-<h2 id="10-ssh-setup">🟦 10. SSH Setup</h2>
-<p>תשאל אם להתקין OpenSSH Server:</p>
+<h3 id="disk-usage-by-process">Disk Usage by Process</h3>
 <ul>
-<li>אפשר בחירת מפתחות או חיבור רגיל</li>
+<li>מזהה תהליכים שעמסו על הדיסק.</li>
+<li>ניתן לראות אם עומס בדיסק חופף לתקופת אתחול.</li>
 </ul>
-<p><strong>מומלץ:</strong> סמן התקנת OpenSSH server (לגישה מרחוק)</p>
-<hr />
-<h2 id="11-featured-server-snaps">🟦 11. Featured Server Snaps</h2>
-<p>רשימת Snap packages שאפשר להתקין:</p>
+<h3 id="services">Services</h3>
 <ul>
-<li>Docker</li>
-<li>Nextcloud</li>
-<li>MicroK8s ועוד...</li>
+<li>מזהה אילו שירותים התחילו, מתי הסתיימו, ומה היה משך הזמן של כל אחד מהם.</li>
+<li>שירות שנמשך מעל לממוצע (במיוחד לאחר Explorer Init) עשוי להוות צוואר בקבוק.</li>
 </ul>
-<p><strong>אם אינך בטוח:</strong> לחץ Enter כדי לדלג.</p>
 <hr />
-<h2 id="12-confirm-installation">🟦 12. Confirm Installation</h2>
-<p>לאחר אישור כל ההגדרות – תתבקש לאשר ולהתחיל את ההתקנה.<br />
-<strong>זה הזמן האחרון לבטל!</strong></p>
+<h2 id="6">✅ שלב 6: מסקנות ופעולות מומלצות</h2>
+<table>
+<thead>
+<tr>
+<th>בעיה אפשרית</th>
+<th>פעולה מומלצת</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>שירות שמופעל מוקדם וצורך משאבים</td>
+<td>לדחות את הפעלתו ב-Task Scheduler או Autoruns</td>
+</tr>
+<tr>
+<td>תוכנת צד ג' צורכת CPU ודיסק</td>
+<td>להסיר, לעדכן או לדחות את טעינתה</td>
+</tr>
+<tr>
+<td>עומס על הדיסק במהלך אתחול</td>
+<td>לבדוק זמינות SSD, תוכנות גיבוי, סריקות אנטי-וירוס</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="13-installation-progress">🟦 13. Installation Progress</h2>
-<p>תהליך ההתקנה יתחיל.<br />
-משך זמן: בין 5–15 דקות, תלוי במחשב.</p>
+<h2 id="_2">✅ טיפים נוספים</h2>
+<ul>
+<li>תמיד בחר טווח זמן על ציר הזמן (מ-0 ועד שהגרפים מתייצבים) כדי להתמקד באתחול בלבד.</li>
+<li>אפשר להפעיל הקלטות נוספות עם פרמטרים אחרים (כגון <code>boot+drivers</code> או <code>boot+mark</code>) לקבלת מידע נוסף.</li>
+</ul>
 <hr />
-<h2 id="14-reboot-and-remove-media">🟦 14. Reboot and Remove Media</h2>
-<p>בסיום תראה הודעה להפעיל מחדש.<br />
-הסר את ה־USB או דיסק ההתקנה ולחץ Enter.</p>
-<hr />
-<p>המערכת כעת מוכנה לאתחול ל־Ubuntu Server שהתקנת 🎉</p>
+<h2 id="_3">🌐 לשילוב באתר</h2>
+<p>תוכן זה נכתב בפורמט Markdown ומוכן לשילוב ישיר באתר תיעוד או מערכת MkDocs.</p>
+<p>למידע נוסף: <a href="https://learn.microsoft.com/en-us/windows-hardware/test/wpt/windows-performance-analyzer">Microsoft WPA Docs</a></p>
 
 
 
