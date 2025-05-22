@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../squid-explained/">
+        <link rel="prev" href="../nano-guide/">
       
       
-        <link rel="next" href="../ubuntu-explained/">
+        <link rel="next" href="../it-scripts/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>הסבר לפקודות שרת ווב - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>הסבר על הרשאות בלינוקס - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu" class="md-skip">
+        <a href="#_1" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר לפקודות שרת ווב
+              הסבר על הרשאות בלינוקס
             
           </span>
         </div>
@@ -674,32 +674,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר לפקודות שרת ווב
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../web-server-explained/" class="md-nav__link">
         
   
   
@@ -710,80 +688,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      עדכון מערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Apache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      חומת אש (UFW)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#php" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת PHP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת MySQL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסרת קובץ בדיקה
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -885,10 +789,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../linux-permissions-guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    הסבר על הרשאות בלינוקס
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -899,6 +825,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 קבוצות והרשאות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔐 קבוצות והרשאות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      קבוצות (Permission Groups)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      סוגים של הרשאות (Permission Types)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 הצגת הרשאות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ קביעת הרשאות (chmod)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ קביעת הרשאות (chmod)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      קידוד מספרי
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמה לשימוש ב־chmod
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ סיכום
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ סיכום">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 קריאה נוספת
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1098,56 +1143,101 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      עדכון מערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Apache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      חומת אש (UFW)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#php" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת PHP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת MySQL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      הסרת קובץ בדיקה
+      🔐 קבוצות והרשאות
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🔐 קבוצות והרשאות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      קבוצות (Permission Groups)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      סוגים של הרשאות (Permission Types)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 הצגת הרשאות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ קביעת הרשאות (chmod)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ קביעת הרשאות (chmod)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      קידוד מספרי
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמה לשימוש ב־chmod
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ סיכום
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ סיכום">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 קריאה נוספת
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1167,73 +1257,91 @@
 
 
 
-<h1 id="ubuntu">הסבר לפקודות התקנת שרת ווב על Ubuntu</h1>
-<p>מדריך זה מסביר מה כל פקודה עושה בתהליך התקנת שרת ווב על Ubuntu Server.</p>
+<h1 id="_1">ניהול הרשאות בסיסיות בלינוקס</h1>
+<p>מדריך זה מסביר כיצד להתמקד בנושאים הבסיסיים של ניהול הרשאות בלינוקס, בהתאם למדריך של OVHcloud.</p>
 <hr />
-<h2 id="_1">עדכון מערכת</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<h2 id="_2">🔐 קבוצות והרשאות</h2>
+<h3 id="permission-groups">קבוצות (Permission Groups)</h3>
+<p>במערכת לינוקס יש שלוש קבוצות הרשאה עיקריות:</p>
+<ul>
+<li><strong>Owner</strong> – הבעלים של הקובץ/תיקייה  </li>
+<li><strong>Group</strong> – משתמשים השייכים לקבוצה שהוקצתה לקובץ  </li>
+<li><strong>All Users</strong> – כל המשתמשים במערכת</li>
+</ul>
+<h3 id="permission-types">סוגים של הרשאות (Permission Types)</h3>
+<p>ישנם שלושה סוגי הרשאות, ולכל אחד מהם מוקצה ערך מספרי:</p>
+<table>
+<thead>
+<tr>
+<th>סוג הרשאה</th>
+<th>תיאור</th>
+<th>ערך מספרי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td>קריאה (צפייה)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Write</td>
+<td>כתיבה (שינוי)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Execute</td>
+<td>ביצוע (הרצה)</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">🎯 הצגת הרשאות</h2>
+<p>להצגת ההרשאות הקיימות של קובץ או תיקייה, השתמש בפקודה:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>התוצאה תוצג בצורה כזו:</p>
+<div class="highlight"><pre><span></span><code>-rwxr-xr-- 1 user group ...
+</code></pre></div>
+<p>המשמעות:
+- <code>rwx</code> – הרשאות לבעלים<br />
+- <code>r-x</code> – הרשאות לקבוצה<br />
+- <code>r--</code> – הרשאות לשאר המשתמשים</p>
+<hr />
+<h2 id="chmod">🛠️ קביעת הרשאות (chmod)</h2>
+<h3 id="_4">קידוד מספרי</h3>
+<p>ערכים מספריים משמשים להגדרה קצרה של הרשאות:
+- <code>0</code> – ללא הרשאה<br />
+- <code>1</code> – Execute<br />
+- <code>2</code> – Write<br />
+- <code>3</code> – Write + Execute<br />
+- <code>4</code> – Read<br />
+- <code>5</code> – Read + Execute<br />
+- <code>6</code> – Read + Write<br />
+- <code>7</code> – Read + Write + Execute</p>
+<h3 id="chmod_1">דוגמה לשימוש ב־chmod</h3>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>/var/www/html/
 </code></pre></div>
 <ul>
-<li><code>sudo</code> – מריץ את הפקודה כמשתמש מנהל (root)</li>
-<li><code>apt update</code> – מרענן את רשימת החבילות מהמאגר</li>
-<li><code>apt upgrade -y</code> – משדרג את כל החבילות למעודכנות ביותר, <code>-y</code> מאשר אוטומטית</li>
+<li><code>7</code> (owner) = Read, Write, Execute  </li>
+<li><code>5</code> (group) = Read, Execute  </li>
+<li><code>0</code> (others) = ללא הרשאה</li>
 </ul>
 <hr />
-<h2 id="apache">התקנת Apache</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
-</code></pre></div>
+<h2 id="_5">✅ סיכום</h2>
 <ul>
-<li><code>apt install apache2</code> – מתקין את שרת ה־Web Apache</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
-</code></pre></div>
-<ul>
-<li>מציג את מצב השירות – האם רץ, מופעל באתחול וכו'</li>
+<li>מערכת קבצים בלינוקס משתמשת בשלוש קבוצות הרשאה עיקריות: בעלים, קבוצה, שאר המשתמשים  </li>
+<li>קיימים שלושה סוגי הרשאות: קריאה, כתיבה, ביצוע  </li>
+<li>פקודת <code>ls -l</code> מציגה את ההרשאות בפורמט קריא  </li>
+<li>פקודת <code>chmod</code> יחד עם קידוד מספרי מאפשרת להגדיר במהירות את ההרשאות הרצויות  </li>
 </ul>
 <hr />
-<h2 id="ufw">חומת אש (UFW)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Apache Full&#39;</span>
-</code></pre></div>
+<h3 id="_6">📘 קריאה נוספת</h3>
 <ul>
-<li>מאפשר תעבורה בפורטים 80 (HTTP) ו־443 (HTTPS) דרך UFW</li>
+<li>כיצד לנהל חשבונות משתמש ובקרת root בשרת  </li>
+<li>טיפים לאבטחת VPS/שרת ייעודי  </li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status
-</code></pre></div>
-<ul>
-<li>מציג את מצב החומת אש והחוקים המוגדרים</li>
-</ul>
-<hr />
-<h2 id="php">התקנת PHP</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php<span class="w"> </span>libapache2-mod-php<span class="w"> </span>-y
-</code></pre></div>
-<ul>
-<li>מתקין את PHP ואת התמיכה שלו בתוך Apache (מודול mod-php)</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;?php phpinfo(); ?&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/var/www/html/info.php
-</code></pre></div>
-<ul>
-<li>יוצר קובץ <code>info.php</code> שמציג את הגדרות PHP בדפדפן</li>
-</ul>
-<hr />
-<h2 id="mysql">התקנת MySQL</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server<span class="w"> </span>-y
-</code></pre></div>
-<ul>
-<li>מתקין את שרת מסד הנתונים MySQL</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mysql_secure_installation
-</code></pre></div>
-<ul>
-<li>אשף הגדרות אבטחה בסיסי של MySQL (סיסמה, הסרת משתמשים אנונימיים וכו')</li>
-</ul>
-<hr />
-<h2 id="_2">הסרת קובץ בדיקה</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>/var/www/html/info.php
-</code></pre></div>
-<ul>
-<li>מוחק את קובץ info.php (מומלץ לאחר השימוש מטעמי אבטחה)</li>
-</ul>
-<hr />
 
 
 
