@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../proxy-forward-install/">
+        <link rel="prev" href="../vmware-install/">
       
       
-        <link rel="next" href="../vmware-esxi-8-create-vm/">
+        <link rel="next" href="../aad-broker-troubleshooting/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>מדריך התקנה Vmware - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך להתקנה של vmware - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vmware-workstation-player" class="md-skip">
+        <a href="#vmware-esxi-8" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              מדריך התקנה Vmware
+              מדריך להתקנה של vmware
             
           </span>
         </div>
@@ -377,6 +377,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../vmware-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך התקנה Vmware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -394,7 +417,7 @@
   
   
   <span class="md-ellipsis">
-    מדריך התקנה Vmware
+    מדריך להתקנה של vmware
     
   </span>
   
@@ -407,7 +430,7 @@
   
   
   <span class="md-ellipsis">
-    מדריך התקנה Vmware
+    מדריך להתקנה של vmware
     
   </span>
   
@@ -430,54 +453,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-web-client" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 1: הורדה
+      🟢 שלב 1: התחברות ל־Web Client
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-iso-datastore" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 2: התקנה
+      🟢 שלב 2: העלאת ISO ל־Datastore
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-vm" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 3: יצירת מכונה וירטואלית חדשה
+      🟢 שלב 3: יצירת VM חדש
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-vm" class="md-nav__link">
+  <a href="#4-guest-os" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 4: התקנת מערכת ההפעלה בתוך ה־VM
+      🟢 שלב 4: בחירת שם ו־Guest OS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-vmware-tools" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 5: התקנת VMware Tools (מומלץ)
+      🟢 שלב 5: בחירת אחסון
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 טיפים
+      🟢 שלב 6: הגדרות חומרה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-iso" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 7: קביעת קובץ ISO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 8: סיום והפעלה
     </span>
   </a>
   
@@ -487,29 +528,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vmware-esxi-8-create-vm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    מדריך להתקנה של vmware
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1052,54 +1070,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-web-client" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 1: הורדה
+      🟢 שלב 1: התחברות ל־Web Client
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-iso-datastore" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 2: התקנה
+      🟢 שלב 2: העלאת ISO ל־Datastore
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-vm" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 3: יצירת מכונה וירטואלית חדשה
+      🟢 שלב 3: יצירת VM חדש
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-vm" class="md-nav__link">
+  <a href="#4-guest-os" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 4: התקנת מערכת ההפעלה בתוך ה־VM
+      🟢 שלב 4: בחירת שם ו־Guest OS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-vmware-tools" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 5: התקנת VMware Tools (מומלץ)
+      🟢 שלב 5: בחירת אחסון
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 טיפים
+      🟢 שלב 6: הגדרות חומרה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-iso" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 7: קביעת קובץ ISO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 8: סיום והפעלה
     </span>
   </a>
   
@@ -1121,58 +1157,69 @@
 
 
 
-<h1 id="vmware-workstation-player">מדריך התקנת VMware Workstation Player</h1>
-<p>VMware Workstation Player הוא פתרון קל ונוח להרצת מכונות וירטואליות על תחנות עבודה.</p>
+<h1 id="vmware-esxi-8">מדריך: יצירת מכונה וירטואלית ב־VMware ESXi 8</h1>
+<p>מדריך זה מסביר כיצד ליצור מכונה וירטואלית (VM) בסביבת VMware ESXi 8, כולל תמונות אמיתיות מהמערכת.</p>
 <hr />
-<h2 id="1">🟢 שלב 1: הורדה</h2>
-<ul>
-<li>
-<p>עבור לאתר הרשמי:<br />
-🔗 https://www.vmware.com/products/workstation-player.html</p>
-</li>
-<li>
-<p>לחץ על <strong>Download for Windows/Linux</strong></p>
-</li>
-<li>בחר את הגרסה החינמית לשימוש אישי (VMware Workstation Player)</li>
-</ul>
+<h2 id="1-web-client">🟢 שלב 1: התחברות ל־Web Client</h2>
+<p>התחבר ל־ESXi דרך כתובת ה־IP בדפדפן, לדוגמה:</p>
+<div class="highlight"><pre><span></span><code>https://192.168.1.100
+</code></pre></div>
+<p><em>הזן את שם המשתמש והסיסמה שלך כדי להתחבר לממשק הניהול.</em></p>
 <hr />
-<h2 id="2">🟢 שלב 2: התקנה</h2>
-<ul>
-<li>הרץ את קובץ ההתקנה</li>
-<li>אשר את תנאי השימוש</li>
-<li>בחר <strong>ללא רישיון (Use free for non-commercial use)</strong></li>
-<li>לחץ Next עד לסיום</li>
-</ul>
-<hr />
-<h2 id="3">🟢 שלב 3: יצירת מכונה וירטואלית חדשה</h2>
+<h2 id="2-iso-datastore">🟢 שלב 2: העלאת ISO ל־Datastore</h2>
 <ol>
-<li>פתח את VMware Player</li>
-<li>לחץ על <strong>Create a New Virtual Machine</strong></li>
-<li>בחר <strong>Installer disc image (ISO)</strong> – והצב קובץ ISO (למשל Ubuntu)</li>
-<li>בחר שם משתמש, סיסמה, שם מכונה</li>
-<li>הגדר את גודל הדיסק הווירטואלי (למשל 20GB)</li>
-<li>הגדר את הזיכרון (RAM) ומספר ליבות מעבד</li>
-<li>אשר והפעל</li>
+<li>עבור ל־<strong>Storage &gt; Datastores</strong></li>
+<li>בחר Datastore קיים</li>
+<li>לחץ על <strong>Datastore browser</strong></li>
+<li>לחץ <strong>Upload</strong> ובחר את קובץ ה־ISO</li>
 </ol>
+<p><img alt="Datastore browser והעלאת ISO" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/upload_iso.jpg" /></p>
 <hr />
-<h2 id="4-vm">🟢 שלב 4: התקנת מערכת ההפעלה בתוך ה־VM</h2>
-<ul>
-<li>בצע את ההתקנה כמו על מחשב רגיל</li>
-<li>בסיום ההתקנה, ה־VM תאתחל למערכת ההפעלה החדשה</li>
-</ul>
+<h2 id="3-vm">🟢 שלב 3: יצירת VM חדש</h2>
+<ol>
+<li>עבור ל־<strong>Virtual Machines</strong></li>
+<li>לחץ על <strong>Create / Register VM</strong></li>
+<li>בחר באופציה הראשונה: <strong>Create a new virtual machine</strong></li>
+</ol>
+<p><img alt="יצירת VM חדש" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/create_vm_button.png" /></p>
 <hr />
-<h2 id="5-vmware-tools">🟢 שלב 5: התקנת VMware Tools (מומלץ)</h2>
-<ul>
-<li>פתח את התפריט: <strong>Player &gt; Manage &gt; Install VMware Tools</strong></li>
-<li>בתוך המערכת תופיע דיסק – פתח אותו והתקן</li>
-</ul>
+<h2 id="4-guest-os">🟢 שלב 4: בחירת שם ו־Guest OS</h2>
+<ol>
+<li>הזן שם למכונה (למשל <code>Ubuntu-Server</code>)</li>
+<li>בחר:</li>
+<li>Compatibility: ברירת מחדל</li>
+<li>Guest OS family: <code>Linux</code></li>
+<li>Guest OS version: <code>Ubuntu Linux (64-bit)</code></li>
+</ol>
+<p><img alt="Guest OS Selection" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/vm_details.png" /></p>
 <hr />
-<h2 id="_1">💡 טיפים</h2>
-<ul>
-<li>תוכל להריץ מספר מכונות במקביל – תלוי במשאבים</li>
-<li>הגדר Bridge Networking כדי לאפשר למכונה כתובת IP כמו כל מחשב ברשת</li>
-<li>תוכל לשכפל מכונות קיימות (Clone) או ליצור Snapshot בגרסה Pro</li>
-</ul>
+<h2 id="5">🟢 שלב 5: בחירת אחסון</h2>
+<p>בחר את הדאטאסטור שבו יישמר הדיסק של המכונה הווירטואלית.</p>
+<p><img alt="Select storage" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/select_storage.png" /></p>
+<hr />
+<h2 id="6">🟢 שלב 6: הגדרות חומרה</h2>
+<p>הגדר את פרטי החומרה של המכונה:
+- CPU: לדוגמה 2 ליבות
+- זיכרון (RAM): 2048MB
+- דיסק: 20GB (או יותר לפי הצורך)</p>
+<p><img alt="Customize hardware" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/hardware_settings.png" /></p>
+<hr />
+<h2 id="7-iso">🟢 שלב 7: קביעת קובץ ISO</h2>
+<ol>
+<li>בקטגוריה CD/DVD Drive לחץ על <strong>Datastore ISO file</strong></li>
+<li>בחר את קובץ ה־ISO שהעלית קודם לכן</li>
+</ol>
+<p><img alt="Select ISO" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/select_iso.png" /></p>
+<hr />
+<h2 id="8">🟢 שלב 8: סיום והפעלה</h2>
+<ol>
+<li>לחץ <strong>Finish</strong></li>
+<li>לחץ <strong>Power on</strong> על ה־VM החדש כדי להתחיל בהתקנת מערכת ההפעלה</li>
+</ol>
+<p><img alt="Power on VM" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/power_on_vm.png" /></p>
+<hr />
+<p>כעת המכונה מוכנה, תוכל להיכנס ל־Console ולהתחיל בהתקנת מערכת ההפעלה.</p>
+<hr />
 
 
 
