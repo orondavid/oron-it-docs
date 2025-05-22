@@ -1,0 +1,1290 @@
+
+<!doctype html>
+<html lang="he" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>🔧 בדיקות תחזוקה וביצועים ב-Windows (PowerShell) - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-windows-powershell" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
+    <a href="../.." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs4IT – מדריכים, פתרונות וידע מהשטח
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🔧 בדיקות תחזוקה וביצועים ב-Windows (PowerShell)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="חיפוש" placeholder="חיפוש" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="חיפוש">
+        
+        <button type="reset" class="md-search__icon md-icon" title="ניקוי" aria-label="ניקוי" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            אתחול חיפוש
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs4IT – מדריכים, פתרונות וידע מהשטח
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    דף הבית
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    אודות
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    התקנות
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            התקנות
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-install.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    התקנת Ubuntu Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-server-ubuntu.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    התקנת Apache HTTP Server על Ubuntu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../squid-reverse-proxy.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    התקנת Squid Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proxy-forward-install.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vmware-install.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך התקנה Vmware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vmware-esxi-8-create-vm.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך להתקנה של vmware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows-firewall-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך להגדרת Windows Firewall
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    תקלות
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            תקלות
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aad-broker-troubleshooting.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    פתרון תקלות Azure/Teams/Outlook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    הסברים
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            הסברים
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sysinternals-tools.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך Sysinternals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wireshark-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך Wireshark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vmware-explained.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    הסבר להתקנת Vmware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux-explained.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    הסבר לפקודות לינוקס
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../squid-explained.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    הסבר לפקודות Squid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web-server-explained.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    הסבר לפקודות שרת ווב
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu-explained.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    הסבר לפקודות Ubuntu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proxy-forward-explained.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    הסבר לפקודות התקנת שרת פרוקסי קדמי עם Squid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vim-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    פקודות בסיסיות ב־VIM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nano-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    פקודות בסיסיות ב־NANO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    סקריפטים כלים ופקודות
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            סקריפטים כלים ופקודות
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../it-scripts.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    סקריפטים שימושיים
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows-maintenance.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    פקודות תחזוקת וינדוס
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WPA_Boot_Analysis_Guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך מלא לניתוח איתחול מחשב
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NK2_to_Outlook_Contacts.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    מדריך עבודה עם NK2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../portable-tools.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    כלים ניידים ושימושיים
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 בדיקת תקינות קבצי מערכת
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 בדיקת תקינות קבצי מערכת">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sfc-" class="md-nav__link">
+    <span class="md-ellipsis">
+      SFC - סריקה ותיקון קבצי מערכת
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dism-" class="md-nav__link">
+    <span class="md-ellipsis">
+      DISM - תיקון תמונת מערכת
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssd-hdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      💽 בדיקת סוג דיסק (SSD או HDD)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕒 מדידת זמן אתחול המערכת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#speedtest-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 בדיקת מהירות אינטרנט (Speedtest CLI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📶 בדיקת מהירות אינטרנט (Speedtest CLI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלבים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 בדיקת פינג
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powershell-exe-ps2exe" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ פקודה לדוגמה:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 הסבר רכיבים:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ הערות חשובות:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 סיכום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="-windows-powershell">🔧 בדיקות תחזוקה וביצועים ב-Windows (PowerShell)</h1>
+<p>בדף זה מופיעות פקודות שימושיות לאבחון ותחזוקת מערכת Windows באמצעות PowerShell. הפקודות כוללות בדיקות תקינות קבצים, זיהוי סוג דיסק, מדידת זמן אתחול ובדיקת מהירות אינטרנט. הפקודות באנגלית, וההסברים בעברית.</p>
+<hr />
+<h2 id="_1">🧪 בדיקת תקינות קבצי מערכת</h2>
+<h3 id="sfc-">SFC - סריקה ותיקון קבצי מערכת</h3>
+<div class="highlight"><pre><span></span><code><span class="n">sfc</span> <span class="p">/</span><span class="n">scannow</span>
+</code></pre></div>
+<p>פקודה זו סורקת את קבצי מערכת Windows ובודקת אם יש קבצים פגומים או חסרים. אם נמצאו – הם מוחלפים בעותקים תקינים מהמערכת.</p>
+<hr />
+<h3 id="dism-">DISM - תיקון תמונת מערכת</h3>
+<div class="highlight"><pre><span></span><code><span class="n">DISM</span> <span class="p">/</span><span class="n">Online</span> <span class="p">/</span><span class="n">Cleanup-Image</span> <span class="p">/</span><span class="n">RestoreHealth</span>
+</code></pre></div>
+<p>משמשת לתיקון תמונת המערכת (Windows Image) במקרה ש־SFC לא מצליח לשחזר קבצים בגלל תמונה פגומה.</p>
+<hr />
+<h2 id="ssd-hdd">💽 בדיקת סוג דיסק (SSD או HDD)</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-PhysicalDisk</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">FriendlyName</span><span class="p">,</span> <span class="n">MediaType</span><span class="p">,</span> <span class="n">Size</span>
+</code></pre></div>
+<p>מציג את הכוננים הפיזיים ומציין האם מדובר ב־SSD או HDD.</p>
+<hr />
+<h2 id="_2">🕒 מדידת זמן אתחול המערכת</h2>
+<p>סקריפט שמושך את Event ID 100 מתוך יומן האתחול ומחשב את משך האתחול הכולל, את זמן הליבה ואת זמן ההגעה למסך הלוגין.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$event</span> <span class="p">=</span> <span class="nb">Get-WinEvent</span> <span class="n">-FilterHashtable</span> <span class="p">@{</span><span class="n">LogName</span><span class="p">=</span><span class="s1">&#39;Microsoft-Windows-Diagnostics-Performance/Operational&#39;</span><span class="p">;</span> <span class="n">Id</span><span class="p">=</span><span class="n">100</span><span class="p">}</span> <span class="n">-MaxEvents</span> <span class="n">1</span>
+<span class="nv">$props</span> <span class="p">=</span> <span class="nv">$event</span><span class="p">.</span><span class="n">Properties</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="p">}</span>
+
+<span class="nv">$bootTimeMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">5</span><span class="p">]</span>
+<span class="nv">$mainBootMs</span> <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">6</span><span class="p">]</span>
+<span class="nv">$logonMs</span>    <span class="p">=</span> <span class="no">[int]</span><span class="nv">$props</span><span class="p">[</span><span class="n">19</span><span class="p">]</span>
+
+<span class="nv">$bootSec</span>  <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$bootTimeMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
+<span class="nv">$mainSec</span>  <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$mainBootMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
+<span class="nv">$logonSec</span> <span class="p">=</span> <span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$logonMs</span> <span class="p">/</span> <span class="n">1000</span><span class="p">,</span> <span class="n">1</span><span class="p">)</span>
+
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🖥️ Total Boot Time&quot;</span><span class="p">,</span> <span class="nv">$bootTimeMs</span><span class="p">,</span> <span class="nv">$bootSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🔄 Main Path Boot Time&quot;</span><span class="p">,</span> <span class="nv">$mainBootMs</span><span class="p">,</span> <span class="nv">$mainSec</span><span class="p">)</span>
+<span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">&quot;{0,-25}: {1,6} ms (~{2} sec)&quot;</span> <span class="o">-f</span> <span class="s2">&quot;🔐 Time to Logon Screen&quot;</span><span class="p">,</span> <span class="nv">$logonMs</span><span class="p">,</span> <span class="nv">$logonSec</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="speedtest-cli">📶 בדיקת מהירות אינטרנט (Speedtest CLI)</h2>
+<h3 id="_3">שלבים:</h3>
+<ol>
+<li>
+<p>הורד את הכלי:
+   <a href="https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-win64.zip">לחץ כאן להורדה</a></p>
+</li>
+<li>
+<p>חלץ את הקובץ <code>speedtest.exe</code> מתוך הקובץ ZIP ושמור אותו בתיקיה לדוגמה <code>C:\Tools\</code>.</p>
+</li>
+<li>
+<p>הרץ את הפקודה:
+<div class="highlight"><pre><span></span><code><span class="n">C</span><span class="p">:\</span><span class="n">Tools</span><span class="p">\</span><span class="n">speedtest</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>אם שמרת את הקובץ בתקייה שנמצאת ב־PATH:
+<div class="highlight"><pre><span></span><code><span class="n">speedtest</span>
+</code></pre></div></p>
+<hr />
+<h2 id="_4">🧩 בדיקת פינג</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">Test-Connection</span> <span class="n">google</span><span class="p">.</span><span class="n">com</span> <span class="n">-Count</span> <span class="n">5</span>
+</code></pre></div>
+<p>בודק זמני תגובה משרת אינטרנט כדי לבדוק קישוריות וביצועים בסיסיים של הרשת.</p>
+<hr />
+<h2 id="powershell-exe-ps2exe">🛠️ המרת סקריפט PowerShell לתוכנת EXE באמצעות PS2EXE</h2>
+<p>הכלי <code>PS2EXE</code> מאפשר להמיר סקריפט PowerShell (קובץ <code>.ps1</code>) לקובץ הרצה עצמאי (<code>.exe</code>) שניתן להפעיל בלחיצה כפולה – גם עם ממשק משתמש (GUI).</p>
+<h3 id="_5">✅ פקודה לדוגמה:</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Invoke-ps2exe</span> <span class="n">-InputFile</span> <span class="s2">&quot;C:\PS\boot-info-gui.ps1&quot;</span> <span class="n">-OutputFile</span> <span class="s2">&quot;C:\PS\boot-info.exe&quot;</span> <span class="n">-NoConsole</span>
+</code></pre></div>
+<h3 id="_6">🧾 הסבר רכיבים:</h3>
+<table>
+<thead>
+<tr>
+<th>פרמטר</th>
+<th>תיאור</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Invoke-ps2exe</code></td>
+<td>הפקודה שמבצעת את ההמרה</td>
+</tr>
+<tr>
+<td><code>-InputFile</code></td>
+<td>הנתיב לקובץ ה־PowerShell המקורי (<code>.ps1</code>)</td>
+</tr>
+<tr>
+<td><code>-OutputFile</code></td>
+<td>הנתיב לקובץ ה־<code>.exe</code> שיווצר</td>
+</tr>
+<tr>
+<td><code>-NoConsole</code></td>
+<td>מייצר קובץ GUI ללא פתיחת חלון קונסול (Console)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">⚠️ הערות חשובות:</h3>
+<ul>
+<li>הפעל את הפקודה מתוך PowerShell עם הרשאות <strong>מנהל מערכת</strong>.</li>
+<li>אין צורך בהתקנות מיוחדות במחשב שבו מריצים את קובץ ה־EXE שנוצר.</li>
+<li>אם הסקריפט משתמש ב־GUI (<code>System.Windows.Forms</code>), חובה להשתמש בפרמטר <code>-NoConsole</code>.</li>
+</ul>
+<hr />
+<h2 id="_8">📝 סיכום</h2>
+<p>בדף זה מוצגים כלים שימושיים לניתוח תקינות מערכת Windows, מדידת זמן אתחול, בדיקת מהירות אינטרנט וזיהוי סוג דיסק – כל זאת באמצעות PowerShell.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  חזרה למעלה
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
