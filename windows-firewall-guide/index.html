@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../web-server-explained/">
+        <link rel="prev" href="../vmware-esxi-8-create-vm/">
       
       
-        <link rel="next" href="../proxy-forward-explained/">
+        <link rel="next" href="../aad-broker-troubleshooting/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>הסבר לפקודות Ubuntu - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך להגדרת Windows Firewall - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu-server" class="md-skip">
+        <a href="#windows" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר לפקודות Ubuntu
+              מדריך להגדרת Windows Firewall
             
           </span>
         </div>
@@ -245,18 +245,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -272,7 +274,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -421,10 +423,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../windows-firewall-guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    מדריך להגדרת Windows Firewall
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -435,6 +459,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ הקדמה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📍 שלב 1: פתיחת הגדרות חומת האש
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-inbound-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 שלב 2: יצירת כלל נכנס חדש (Inbound Rule)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-outbound-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔓 שלב 3: יצירת כלל יוצא (Outbound Rule)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 שלב 4: בדיקת הכלל
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 טיפים חשובים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 כלים מתקדמים (אופציונלי)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 סיכום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -519,20 +635,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -548,7 +662,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -697,32 +811,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר לפקודות Ubuntu
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ubuntu-explained/" class="md-nav__link">
         
   
   
@@ -733,71 +825,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ip-a" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 ip a
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-update-sudo-apt-upgrade-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt update &amp;&amp; sudo apt upgrade -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-install-openssh-server-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt install openssh-server -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-systemctl-status-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo systemctl status ssh
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      הערות
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1066,45 +1093,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ip-a" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 ip a
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-update-sudo-apt-upgrade-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt update &amp;&amp; sudo apt upgrade -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-install-openssh-server-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt install openssh-server -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-systemctl-status-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo systemctl status ssh
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      הערות
+      🛡️ הקדמה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📍 שלב 1: פתיחת הגדרות חומת האש
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-inbound-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 שלב 2: יצירת כלל נכנס חדש (Inbound Rule)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-outbound-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔓 שלב 3: יצירת כלל יוצא (Outbound Rule)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 שלב 4: בדיקת הכלל
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 טיפים חשובים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 כלים מתקדמים (אופציונלי)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 סיכום
     </span>
   </a>
   
@@ -1126,39 +1180,60 @@
 
 
 
-<h1 id="ubuntu-server">הסבר לפקודות התקנת Ubuntu Server</h1>
-<p>להלן הסברים לפקודות שבהן נעשה שימוש במדריך:</p>
+<h1 id="windows">מדריך: איך להגדיר את חומת האש של Windows</h1>
+<h2 id="_1">🛡️ הקדמה</h2>
+<p>חומת האש של Windows (Windows Defender Firewall) היא כלי אבטחה מובנה שמאפשר לך לשלוט בחיבורים הנכנסים והיוצאים מהמחשב שלך. מדריך זה ידריך אותך כיצד לאפשר או לחסום תוכנות ופורט ספציפי.</p>
 <hr />
-<h2 id="ip-a">🔹 <code>ip a</code></h2>
+<h2 id="1">📍 שלב 1: פתיחת הגדרות חומת האש</h2>
+<ol>
+<li>לחץ על <code>התחל</code> והקלד <strong>Windows Defender Firewall</strong>.</li>
+<li>לחץ על התוצאה המתאימה כדי לפתוח את ממשק ההגדרות.</li>
+</ol>
+<hr />
+<h2 id="2-inbound-rule">🔒 שלב 2: יצירת כלל נכנס חדש (Inbound Rule)</h2>
+<ol>
+<li>לחץ על <strong>Advanced settings</strong>.</li>
+<li>בחלונית השמאלית, בחר <strong>Inbound Rules</strong>.</li>
+<li>בחלונית הימנית, לחץ על <strong>New Rule...</strong>.</li>
+<li>בחר את סוג הכלל שברצונך ליצור:</li>
+<li><code>Program</code> – חסימת/אישור תוכנה מסוימת.</li>
+<li><code>Port</code> – חסימת/אישור פורט (TCP או UDP).</li>
+<li><code>Predefined</code> – שימוש בכללים קיימים מראש.</li>
+<li><code>Custom</code> – כלל מותאם אישית.</li>
+<li>לדוגמה, בחר <strong>Port</strong>, לחץ <strong>Next</strong>.</li>
+<li>בחר <code>TCP</code> או <code>UDP</code>, וציין את מספר הפורט (למשל: <code>80</code> או <code>3389</code>).</li>
+<li>לחץ <strong>Next</strong>, בחר את הפעולה:</li>
+<li><code>Allow the connection</code> – לאפשר.</li>
+<li><code>Block the connection</code> – לחסום.</li>
+<li>לחץ <strong>Next</strong>, בחר מתי הכלל יהיה בתוקף:</li>
+<li><code>Domain</code></li>
+<li><code>Private</code></li>
+<li><code>Public</code></li>
+<li>לחץ <strong>Next</strong>, תן שם לכלל, למשל: <code>חסימת פורט 80</code>.</li>
+<li>לחץ <strong>Finish</strong>.</li>
+</ol>
+<hr />
+<h2 id="3-outbound-rule">🔓 שלב 3: יצירת כלל יוצא (Outbound Rule)</h2>
+<p>כמו כללים נכנסים, תוכל ליצור כלל <strong>יוצא</strong> ע"י בחירה ב־<strong>Outbound Rules</strong> &gt; <strong>New Rule...</strong>, ולאחר מכן בצע את אותם השלבים.</p>
+<hr />
+<h2 id="4">🧪 שלב 4: בדיקת הכלל</h2>
+<p>לאחר יצירת הכלל, תוכל לבדוק אם הוא בתוקף ע"י ניסוי עם התוכנה/שירות שנחסם או הותר. תוכל גם לערוך את הכללים, למחוק אותם או להשבית זמנית.</p>
+<hr />
+<h2 id="_2">💡 טיפים חשובים</h2>
 <ul>
-<li>מציג את כתובות ה-IP של המחשב</li>
-<li>חשוב כדי לדעת מה הכתובת להתחברות ב־SSH</li>
+<li>היזהר מחסימת שירותים מערכתיים שעלולים להשפיע על הרשת או על התחברות מרחוק.</li>
+<li>תיעד תמיד את הכללים שאתה יוצר.</li>
+<li>מומלץ לגבות את הגדרות חומת האש לאחר שינויים משמעותיים.</li>
 </ul>
 <hr />
-<h2 id="sudo-apt-update-sudo-apt-upgrade-y">🔹 <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></h2>
-<ul>
-<li><code>sudo</code> – ביצוע כ־root</li>
-<li><code>apt update</code> – רענון רשימת החבילות</li>
-<li><code>apt upgrade -y</code> – שדרוג אוטומטי של כל החבילות</li>
-</ul>
+<h2 id="_3">🧰 כלים מתקדמים (אופציונלי)</h2>
+<p>ניתן גם לנהל חומת אש באמצעות PowerShell:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># יצירת כלל לחסימת פורט 3389</span>
+<span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&quot;חסימת RDP&quot;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-LocalPort</span> <span class="n">3389</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-Action</span> <span class="n">Block</span>
+</code></pre></div>
 <hr />
-<h2 id="sudo-apt-install-openssh-server-y">🔹 <code>sudo apt install openssh-server -y</code></h2>
-<ul>
-<li>מתקין את שרת SSH</li>
-<li>מאפשר התחברות מרחוק דרך SSH</li>
-</ul>
-<hr />
-<h2 id="sudo-systemctl-status-ssh">🔹 <code>sudo systemctl status ssh</code></h2>
-<ul>
-<li>מציג את מצב שירות SSH</li>
-<li>האם הוא רץ? מופעל באתחול? שגיאות?</li>
-</ul>
-<hr />
-<h2 id="_1">הערות</h2>
-<ul>
-<li>כל הפקודות נכתבות בטרמינל לאחר התחברות</li>
-<li>כל פקודה שמתחילה ב־<code>sudo</code> דורשת סיסמת משתמש</li>
-</ul>
+<h2 id="_4">🧾 סיכום</h2>
+<p>באמצעות השלבים לעיל, תוכל לנהל את תעבורת הרשת במחשב שלך ולהפוך אותו לבטוח יותר. ניהול נכון של חומת האש הוא חלק חשוב בתחזוקת אבטחה בסיסית.</p>
 
 
 
