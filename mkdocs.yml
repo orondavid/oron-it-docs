@@ -1,3 +1,4 @@
+
 site_name: Docs4IT – מדריכים, פתרונות וידע מהשטח
 
 theme:
@@ -12,42 +13,39 @@ theme:
 
 nav:
   - דף הבית: index.md
-  - אודות: about.md
+  - אודות: about/index.md
 
   - התקנות:
-      - התקנת Ubuntu Server: ubuntu-install.md
-      - התקנת Apache HTTP Server על Ubuntu: web-server-ubuntu.md
-      - התקנת Squid Reverse Proxy: squid-reverse-proxy.md
-      - התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid: proxy-forward-install.md
-      - מדריך התקנה Vmware: vmware-install.md
-      - מדריך להתקנה של vmware: vmware-esxi-8-create-vm.md
-      - מדריך להגדרת Windows Firewall: windows-firewall-guide.md
-      
-      
+      - התקנת Ubuntu Server: ubuntu-install/index.md
+      - התקנת Apache HTTP Server על Ubuntu: web-server-ubuntu/index.md
+      - התקנת Squid Reverse Proxy: squid-reverse-proxy/index.md
+      - התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid: proxy-forward-install/index.md
+      - מדריך התקנה Vmware: vmware-install/index.md
+      - מדריך להתקנה של vmware: vmware-esxi-8-create-vm/index.md
+      - מדריך להגדרת Windows Firewall: windows-firewall-guide/index.md
 
   - תקלות:
-      - פתרון תקלות Azure/Teams/Outlook: aad-broker-troubleshooting.md
+      - פתרון תקלות Azure/Teams/Outlook: aad-broker-troubleshooting/index.md
 
   - הסברים:
-      - מדריך Sysinternals: sysinternals-tools.md
-      - מדריך Wireshark: wireshark-guide.md
-      - הסבר להתקנת Vmware: vmware-explained.md
-      - הסבר לפקודות לינוקס: linux-explained.md
-      - הסבר לפקודות Squid: squid-explained.md
-      - הסבר לפקודות שרת ווב: web-server-explained.md
-      - הסבר לפקודות Ubuntu: ubuntu-explained.md
-      - הסבר לפקודות התקנת שרת פרוקסי קדמי עם Squid: proxy-forward-explained.md
-      - פקודות בסיסיות ב־VIM: vim-guide.md
-      - פקודות בסיסיות ב־NANO: nano-guide.md
-      
-      
-  -  סקריפטים כלים ופקודות:
-      - סקריפטים שימושיים: it-scripts.md
-      - פקודות תחזוקת וינדוס: windows-maintenance.md
-      - מדריך מלא לניתוח איתחול מחשב: WPA_Boot_Analysis_Guide.md
-      - מדריך עבודה עם NK2: NK2_to_Outlook_Contacts.md
-      - כלים ניידים ושימושיים: portable-tools.md
-      
+      - מדריך Sysinternals: sysinternals-tools/index.md
+      - מדריך Wireshark: wireshark-guide/index.md
+      - הסבר להתקנת Vmware: vmware-explained/index.md
+      - הסבר לפקודות לינוקס: linux-explained/index.md
+      - הסבר לפקודות Squid: squid-explained/index.md
+      - הסבר לפקודות שרת ווב: web-server-explained/index.md
+      - הסבר לפקודות Ubuntu: ubuntu-explained/index.md
+      - הסבר לפקודות התקנת שרת פרוקסי קדמי עם Squid: proxy-forward-explained/index.md
+      - פקודות בסיסיות ב־VIM: vim-guide/index.md
+      - פקודות בסיסיות ב־NANO: nano-guide/index.md
+
+  - סקריפטים כלים ופקודות:
+      - סקריפטים שימושיים: it-scripts/index.md
+      - פקודות תחזוקת וינדוס: windows-maintenance/index.md
+      - מדריך מלא לניתוח איתחול מחשב: WPA_Boot_Analysis_Guide/index.md
+      - מדריך עבודה עם NK2: NK2_to_Outlook_Contacts/index.md
+      - כלים ניידים ושימושיים: portable-tools/index.md
+
 extra_css:
   - stylesheets/extra.css
 
