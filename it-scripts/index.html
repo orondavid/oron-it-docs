@@ -993,6 +993,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקת הרשאות על יומן של משתמש
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹נתינת הרשאות ליומן של משתמש
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1009,7 +1027,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       🔹 גיבוי תיקיות
     </span>
@@ -1018,7 +1036,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       🔹 התרעה על שטח דיסק
     </span>
@@ -1036,7 +1054,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       🔹 מעקב לוגים בזמן אמת
     </span>
@@ -1050,7 +1068,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       🎯 שימושים נפוצים
     </span>
@@ -1274,6 +1292,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקת הרשאות על יומן של משתמש
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹נתינת הרשאות ליומן של משתמש
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1290,7 +1326,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       🔹 גיבוי תיקיות
     </span>
@@ -1299,7 +1335,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       🔹 התרעה על שטח דיסק
     </span>
@@ -1317,7 +1353,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       🔹 מעקב לוגים בזמן אמת
     </span>
@@ -1331,7 +1367,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       🎯 שימושים נפוצים
     </span>
@@ -1387,22 +1423,32 @@
 <h3 id="powershell-sessions">🔹סקריפט PowerShell לסגירת Sessions ישנים</h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Get-SmbSession</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">IdleTime</span> <span class="o">-gt</span> <span class="n">30</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Close-SmbSession</span>
 </code></pre></div>
+<h3 id="_5">🔹בדיקת הרשאות על יומן של משתמש</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-MailboxFolderPermission</span> <span class="n">-Identity</span> <span class="s2">&quot;ilan@gsbsystems.co.il:\Calendar&quot;</span>
+</code></pre></div>
+<h3 id="_6">🔹נתינת הרשאות ליומן של משתמש</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-MailboxFolderPermission</span> <span class="n">-Identity</span> <span class="s2">&quot;oron@example.com:\יומן&quot;</span> <span class="n">-User</span> <span class="s2">&quot;otheruser@example.com&quot;</span> <span class="n">-AccessRights</span> <span class="n">Reviewer</span>
+</code></pre></div>
+<p>oron@example.com – התיבה שברצונך לשתף את היומן שלה.</p>
+<p>\יומן – שם תיקיית היומן, בעברית.</p>
+<p>otheruser@domain.com – המשתמש שיקבל את ההרשאה.</p>
+<p>Reviewer – רמת הרשאה: צפייה בלבד (כולל נושא, זמן, מיקום וכו').</p>
 <hr />
 <h2 id="bash-linux">🐧 Bash (Linux)</h2>
-<h3 id="_5">🔹 גיבוי תיקיות</h3>
+<h3 id="_7">🔹 גיבוי תיקיות</h3>
 <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-czvf<span class="w"> </span>backup_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>.tar.gz<span class="w"> </span>/etc<span class="w"> </span>/home<span class="w"> </span>/var/www
 </code></pre></div>
-<h3 id="_6">🔹 התרעה על שטח דיסק</h3>
+<h3 id="_8">🔹 התרעה על שטח דיסק</h3>
 <div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>mail<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;Disk Report&quot;</span><span class="w"> </span>admin@domain.com
 </code></pre></div>
 <h3 id="cpu">🔹 איתור עומס CPU</h3>
 <div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-eo<span class="w"> </span>pid,comm,%cpu<span class="w"> </span>--sort<span class="o">=</span>-%cpu<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
 </code></pre></div>
-<h3 id="_7">🔹 מעקב לוגים בזמן אמת</h3>
+<h3 id="_9">🔹 מעקב לוגים בזמן אמת</h3>
 <div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/syslog
 </code></pre></div>
 <hr />
-<h2 id="_8">🎯 שימושים נפוצים</h2>
+<h2 id="_10">🎯 שימושים נפוצים</h2>
 <ul>
 <li>תחזוקה שוטפת</li>
 <li>ניטור וזיהוי תקלות</li>
