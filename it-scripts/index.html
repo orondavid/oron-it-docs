@@ -957,6 +957,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקת תאריך יצירת משתמש מקומי באמצעות PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקת יצירת משתמש ב Active Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקה של מספר משתמשים (למשל משתמשים שנוצרו ב־30 הימים האחרונים)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1202,6 +1229,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקת תאריך יצירת משתמש מקומי באמצעות PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקת יצירת משתמש ב Active Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹בדיקה של מספר משתמשים (למשל משתמשים שנוצרו ב־30 הימים האחרונים)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1300,6 +1354,17 @@
 <div class="highlight"><pre><span></span><code><span class="n">ipconfig</span> <span class="p">/</span><span class="n">flushdns</span>
 <span class="n">netsh</span> <span class="n">winsock</span> <span class="n">reset</span>
 <span class="n">netsh</span> <span class="n">int</span> <span class="n">ip</span> <span class="n">reset</span>
+</code></pre></div>
+<h3 id="powershell">🔹בדיקת תאריך יצירת משתמש מקומי באמצעות PowerShell</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-LocalUser</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="p">@{</span><span class="n">Name</span><span class="p">=</span><span class="s2">&quot;Created&quot;</span><span class="p">;</span><span class="n">Expression</span><span class="p">={(</span><span class="nb">Get-Item</span> <span class="s2">&quot;C:\Users\</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span><span class="p">).</span><span class="n">CreationTime</span><span class="p">}}</span> <span class="p">|</span> <span class="nb">Format-Table</span>
+</code></pre></div>
+<h3 id="active-directory">🔹בדיקת יצירת משתמש ב Active Directory</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ADUser</span> <span class="n">-Identity</span> <span class="n">שם_משתמש</span> <span class="n">-Properties</span> <span class="n">whenCreated</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">whenCreated</span>
+</code></pre></div>
+<h3 id="30_1">🔹בדיקה של מספר משתמשים (למשל משתמשים שנוצרו ב־30 הימים האחרונים)</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ADUser</span> <span class="n">-Filter</span> <span class="p">*</span> <span class="n">-Properties</span> <span class="n">whenCreated</span> <span class="p">|</span>
+<span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">whenCreated</span> <span class="o">-gt</span> <span class="p">(</span><span class="nb">Get-Date</span><span class="p">).</span><span class="n">AddDays</span><span class="p">(-</span><span class="n">30</span><span class="p">)</span> <span class="p">}</span> <span class="p">|</span>
+<span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">whenCreated</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">whenCreated</span>
 </code></pre></div>
 <hr />
 <h2 id="bash-linux">🐧 Bash (Linux)</h2>
