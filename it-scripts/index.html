@@ -1017,6 +1017,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-mailboxfolderpermission" class="md-nav__link">
+    <span class="md-ellipsis">
+      רמות הרשאה לפקודה Add-MailboxFolderPermission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bash-linux" class="md-nav__link">
     <span class="md-ellipsis">
       🐧 Bash (Linux)
@@ -1316,6 +1325,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-mailboxfolderpermission" class="md-nav__link">
+    <span class="md-ellipsis">
+      רמות הרשאה לפקודה Add-MailboxFolderPermission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bash-linux" class="md-nav__link">
     <span class="md-ellipsis">
       🐧 Bash (Linux)
@@ -1429,10 +1447,57 @@
 <h3 id="_6">🔹נתינת הרשאות ליומן של משתמש</h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Add-MailboxFolderPermission</span> <span class="n">-Identity</span> <span class="s2">&quot;oron@example.com:\יומן&quot;</span> <span class="n">-User</span> <span class="s2">&quot;otheruser@example.com&quot;</span> <span class="n">-AccessRights</span> <span class="n">Reviewer</span>
 </code></pre></div>
-<p>oron@example.com – התיבה שברצונך לשתף את היומן שלה.</p>
-<p>\יומן – שם תיקיית היומן, בעברית.</p>
-<p>otheruser@domain.com – המשתמש שיקבל את ההרשאה.</p>
-<p>Reviewer – רמת הרשאה: צפייה בלבד (כולל נושא, זמן, מיקום וכו').</p>
+<h2 id="add-mailboxfolderpermission">רמות הרשאה לפקודה Add-MailboxFolderPermission</h2>
+<table>
+<thead>
+<tr>
+<th>AccessRights</th>
+<th>תיאור</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AvailabilityOnly</td>
+<td>הצגת זמינות בלבד – האם המשתמש פנוי/תפוס</td>
+</tr>
+<tr>
+<td>LimitedDetails</td>
+<td>הצגת זמינות + נושא הפגישה, ללא תוכן מלא</td>
+</tr>
+<tr>
+<td>Reviewer</td>
+<td>גישה לקריאה בלבד – ניתן לראות את כל פרטי הפגישה</td>
+</tr>
+<tr>
+<td>Contributor</td>
+<td>ניתן להוסיף פריטים אך לא לראות את תוכנם</td>
+</tr>
+<tr>
+<td>NonEditingAuthor</td>
+<td>ניתן ליצור פריטים אך לא לערוך פריטים קיימים</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>ניתן ליצור ולערוך פריטים שנוצרו ע"י המשתמש</td>
+</tr>
+<tr>
+<td>PublishingAuthor</td>
+<td>כמו Author + יכול ליצור תתי-תיקיות</td>
+</tr>
+<tr>
+<td>Editor</td>
+<td>גישה מלאה לעריכת כל הפריטים בתיקיה</td>
+</tr>
+<tr>
+<td>PublishingEditor</td>
+<td>כמו Editor + יכול ליצור תתי-תיקיות</td>
+</tr>
+<tr>
+<td>Owner</td>
+<td>שליטה מלאה – עריכה, מחיקה, הרשאות</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="bash-linux">🐧 Bash (Linux)</h2>
 <h3 id="_7">🔹 גיבוי תיקיות</h3>
