@@ -1424,7 +1424,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">Get-SmbSession</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">IdleTime</span> <span class="o">-gt</span> <span class="n">30</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Close-SmbSession</span>
 </code></pre></div>
 <h3 id="_5">🔹בדיקת הרשאות על יומן של משתמש</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-MailboxFolderPermission</span> <span class="n">-Identity</span> <span class="s2">&quot;ilan@gsbsystems.co.il:\Calendar&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-MailboxFolderPermission</span> <span class="n">-Identity</span> <span class="s2">&quot;oron@example.com:\Calendar&quot;</span>
 </code></pre></div>
 <h3 id="_6">🔹נתינת הרשאות ליומן של משתמש</h3>
 <div class="highlight"><pre><span></span><code><span class="nb">Add-MailboxFolderPermission</span> <span class="n">-Identity</span> <span class="s2">&quot;oron@example.com:\יומן&quot;</span> <span class="n">-User</span> <span class="s2">&quot;otheruser@example.com&quot;</span> <span class="n">-AccessRights</span> <span class="n">Reviewer</span>
