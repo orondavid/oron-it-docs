@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../web-server-ubuntu/">
-      
-      
-        <link rel="next" href="../proxy-forward-install/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>התקנת Squid Reverse Proxy - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>הגדרת ארכיון און־ליין ב־Microsoft 365 - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#squid-reverse-proxy-ubuntu-server" class="md-skip">
+        <a href="#microsoft-365" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת Squid Reverse Proxy
+              הגדרת ארכיון און־ליין ב־Microsoft 365
             
           </span>
         </div>
@@ -247,20 +243,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -276,7 +270,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -333,32 +327,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת Squid Reverse Proxy
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../squid-reverse-proxy/" class="md-nav__link">
         
   
   
@@ -369,89 +341,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: עדכון המערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: גיבוי הקובץ המקורי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: עריכת קובץ הקונפיגורציה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5: הפעלת השירות מחדש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-3128" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 (אופציונלי): פתיחת פורט 3128
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיום
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -945,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Enable_Online_Archive_365/index" class="md-nav__link">
+      <a href="index" class="md-nav__link">
         
   
   
@@ -1178,18 +1067,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 1: עדכון המערכת
+      דרישות מקדימות
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-squid" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 2: התקנת Squid
+      שלב 1: הפעלת ארכיון און־ליין למשתמשים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: יצירת תגית (Tag) להעברת מיילים מעל שנה לארכיון
     </span>
   </a>
   
@@ -1198,7 +1096,7 @@
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 3: גיבוי הקובץ המקורי
+      שלב 3: יצירת מדיניות ושיוכה למשתמשים
     </span>
   </a>
   
@@ -1207,34 +1105,16 @@
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 4: עריכת קובץ הקונפיגורציה
+      שלב 4: אימות והפעלה מיידית של מדיניות הארכיון (אופציונלי)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 5: הפעלת השירות מחדש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-3128" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 (אופציונלי): פתיחת פורט 3128
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיום
+      בדיקה
     </span>
   </a>
   
@@ -1256,51 +1136,72 @@
 
 
 
-<h1 id="squid-reverse-proxy-ubuntu-server">התקנת Squid Reverse Proxy על Ubuntu Server</h1>
-<p>מדריך זה יסביר כיצד להתקין ולהגדיר את Squid כ־Reverse Proxy.</p>
+<h1 id="microsoft-365">הגדרת ארכיון און־ליין ב־Microsoft 365</h1>
+<p>מדריך זה מתאר כיצד להפעיל ארכיון און־ליין (Online Archive) עבור תיבות דואר בארגון, כך שכל הודעות הדוא"ל שגילן מעל שנה יועברו אוטומטית לארכיון.</p>
+<h2 id="_1">דרישות מקדימות</h2>
+<ul>
+<li>הרשאות אדמין ב־Exchange Online (Microsoft 365)</li>
+<li>רישיון הכולל Online Archive (למשל: Exchange Online Plan 2 או Microsoft 365 E3 ומעלה)</li>
+</ul>
+<h2 id="1">שלב 1: הפעלת ארכיון און־ליין למשתמשים</h2>
+<ol>
+<li>
+<p>התחבר ל־Exchange Online PowerShell:
+<div class="highlight"><pre><span></span><code><span class="nb">Connect-ExchangeOnline</span> <span class="n">-UserPrincipalName</span> <span class="n">admin</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>בדוק אם הארכיון כבר מופעל:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Mailbox</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">ArchiveStatus</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>אם הארכיון לא מופעל, הפעל אותו:
+<div class="highlight"><pre><span></span><code><span class="nb">Enable-Mailbox</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="n">-Archive</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>ניתן להפעיל את הארכיון עבור כל המשתמשים:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Mailbox</span> <span class="n">-RecipientTypeDetails</span> <span class="n">UserMailbox</span> <span class="n">-ResultSize</span> <span class="n">Unlimited</span> <span class="p">|</span> <span class="nb">Enable-Mailbox</span> <span class="n">-Archive</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="2-tag">שלב 2: יצירת תגית (Tag) להעברת מיילים מעל שנה לארכיון</h2>
+<ol>
+<li>צור Retention Tag מסוג 'Archive':
+<div class="highlight"><pre><span></span><code><span class="nb">New-RetentionPolicyTag</span> <span class="n">-Name</span> <span class="s2">&quot;Archive after 1 year&quot;</span> <span class="n">-Type</span> <span class="n">All</span> <span class="n">-RetentionAction</span> <span class="n">MoveToArchive</span> <span class="n">-AgeLimitForRetention</span> <span class="n">365</span> <span class="n">-RetentionEnabled</span> <span class="nv">$true</span>
+</code></pre></div></li>
+</ol>
+<h2 id="3">שלב 3: יצירת מדיניות ושיוכה למשתמשים</h2>
+<ol>
+<li>
+<p>צור מדיניות חדשה:
+<div class="highlight"><pre><span></span><code><span class="nb">New-RetentionPolicy</span> <span class="n">-Name</span> <span class="s2">&quot;Archive Policy 1Y&quot;</span> <span class="n">-RetentionPolicyTagLinks</span> <span class="s2">&quot;Archive after 1 year&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>שייך את המדיניות למשתמש:
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Mailbox</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="n">-RetentionPolicy</span> <span class="s2">&quot;Archive Policy 1Y&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>לשיוך המוני לכל המשתמשים:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Mailbox</span> <span class="n">-ResultSize</span> <span class="n">Unlimited</span> <span class="p">|</span> <span class="nb">Set-Mailbox</span> <span class="n">-RetentionPolicy</span> <span class="s2">&quot;Archive Policy 1Y&quot;</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="4">שלב 4: אימות והפעלה מיידית של מדיניות הארכיון (אופציונלי)</h2>
+<p>ניתן להפעיל את עיבוד המדיניות באופן מיידי:
+<div class="highlight"><pre><span></span><code><span class="nb">Start-ManagedFolderAssistant</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div></p>
+<h2 id="_2">בדיקה</h2>
+<ol>
+<li>היכנס לתיבת הדואר של המשתמש.</li>
+<li>ודא שמופיעה תיקיית "In-Place Archive" ב־Outlook או Outlook Web.</li>
+<li>ודא שמיילים בני יותר משנה מועברים אוטומטית לארכיון.</li>
+</ol>
 <hr />
-<h2 id="1">שלב 1: עדכון המערכת</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</code></pre></div>
-<hr />
-<h2 id="2-squid">שלב 2: התקנת Squid</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>squid<span class="w"> </span>-y
-</code></pre></div>
-<hr />
-<h2 id="3">שלב 3: גיבוי הקובץ המקורי</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/squid/squid.conf<span class="w"> </span>/etc/squid/squid.conf.bak
-</code></pre></div>
-<hr />
-<h2 id="4">שלב 4: עריכת קובץ הקונפיגורציה</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/squid.conf
-</code></pre></div>
-<p>מחק את תוכן הקובץ והדבק את זה (דוגמה בסיסית ל־Reverse Proxy):</p>
-<div class="highlight"><pre><span></span><code>http_port 3128 accel vhost allow-direct
-cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
-acl our_sites dstdomain yourdomain.com
-http_access allow our_sites
-</code></pre></div>
-<blockquote>
-<p>החלף את <code>192.168.1.100</code> בכתובת השרת שאליו תרצה להפנות<br />
-והחלף <code>yourdomain.com</code> בשם הדומיין החיצוני שלך</p>
-</blockquote>
-<hr />
-<h2 id="5">שלב 5: הפעלת השירות מחדש</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>squid
-</code></pre></div>
-<p>בדיקת מצב השירות:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>squid
-</code></pre></div>
-<hr />
-<h2 id="6-3128">שלב 6 (אופציונלי): פתיחת פורט 3128</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3128</span>/tcp
-</code></pre></div>
-<hr />
-<h2 id="_1">סיום</h2>
-<p>כעת Squid יאזין על פורט 3128 ויפעל כ־Reverse Proxy לכתובת שהוגדרה.<br />
-מומלץ לבדוק את הלוגים הראשונים:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/squid/access.log
-</code></pre></div>
+<p>בהצלחה!</p>
 
 
 
