@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../vim-guide/">
+        <link rel="prev" href="../windows-firewall-guide/">
       
       
-        <link rel="next" href="../linux-permissions-guide/">
+        <link rel="next" href="../aad-broker-troubleshooting/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>פקודות בסיסיות ב־NANO - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך הגדרה לתוכנת BgInfo - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nano" class="md-skip">
+        <a href="#bginfo" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              פקודות בסיסיות ב־NANO
+              מדריך הגדרה לתוכנת BgInfo
             
           </span>
         </div>
@@ -247,18 +247,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -274,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -446,10 +448,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../BgInfo-Guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    מדריך הגדרה לתוכנת BgInfo
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -460,6 +484,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: הורדה והפעלה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: הגדרת תצוגת מידע
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: הגדרות עיצוב
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: שמירת התצורה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: הפעלה אוטומטית עם Windows (מומלץ)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-group-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6: שימוש ב־Group Policy (אופציונלי לארגונים)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      טיפים נוספים
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -567,20 +674,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -596,7 +701,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -814,32 +919,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    פקודות בסיסיות ב־NANO
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../nano-guide/" class="md-nav__link">
         
   
   
@@ -850,71 +933,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתיחת קובץ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      כתיבה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      שמירה ויציאה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      עריכה ופקודות שימושיות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      קיצורים מוצגים בתחתית העורך
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1183,45 +1201,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: הורדה והפעלה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: הגדרת תצוגת מידע
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: הגדרות עיצוב
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: שמירת התצורה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: הפעלה אוטומטית עם Windows (מומלץ)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-group-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6: שימוש ב־Group Policy (אופציונלי לארגונים)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      פתיחת קובץ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      כתיבה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      שמירה ויציאה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      עריכה ופקודות שימושיות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      קיצורים מוצגים בתחתית העורך
+      טיפים נוספים
     </span>
   </a>
   
@@ -1243,39 +1279,79 @@
 
 
 
-<h1 id="nano">פקודות בסיסיות בעורך NANO</h1>
-<p><code>nano</code> הוא עורך טקסט פשוט ונוח במיוחד למתחילים.</p>
+<h1 id="bginfo">מדריך הגדרה לתוכנת BgInfo</h1>
+<p><strong>BgInfo</strong> היא תוכנה קלה לשימוש של Microsoft Sysinternals, המציגה מידע מערכת כגון כתובת IP, גרסת Windows, שם מחשב ועוד – ישירות על הרקע של שולחן העבודה.</p>
 <hr />
-<h2 id="_1">פתיחת קובץ</h2>
-<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>filename.txt
+<h2 id="1">שלב 1: הורדה והפעלה</h2>
+<ol>
+<li>
+<p>עבור לאתר ההורדה:
+   <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo">https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo</a></p>
+</li>
+<li>
+<p>הורד את הקובץ <code>BgInfo.zip</code> ופתח אותו לתיקייה, לדוגמה:
+   <code>C:\Tools\BgInfo</code></p>
+</li>
+<li>
+<p>הפעל את הקובץ <code>Bginfo.exe</code>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2">שלב 2: הגדרת תצוגת מידע</h2>
+<ol>
+<li>לאחר ההפעלה, תיפתח חלונית ההגדרות.</li>
+<li>תוכל לראות טקסט ברירת מחדל עם שדות כמו:
+   <div class="highlight"><pre><span></span><code>User:         &lt;UserName&gt;
+Computer:     &lt;HostName&gt;
+IP Address:   &lt;IpAddress&gt;
+</code></pre></div></li>
+<li>ניתן לערוך את הטקסט, למחוק שורות או להוסיף שדות חדשים על ידי לחיצה על <strong>Custom…</strong> ובחירה משדות המערכת או יצירת שדות מותאמים אישית.</li>
+</ol>
+<hr />
+<h2 id="3">שלב 3: הגדרות עיצוב</h2>
+<ol>
+<li>לחיצה על כפתור <strong>Background</strong> – בחר אם אתה רוצה להטמיע את הטקסט על הרקע הקיים או להחליפו.</li>
+<li>לחיצה על <strong>Position</strong> – בחר מיקום לתצוגה על המסך (למשל: עליון-שמאלי).</li>
+<li>לחיצה על <strong>Font</strong> – הגדר את הגופן, הצבע והגודל הרצוי.</li>
+</ol>
+<hr />
+<h2 id="4">שלב 4: שמירת התצורה</h2>
+<ol>
+<li>לחץ על <strong>File &gt; Save As...</strong>.</li>
+<li>שמור את הקובץ בפורמט <code>.bgi</code>, לדוגמה:
+   <code>C:\Tools\BgInfo\DefaultConfig.bgi</code></li>
+</ol>
+<hr />
+<h2 id="5-windows">שלב 5: הפעלה אוטומטית עם Windows (מומלץ)</h2>
+<ol>
+<li>צור קובץ Batch להפעלה אוטומטית:
+   שמור את הקובץ הבא בשם <code>StartBgInfo.bat</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;C:\Tools\BgInfo\Bginfo.exe&quot;</span> <span class="s2">&quot;C:\Tools\BgInfo\DefaultConfig.bgi&quot;</span> /timer:0 /silent
 </code></pre></div>
+<ol>
+<li>הוסף את קובץ ה־BAT לתיקיית ה־Startup של Windows:</li>
+<li>לחץ <code>Win + R</code>, הקלד: <code>shell:startup</code></li>
+<li>העתק לשם את <code>StartBgInfo.bat</code></li>
+</ol>
 <hr />
-<h2 id="_2">כתיבה</h2>
+<h2 id="6-group-policy">שלב 6: שימוש ב־Group Policy (אופציונלי לארגונים)</h2>
+<p>ניתן להריץ את BgInfo לכל משתמש דרך GPO ב־Logon Script:</p>
+<ol>
+<li>פתח Group Policy Management Console (GPMC).</li>
+<li>צור או ערוך GPO קיים.</li>
+<li>נווט ל:
+   <code>User Configuration &gt; Windows Settings &gt; Scripts (Logon)</code></li>
+<li>הוסף את קובץ ה־BAT.</li>
+</ol>
+<hr />
+<h2 id="_1">טיפים נוספים</h2>
 <ul>
-<li>פשוט מתחילים להקליד</li>
-<li>השתמש בחצים לזוז בין שורות</li>
+<li>אם הרקע לא מתעדכן: ודא שאין הגדרה ב־Windows שמונעת שינוי רקע שולחן העבודה.</li>
+<li>אם יש מספר מסכים – BgInfo תציג את המידע רק על המסך הראשי.</li>
 </ul>
 <hr />
-<h2 id="_3">שמירה ויציאה</h2>
-<ul>
-<li><code>Ctrl + O</code> – שמירה (write out)</li>
-<li><code>Enter</code> – לאשר שם קובץ</li>
-<li><code>Ctrl + X</code> – יציאה</li>
-</ul>
-<hr />
-<h2 id="_4">עריכה ופקודות שימושיות</h2>
-<ul>
-<li><code>Ctrl + K</code> – מחיקת שורה</li>
-<li><code>Ctrl + U</code> – הדבקה</li>
-<li><code>Ctrl + W</code> – חיפוש</li>
-<li><code>Ctrl + C</code> – מידע על מיקום הסמן</li>
-<li><code>Ctrl + G</code> – עזרה</li>
-</ul>
-<hr />
-<h2 id="_5">קיצורים מוצגים בתחתית העורך</h2>
-<ul>
-<li>סימן <code>^</code> מציין Ctrl</li>
-</ul>
+<p>בהצלחה!</p>
 
 
 
