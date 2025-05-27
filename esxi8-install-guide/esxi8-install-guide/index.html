@@ -9,25 +9,21 @@
       
       
       
-        <link rel="prev" href="../vmware-explained/">
       
       
-        <link rel="next" href="../aad-broker-troubleshooting/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>מדריך להגדרת Windows Firewall - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך להתקנת שרת VMware ESXi 8 - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,11 +42,11 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows" class="md-skip">
+        <a href="#vmware-esxi-8" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -90,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
-    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href="../.." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              מדריך להגדרת Windows Firewall
+              מדריך להתקנת שרת VMware ESXi 8
             
           </span>
         </div>
@@ -188,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href="../.." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -206,7 +202,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -228,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -247,20 +243,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -276,7 +270,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות והגדרות
@@ -328,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu-install/" class="md-nav__link">
+      <a href="../../ubuntu-install/" class="md-nav__link">
         
   
   
@@ -351,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu-explained/" class="md-nav__link">
+      <a href="../../ubuntu-explained/" class="md-nav__link">
         
   
   
@@ -420,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-server-ubuntu/" class="md-nav__link">
+      <a href="../../web-server-ubuntu/" class="md-nav__link">
         
   
   
@@ -443,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-server-explained/" class="md-nav__link">
+      <a href="../../web-server-explained/" class="md-nav__link">
         
   
   
@@ -512,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../squid-reverse-proxy/" class="md-nav__link">
+      <a href="../../squid-reverse-proxy/" class="md-nav__link">
         
   
   
@@ -535,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxy-forward-install/" class="md-nav__link">
+      <a href="../../proxy-forward-install/" class="md-nav__link">
         
   
   
@@ -558,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../squid-explained/" class="md-nav__link">
+      <a href="../../squid-explained/" class="md-nav__link">
         
   
   
@@ -581,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxy-forward-explained/" class="md-nav__link">
+      <a href="../../proxy-forward-explained/" class="md-nav__link">
         
   
   
@@ -650,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../esxi8-install-guide" class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -673,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vmware-install/" class="md-nav__link">
+      <a href="../../vmware-install/" class="md-nav__link">
         
   
   
@@ -696,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vmware-esxi-8-create-vm/" class="md-nav__link">
+      <a href="../../vmware-esxi-8-create-vm/" class="md-nav__link">
         
   
   
@@ -719,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vmware-explained/" class="md-nav__link">
+      <a href="../../vmware-explained/" class="md-nav__link">
         
   
   
@@ -747,20 +741,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -776,7 +768,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             אבטחת מערכת
@@ -787,32 +779,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    מדריך להגדרת Windows Firewall
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../windows-firewall-guide/" class="md-nav__link">
         
   
   
@@ -823,98 +793,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ הקדמה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      📍 שלב 1: פתיחת הגדרות חומת האש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-inbound-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔒 שלב 2: יצירת כלל נכנס חדש (Inbound Rule)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-outbound-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔓 שלב 3: יצירת כלל יוצא (Outbound Rule)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 שלב 4: בדיקת הכלל
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 טיפים חשובים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 כלים מתקדמים (אופציונלי)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 סיכום
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1018,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aad-broker-troubleshooting/" class="md-nav__link">
+      <a href="../../aad-broker-troubleshooting/" class="md-nav__link">
         
   
   
@@ -1087,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Outlook-Performance-Diagnostics/" class="md-nav__link">
+      <a href="../../Outlook-Performance-Diagnostics/" class="md-nav__link">
         
   
   
@@ -1201,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sysinternals-tools/" class="md-nav__link">
+      <a href="../../sysinternals-tools/" class="md-nav__link">
         
   
   
@@ -1224,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wireshark-guide/" class="md-nav__link">
+      <a href="../../wireshark-guide/" class="md-nav__link">
         
   
   
@@ -1247,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WPA_Boot_Analysis_Guide/" class="md-nav__link">
+      <a href="../../WPA_Boot_Analysis_Guide/" class="md-nav__link">
         
   
   
@@ -1316,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux-explained/" class="md-nav__link">
+      <a href="../../linux-explained/" class="md-nav__link">
         
   
   
@@ -1339,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux-permissions-guide/" class="md-nav__link">
+      <a href="../../linux-permissions-guide/" class="md-nav__link">
         
   
   
@@ -1362,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vim-guide/" class="md-nav__link">
+      <a href="../../vim-guide/" class="md-nav__link">
         
   
   
@@ -1385,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nano-guide/" class="md-nav__link">
+      <a href="../../nano-guide/" class="md-nav__link">
         
   
   
@@ -1461,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../it-scripts/" class="md-nav__link">
+      <a href="../../it-scripts/" class="md-nav__link">
         
   
   
@@ -1484,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows-maintenance/" class="md-nav__link">
+      <a href="../../windows-maintenance/" class="md-nav__link">
         
   
   
@@ -1507,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../NK2_to_Outlook_Contacts/" class="md-nav__link">
+      <a href="../../NK2_to_Outlook_Contacts/" class="md-nav__link">
         
   
   
@@ -1530,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../portable-tools/" class="md-nav__link">
+      <a href="../../portable-tools/" class="md-nav__link">
         
   
   
@@ -1598,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Enable_Online_Archive_365/" class="md-nav__link">
+      <a href="../../Enable_Online_Archive_365/" class="md-nav__link">
         
   
   
@@ -1621,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exchange365-mailbox-commands/" class="md-nav__link">
+      <a href="../../exchange365-mailbox-commands/" class="md-nav__link">
         
   
   
@@ -1673,7 +1551,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ הקדמה
+      דרישות מקדימות
     </span>
   </a>
   
@@ -1682,34 +1560,52 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      📍 שלב 1: פתיחת הגדרות חומת האש
+      שלב 1: הורדת קובץ ההתקנה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-inbound-rule" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      🔒 שלב 2: יצירת כלל נכנס חדש (Inbound Rule)
+      שלב 2: יצירת דיסק התקנה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-outbound-rule" class="md-nav__link">
+  <a href="#3-usb" class="md-nav__link">
     <span class="md-ellipsis">
-      🔓 שלב 3: יצירת כלל יוצא (Outbound Rule)
+      שלב 3: אתחול מהתקן USB
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-vmware-esxi" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 שלב 4: בדיקת הכלל
+      שלב 4: התקנת VMware ESXi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: קביעת תצורה ראשונית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vsphere-web-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6: גישה ל־vSphere Web Client
     </span>
   </a>
   
@@ -1718,25 +1614,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 טיפים חשובים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 כלים מתקדמים (אופציונלי)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 סיכום
+      סיום
     </span>
   </a>
   
@@ -1758,72 +1636,82 @@
 
 
 
-<h1 id="windows">מדריך: איך להגדיר את חומת האש של Windows</h1>
-<h2 id="_1">🛡️ הקדמה</h2>
-<p>חומת האש של Windows (Windows Defender Firewall) היא כלי אבטחה מובנה שמאפשר לך לשלוט בחיבורים הנכנסים והיוצאים מהמחשב שלך. מדריך זה ידריך אותך כיצד לאפשר או לחסום תוכנות ופורט ספציפי.</p>
+<h1 id="vmware-esxi-8">מדריך להתקנת שרת VMware ESXi 8</h1>
+<p>מדריך זה יסביר שלב אחר שלב כיצד להתקין את שרת VMware ESXi 8 על שרת פיזי.</p>
 <hr />
-<h2 id="1">📍 שלב 1: פתיחת הגדרות חומת האש</h2>
+<h2 id="_1">דרישות מקדימות</h2>
+<ul>
+<li>מחשב או שרת שתומך בווירטואליזציה (VT-x / AMD-V)</li>
+<li>לפחות 8GB RAM (מומלץ יותר)</li>
+<li>כונן קשיח פנוי בגודל מינימלי של 32GB</li>
+<li>חיבור אינטרנט (להורדה ועדכונים)</li>
+<li>דיסק און קי בגודל 8GB לפחות ליצירת דיסק התקנה</li>
+<li>תוכנת Rufus או balenaEtcher לכתיבת קובץ ההתקנה על USB</li>
+<li>קובץ ISO של ESXi 8 מהאתר הרשמי של VMware</li>
+</ul>
+<hr />
+<h2 id="1">שלב 1: הורדת קובץ ההתקנה</h2>
 <ol>
-<li>לחץ על <em>התחל</em> והקלד <strong>Windows Defender Firewall</strong>.</li>
-<li>לחץ על התוצאה המתאימה כדי לפתוח את ממשק ההגדרות.</li>
+<li>היכנס לאתר <a href="https://customerconnect.vmware.com/">VMware</a></li>
+<li>הירשם או התחבר לחשבון שלך</li>
+<li>עבור לתפריט <strong>Products and Accounts &gt; All Products</strong></li>
+<li>בחר <strong>VMware vSphere Hypervisor (ESXi)</strong></li>
+<li>בחר גרסה 8 ולחץ על "Download Now" על קובץ ISO</li>
 </ol>
 <hr />
-<h2 id="2-inbound-rule">🔒 שלב 2: יצירת כלל נכנס חדש (Inbound Rule)</h2>
-<p><em>. לחץ על </em><em>Advanced settings</em>*.</p>
-<p><img alt="Advanced settings.jpg" src="Advanced%20settings.jpg" /></p>
-<p><em>. בחלונית השמאלית, בחר </em><em>Inbound Rules</em>*.</p>
-<p><img alt="Inbound Rules.jpg" src="Inbound%20Rules.jpg" /></p>
-<p><em>. בחלונית השמאלית, לחץ על </em><em>New Rule...</em>*.</p>
-<p><img alt="New Rule.jpg" src="New%20Rule.jpg" /></p>
-<p>*. בחר את סוג הכלל שברצונך ליצור:</p>
-<ul>
-<li><code>Program</code> – חסימת/אישור תוכנה מסוימת.</li>
-<li><code>Port</code> – חסימת/אישור פורט (TCP או UDP).</li>
-<li><code>Predefined</code> – שימוש בכללים קיימים מראש.</li>
-<li><code>Custom</code> – כלל מותאם אישית.</li>
-</ul>
-<p>**לדוגמה, בחר Port , לחץ Next_</p>
-<p><img alt="Rule Type.jpg" src="Rule%20Type.jpg" /></p>
-<p>*. בחר <code>TCP</code> או <code>UDP</code>, וציין את מספר הפורט (למשל: <code>80</code> או <code>3389</code>).</p>
-<p><img alt="Define the port.jpg" src="Define%20the%20port.jpg" /></p>
-<p>*.  בחר את הפעולה</p>
-<ul>
-<li><code>Allow the connection</code> – לאפשר.</li>
-<li><code>Block the connection</code> – לחסום.</li>
-</ul>
-<p><img alt="Action.jpg" src="Action.jpg" /></p>
-<p>*.  בחר על מה יחול הכלל:</p>
-<ul>
-<li><code>Domain</code></li>
-<li><code>Private</code></li>
-<li><code>Public</code></li>
-</ul>
-<p><img alt="Profile.jpg" src="Profile.jpg" /></p>
-<p><em>. לחץ </em><em>Next</em><em>, תן שם לכלל, למשל: <code>חסימת פורט 80</code>.
-</em>. לחץ <strong>Finish</strong>.</p>
-<p><img alt="Finish.jpg" src="Finish.jpg" /></p>
+<h2 id="2">שלב 2: יצירת דיסק התקנה</h2>
+<ol>
+<li>חבר דיסק און קי למחשב</li>
+<li>פתח את תוכנת Rufus (או balenaEtcher)</li>
+<li>בחר את הדיסק און קי שלך</li>
+<li>בחר את קובץ ה־ISO שהורדת</li>
+<li>לחץ "Start" ובצע אישור למחיקה</li>
+<li>לאחר סיום, בטל את חיבור ה-USB בבטחה</li>
+</ol>
 <hr />
-<h2 id="3-outbound-rule">🔓 שלב 3: יצירת כלל יוצא (Outbound Rule)</h2>
-<p>כמו כללים נכנסים, תוכל ליצור כלל <strong>יוצא</strong> ע"י בחירה ב־<strong>Outbound Rules</strong> &gt; <strong>New Rule...</strong>, ולאחר מכן בצע את אותם השלבים.</p>
+<h2 id="3-usb">שלב 3: אתחול מהתקן USB</h2>
+<ol>
+<li>חבר את ה־USB לשרת היעד</li>
+<li>אתחל את השרת וגש לתפריט האתחול (Boot Menu) לפי מקש יצרן (לרוב F12/F11/ESC)</li>
+<li>בחר את כונן ה־USB ככונן אתחול</li>
+</ol>
 <hr />
-<h2 id="4">🧪 שלב 4: בדיקת הכלל</h2>
-<p>לאחר יצירת הכלל, תוכל לבדוק אם הוא בתוקף ע"י ניסוי עם התוכנה/שירות שנחסם או הותר. תוכל גם לערוך את הכללים, למחוק אותם או להשבית זמנית.</p>
+<h2 id="4-vmware-esxi">שלב 4: התקנת VMware ESXi</h2>
+<ol>
+<li>במסך הפתיחה בחר <code>Enter</code> כדי להתחיל את ההתקנה</li>
+<li>אשר את הסכם הרישיון עם <code>F11</code></li>
+<li>בחר את הכונן עליו תותקן המערכת</li>
+<li>בחר פריסת מקלדת (לדוגמה: US)</li>
+<li>הגדר סיסמת root</li>
+<li>לחץ <code>F11</code> כדי לאשר ולהתקין</li>
+</ol>
+<blockquote>
+<p>⚠️ כל הנתונים בכונן הנבחר יימחקו</p>
+</blockquote>
+<ol>
+<li>לאחר סיום, השרת יאותחל מחדש — נתק את דיסק ה־USB</li>
+</ol>
 <hr />
-<h2 id="_2">💡 טיפים חשובים</h2>
-<ul>
-<li>היזהר מחסימת שירותים מערכתיים שעלולים להשפיע על הרשת או על התחברות מרחוק.</li>
-<li>תיעד תמיד את הכללים שאתה יוצר.</li>
-<li>מומלץ לגבות את הגדרות חומת האש לאחר שינויים משמעותיים.</li>
-</ul>
+<h2 id="5">שלב 5: קביעת תצורה ראשונית</h2>
+<ol>
+<li>במסך הראשי יוצג לך כתובת ה־IP שניתנה לשרת</li>
+<li>לחץ <code>F2</code> כדי להיכנס להגדרות המערכת</li>
+<li>התחבר עם סיסמת root</li>
+<li>שנה כתובת IP לכתובת קבועה (אם נדרש)</li>
+<li>אשר את השינויים וצא</li>
+</ol>
 <hr />
-<h2 id="_3">🧰 כלים מתקדמים (אופציונלי)</h2>
-<p>ניתן גם לנהל חומת אש באמצעות PowerShell:</p>
-<pre><code class="language-powershell"># יצירת כלל לחסימת פורט 3389
-New-NetFirewallRule -DisplayName &quot;חסימת RDP&quot; -Direction Inbound -LocalPort 3389 -Protocol TCP -Action Block
-</code></pre>
+<h2 id="6-vsphere-web-client">שלב 6: גישה ל־vSphere Web Client</h2>
+<ol>
+<li>פתח דפדפן במחשב ברשת</li>
+<li>גש לכתובת ה־IP של השרת לדוגמה: <code>https://192.168.1.100</code></li>
+<li>אשר חריגת אבטחה (HTTPS)</li>
+<li>התחבר עם המשתמש <code>root</code> והסיסמה שהגדרת</li>
+<li>השרת מוכן לשימוש ולהתקנת מכונות וירטואליות</li>
+</ol>
 <hr />
-<h2 id="_4">🧾 סיכום</h2>
-<p>באמצעות השלבים לעיל, תוכל לנהל את תעבורת הרשת במחשב שלך ולהפוך אותו לבטוח יותר. ניהול נכון של חומת האש הוא חלק חשוב בתחזוקת אבטחה בסיסית.</p>
+<h2 id="_2">סיום</h2>
+<p>שרת VMware ESXi 8 שלך מוכן לעבודה. עכשיו ניתן להוסיף אליו אחסון, ליצור מכונות וירטואליות, ולהתחבר עם vCenter אם נדרש.</p>
 
 
 
@@ -1878,10 +1766,10 @@ New-NetFirewallRule -DisplayName &quot;חסימת RDP&quot; -Direction Inbound -
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
