@@ -932,10 +932,52 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="שלב 4: אימות והפעלה מיידית של מדיניות הארכיון (אופציונלי)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 בדיקת סטטוס הארכיון
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 בדיקת המדיניות שמוגדרת למשתמש
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 בדיקת סטטיסטיקות של הארכיון
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 פירוט גודל תיקיות בתיבת הדואר
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       בדיקה
     </span>
@@ -1211,10 +1253,52 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="שלב 4: אימות והפעלה מיידית של מדיניות הארכיון (אופציונלי)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 בדיקת סטטוס הארכיון
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 בדיקת המדיניות שמוגדרת למשתמש
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 בדיקת סטטיסטיקות של הארכיון
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 פירוט גודל תיקיות בתיבת הדואר
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       בדיקה
     </span>
@@ -1296,7 +1380,25 @@
 <p>ניתן להפעיל את עיבוד המדיניות באופן מיידי:
 <div class="highlight"><pre><span></span><code><span class="nb">Start-ManagedFolderAssistant</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span>
 </code></pre></div></p>
-<h2 id="_2">בדיקה</h2>
+<h3 id="_2">🔍 בדיקת סטטוס הארכיון</h3>
+<p>📌 בודק אם למשתמש מוגדר ארכיון און־ליין (פעיל/לא פעיל).
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Mailbox</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">ArchiveStatus</span>
+</code></pre></div></p>
+<h3 id="_3">📌 בדיקת המדיניות שמוגדרת למשתמש</h3>
+<p>📌 מציג את שם המדיניות הנוכחית של המשתמש.
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Mailbox</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">RetentionPolicy</span>
+</code></pre></div></p>
+<h3 id="_4">📈 בדיקת סטטיסטיקות של הארכיון</h3>
+<p>📌 מציג כמה פריטים וכמה נפח תופסת תיבת הארכיון של המשתמש.
+<div class="highlight"><pre><span></span><code><span class="nb">Get-MailboxStatistics</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="n">-Archive</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">DisplayName</span><span class="p">,</span> <span class="n">TotalItemSize</span><span class="p">,</span> <span class="n">ItemCount</span>
+</code></pre></div></p>
+<h3 id="_5">📂 פירוט גודל תיקיות בתיבת הדואר</h3>
+<p>📌 מציג את כל התיקיות בתיבת הדואר וממיין לפי גודל (מהגדול לקטן), כולל תיקיות עם תכולה ישנה או חריגה.
+<div class="highlight"><pre><span></span><code><span class="nb">Get-MailboxFolderStatistics</span> <span class="n">-Identity</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="p">|</span>
+<span class="nb">Select </span><span class="n">FolderPath</span><span class="p">,</span> <span class="n">FolderSize</span> <span class="p">|</span>
+<span class="nb">Sort-Object</span> <span class="n">FolderSize</span> <span class="n">-Descending</span>
+</code></pre></div></p>
+<h2 id="_6">בדיקה</h2>
 <ol>
 <li>היכנס לתיבת הדואר של המשתמש.</li>
 <li>ודא שמופיעה תיקיית "In-Place Archive" ב־Outlook או Outlook Web.</li>
