@@ -923,10 +923,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="שלב 3: יצירת מדיניות ושיוכה למשתמשים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       שלב 4: אימות והפעלה מיידית של מדיניות הארכיון (אופציונלי)
@@ -934,8 +933,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       🔍 בדיקת סטטוס הארכיון
@@ -943,8 +942,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       📌 בדיקת המדיניות שמוגדרת למשתמש
@@ -952,8 +951,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       📈 בדיקת סטטיסטיקות של הארכיון
@@ -961,18 +960,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       📂 פירוט גודל תיקיות בתיבת הדואר
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1244,10 +1238,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="שלב 3: יצירת מדיניות ושיוכה למשתמשים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       שלב 4: אימות והפעלה מיידית של מדיניות הארכיון (אופציונלי)
@@ -1255,8 +1248,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       🔍 בדיקת סטטוס הארכיון
@@ -1264,8 +1257,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       📌 בדיקת המדיניות שמוגדרת למשתמש
@@ -1273,8 +1266,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       📈 בדיקת סטטיסטיקות של הארכיון
@@ -1282,18 +1275,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       📂 פירוט גודל תיקיות בתיבת הדואר
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1324,12 +1312,12 @@
 
 <h1 id="microsoft-365">הגדרת ארכיון און־ליין ב־Microsoft 365</h1>
 <p>מדריך זה מתאר כיצד להפעיל ארכיון און־ליין (Online Archive) עבור תיבות דואר בארגון, כך שכל הודעות הדוא"ל שגילן מעל שנה יועברו אוטומטית לארכיון.</p>
-<h2 id="_1">דרישות מקדימות</h2>
+<h3 id="_1">דרישות מקדימות</h3>
 <ul>
 <li>הרשאות אדמין ב־Exchange Online (Microsoft 365)</li>
 <li>רישיון הכולל Online Archive (למשל: Exchange Online Plan 2 או Microsoft 365 E3 ומעלה)</li>
 </ul>
-<h2 id="1">שלב 1: הפעלת ארכיון און־ליין למשתמשים</h2>
+<h3 id="1">שלב 1: הפעלת ארכיון און־ליין למשתמשים</h3>
 <ol>
 <li>
 <p>התחבר ל־Exchange Online PowerShell:
@@ -1352,13 +1340,13 @@
 </code></pre></div></p>
 </li>
 </ol>
-<h2 id="2-tag">שלב 2: יצירת תגית (Tag) להעברת מיילים מעל שנה לארכיון</h2>
+<h3 id="2-tag">שלב 2: יצירת תגית (Tag) להעברת מיילים מעל שנה לארכיון</h3>
 <ol>
 <li>צור Retention Tag מסוג 'Archive':
 <div class="highlight"><pre><span></span><code><span class="nb">New-RetentionPolicyTag</span> <span class="n">-Name</span> <span class="s2">&quot;Archive after 1 year&quot;</span> <span class="n">-Type</span> <span class="n">All</span> <span class="n">-RetentionAction</span> <span class="n">MoveToArchive</span> <span class="n">-AgeLimitForRetention</span> <span class="n">365</span> <span class="n">-RetentionEnabled</span> <span class="nv">$true</span>
 </code></pre></div></li>
 </ol>
-<h2 id="3">שלב 3: יצירת מדיניות ושיוכה למשתמשים</h2>
+<h3 id="3">שלב 3: יצירת מדיניות ושיוכה למשתמשים</h3>
 <ol>
 <li>
 <p>צור מדיניות חדשה:
