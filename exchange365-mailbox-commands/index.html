@@ -1003,6 +1003,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 ייצוא רשומות יומן פעילות עבור משתמש מסוים
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1213,6 +1222,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 ייצוא רשומות יומן פעילות עבור משתמש מסוים
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1294,6 +1312,40 @@
 <span class="nb">Remove-Mailbox</span> <span class="n">-Identity</span> <span class="s2">&quot;user@domain.com&quot;</span>
 
 <span class="c"># ⚠️ פעולה זו מוחקת את התיבה אך מאפשרת שחזור (Soft Deleted) למשך 30 יום.</span>
+</code></pre></div>
+<h3 id="_4">📤 ייצוא רשומות יומן פעילות עבור משתמש מסוים</h3>
+<div class="highlight"><pre><span></span><code><span class="c"># -----------------------------------------------</span>
+<span class="c"># 🔍 Export Audit Log Entries for Specific User</span>
+<span class="c"># 📄 סקריפט זה מחפש ביומן הפעילות (Unified Audit Log)</span>
+<span class="c">#     את כל הפעולות שבוצעו על המשתמש: oron@example.co.il</span>
+<span class="c">#     ומייצא את תוצאות השינויים (רישוי, תכונות וכו&#39;) לקובץ טקסט.</span>
+<span class="c"># 🛟 הפלט נשמר בקובץ: C:\PS\audit_results.txt</span>
+<span class="c"># -----------------------------------------------</span>
+
+<span class="nv">$outputPath</span> <span class="p">=</span> <span class="s2">&quot;C:\PS\audit_results.txt&quot;</span>
+
+<span class="nv">$logs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">AuditData</span> <span class="o">-like</span> <span class="s2">&quot;*oron@example.co.il*&quot;</span> <span class="p">}</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+    <span class="nv">$data</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$_</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">AuditData</span><span class="p">)</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span>
+
+    <span class="nv">$changes</span> <span class="p">=</span> <span class="nv">$data</span><span class="p">.</span><span class="n">ModifiedProperties</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+        <span class="s2">&quot; - </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">: </span><span class="se">`n</span><span class="s2">     From: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">OldValue</span><span class="p">)</span><span class="se">`n</span><span class="s2">     To:   </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">NewValue</span><span class="p">)</span><span class="se">`n</span><span class="s2">&quot;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$text</span> <span class="p">=</span> <span class="sh">@&quot;</span>
+<span class="sh">===============================</span>
+<span class="sh">Time: </span><span class="p">$(</span><span class="nv">$data</span><span class="p">.</span><span class="n">CreationTime</span><span class="p">)</span>
+<span class="sh">Operation: </span><span class="p">$(</span><span class="nv">$data</span><span class="p">.</span><span class="n">Operation</span><span class="p">)</span>
+<span class="sh">Performed By: </span><span class="p">$(</span><span class="nv">$data</span><span class="p">.</span><span class="n">UserId</span><span class="p">)</span>
+<span class="sh">Target User: </span><span class="p">$(</span><span class="nv">$data</span><span class="p">.</span><span class="n">ObjectId</span><span class="p">)</span>
+<span class="sh">Changes:</span>
+<span class="p">$(</span><span class="nv">$changes</span> <span class="n">-join</span> <span class="s2">&quot;</span><span class="se">`n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="sh">===============================</span>
+<span class="sh">&quot;@</span>
+
+    <span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="nv">$outputPath</span> <span class="n">-Value</span> <span class="nv">$text</span>
+<span class="p">}</span>
+
+<span class="nb">Write-Output</span> <span class="s2">&quot;Audit results exported to: $outputPath&quot;</span>
 </code></pre></div>
 
 
