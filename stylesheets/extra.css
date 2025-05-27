@@ -1,4 +1,81 @@
+/* עיצוב כותרות */
+h1, h2, h3, h4, h5, h6 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #088F8F !important;
+}
+
+/* פסקאות */
+.md-typeset p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+/* קישורים */
+a {
+  color: #1976d2;
+  text-decoration: underline dotted;
+}
+
+/* קוד */
+code {
+  background-color: #f5f5f5;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: Consolas, monospace;
+}
+
+/* בלוקי קוד */
+pre code {
+  background-color: #f3f3f3;
+  display: block;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* תמונות */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px;
+  margin: 1em 0;
+}
+
+/* מסגרות מותאמות */
+.tip-box {
+  background-color: #e8f0fe;
+  border-left: 4px solid #4285f4;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 5px;
+}
+
+/* רקע כללי */
 body {
-  direction: rtl;
-  text-align: right;
+  background-color: #ffffff;  /* רקע לבן */
+}
+
+/* תוכן הדף ממורכז ברוחב נוח */
+.md-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+/* רקע תפריט צד אם קיים */
+.md-sidebar {
+  background-color: #f7f7f7;
+}
+
+/* גבול עדין סביב בלוקים */
+.md-content__inner {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
