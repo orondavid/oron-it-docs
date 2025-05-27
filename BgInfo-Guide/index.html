@@ -1696,14 +1696,27 @@
 <hr />
 <div id="cusdis_thread"
      data-host="https://cusdis.com"
-     data-app-id="b295b6ff-9366-4960-8693-4f03fd6ef8a8">
+     data-app-id="b295b6ff-9366-4960-8693-4f03fd6ef8a8"
+     data-page-id="window.location.pathname"
+     data-page-url="window.location.href"
+     data-page-title="document.title">
 </div>
 
 <script>
-  // הגדרת שפה לעברית
-  window.CUSDIS_LOCALE = 'he';
+  window.CUSDIS_LOCALE = {
+    "nickname": "שם",
+    "email": "אימייל (לא חובה)",
+    "reply": "תגובה...",
+    "submit": "שלח",
+    "loading": "טוען...",
+    "replyingTo": "מגיב ל־",
+    "cancelReply": "בטל תגובה",
+    "markdown": "Markdown",
+    "required": "שדה חובה",
+    "comments": "תגובות",
+    "loadMore": "טען עוד תגובות"
+  };
 
-  // הגדרת פרטי הדף לפני טעינת הסקריפט
   const thread = document.getElementById('cusdis_thread');
   thread.setAttribute('data-page-id', window.location.pathname);
   thread.setAttribute('data-page-url', window.location.href);
