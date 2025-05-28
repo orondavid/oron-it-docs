@@ -1690,7 +1690,7 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📬 הרשאות על תיבות דואר
+      הצגת נפח כולל של תיבת הדואר
     </span>
   </a>
   
@@ -1817,7 +1817,7 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📬 הרשאות על תיבות דואר
+      הצגת נפח כולל של תיבת הדואר
     </span>
   </a>
   
@@ -1910,8 +1910,19 @@ Set-Mailbox -Identity &quot;user@domain.com&quot; -DisplayName &quot;New Display
 # הפיכת תיבת דואר רגילה ל־Shared
 Set-Mailbox -Identity &quot;user@domain.com&quot; -Type Shared
 </code></pre>
-<h3 id="_3">📬 הרשאות על תיבות דואר</h3>
-<pre><code class="language-powershell"># צפייה בהרשאות גישה לתיבת דואר
+<h3 id="_3">הצגת נפח כולל של תיבת הדואר</h3>
+<pre><code class="language-powershell">Get-MailboxStatistics -Identity user@domain.com | 
+Select DisplayName, TotalItemSize, ItemCount, LastLogonTime
+
+### הצגת כל התיקיות והנפח שלהם
+```powershell
+Get-MailboxFolderStatistics -Identity user@domain.com |
+Select FolderPath, FolderSize |
+Sort-Object FolderSize -Descending
+
+### 📬 הרשאות על תיבות דואר
+```powershell
+# צפייה בהרשאות גישה לתיבת דואר
 Get-MailboxPermission -Identity &quot;user@domain.com&quot;
 
 # הוספת הרשאת Full Access
