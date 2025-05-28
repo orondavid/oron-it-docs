@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../squid-reverse-proxy/">
-      
-      
-        <link rel="next" href="../squid-explained/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>התקנת פרוקסי קדמי עם Squid - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך התקנת VitalPBX על שרת לינוקס - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -70,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#forward-proxy-squid" class="md-skip">
+        <a href="#vitalpbx" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -106,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת פרוקסי קדמי עם Squid
+              מדריך התקנת VitalPBX על שרת לינוקס
             
           </span>
         </div>
@@ -243,20 +239,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -272,7 +266,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות והגדרות
@@ -490,20 +484,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -519,7 +511,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             שרתי פרוקסי
@@ -553,32 +545,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת פרוקסי קדמי עם Squid
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../proxy-forward-install/" class="md-nav__link">
         
   
   
@@ -589,89 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 1: התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 2: גיבוי קובץ ההגדרות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 3: עריכת קובץ ההגדרות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 4: הפעלת השירות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 טסט מהיר:
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1704,9 +1591,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-squid" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 1: התקנת Squid
+      דרישות מוקדמות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-centos-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: התקנת CentOS 7
     </span>
   </a>
   
@@ -1715,16 +1611,16 @@
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 2: גיבוי קובץ ההגדרות
+      שלב 2: עדכון מערכת והתקנת תלות בסיסית
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-vitalpbx" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 3: עריכת קובץ ההגדרות
+      שלב 3: התקנת VitalPBX
     </span>
   </a>
   
@@ -1733,34 +1629,79 @@
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 4: הפעלת השירות
+      שלב 4: גישה לממשק הניהול
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-firewall" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)
+      שלב 5: יצירת שלוחה לבדיקה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-softphone" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח
+      שלב 6: חיבור תוכנת טלפון (Softphone)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#7-sip-trunk-019" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 טסט מהיר:
+      שלב 7: חיבור קו SIP Trunk מול ספק 019
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-inbound-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 8: הגדרת שיחות נכנסות (Inbound Route) לדוגמה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-outbound-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 9: הגדרת שיחות יוצאות (Outbound Route) לדוגמה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 10: ביצוע גיבוי והקשחת אבטחה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 11: הגדרות נוספות (טלפוניה)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיום
     </span>
   </a>
   
@@ -1782,54 +1723,178 @@
 
 
 
-<h1 id="forward-proxy-squid">התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid</h1>
-<p>מדריך זה מסביר כיצד להקים שרת פרוקסי קדמי (Forward Proxy) באמצעות Squid על מערכת Ubuntu.</p>
-<hr />
-<h2 id="1-squid">🟩 שלב 1: התקנת Squid</h2>
-<pre><code class="language-bash">sudo apt update
-sudo apt install squid -y
-</code></pre>
-<hr />
-<h2 id="2">🟩 שלב 2: גיבוי קובץ ההגדרות</h2>
-<pre><code class="language-bash">sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.backup
-</code></pre>
-<hr />
-<h2 id="3">🟩 שלב 3: עריכת קובץ ההגדרות</h2>
-<pre><code class="language-bash">sudo nano /etc/squid/squid.conf
-</code></pre>
-<p>חפש את השורה:</p>
-<pre><code>http_port 3128
-</code></pre>
-<p>ודא שהיא לא מוסתרת (ללא #).</p>
-<p>כעת הוסף/שנה את השורות הבאות:</p>
-<pre><code class="language-conf">acl localnet src 192.168.1.0/24
-http_access allow localnet
-http_access deny all
-</code></pre>
-<hr />
-<h2 id="4">🟩 שלב 4: הפעלת השירות</h2>
-<pre><code class="language-bash">sudo systemctl restart squid
-sudo systemctl enable squid
-</code></pre>
-<hr />
-<h2 id="5-firewall">🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)</h2>
-<pre><code class="language-bash">sudo ufw allow 3128/tcp
-</code></pre>
-<hr />
-<h2 id="6">🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח</h2>
-<p>במחשב שמתחבר דרך הפרוקסי:</p>
+<h1 id="vitalpbx">מדריך התקנת VitalPBX על שרת לינוקס</h1>
+<h2 id="_1">דרישות מוקדמות</h2>
 <ul>
-<li>כתובת שרת: IP של השרת</li>
-<li>פורט: 3128</li>
-<li>פרוטוקול: HTTP Proxy</li>
+<li>מחשב/שרת עם גישה לאינטרנט</li>
+<li>כתובת IP קבועה</li>
+<li>שם מתחם (לא חובה, אך מומלץ)</li>
+<li>הפצת לינוקס נתמכת: <strong>VitalPBX מבוססת על CentOS 7</strong> – לכן נשתמש בגרסה זו</li>
+</ul>
+<blockquote>
+<p>חשוב: אין להתקין VitalPBX על מערכת עם שירותים קיימים או שימושים נוספים. </p>
+</blockquote>
+<hr />
+<h2 id="1-centos-7">שלב 1: התקנת CentOS 7</h2>
+<ol>
+<li>הורד את ISO של CentOS 7:</li>
+<li>
+<p><a href="https://www.centos.org/download/">https://www.centos.org/download/</a></p>
+</li>
+<li>
+<p>התקן את CentOS 7 על השרת (מומלץ מצב Minimal Install)</p>
+</li>
+<li>
+<p>הגדר כתובת IP סטטית ב־<code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> לדוגמה:</p>
+</li>
+</ol>
+<pre><code class="language-bash">BOOTPROTO=static
+IPADDR=192.168.1.100
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+DNS1=8.8.8.8
+ONBOOT=yes
+</code></pre>
+<p>הפעל מחדש את השירות:</p>
+<pre><code class="language-bash">systemctl restart network
+</code></pre>
+<hr />
+<h2 id="2">שלב 2: עדכון מערכת והתקנת תלות בסיסית</h2>
+<pre><code class="language-bash">yum update -y
+yum install -y epel-release nano wget curl net-tools
+</code></pre>
+<hr />
+<h2 id="3-vitalpbx">שלב 3: התקנת VitalPBX</h2>
+<pre><code class="language-bash">wget https://repo.vitalpbx.org/vitalpbx/v4/installer/vitalpbx-install
+chmod +x vitalpbx-install
+./vitalpbx-install
+</code></pre>
+<p>ההתקנה תמשך מספר דקות ותתקין את כל רכיבי המערכת הדרושים (Asterisk, MariaDB, Apache ועוד).</p>
+<hr />
+<h2 id="4">שלב 4: גישה לממשק הניהול</h2>
+<p>לאחר סיום ההתקנה, פתח דפדפן וגש לכתובת ה-IP של השרת:</p>
+<pre><code>http://כתובת-שרת
+</code></pre>
+<ul>
+<li>
+<p>לדוגמה: http://192.168.1.100</p>
+</li>
+<li>
+<p>עקוב אחר אשף ההגדרות הראשוני לקביעת:</p>
+</li>
+<li>סיסמת אדמין</li>
+<li>אזור זמן</li>
+<li>פרטי רשת</li>
+<li>תצורה בסיסית למערכת</li>
 </ul>
 <hr />
-<h2 id="_1">🟢 טסט מהיר:</h2>
-<p>מהמחשב של הלקוח הרץ:</p>
-<pre><code class="language-bash">curl -x http://IP-of-proxy:3128 http://example.com
-</code></pre>
+<h2 id="5">שלב 5: יצירת שלוחה לבדיקה</h2>
+<ol>
+<li>התחבר לממשק הניהול של VitalPBX.</li>
+<li>בתפריט הצד, עבור אל <strong>PBX &gt; Extensions</strong></li>
+<li>לחץ על <strong>Add Extension</strong></li>
+<li>בחר <strong>PJSIP</strong> כטכנולוגיה</li>
+<li>מלא את השדות הבאים:</li>
+<li><strong>Extension</strong>: <code>1000</code></li>
+<li><strong>Name</strong>: <code>Test User</code></li>
+<li><strong>Secret</strong>: סיסמה חזקה (לדוגמה: <code>Test@1234</code>)</li>
+<li>יתר ההגדרות ניתן להשאיר כברירת מחדל</li>
+<li>לחץ על <strong>Save</strong> ולאחר מכן על <strong>Apply Changes</strong> בצד ימין למעלה</li>
+</ol>
 <hr />
-<p>שרת הפרוקסי שלך מוכן וניתן להשתמש בו כתחנת מעבר לגלישה/גישה לאינטרנט דרך שרת מאובטח.</p>
+<h2 id="6-softphone">שלב 6: חיבור תוכנת טלפון (Softphone)</h2>
+<p>השתמש באפליקציה כמו Zoiper או MicroSIP:</p>
+<ul>
+<li><strong>Username</strong>: 1000</li>
+<li><strong>Password</strong>: הסיסמה שהגדרת</li>
+<li><strong>Domain / Host</strong>: כתובת ה-IP של השרת (לדוגמה 192.168.1.100)</li>
+<li><strong>Transport</strong>: UDP</li>
+</ul>
+<p>לאחר החיבור, אם המערכת פעילה והשלוחה תקינה – תופיע כ־"Registered" באפליקציה.</p>
+<hr />
+<h2 id="7-sip-trunk-019">שלב 7: חיבור קו SIP Trunk מול ספק 019</h2>
+<ol>
+<li>הכן את הפרטים שקיבלת מהספק 019:</li>
+<li>שם משתמש (Username)</li>
+<li>סיסמה (Password)</li>
+<li>כתובת שרת SIP (לרוב sip.019tel.co.il)</li>
+<li>
+<p>פורט (לרוב 5060)</p>
+</li>
+<li>
+<p>גש ל־<strong>PBX &gt; External &gt; Trunks</strong></p>
+</li>
+<li>לחץ על <strong>Add Trunk</strong></li>
+<li>בחר <strong>PJSIP</strong></li>
+<li>מלא את השדות הבאים:</li>
+<li><strong>Description</strong>: <code>019 Trunk</code></li>
+<li><strong>Username</strong>: כפי שסופק</li>
+<li><strong>Password</strong>: כפי שסופק</li>
+<li><strong>SIP Server</strong>: <code>sip.019tel.co.il</code></li>
+<li><strong>SIP Port</strong>: <code>5060</code></li>
+<li><strong>Authentication</strong>: כן (Username + Password)</li>
+<li><strong>Transport</strong>: UDP</li>
+<li>לחץ על <strong>Save</strong> ולאחר מכן על <strong>Apply Changes</strong></li>
+</ol>
+<blockquote>
+<p>חשוב: ודא שפורט 5060 פתוח ב־firewall ושכתובת ה־IP הציבורית שלך רשומה אצל 019.</p>
+</blockquote>
+<hr />
+<h2 id="8-inbound-route">שלב 8: הגדרת שיחות נכנסות (Inbound Route) לדוגמה</h2>
+<ol>
+<li>עבור אל <strong>PBX &gt; Call Routing &gt; Inbound Routes</strong></li>
+<li>לחץ על <strong>Add Inbound Route</strong></li>
+<li>מלא את השדות:</li>
+<li><strong>Description</strong>: <code>019 Incoming</code></li>
+<li><strong>DID Pattern</strong>: השאר ריק או הכנס את המספר שסופק ע"י 019</li>
+<li><strong>CID Pattern</strong>: ריק</li>
+<li>תחת <strong>Destination</strong>:</li>
+<li>בחר <strong>Extensions</strong></li>
+<li>ואז בחר את השלוחה <code>1000</code></li>
+<li>לחץ <strong>Save</strong> ואחר כך <strong>Apply Changes</strong></li>
+</ol>
+<blockquote>
+<p>כעת כל שיחה נכנסת מהקו של 019 תנותב ישירות לשלוחה 1000.</p>
+</blockquote>
+<hr />
+<h2 id="9-outbound-route">שלב 9: הגדרת שיחות יוצאות (Outbound Route) לדוגמה</h2>
+<ol>
+<li>עבור אל <strong>PBX &gt; Call Routing &gt; Outbound Routes</strong></li>
+<li>לחץ על <strong>Add Outbound Route</strong></li>
+<li>מלא את השדות:</li>
+<li><strong>Description</strong>: <code>019 Outgoing</code></li>
+<li><strong>Dial Pattern</strong>: <code>0.</code> (כל מספר שמתחיל ב־0)</li>
+<li>תחת <strong>Trunk Sequence</strong>:</li>
+<li>בחר את ה־Trunk של 019 שיצרת קודם</li>
+<li>לחץ <strong>Save</strong> ואחר כך <strong>Apply Changes</strong></li>
+</ol>
+<blockquote>
+<p>כעת כל שלוחה שתחייג מספר שמתחיל ב־0, תנותב החוצה דרך ספק 019.</p>
+</blockquote>
+<hr />
+<h2 id="10">שלב 10: ביצוע גיבוי והקשחת אבטחה</h2>
+<ol>
+<li>צור snapshot אם מותקן ב־VM</li>
+<li>הגדר סיסמאות חזקות למשתמשים</li>
+<li>שנה את פורט הגישה לממשק הניהול אם נדרש (כדי להימנע מסריקות אוטומטיות)</li>
+<li>ודא שמוגדר חומת אש (<code>firewalld</code> או <code>iptables</code>) המגבילה גישה לפי IP</li>
+</ol>
+<hr />
+<h2 id="11">שלב 11: הגדרות נוספות (טלפוניה)</h2>
+<ul>
+<li>יצירת SIP Trunks נוספים</li>
+<li>יצירת תורים (Queues)</li>
+<li>הגדרת הקלטות, IVR ועוד</li>
+</ul>
+<hr />
+<h2 id="_2">סיום</h2>
+<p>המערכת מוכנה לשימוש. מומלץ להמשיך בהדרכות מתוך האתר הרשמי של VitalPBX:</p>
+<ul>
+<li><a href="https://vitalpbx.org">https://vitalpbx.org</a></li>
+<li><a href="https://github.com/VitalPBX">https://github.com/VitalPBX</a></li>
+</ul>
+<hr />
+<p><em>Oron IT Docs</em></p>
 
 
 
