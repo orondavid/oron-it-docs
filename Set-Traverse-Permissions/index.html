@@ -1856,10 +1856,10 @@
 </ul>
 <hr />
 <h2 id="_4">קוד הסקריפט</h2>
-<pre><code class="language-powershell"># הגדרת הקבוצה
+<pre><code class="language-powershell"># Define the AD group
 $group = &quot;company.local\FinanceTeam&quot;
 
-# הגדרת נתיב התיקיות בדרך עד לתיקיה '2024' (ללא התיקיה עצמה)
+# Define the folder path chain (excluding the target folder itself)
 $folders = @(
     &quot;D:\Departments&quot;,
     &quot;D:\Departments\Finance&quot;,
@@ -1867,12 +1867,12 @@ $folders = @(
 )
 
 foreach ($folder in $folders) {
-    Write-Host &quot;`nמטפל בתיקיה: $folder&quot;
+    Write-Host &quot;`nProcessing folder: $folder&quot;
 
-    # קבלת ההרשאות הקיימות
+    # Get existing ACL
     $acl = Get-Acl -Path $folder
 
-    # יצירת כלל הרשאה מסוג Traverse בלבד
+    # Create a Traverse-only access rule
     $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule(
         $group,
         &quot;Traverse&quot;,
@@ -1881,7 +1881,7 @@ foreach ($folder in $folders) {
         &quot;Allow&quot;
     )
 
-    # בדיקה אם ההרשאה כבר קיימת
+    # Check if the permission already exists
     $existing = $acl.Access | Where-Object {
         $_.IdentityReference -eq $group -and $_.FileSystemRights -eq &quot;Traverse&quot;
     }
@@ -1889,16 +1889,16 @@ foreach ($folder in $folders) {
     if (-not $existing) {
         $acl.AddAccessRule($accessRule)
         Set-Acl -Path $folder -AclObject $acl
-        Write-Host &quot;✓ נוספה הרשאת Traverse לקבוצה&quot;
+        Write-Host &quot;✓ Traverse permission added.&quot;
     } else {
-        Write-Host &quot;✓ הרשאת Traverse כבר קיימת, אין צורך לעדכן&quot;
+        Write-Host &quot;✓ Traverse permission already exists. No changes made.&quot;
     }
 }
 
-Write-Host &quot;`The script completed successfully. The group can now access the folder.&quot;
+Write-Host &quot;`nScript completed successfully. The group can now traverse to the target folder.&quot;
 
-# Pause until user confirmation
-Read-Host &quot;`The script has finished. Press Enter to exit&quot;
+# Pause until user confirms
+Read-Host &quot;`nScript finished. Press Enter to exit&quot;
 </code></pre>
 <hr />
 <h2 id="_5">הנחיות הרצה</h2>
