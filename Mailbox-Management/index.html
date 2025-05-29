@@ -1681,7 +1681,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      🔀 הפניית דוא"ל למשתמש אחר
+      👤 בדיקה אם יש הפניות לתיבת דואר אחרת
     </span>
   </a>
   
@@ -1690,7 +1690,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      ❌ ביטול הפניה
+      🔀 הפניית דוא"ל למשתמש אחר
     </span>
   </a>
   
@@ -1698,6 +1698,15 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ ביטול הפניה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       🔐 הרשאות על תיבת דואר
     </span>
@@ -1748,7 +1757,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       👥 בדיקת חברות בקבוצות תפוצה
     </span>
@@ -1757,7 +1766,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       📤 הפעלת ארכיון לתיבת דואר
     </span>
@@ -1766,7 +1775,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       🛑 השבתת הארכיון
     </span>
@@ -1775,7 +1784,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       📄 סיכום
     </span>
@@ -2048,7 +2057,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      🔀 הפניית דוא"ל למשתמש אחר
+      👤 בדיקה אם יש הפניות לתיבת דואר אחרת
     </span>
   </a>
   
@@ -2057,7 +2066,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      ❌ ביטול הפניה
+      🔀 הפניית דוא"ל למשתמש אחר
     </span>
   </a>
   
@@ -2065,6 +2074,15 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ ביטול הפניה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       🔐 הרשאות על תיבת דואר
     </span>
@@ -2115,7 +2133,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       👥 בדיקת חברות בקבוצות תפוצה
     </span>
@@ -2124,7 +2142,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       📤 הפעלת ארכיון לתיבת דואר
     </span>
@@ -2133,7 +2151,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       🛑 השבתת הארכיון
     </span>
@@ -2142,7 +2160,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       📄 סיכום
     </span>
@@ -2185,15 +2203,19 @@
 <pre><code class="language-powershell">Set-Mailbox -Identity user@domain.com -DisplayName &quot;שם תצוגה חדש&quot;
 </code></pre>
 <hr />
-<h2 id="_3">🔀 הפניית דוא"ל למשתמש אחר</h2>
+<h2 id="_3">👤 בדיקה אם יש הפניות לתיבת דואר אחרת</h2>
+<pre><code class="language-powershell">Get-Mailbox -Identity user@domain.com | Select DisplayName, ForwardingSmtpAddress, DeliverToMailboxAndForward
+</code></pre>
+<hr />
+<h2 id="_4">🔀 הפניית דוא"ל למשתמש אחר</h2>
 <pre><code class="language-powershell">Set-Mailbox -Identity user@domain.com -ForwardingSmtpAddress forward@domain.com
 </code></pre>
 <hr />
-<h2 id="_4">❌ ביטול הפניה</h2>
+<h2 id="_5">❌ ביטול הפניה</h2>
 <pre><code class="language-powershell">Set-Mailbox -Identity user@domain.com -ForwardingSmtpAddress $null
 </code></pre>
 <hr />
-<h2 id="_5">🔐 הרשאות על תיבת דואר</h2>
+<h2 id="_6">🔐 הרשאות על תיבת דואר</h2>
 <h3 id="full-access">הענקת גישת Full Access</h3>
 <pre><code class="language-powershell">Add-MailboxPermission -Identity user@domain.com -User anotheruser@domain.com -AccessRights FullAccess
 </code></pre>
@@ -2208,21 +2230,21 @@
 <pre><code class="language-powershell">Get-MailboxPermission -Identity user@domain.com | Where-Object { $_.AccessRights -eq &quot;FullAccess&quot; -and $_.IsInherited -eq $false }
 </code></pre>
 <hr />
-<h2 id="_6">👥 בדיקת חברות בקבוצות תפוצה</h2>
+<h2 id="_7">👥 בדיקת חברות בקבוצות תפוצה</h2>
 <pre><code class="language-powershell">Get-DistributionGroup | Where-Object {
     (Get-DistributionGroupMember $_.Identity | Where-Object {$_.PrimarySmtpAddress -eq &quot;user@domain.com&quot;})
 }
 </code></pre>
 <hr />
-<h2 id="_7">📤 הפעלת ארכיון לתיבת דואר</h2>
+<h2 id="_8">📤 הפעלת ארכיון לתיבת דואר</h2>
 <pre><code class="language-powershell">Enable-Mailbox -Identity user@domain.com -Archive
 </code></pre>
 <hr />
-<h2 id="_8">🛑 השבתת הארכיון</h2>
+<h2 id="_9">🛑 השבתת הארכיון</h2>
 <pre><code class="language-powershell">Disable-Mailbox -Identity user@domain.com -Archive
 </code></pre>
 <hr />
-<h2 id="_9">📄 סיכום</h2>
+<h2 id="_10">📄 סיכום</h2>
 <p>הפקודות במדריך זה משמשות לניהול תיבות דואר בארגון כולל הרשאות, נפח, הפניות, כתובות דוא"ל ועוד. שימוש נכון בהן מאפשר ניהול יעיל ומדויק של משאבי הדוא"ל בארגון.</p>
 
 
