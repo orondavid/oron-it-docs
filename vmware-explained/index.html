@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../web-server-explained/">
+        <link rel="prev" href="../wireshark-guide/">
       
       
-        <link rel="next" href="../proxy-forward-explained/">
+        <link rel="next" href="../linux-explained/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>הסבר לפקודות Ubuntu - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>הסבר להתקנת Vmware - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu-server" class="md-skip">
+        <a href="#vmware-player" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר לפקודות Ubuntu
+              הסבר להתקנת Vmware
             
           </span>
         </div>
@@ -605,10 +605,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../vmware-explained/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    הסבר להתקנת Vmware
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -619,6 +641,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vmware-player_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 למה לבחור ב־VMware Player?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 הסבר על הגדרות VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmware-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 VMware Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ דרישות מערכת
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -697,32 +775,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר לפקודות Ubuntu
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ubuntu-explained/" class="md-nav__link">
         
   
   
@@ -733,71 +789,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ip-a" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 ip a
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-update-sudo-apt-upgrade-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt update &amp;&amp; sudo apt upgrade -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-install-openssh-server-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt install openssh-server -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-systemctl-status-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo systemctl status ssh
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      הערות
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1066,36 +1057,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ip-a" class="md-nav__link">
+  <a href="#vmware-player_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 ip a
+      🔹 למה לבחור ב־VMware Player?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sudo-apt-update-sudo-apt-upgrade-y" class="md-nav__link">
+  <a href="#vm" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 sudo apt update &amp;&amp; sudo apt upgrade -y
+      🔹 הסבר על הגדרות VM
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sudo-apt-install-openssh-server-y" class="md-nav__link">
+  <a href="#vmware-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 sudo apt install openssh-server -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-systemctl-status-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo systemctl status ssh
+      🔹 VMware Tools
     </span>
   </a>
   
@@ -1104,7 +1086,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      הערות
+      🛡️ דרישות מערכת
     </span>
   </a>
   
@@ -1126,39 +1108,54 @@
 
 
 
-<h1 id="ubuntu-server">הסבר לפקודות התקנת Ubuntu Server</h1>
-<p>להלן הסברים לפקודות שבהן נעשה שימוש במדריך:</p>
+<h1 id="vmware-player">הסבר לפעולות במדריך התקנת VMware Player</h1>
 <hr />
-<h2 id="ip-a">🔹 <code>ip a</code></h2>
+<h2 id="vmware-player_1">🔹 למה לבחור ב־VMware Player?</h2>
 <ul>
-<li>מציג את כתובות ה-IP של המחשב</li>
-<li>חשוב כדי לדעת מה הכתובת להתחברות ב־SSH</li>
+<li>מאפשר ליצור ולהריץ מכונות וירטואליות בקלות</li>
+<li>קל לתפעול – מתאים ללמידה, בדיקות ולסימולציה</li>
+<li>הגרסה החינמית מספיקה לרוב השימושים האישיים</li>
 </ul>
 <hr />
-<h2 id="sudo-apt-update-sudo-apt-upgrade-y">🔹 <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></h2>
+<h2 id="vm">🔹 הסבר על הגדרות VM</h2>
 <ul>
-<li><code>sudo</code> – ביצוע כ־root</li>
-<li><code>apt update</code> – רענון רשימת החבילות</li>
-<li><code>apt upgrade -y</code> – שדרוג אוטומטי של כל החבילות</li>
+<li><strong>ISO Image</strong> – קובץ התקנה של מערכת הפעלה (למשל Ubuntu)</li>
+<li><strong>Virtual Disk</strong> – קובץ שמכיל את כל הדיסק של המכונה הווירטואלית</li>
+<li><strong>RAM</strong> – מומלץ להקצות לפחות 2GB ללינוקס ו־4GB לחלונות</li>
+<li>
+<p><strong>Networking</strong> – ניתן לבחור בין NAT, Bridge ו־Host-only:</p>
+</li>
+<li>
+<p><strong>Bridge</strong> – IP כמו שאר הרשת (מומלץ לבדיקה מול שרתים)</p>
+<p>המכונה מקבלת IP כמו כל מחשב אחר ברשת</p>
+<p>מתחברת ישירות לראוטר/רשת הפיזית</p>
+</li>
+</ul>
+<p>✅ מאפשר גישה ישירה אל ומה־VM (כמו שרת ברשת)</p>
+<ul>
+<li>
+<p><strong>NAT</strong> – המכונה מקבלת כתובת פרטית ויוצאת דרך המארח</p>
+</li>
+<li>
+<p><strong>Host-only</strong> – תקשורת רק מול מחשב המארח</p>
+</li>
 </ul>
 <hr />
-<h2 id="sudo-apt-install-openssh-server-y">🔹 <code>sudo apt install openssh-server -y</code></h2>
+<h2 id="vmware-tools">🔹 VMware Tools</h2>
 <ul>
-<li>מתקין את שרת SSH</li>
-<li>מאפשר התחברות מרחוק דרך SSH</li>
+<li>התקנתם מוסיפה:</li>
+<li>גרירה ושחרור בין מערכת מארחת לאורחת</li>
+<li>שיתוף תיקיות</li>
+<li>רזולוציית מסך דינמית</li>
 </ul>
 <hr />
-<h2 id="sudo-systemctl-status-ssh">🔹 <code>sudo systemctl status ssh</code></h2>
+<h2 id="_1">🛡️ דרישות מערכת</h2>
 <ul>
-<li>מציג את מצב שירות SSH</li>
-<li>האם הוא רץ? מופעל באתחול? שגיאות?</li>
+<li>Windows 10/11 או Linux עם תמיכה ב־Virtualization</li>
+<li>לפחות 8GB RAM ו־20GB דיסק פנוי</li>
 </ul>
 <hr />
-<h2 id="_1">הערות</h2>
-<ul>
-<li>כל הפקודות נכתבות בטרמינל לאחר התחברות</li>
-<li>כל פקודה שמתחילה ב־<code>sudo</code> דורשת סיסמת משתמש</li>
-</ul>
+<p>VMware הוא פתרון חזק וגמיש לניהול מערכות בסביבה וירטואלית.</p>
 
 
 

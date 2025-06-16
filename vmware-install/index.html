@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../web-server-explained/">
+        <link rel="prev" href="../proxy-forward-install/">
       
       
-        <link rel="next" href="../proxy-forward-explained/">
+        <link rel="next" href="../vmware-esxi-8-create-vm/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>הסבר לפקודות Ubuntu - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך התקנה Vmware - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu-server" class="md-skip">
+        <a href="#vmware-workstation-player" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר לפקודות Ubuntu
+              מדריך התקנה Vmware
             
           </span>
         </div>
@@ -245,18 +245,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -272,7 +274,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -375,10 +377,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../vmware-install/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    מדריך התקנה Vmware
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -389,6 +413,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 1: הורדה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 2: התקנה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 3: יצירת מכונה וירטואלית חדשה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 4: התקנת מערכת ההפעלה בתוך ה־VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vmware-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 5: התקנת VMware Tools (מומלץ)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 טיפים
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -519,20 +617,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -548,7 +644,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -697,32 +793,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר לפקודות Ubuntu
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ubuntu-explained/" class="md-nav__link">
         
   
   
@@ -733,71 +807,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ip-a" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 ip a
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-update-sudo-apt-upgrade-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt update &amp;&amp; sudo apt upgrade -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-apt-install-openssh-server-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo apt install openssh-server -y
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sudo-systemctl-status-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 sudo systemctl status ssh
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      הערות
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1066,36 +1075,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ip-a" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 ip a
+      🟢 שלב 1: הורדה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sudo-apt-update-sudo-apt-upgrade-y" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 sudo apt update &amp;&amp; sudo apt upgrade -y
+      🟢 שלב 2: התקנה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sudo-apt-install-openssh-server-y" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 sudo apt install openssh-server -y
+      🟢 שלב 3: יצירת מכונה וירטואלית חדשה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sudo-systemctl-status-ssh" class="md-nav__link">
+  <a href="#4-vm" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 sudo systemctl status ssh
+      🟢 שלב 4: התקנת מערכת ההפעלה בתוך ה־VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vmware-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 שלב 5: התקנת VMware Tools (מומלץ)
     </span>
   </a>
   
@@ -1104,7 +1122,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      הערות
+      💡 טיפים
     </span>
   </a>
   
@@ -1126,38 +1144,57 @@
 
 
 
-<h1 id="ubuntu-server">הסבר לפקודות התקנת Ubuntu Server</h1>
-<p>להלן הסברים לפקודות שבהן נעשה שימוש במדריך:</p>
+<h1 id="vmware-workstation-player">מדריך התקנת VMware Workstation Player</h1>
+<p>VMware Workstation Player הוא פתרון קל ונוח להרצת מכונות וירטואליות על תחנות עבודה.</p>
 <hr />
-<h2 id="ip-a">🔹 <code>ip a</code></h2>
+<h2 id="1">🟢 שלב 1: הורדה</h2>
 <ul>
-<li>מציג את כתובות ה-IP של המחשב</li>
-<li>חשוב כדי לדעת מה הכתובת להתחברות ב־SSH</li>
+<li>
+<p>עבור לאתר הרשמי:<br />
+🔗 https://www.vmware.com/products/workstation-player.html</p>
+</li>
+<li>
+<p>לחץ על <strong>Download for Windows/Linux</strong></p>
+</li>
+<li>בחר את הגרסה החינמית לשימוש אישי (VMware Workstation Player)</li>
 </ul>
 <hr />
-<h2 id="sudo-apt-update-sudo-apt-upgrade-y">🔹 <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code></h2>
+<h2 id="2">🟢 שלב 2: התקנה</h2>
 <ul>
-<li><code>sudo</code> – ביצוע כ־root</li>
-<li><code>apt update</code> – רענון רשימת החבילות</li>
-<li><code>apt upgrade -y</code> – שדרוג אוטומטי של כל החבילות</li>
+<li>הרץ את קובץ ההתקנה</li>
+<li>אשר את תנאי השימוש</li>
+<li>בחר <strong>ללא רישיון (Use free for non-commercial use)</strong></li>
+<li>לחץ Next עד לסיום</li>
 </ul>
 <hr />
-<h2 id="sudo-apt-install-openssh-server-y">🔹 <code>sudo apt install openssh-server -y</code></h2>
+<h2 id="3">🟢 שלב 3: יצירת מכונה וירטואלית חדשה</h2>
+<ol>
+<li>פתח את VMware Player</li>
+<li>לחץ על <strong>Create a New Virtual Machine</strong></li>
+<li>בחר <strong>Installer disc image (ISO)</strong> – והצב קובץ ISO (למשל Ubuntu)</li>
+<li>בחר שם משתמש, סיסמה, שם מכונה</li>
+<li>הגדר את גודל הדיסק הווירטואלי (למשל 20GB)</li>
+<li>הגדר את הזיכרון (RAM) ומספר ליבות מעבד</li>
+<li>אשר והפעל</li>
+</ol>
+<hr />
+<h2 id="4-vm">🟢 שלב 4: התקנת מערכת ההפעלה בתוך ה־VM</h2>
 <ul>
-<li>מתקין את שרת SSH</li>
-<li>מאפשר התחברות מרחוק דרך SSH</li>
+<li>בצע את ההתקנה כמו על מחשב רגיל</li>
+<li>בסיום ההתקנה, ה־VM תאתחל למערכת ההפעלה החדשה</li>
 </ul>
 <hr />
-<h2 id="sudo-systemctl-status-ssh">🔹 <code>sudo systemctl status ssh</code></h2>
+<h2 id="5-vmware-tools">🟢 שלב 5: התקנת VMware Tools (מומלץ)</h2>
 <ul>
-<li>מציג את מצב שירות SSH</li>
-<li>האם הוא רץ? מופעל באתחול? שגיאות?</li>
+<li>פתח את התפריט: <strong>Player &gt; Manage &gt; Install VMware Tools</strong></li>
+<li>בתוך המערכת תופיע דיסק – פתח אותו והתקן</li>
 </ul>
 <hr />
-<h2 id="_1">הערות</h2>
+<h2 id="_1">💡 טיפים</h2>
 <ul>
-<li>כל הפקודות נכתבות בטרמינל לאחר התחברות</li>
-<li>כל פקודה שמתחילה ב־<code>sudo</code> דורשת סיסמת משתמש</li>
+<li>תוכל להריץ מספר מכונות במקביל – תלוי במשאבים</li>
+<li>הגדר Bridge Networking כדי לאפשר למכונה כתובת IP כמו כל מחשב ברשת</li>
+<li>תוכל לשכפל מכונות קיימות (Clone) או ליצור Snapshot בגרסה Pro</li>
 </ul>
 
 
