@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../aad-broker-troubleshooting/">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../sysinternals-tools/">
+        <link rel="next" href="../ubuntu-install/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -245,18 +245,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -272,12 +274,206 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    secure-vpn-pfsense-2fa
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    secure-vpn-pfsense-2fa
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 מטרת המדריך
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרישות מקדימות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-active-directory-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: הגדרת חיבור ל־Active Directory (LDAP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-freeradius-totp" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: התקנת FreeRADIUS והפעלת תמיכה ב־TOTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 2: התקנת FreeRADIUS והפעלת תמיכה ב־TOTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#freeradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרות ב־FreeRADIUS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-openvpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: הגדרת שרת OpenVPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pfsense-client-freeradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: הגדרת pfSense כ־Client ב־FreeRADIUS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: הגדרת חומת אש (Firewall)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6: ייצוא לקוח VPN והפצת קבצים למשתמשים
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 6: ייצוא לקוח VPN והפצת קבצים למשתמשים">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📲 הפצת למשתמש הקצה:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 7: בדיקה ואימות חיבור
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      טיפים ואבטחה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
             
               
                 
@@ -519,20 +715,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -548,206 +742,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    secure-vpn-pfsense-2fa
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    secure-vpn-pfsense-2fa
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 מטרת המדריך
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      דרישות מקדימות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-active-directory-ldap" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: הגדרת חיבור ל־Active Directory (LDAP)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-freeradius-totp" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת FreeRADIUS והפעלת תמיכה ב־TOTP
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="שלב 2: התקנת FreeRADIUS והפעלת תמיכה ב־TOTP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#freeradius" class="md-nav__link">
-    <span class="md-ellipsis">
-      הגדרות ב־FreeRADIUS:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-openvpn" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: הגדרת שרת OpenVPN
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-pfsense-client-freeradius" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: הגדרת pfSense כ־Client ב־FreeRADIUS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5: הגדרת חומת אש (Firewall)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-vpn" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6: ייצוא לקוח VPN והפצת קבצים למשתמשים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="שלב 6: ייצוא לקוח VPN והפצת קבצים למשתמשים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📲 הפצת למשתמש הקצה:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 7: בדיקה ואימות חיבור
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      טיפים ואבטחה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיום
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
             
               
                 
