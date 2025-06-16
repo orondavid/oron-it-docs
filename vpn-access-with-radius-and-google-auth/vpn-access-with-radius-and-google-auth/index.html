@@ -9,25 +9,21 @@
       
       
       
-        <link rel="prev" href="../squid-reverse-proxy/">
       
       
-        <link rel="next" href="../vmware-install/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך להתקנת VPN ב־pfSense עם חיבור ל־Active Directory ואימות MFA של Google (2FA) - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#forward-proxy-squid" class="md-skip">
+        <a href="#vpn-pfsense-active-directory-mfa-google-2fa" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -88,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
-    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href="../.." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid
+              מדריך להתקנת VPN ב־pfSense עם חיבור ל־Active Directory ואימות MFA של Google (2FA)
             
           </span>
         </div>
@@ -186,7 +182,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href="../.." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -204,7 +200,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -226,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -245,20 +241,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -274,7 +268,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -288,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu-install/" class="md-nav__link">
+      <a href="../../ubuntu-install/" class="md-nav__link">
         
   
   
@@ -311,7 +305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-server-ubuntu/" class="md-nav__link">
+      <a href="../../web-server-ubuntu/" class="md-nav__link">
         
   
   
@@ -334,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../squid-reverse-proxy/" class="md-nav__link">
+      <a href="../../squid-reverse-proxy/" class="md-nav__link">
         
   
   
@@ -354,32 +348,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../proxy-forward-install/" class="md-nav__link">
         
   
   
@@ -390,89 +362,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 1: התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 2: גיבוי קובץ ההגדרות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 3: עריכת קובץ ההגדרות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 4: הפעלת השירות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 טסט מהיר:
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -485,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vmware-install/" class="md-nav__link">
+      <a href="../../vmware-install/" class="md-nav__link">
         
   
   
@@ -508,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vmware-esxi-8-create-vm/" class="md-nav__link">
+      <a href="../../vmware-esxi-8-create-vm/" class="md-nav__link">
         
   
   
@@ -531,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows-firewall-guide/" class="md-nav__link">
+      <a href="../../windows-firewall-guide/" class="md-nav__link">
         
   
   
@@ -599,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aad-broker-troubleshooting/" class="md-nav__link">
+      <a href="../../aad-broker-troubleshooting/" class="md-nav__link">
         
   
   
@@ -667,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpn-access-with-radius-and-google-auth/index.md" class="md-nav__link">
+      <a href="../index.md" class="md-nav__link">
         
   
   
@@ -690,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sysinternals-tools/" class="md-nav__link">
+      <a href="../../sysinternals-tools/" class="md-nav__link">
         
   
   
@@ -713,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wireshark-guide/" class="md-nav__link">
+      <a href="../../wireshark-guide/" class="md-nav__link">
         
   
   
@@ -736,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vmware-explained/" class="md-nav__link">
+      <a href="../../vmware-explained/" class="md-nav__link">
         
   
   
@@ -759,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux-explained/" class="md-nav__link">
+      <a href="../../linux-explained/" class="md-nav__link">
         
   
   
@@ -782,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../squid-explained/" class="md-nav__link">
+      <a href="../../squid-explained/" class="md-nav__link">
         
   
   
@@ -805,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../web-server-explained/" class="md-nav__link">
+      <a href="../../web-server-explained/" class="md-nav__link">
         
   
   
@@ -828,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu-explained/" class="md-nav__link">
+      <a href="../../ubuntu-explained/" class="md-nav__link">
         
   
   
@@ -851,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxy-forward-explained/" class="md-nav__link">
+      <a href="../../proxy-forward-explained/" class="md-nav__link">
         
   
   
@@ -874,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vim-guide/" class="md-nav__link">
+      <a href="../../vim-guide/" class="md-nav__link">
         
   
   
@@ -897,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nano-guide/" class="md-nav__link">
+      <a href="../../nano-guide/" class="md-nav__link">
         
   
   
@@ -965,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../it-scripts/" class="md-nav__link">
+      <a href="../../it-scripts/" class="md-nav__link">
         
   
   
@@ -988,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows-maintenance/" class="md-nav__link">
+      <a href="../../windows-maintenance/" class="md-nav__link">
         
   
   
@@ -1011,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WPA_Boot_Analysis_Guide/" class="md-nav__link">
+      <a href="../../WPA_Boot_Analysis_Guide/" class="md-nav__link">
         
   
   
@@ -1034,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../NK2_to_Outlook_Contacts/" class="md-nav__link">
+      <a href="../../NK2_to_Outlook_Contacts/" class="md-nav__link">
         
   
   
@@ -1057,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../portable-tools/" class="md-nav__link">
+      <a href="../../portable-tools/" class="md-nav__link">
         
   
   
@@ -1107,36 +996,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-squid" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 1: התקנת Squid
+      🎯 מטרת המדריך
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 2: גיבוי קובץ ההגדרות
+      דרישות מקדימות
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#1-active-directory-ldap" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 3: עריכת קובץ ההגדרות
+      שלב 1: הגדרת חיבור ל־Active Directory (LDAP)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#2-freeradius-totp" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 4: הפעלת השירות
+      שלב 2: התקנת FreeRADIUS והפעלת תמיכה ב־TOTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 2: התקנת FreeRADIUS והפעלת תמיכה ב־TOTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#freeradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרות ב־FreeRADIUS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-openvpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: הגדרת שרת OpenVPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pfsense-client-freeradius" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: הגדרת pfSense כ־Client ב־FreeRADIUS
     </span>
   </a>
   
@@ -1145,25 +1067,58 @@
         <li class="md-nav__item">
   <a href="#5-firewall" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)
+      שלב 5: הגדרת חומת אש (Firewall)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-vpn" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח
+      שלב 6: ייצוא לקוח VPN והפצת קבצים למשתמשים
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 6: ייצוא לקוח VPN והפצת קבצים למשתמשים">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📲 הפצת למשתמש הקצה:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 7: בדיקה ואימות חיבור
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 טסט מהיר:
+      טיפים ואבטחה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיום
     </span>
   </a>
   
@@ -1185,54 +1140,123 @@
 
 
 
-<h1 id="forward-proxy-squid">התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid</h1>
-<p>מדריך זה מסביר כיצד להקים שרת פרוקסי קדמי (Forward Proxy) באמצעות Squid על מערכת Ubuntu.</p>
+<h1 id="vpn-pfsense-active-directory-mfa-google-2fa">מדריך להתקנת VPN ב־pfSense עם חיבור ל־Active Directory ואימות MFA של Google (2FA)</h1>
+<h2 id="_1">🎯 מטרת המדריך</h2>
+<p>להגדיר חיבור VPN מאובטח ב־pfSense עם אימות כפול (2FA) באמצעות Active Directory ו־Google Authenticator, כולל הגדרות צד שרת וצד לקוח.</p>
 <hr />
-<h2 id="1-squid">🟩 שלב 1: התקנת Squid</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>squid<span class="w"> </span>-y
-</code></pre></div>
-<hr />
-<h2 id="2">🟩 שלב 2: גיבוי קובץ ההגדרות</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/squid/squid.conf<span class="w"> </span>/etc/squid/squid.conf.backup
-</code></pre></div>
-<hr />
-<h2 id="3">🟩 שלב 3: עריכת קובץ ההגדרות</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/squid.conf
-</code></pre></div>
-<p>חפש את השורה:</p>
-<div class="highlight"><pre><span></span><code>http_port 3128
-</code></pre></div>
-<p>ודא שהיא לא מוסתרת (ללא #).</p>
-<p>כעת הוסף/שנה את השורות הבאות:</p>
-<div class="highlight"><pre><span></span><code>acl localnet src 192.168.1.0/24
-http_access allow localnet
-http_access deny all
-</code></pre></div>
-<hr />
-<h2 id="4">🟩 שלב 4: הפעלת השירות</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>squid
-sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>squid
-</code></pre></div>
-<hr />
-<h2 id="5-firewall">🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3128</span>/tcp
-</code></pre></div>
-<hr />
-<h2 id="6">🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח</h2>
-<p>במחשב שמתחבר דרך הפרוקסי:</p>
+<h2 id="_2">דרישות מקדימות</h2>
 <ul>
-<li>כתובת שרת: IP של השרת</li>
-<li>פורט: 3128</li>
-<li>פרוטוקול: HTTP Proxy</li>
+<li>pfSense מותקן ופעיל עם חיבור לאינטרנט</li>
+<li>שרת Active Directory פעיל (Domain Controller)</li>
+<li>שירות DNS פנימי פעיל עבור pfSense</li>
+<li>טלפון נייד עם אפליקציית Google Authenticator או כל TOTP אחר</li>
+<li>חבילת <code>openvpn-client-export</code> מותקנת ב־pfSense</li>
 </ul>
 <hr />
-<h2 id="_1">🟢 טסט מהיר:</h2>
-<p>מהמחשב של הלקוח הרץ:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-x<span class="w"> </span>http://IP-of-proxy:3128<span class="w"> </span>http://example.com
-</code></pre></div>
+<h2 id="1-active-directory-ldap">שלב 1: הגדרת חיבור ל־Active Directory (LDAP)</h2>
+<ol>
+<li>עבור ל־<strong>System &gt; User Manager &gt; Authentication Servers</strong>.</li>
+<li>לחץ <strong>Add</strong>.</li>
+<li>מלא:</li>
+<li><strong>Descriptive name</strong>: AD</li>
+<li><strong>Type</strong>: LDAP</li>
+<li><strong>Hostname</strong>: כתובת ה־Domain Controller (לדוגמה <code>dc.example.local</code>)</li>
+<li><strong>Port</strong>: 389 או 636 (אם עם SSL)</li>
+<li><strong>Transport</strong>: TCP - Standard או SSL</li>
+<li><strong>Base DN</strong>: לדוגמה <code>DC=example,DC=local</code></li>
+<li><strong>Bind credentials</strong>: משתמש עם הרשאות קריאה</li>
+<li><strong>Authentication Containers</strong>: <code>CN=Users,DC=example,DC=local</code></li>
+<li>לחץ <strong>Save and Test</strong> כדי לוודא התחברות מוצלחת.</li>
+</ol>
 <hr />
-<p>שרת הפרוקסי שלך מוכן וניתן להשתמש בו כתחנת מעבר לגלישה/גישה לאינטרנט דרך שרת מאובטח.</p>
+<h2 id="2-freeradius-totp">שלב 2: התקנת FreeRADIUS והפעלת תמיכה ב־TOTP</h2>
+<ol>
+<li>עבור ל־<strong>System &gt; Package Manager &gt; Available Packages</strong>.</li>
+<li>התקן את <strong>freeradius3</strong>.</li>
+</ol>
+<h3 id="freeradius">הגדרות ב־FreeRADIUS:</h3>
+<ol>
+<li>עבור ל־<strong>Services &gt; FreeRADIUS &gt; Settings</strong>:</li>
+<li>סמן <strong>Enable Mobile One-Time Password Support</strong></li>
+<li>בחר Hash: <code>SHA256</code></li>
+<li>לשונית <strong>Interfaces</strong>:</li>
+<li>Listener על פורט 1812/1813</li>
+<li>לשונית <strong>Clients</strong>:</li>
+<li>הוסף את pfSense כ־Client</li>
+<li>הזן Shared Secret חזק</li>
+<li>לשונית <strong>Users</strong>:</li>
+<li>צור משתמשי בדיקה עם TOTP (לדוגמה: <code>vpnuser Cleartext-Password := "123456", Google-Authenticator := "yes"</code>)</li>
+<li>בצד שמאל יופיע QR סרוק עם Google Authenticator</li>
+</ol>
+<hr />
+<h2 id="3-openvpn">שלב 3: הגדרת שרת OpenVPN</h2>
+<ol>
+<li>עבור ל־<strong>VPN &gt; OpenVPN &gt; Wizards</strong>.</li>
+<li>צור CA חדשה ותעודת שרת.</li>
+<li>הגדר:</li>
+<li><strong>Backend for authentication</strong>: RADIUS</li>
+<li><strong>Tunnel Network</strong>: לדוגמה <code>10.8.0.0/24</code></li>
+<li><strong>Local Network</strong>: הרשת הפנימית (לדוגמה <code>192.168.1.0/24</code>)</li>
+<li><strong>Redirect Gateway</strong>: לפי הצורך</li>
+<li><strong>DNS Servers</strong>: 8.8.8.8 (או פנימי)</li>
+<li><strong>Compression</strong>: off</li>
+<li><strong>Port</strong>: 1194 UDP (ברירת מחדל)</li>
+<li>סיים את ההגדרה ושמור.</li>
+</ol>
+<hr />
+<h2 id="4-pfsense-client-freeradius">שלב 4: הגדרת pfSense כ־Client ב־FreeRADIUS</h2>
+<ol>
+<li>עבור ל־<strong>System &gt; User Manager &gt; Authentication Servers</strong>.</li>
+<li>הוסף שרת חדש:</li>
+<li><strong>Type</strong>: RADIUS</li>
+<li><strong>Hostname</strong>: <code>127.0.0.1</code></li>
+<li><strong>Shared secret</strong>: אותו Secret שהוזן ב־FreeRADIUS</li>
+<li><strong>Authentication port</strong>: 1812</li>
+<li><strong>Protocol</strong>: PAP (הכרחי ל־OTP)</li>
+</ol>
+<hr />
+<h2 id="5-firewall">שלב 5: הגדרת חומת אש (Firewall)</h2>
+<ol>
+<li>עבור ל־<strong>Firewall &gt; Rules &gt; WAN</strong>.</li>
+<li>פתח פורט 1194 UDP אל כתובת ה־pfSense.</li>
+</ol>
+<hr />
+<h2 id="6-vpn">שלב 6: ייצוא לקוח VPN והפצת קבצים למשתמשים</h2>
+<ol>
+<li>עבור ל־<strong>VPN &gt; OpenVPN &gt; Client Export</strong>.</li>
+<li>הורד את קובץ ההתקנה:</li>
+<li>בחר מערכת הפעלה</li>
+<li>הורד את גרסת ה־installer או קובץ config</li>
+</ol>
+<h3 id="_3">📲 הפצת למשתמש הקצה:</h3>
+<ul>
+<li>יש לשלוח למשתמש את:</li>
+<li>קובץ ההתקנה או הקונפיגורציה (ולוודא הצפנה בהעברה)</li>
+<li>קוד QR מ־FreeRADIUS לסריקה באפליקציית Google Authenticator</li>
+<li>הסבר: בעת כניסה, המשתמש יזין את הסיסמה הרגילה שלו ואחריה את קוד ה־OTP (לדוגמה: <code>MyPassword123456</code>)</li>
+</ul>
+<hr />
+<h2 id="7">שלב 7: בדיקה ואימות חיבור</h2>
+<ol>
+<li>התקן את OpenVPN Client על מחשב המשתמש.</li>
+<li>העלה את הקובץ שהורד.</li>
+<li>התחבר:</li>
+<li>שם משתמש: לפי ההגדרה</li>
+<li>סיסמה: הסיסמה + קוד OTP</li>
+<li>בדוק שה־VPN מעלה כתובת IP תקינה (לדוגמה: <code>10.8.0.x</code>) ושהרשת המקומית נגישה.</li>
+</ol>
+<hr />
+<h2 id="_4">טיפים ואבטחה</h2>
+<ul>
+<li>ודא ש־NTP מסונכרן ב־pfSense וב־DC.</li>
+<li>שמור סיסמאות ו־QR קודים באופן מאובטח.</li>
+<li>בצע בדיקות תקופתיות למשתמשים ומחיקת ישנים.</li>
+<li>תעד נסיונות כושלים (System Logs).</li>
+<li>שקול הפעלת Client Specific Overrides להקצאת כתובות ייחודיות לפי משתמש.</li>
+</ul>
+<hr />
+<h2 id="_5">סיום</h2>
+<p>מדריך זה מיישם תצורת VPN מאובטחת באמצעות pfSense ו־FreeRADIUS תוך חיבור ל־AD ואימות דו־שלבי. מומלץ לבדוק את כל השלבים מול משתמש בדיקה לפני הפצה לכלל הארגון.</p>
 
 
 
@@ -1287,10 +1311,10 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
