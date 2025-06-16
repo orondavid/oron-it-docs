@@ -1,4 +1,5 @@
-﻿# Exchange Online Management Script with Main Menu Structure
+﻿# Script developed by Oron David with the help of ChatGPT
+# Exchange Online Management Script with Main Menu Structure
 
 # === Global Error Logger ===
 

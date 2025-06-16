@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../Linotp%20Install%20Ubuntu/">
       
-        <link rel="next" href="about/">
+      
+        <link rel="next" href="../Pfsense%20Vpn%20Linotp/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>התקנת LinOTP על Debian 12 - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docs4it" class="md-skip">
+        <a href="#linotp-debian-12-active-directory" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -86,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
-    <a href="." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              דף הבית
+              התקנת LinOTP על Debian 12
             
           </span>
         </div>
@@ -184,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -197,6 +199,113 @@
     
       
       
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    דף הבית
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    אודות
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    התקנות
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            התקנות
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linotp%20Install%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    התקנת LinOTP על Ubuntu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -216,7 +325,7 @@
   
   
   <span class="md-ellipsis">
-    דף הבית
+    התקנת LinOTP על Debian 12
     
   </span>
   
@@ -224,12 +333,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    דף הבית
+    התקנת LinOTP על Debian 12
     
   </span>
   
@@ -254,7 +363,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🔧 מדריכים להתקנה
+      🎯 מטרת המדריך
     </span>
   </a>
   
@@ -263,7 +372,88 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🚨 פתרון תקלות
+      דרישות מקדימות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: עדכון מערכת והתקנת תלותיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-linotp-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: התקנת LinOTP בסביבת Python וירטואלית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: יצירת משתמש ובסיס נתונים PostgreSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: יצירת קובצי תצורה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: הפעלת השירות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6: חיבור ל־Active Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 7: יצירת מדיניות ושיוך טוקנים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 8: התקנת רכיב RADIUS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 9: הגדרת pfSense
     </span>
   </a>
   
@@ -272,16 +462,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📚 הסברים וכלים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠 סקריפטים ותחזוקה
+      ✔️ סיום
     </span>
   </a>
   
@@ -294,88 +475,6 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    אודות
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    התקנות
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            התקנות
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Linotp%20Install%20Ubuntu/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    התקנת LinOTP על Ubuntu
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -385,30 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Linotp-debian12-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    התקנת LinOTP על Debian 12
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Pfsense%20Vpn%20Linotp/" class="md-nav__link">
+      <a href="../Pfsense%20Vpn%20Linotp/" class="md-nav__link">
         
   
   
@@ -431,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="secure-vpn-pfsense-2fa/" class="md-nav__link">
+      <a href="../secure-vpn-pfsense-2fa/" class="md-nav__link">
         
   
   
@@ -454,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ubuntu-install/" class="md-nav__link">
+      <a href="../ubuntu-install/" class="md-nav__link">
         
   
   
@@ -477,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="web-server-ubuntu/" class="md-nav__link">
+      <a href="../web-server-ubuntu/" class="md-nav__link">
         
   
   
@@ -500,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="squid-reverse-proxy/" class="md-nav__link">
+      <a href="../squid-reverse-proxy/" class="md-nav__link">
         
   
   
@@ -523,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="proxy-forward-install/" class="md-nav__link">
+      <a href="../proxy-forward-install/" class="md-nav__link">
         
   
   
@@ -546,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vmware-install/" class="md-nav__link">
+      <a href="../vmware-install/" class="md-nav__link">
         
   
   
@@ -569,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vmware-esxi-8-create-vm/" class="md-nav__link">
+      <a href="../vmware-esxi-8-create-vm/" class="md-nav__link">
         
   
   
@@ -592,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="windows-firewall-guide/" class="md-nav__link">
+      <a href="../windows-firewall-guide/" class="md-nav__link">
         
   
   
@@ -660,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="aad-broker-troubleshooting/" class="md-nav__link">
+      <a href="../aad-broker-troubleshooting/" class="md-nav__link">
         
   
   
@@ -728,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sysinternals-tools/" class="md-nav__link">
+      <a href="../sysinternals-tools/" class="md-nav__link">
         
   
   
@@ -751,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="wireshark-guide/" class="md-nav__link">
+      <a href="../wireshark-guide/" class="md-nav__link">
         
   
   
@@ -774,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vmware-explained/" class="md-nav__link">
+      <a href="../vmware-explained/" class="md-nav__link">
         
   
   
@@ -797,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux-explained/" class="md-nav__link">
+      <a href="../linux-explained/" class="md-nav__link">
         
   
   
@@ -820,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="squid-explained/" class="md-nav__link">
+      <a href="../squid-explained/" class="md-nav__link">
         
   
   
@@ -843,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="web-server-explained/" class="md-nav__link">
+      <a href="../web-server-explained/" class="md-nav__link">
         
   
   
@@ -866,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ubuntu-explained/" class="md-nav__link">
+      <a href="../ubuntu-explained/" class="md-nav__link">
         
   
   
@@ -889,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="proxy-forward-explained/" class="md-nav__link">
+      <a href="../proxy-forward-explained/" class="md-nav__link">
         
   
   
@@ -912,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vim-guide/" class="md-nav__link">
+      <a href="../vim-guide/" class="md-nav__link">
         
   
   
@@ -935,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nano-guide/" class="md-nav__link">
+      <a href="../nano-guide/" class="md-nav__link">
         
   
   
@@ -1003,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Exchangeonline%20Script%20Guid/" class="md-nav__link">
+      <a href="../Exchangeonline%20Script%20Guid/" class="md-nav__link">
         
   
   
@@ -1026,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="it-scripts/" class="md-nav__link">
+      <a href="../it-scripts/" class="md-nav__link">
         
   
   
@@ -1049,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="windows-maintenance/" class="md-nav__link">
+      <a href="../windows-maintenance/" class="md-nav__link">
         
   
   
@@ -1072,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="WPA_Boot_Analysis_Guide/" class="md-nav__link">
+      <a href="../WPA_Boot_Analysis_Guide/" class="md-nav__link">
         
   
   
@@ -1095,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="NK2_to_Outlook_Contacts/" class="md-nav__link">
+      <a href="../NK2_to_Outlook_Contacts/" class="md-nav__link">
         
   
   
@@ -1118,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="portable-tools/" class="md-nav__link">
+      <a href="../portable-tools/" class="md-nav__link">
         
   
   
@@ -1170,7 +1246,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🔧 מדריכים להתקנה
+      🎯 מטרת המדריך
     </span>
   </a>
   
@@ -1179,7 +1255,88 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🚨 פתרון תקלות
+      דרישות מקדימות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: עדכון מערכת והתקנת תלותיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-linotp-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: התקנת LinOTP בסביבת Python וירטואלית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: יצירת משתמש ובסיס נתונים PostgreSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: יצירת קובצי תצורה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: הפעלת השירות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-active-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6: חיבור ל־Active Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 7: יצירת מדיניות ושיוך טוקנים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-radius" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 8: התקנת רכיב RADIUS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 9: הגדרת pfSense
     </span>
   </a>
   
@@ -1188,16 +1345,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      📚 הסברים וכלים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠 סקריפטים ותחזוקה
+      ✔️ סיום
     </span>
   </a>
   
@@ -1219,47 +1367,143 @@
 
 
 
-<h1 id="docs4it">ברוכים הבאים ל־Docs4IT 🚀</h1>
-<p>ברוכים הבאים לאתר התיעוד שלך! כאן תמצא מדריכים, תקלות נפוצות, הסברים וכלים שימושיים למערכות מחשוב.</p>
+<h1 id="linotp-debian-12-active-directory">מדריך: התקנת LinOTP על שרת Debian 12 עם חיבור ל־Active Directory</h1>
+<h2 id="_1">🎯 מטרת המדריך</h2>
+<p>להתקין את LinOTP על מערכת Debian 12 ולחבר אותה ל־Active Directory, כולל תמיכה בקודי OTP כמו Google Authenticator, ויכולת אימות דרך pfSense או פתרון RADIUS.</p>
 <hr />
-<h2 id="_1">🔧 מדריכים להתקנה</h2>
+<h2 id="_2">דרישות מקדימות</h2>
 <ul>
-<li><a href="ubuntu-install/">התקנת Ubuntu Server</a></li>
-<li><a href="web-server-ubuntu/">התקנת Apache HTTP על Ubuntu</a></li>
-<li><a href="squid-reverse-proxy/">התקנת Squid Reverse Proxy</a></li>
-<li><a href="proxy-forward-install/">התקנת שרת פרוקסי קדמי עם Squid</a></li>
-<li><a href="vmware-install/">מדריך להתקנת VMware</a></li>
-<li><a href="vmware-esxi-8-create-vm/">יצירת VM ב־VMware ESXi 8</a></li>
-<li><a href="windows-firewall-guide/">הגדרת Windows Firewall</a></li>
+<li>שרת <strong>Debian 12</strong> (מומלץ מכונה וירטואלית)</li>
+<li>גישת <code>root</code> או <code>sudo</code></li>
+<li>שרת Active Directory (לדוגמה: <code>dc.example.local</code>)</li>
+<li>חיבור לאינטרנט פעיל</li>
 </ul>
 <hr />
-<h2 id="_2">🚨 פתרון תקלות</h2>
-<ul>
-<li><a href="aad-broker-troubleshooting/">תקלות Azure/Teams/Outlook</a></li>
-</ul>
+<h2 id="1">שלב 1: עדכון מערכת והתקנת תלותיות</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apache2<span class="w"> </span>libapache2-mod-wsgi-py3<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv<span class="w"> </span>postgresql<span class="w"> </span>postgresql-contrib
+</code></pre></div>
 <hr />
-<h2 id="_3">📚 הסברים וכלים</h2>
-<ul>
-<li><a href="sysinternals-tools/">Sysinternals Tools</a></li>
-<li><a href="wireshark-guide/">Wireshark – ניתוח רשתות</a></li>
-<li><a href="vmware-explained/">הסבר על התקנת VMware</a></li>
-<li><a href="linux-explained/">פקודות לינוקס בסיסיות</a></li>
-<li><a href="squid-explained/">הסבר על Squid</a></li>
-<li><a href="web-server-explained/">הסבר על שרת ווב</a></li>
-<li><a href="ubuntu-explained/">הסבר על Ubuntu</a></li>
-<li><a href="proxy-forward-explained/">התקנת פרוקסי קדמי עם Squid</a></li>
-<li><a href="vim-guide/">פקודות בסיסיות ב־VIM</a></li>
-<li><a href="nano-guide/">פקודות בסיסיות ב־NANO</a></li>
-</ul>
+<h2 id="2-linotp-python">שלב 2: התקנת LinOTP בסביבת Python וירטואלית</h2>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/opt/linotp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/linotp
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>linotp
+</code></pre></div>
 <hr />
-<h2 id="_4">🛠 סקריפטים ותחזוקה</h2>
-<ul>
-<li><a href="it-scripts/">סקריפטים שימושיים</a></li>
-<li><a href="windows-maintenance/">תחזוקת Windows</a></li>
-<li><a href="WPA_Boot_Analysis_Guide/">ניתוח איתחול מחשב (WPA)</a></li>
-<li><a href="NK2_to_Outlook_Contacts/">עבודה עם קובץ NK2</a></li>
-<li><a href="portable-tools/">כלים ניידים ושימושיים</a></li>
-</ul>
+<h2 id="3-postgresql">שלב 3: יצירת משתמש ובסיס נתונים PostgreSQL</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createuser<span class="w"> </span>linotp
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>-O<span class="w"> </span>linotp<span class="w"> </span>linotp
+</code></pre></div>
+<hr />
+<h2 id="4">שלב 4: יצירת קובצי תצורה</h2>
+<ol>
+<li>
+<p>קובץ <code>/etc/linotp/linotp.ini</code>:
+<div class="highlight"><pre><span></span><code><span class="k">[DEFAULT]</span>
+<span class="na">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+
+<span class="k">[LinOTP]</span>
+<span class="na">sql.uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">postgresql://linotp:&lt;סיסמה_חזקה&gt;@localhost/linotp</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>קובץ Apache ב־<code>/etc/apache2/sites-available/linotp.conf</code>:
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nb">WSGIDaemonProcess</span><span class="w"> </span>linotp<span class="w"> </span><span class="k">user</span>=www-data<span class="w"> </span><span class="k">group</span>=www-data<span class="w"> </span>threads=5<span class="w"> </span>python-home=/opt/linotp/venv
+<span class="w">    </span><span class="nb">WSGIScriptAlias</span><span class="w"> </span>/<span class="w"> </span><span class="sx">/opt/linotp/venv/lib/python3.11/site-packages/linotp/wsgi.py</span>
+
+<span class="w">    </span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/opt/linotp/venv/lib/python3.11/site-packages/linotp</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
+<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
+
+<span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/linotp_error.log
+<span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/linotp_access.log<span class="w"> </span>combined
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="5">שלב 5: הפעלת השירות</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2ensite<span class="w"> </span>linotp
+sudo<span class="w"> </span>a2enmod<span class="w"> </span>wsgi
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</code></pre></div>
+<hr />
+<h2 id="6-active-directory">שלב 6: חיבור ל־Active Directory</h2>
+<ol>
+<li>פתח את LinOTP</li>
+<li>צור admin ראשוני</li>
+<li>עבור ללשונית <strong>UserIdResolvers</strong> &gt; הוסף Resolver מסוג LDAP:</li>
+<li>Name: <code>AD</code></li>
+<li>URI: <code>ldap://dc.example.local</code></li>
+<li>BindDN: <code>CN=reader,OU=ServiceAccounts,DC=example,DC=local</code></li>
+<li>BindPW: הסיסמה</li>
+<li>BaseDN: <code>DC=example,DC=local</code></li>
+<li>Scope: <code>Subtree</code></li>
+</ol>
+<hr />
+<h2 id="7">שלב 7: יצירת מדיניות ושיוך טוקנים</h2>
+<ol>
+<li><strong>Policies &gt; Add</strong>:</li>
+<li>Scope: <code>login</code></li>
+<li>Action: <code>authenticate</code></li>
+<li>Realm: <code>AD</code></li>
+<li>
+<p>Users: <code>*</code></p>
+</li>
+<li>
+<p><strong>Tokens &gt; Enroll Token</strong>:</p>
+</li>
+<li>בחר משתמש</li>
+<li>סוג: <code>TOTP</code></li>
+<li>סרוק עם Google Authenticator</li>
+</ol>
+<hr />
+<h2 id="8-radius">שלב 8: התקנת רכיב RADIUS</h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>linotp-radius
+</code></pre></div>
+<ol>
+<li>
+<p>צור קובץ <code>/etc/linotp/radius.ini</code>:
+<div class="highlight"><pre><span></span><code><span class="k">[LINOTP]</span>
+<span class="na">LinOTPConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/etc/linotp/linotp.ini</span>
+<span class="na">SSLCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+<span class="na">Realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">AD</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>התקן וערוך את freeradius:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>freeradius
+sudo<span class="w"> </span>nano<span class="w"> </span>/etc/freeradius/3.0/clients.conf
+</code></pre></div></p>
+</li>
+</ol>
+<p>הוסף:
+<div class="highlight"><pre><span></span><code>client pfsense {
+    ipaddr = &lt;כתובת ה־pfSense&gt;
+    secret = סיסמה_משותפת
+}
+</code></pre></div></p>
+<ol>
+<li>הפעל מחדש:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>freeradius
+</code></pre></div></li>
+</ol>
+<hr />
+<h2 id="9-pfsense">שלב 9: הגדרת pfSense</h2>
+<p>ב־pfSense:
+- System &gt; User Manager &gt; Authentication Servers
+- Add &gt; Type: RADIUS
+- Address: כתובת LinOTP
+- Port: 1812
+- Protocol: PAP
+- Shared Secret: כפי שהוגדר ב־clients.conf</p>
+<hr />
+<h2 id="_3">✔️ סיום</h2>
+<p>שרת LinOTP על Debian 12 מוכן לשימוש עם Active Directory ו־pfSense.
+ניתן להוסיף שכבות אבטחה נוספות, פורטל משתמשים ועוד.</p>
 
 
 
@@ -1314,10 +1558,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "navigation.top"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
