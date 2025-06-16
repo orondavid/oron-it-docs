@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../vmware-install/">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../windows-firewall-guide/">
+        <link rel="next" href="../Pfsense%20Vpn%20Linotp/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>מדריך להתקנה של vmware - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>התקנת LinOTP על Ubuntu - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vmware-esxi-8" class="md-skip">
+        <a href="#linotp-ubuntu-active-directory" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              מדריך להתקנה של vmware
+              התקנת LinOTP על Ubuntu
             
           </span>
         </div>
@@ -285,10 +285,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Linotp%20Install%20Ubuntu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    התקנת LinOTP על Ubuntu
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -299,6 +321,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 מטרת המדריך
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרישות מקדימות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: עדכון מערכת והתקנת תלותיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-linotp-python-virtualenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: התקנת LinOTP דרך Python virtualenv (שיטה עצמאית)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: הגדרת קובץ תצורה בסיסי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: הגדרת ממשק ניהול ובסיס נתונים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: יצירת מדיניות ושיוך טוקנים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-radius-pfsense" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6: התקנת רכיב RADIUS וחיבור ל־pfSense
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -469,32 +592,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    מדריך להתקנה של vmware
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vmware-esxi-8-create-vm/" class="md-nav__link">
         
   
   
@@ -505,98 +606,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-web-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 1: התחברות ל־Web Client
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-iso-datastore" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 2: העלאת ISO ל־Datastore
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 3: יצירת VM חדש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-guest-os" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 4: בחירת שם ו־Guest OS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 5: בחירת אחסון
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 6: הגדרות חומרה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-iso" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 7: קביעת קובץ ISO
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 8: סיום והפעלה
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1162,36 +1171,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-web-client" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 1: התחברות ל־Web Client
+      🎯 מטרת המדריך
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-iso-datastore" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 2: העלאת ISO ל־Datastore
+      דרישות מקדימות
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-vm" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 3: יצירת VM חדש
+      שלב 1: עדכון מערכת והתקנת תלותיות
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-guest-os" class="md-nav__link">
+  <a href="#2-linotp-python-virtualenv" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 4: בחירת שם ו־Guest OS
+      שלב 2: התקנת LinOTP דרך Python virtualenv (שיטה עצמאית)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: הגדרת קובץ תצורה בסיסי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: הגדרת ממשק ניהול ובסיס נתונים
     </span>
   </a>
   
@@ -1200,34 +1227,25 @@
         <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 5: בחירת אחסון
+      שלב 5: יצירת מדיניות ושיוך טוקנים
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-radius-pfsense" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 6: הגדרות חומרה
+      שלב 6: התקנת רכיב RADIUS וחיבור ל־pfSense
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-iso" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 שלב 7: קביעת קובץ ISO
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 שלב 8: סיום והפעלה
+      סיום
     </span>
   </a>
   
@@ -1249,69 +1267,143 @@
 
 
 
-<h1 id="vmware-esxi-8">מדריך: יצירת מכונה וירטואלית ב־VMware ESXi 8</h1>
-<p>מדריך זה מסביר כיצד ליצור מכונה וירטואלית (VM) בסביבת VMware ESXi 8, כולל תמונות אמיתיות מהמערכת.</p>
+<h1 id="linotp-ubuntu-active-directory">מדריך: התקנת LinOTP על שרת Ubuntu עם חיבור ל־Active Directory</h1>
+<h2 id="_1">🎯 מטרת המדריך</h2>
+<p>להתקין ולחבר את LinOTP על שרת Ubuntu כך שיבצע אימות מול Active Directory, כולל ניהול קודי OTP (כגון Google Authenticator), לצורך שימוש מול pfSense או כל פתרון RADIUS אחר.</p>
 <hr />
-<h2 id="1-web-client">🟢 שלב 1: התחברות ל־Web Client</h2>
-<p>התחבר ל־ESXi דרך כתובת ה־IP בדפדפן, לדוגמה:</p>
-<div class="highlight"><pre><span></span><code>https://192.168.1.100
+<h2 id="_2">דרישות מקדימות</h2>
+<ul>
+<li>שרת Ubuntu 20.04 או 22.04 (מומלץ VM נפרדת)</li>
+<li>גישת root</li>
+<li>שרת Active Directory זמין (לדוגמה: <code>dc.example.local</code>)</li>
+<li>חיבור לאינטרנט</li>
+</ul>
+<hr />
+<h2 id="1">שלב 1: עדכון מערכת והתקנת תלותיות</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apache2<span class="w"> </span>libapache2-mod-wsgi-py3<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv<span class="w"> </span>postgresql
 </code></pre></div>
-<p><em>הזן את שם המשתמש והסיסמה שלך כדי להתחבר לממשק הניהול.</em></p>
 <hr />
-<h2 id="2-iso-datastore">🟢 שלב 2: העלאת ISO ל־Datastore</h2>
+<h2 id="2-linotp-python-virtualenv">שלב 2: התקנת LinOTP דרך Python virtualenv (שיטה עצמאית)</h2>
 <ol>
-<li>עבור ל־<strong>Storage &gt; Datastores</strong></li>
-<li>בחר Datastore קיים</li>
-<li>לחץ על <strong>Datastore browser</strong></li>
-<li>לחץ <strong>Upload</strong> ובחר את קובץ ה־ISO</li>
+<li>
+<p>צור סביבת עבודה:
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/opt/linotp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/linotp
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</code></pre></div></p>
+</li>
+<li>
+<p>התקן את LinOTP:
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>linotp
+</code></pre></div></p>
+</li>
+<li>
+<p>הפעל את בסיס הנתונים:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createuser<span class="w"> </span>linotp
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>-O<span class="w"> </span>linotp<span class="w"> </span>linotp
+</code></pre></div></p>
+</li>
 </ol>
-<p><img alt="Datastore browser והעלאת ISO" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/upload_iso.jpg" /></p>
 <hr />
-<h2 id="3-vm">🟢 שלב 3: יצירת VM חדש</h2>
+<h2 id="3">שלב 3: הגדרת קובץ תצורה בסיסי</h2>
 <ol>
-<li>עבור ל־<strong>Virtual Machines</strong></li>
-<li>לחץ על <strong>Create / Register VM</strong></li>
-<li>בחר באופציה הראשונה: <strong>Create a new virtual machine</strong></li>
+<li>
+<p>צור את הקובץ <code>/etc/linotp/linotp.ini</code>:
+<div class="highlight"><pre><span></span><code><span class="k">[DEFAULT]</span>
+<span class="na">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+
+<span class="k">[LinOTP]</span>
+<span class="na">sql.uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">postgresql://linotp:סיסמה@localhost/linotp</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>צור קובץ Apache בשם <code>/etc/apache2/sites-available/linotp.conf</code>:
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nb">WSGIDaemonProcess</span><span class="w"> </span>linotp<span class="w"> </span><span class="k">user</span>=www-data<span class="w"> </span><span class="k">group</span>=www-data<span class="w"> </span>threads=5<span class="w"> </span>python-home=/opt/linotp/venv
+<span class="w">    </span><span class="nb">WSGIScriptAlias</span><span class="w"> </span>/<span class="w"> </span><span class="sx">/opt/linotp/venv/lib/python3.8/site-packages/linotp/wsgi.py</span>
+
+<span class="w">    </span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/opt/linotp/venv/lib/python3.8/site-packages/linotp</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
+<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
+
+<span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/linotp_error.log
+<span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/linotp_access.log<span class="w"> </span>combined
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>הפעל את השירות:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2ensite<span class="w"> </span>linotp
+sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</code></pre></div></p>
+</li>
 </ol>
-<p><img alt="יצירת VM חדש" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/create_vm_button.png" /></p>
+<p>בדוק: <code>http://&lt;ip-server&gt;</code> — תופיע ממשק ניהול של LinOTP.</p>
 <hr />
-<h2 id="4-guest-os">🟢 שלב 4: בחירת שם ו־Guest OS</h2>
+<h2 id="4">שלב 4: הגדרת ממשק ניהול ובסיס נתונים</h2>
 <ol>
-<li>הזן שם למכונה (למשל <code>Ubuntu-Server</code>)</li>
-<li>בחר:</li>
-<li>Compatibility: ברירת מחדל</li>
-<li>Guest OS family: <code>Linux</code></li>
-<li>Guest OS version: <code>Ubuntu Linux (64-bit)</code></li>
+<li>פתח את LinOTP ב־דפדפן</li>
+<li>צור סיסמת admin ראשונית (אם לא נדרש - תמשיך)</li>
+<li>עבור ללשונית <strong>UserIdResolvers</strong> והוסף resolver מסוג LDAP:</li>
+<li>Name: <code>AD</code></li>
+<li>URI: <code>ldap://dc.example.local</code></li>
+<li>BindDN: משתמש בעל הרשאות קריאה ב־AD</li>
+<li>BaseDN: לדוגמה <code>DC=example,DC=local</code></li>
+<li>Scope: <code>Subtree</code></li>
 </ol>
-<p><img alt="Guest OS Selection" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/vm_details.png" /></p>
 <hr />
-<h2 id="5">🟢 שלב 5: בחירת אחסון</h2>
-<p>בחר את הדאטאסטור שבו יישמר הדיסק של המכונה הווירטואלית.</p>
-<p><img alt="Select storage" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/select_storage.png" /></p>
-<hr />
-<h2 id="6">🟢 שלב 6: הגדרות חומרה</h2>
-<p>הגדר את פרטי החומרה של המכונה:
-- CPU: לדוגמה 2 ליבות
-- זיכרון (RAM): 2048MB
-- דיסק: 20GB (או יותר לפי הצורך)</p>
-<p><img alt="Customize hardware" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/hardware_settings.png" /></p>
-<hr />
-<h2 id="7-iso">🟢 שלב 7: קביעת קובץ ISO</h2>
+<h2 id="5">שלב 5: יצירת מדיניות ושיוך טוקנים</h2>
 <ol>
-<li>בקטגוריה CD/DVD Drive לחץ על <strong>Datastore ISO file</strong></li>
-<li>בחר את קובץ ה־ISO שהעלית קודם לכן</li>
+<li>עבור ללשונית <strong>Policies &gt; Add</strong></li>
+<li>Scope: <code>login</code></li>
+<li>Action: <code>authenticate</code></li>
+<li>Realm: <code>AD</code></li>
+<li>
+<p>Users: <code>*</code></p>
+</li>
+<li>
+<p>עבור ל־<strong>Tokens &gt; Enroll Token</strong></p>
+</li>
+<li>בחר את המשתמש</li>
+<li>בחר סוג: <code>TOTP</code></li>
+<li>סרוק את קוד ה־QR עם אפליקציית Google Authenticator</li>
 </ol>
-<p><img alt="Select ISO" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/select_iso.png" /></p>
 <hr />
-<h2 id="8">🟢 שלב 8: סיום והפעלה</h2>
+<h2 id="6-radius-pfsense">שלב 6: התקנת רכיב RADIUS וחיבור ל־pfSense</h2>
 <ol>
-<li>לחץ <strong>Finish</strong></li>
-<li>לחץ <strong>Power on</strong> על ה־VM החדש כדי להתחיל בהתקנת מערכת ההפעלה</li>
+<li>
+<p>התקן את רכיב LinOTP RADIUS:
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>linotp-radius
+</code></pre></div></p>
+</li>
+<li>
+<p>הגדר את <code>radius.ini</code>:
+<div class="highlight"><pre><span></span><code><span class="k">[LINOTP]</span>
+<span class="na">LinOTPConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/etc/linotp/linotp.ini</span>
+<span class="na">SSLCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+<span class="na">Realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">AD</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>הפעל את RADIUS:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>freeradius
+</code></pre></div></p>
+</li>
+<li>
+<p>ב־pfSense:</p>
+</li>
+<li>עבור ל־System &gt; User Manager &gt; Authentication Servers</li>
+<li>הוסף שרת מסוג RADIUS</li>
+<li>כתובת: כתובת ה־LinOTP</li>
+<li>פורט: 1812</li>
+<li>פרוטוקול: PAP</li>
+<li>Shared Secret: תואם להגדרה ב־clients.conf של RADIUS</li>
 </ol>
-<p><img alt="Power on VM" src="https://raw.githubusercontent.com/oronmadar/assets/main/esxi/power_on_vm.png" /></p>
 <hr />
-<p>כעת המכונה מוכנה, תוכל להיכנס ל־Console ולהתחיל בהתקנת מערכת ההפעלה.</p>
-<hr />
+<h2 id="_3">סיום</h2>
+<p>שרת LinOTP מותקן ומוכן לאימות מול Active Directory, עם ניהול קודי TOTP לכל משתמש, ומוגדר כשרת RADIUS תואם pfSense. 
+מכאן תוכל להרחיב עם פורטל משתמשים, שכבות הרשאה לפי קבוצות ועוד.</p>
 
 
 
