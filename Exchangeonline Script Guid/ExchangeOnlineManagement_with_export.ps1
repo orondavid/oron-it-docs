@@ -1,15 +1,30 @@
 ﻿# Exchange Online Management Script with Main Menu Structure
 
 # === Global Error Logger ===
+
+
+# בדיקה אם המודול קיים וטעינה
+if (-not (Get-Module -ListAvailable -Name ExchangeOnlineManagement)) {
+    Write-Host "Installing ExchangeOnlineManagement module..." -ForegroundColor Yellow
+    Install-Module -Name ExchangeOnlineManagement -Scope CurrentUser -Force
+}
+
+# טעינת המודול אם לא נטען
+if (-not (Get-Module ExchangeOnlineManagement)) {
+    Import-Module ExchangeOnlineManagement
+}
+
+# התחברות
+if (-not (Get-PSSession | Where-Object {$_.ComputerName -like "*outlook.office365.com*"})) {
+    $adminUPN = Read-Host "Enter your admin UPN (e.g., admin@yourdomain.com)"
+    Connect-ExchangeOnline -UserPrincipalName $adminUPN -ShowBanner:$false
+}
+
+
 $global:ScriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $global:ErrorLogFile = Join-Path -Path $ScriptDirectory -ChildPath "error_log.txt"
 
 $global:ErrorActionPreference = "Continue"
-
-
-
-
-
 
 
 
