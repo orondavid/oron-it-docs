@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../about/">
+        <link rel="prev" href="../nano-guide/">
       
       
-        <link rel="next" href="../Pfsense%20Vpn%20Linotp/">
+        <link rel="next" href="../it-scripts/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>התקנת LinOTP על Ubuntu - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>Exchangeonline Script Guid - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linotp-ubuntu-active-directory" class="md-skip">
+        <a href="#exchangeonlinemanagement_with_exportps1" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת LinOTP על Ubuntu
+              Exchangeonline Script Guid
             
           </span>
         </div>
@@ -245,20 +245,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -274,7 +272,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -285,32 +283,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת LinOTP על Ubuntu
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Linotp%20Install%20Ubuntu/" class="md-nav__link">
         
   
   
@@ -321,107 +297,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 מטרת המדריך
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      דרישות מקדימות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: עדכון מערכת והתקנת תלותיות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-linotp-python-virtualenv" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת LinOTP דרך Python virtualenv (שיטה עצמאית)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: הגדרת קובץ תצורה בסיסי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: הגדרת ממשק ניהול ובסיס נתונים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5: יצירת מדיניות ושיוך טוקנים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-radius-pfsense" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6: התקנת רכיב RADIUS וחיבור ל־pfSense
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיום
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -988,18 +863,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1015,7 +892,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             סקריפטים כלים ופקודות
@@ -1026,10 +903,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Exchangeonline%20Script%20Guid/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Exchangeonline Script Guid
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1040,6 +939,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 מטרת הסקריפט
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 הורדת הסקריפט
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 מודולים נדרשים
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 מודולים נדרשים">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      התקנת מודולים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ▶️ הרצת הסקריפט
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 מבנה הסקריפט בקצרה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ פתרון בעיות נפוצות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 מיקום לוג שגיאות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ המלצות
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1196,7 +1202,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 מטרת המדריך
+      🎯 מטרת הסקריפט
     </span>
   </a>
   
@@ -1205,61 +1211,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      דרישות מקדימות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: עדכון מערכת והתקנת תלותיות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-linotp-python-virtualenv" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת LinOTP דרך Python virtualenv (שיטה עצמאית)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: הגדרת קובץ תצורה בסיסי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: הגדרת ממשק ניהול ובסיס נתונים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5: יצירת מדיניות ושיוך טוקנים
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-radius-pfsense" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6: התקנת רכיב RADIUS וחיבור ל־pfSense
+      📥 הורדת הסקריפט
     </span>
   </a>
   
@@ -1268,7 +1220,67 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      סיום
+      📦 מודולים נדרשים
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 מודולים נדרשים">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      התקנת מודולים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ▶️ הרצת הסקריפט
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 מבנה הסקריפט בקצרה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ פתרון בעיות נפוצות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 מיקום לוג שגיאות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ המלצות
     </span>
   </a>
   
@@ -1290,143 +1302,90 @@
 
 
 
-<h1 id="linotp-ubuntu-active-directory">מדריך: התקנת LinOTP על שרת Ubuntu עם חיבור ל־Active Directory</h1>
-<h2 id="_1">🎯 מטרת המדריך</h2>
-<p>להתקין ולחבר את LinOTP על שרת Ubuntu כך שיבצע אימות מול Active Directory, כולל ניהול קודי OTP (כגון Google Authenticator), לצורך שימוש מול pfSense או כל פתרון RADIUS אחר.</p>
+<h1 id="exchangeonlinemanagement_with_exportps1">מדריך שימוש בסקריפט ExchangeOnlineManagement_with_export.ps1</h1>
+<h2 id="_1">🎯 מטרת הסקריפט</h2>
+<p>הסקריפט נועד להקל על ניהול סביבת Exchange Online ו־Microsoft 365 דרך PowerShell, כולל התחברות אוטומטית, הפעלת פונקציות נפוצות, הפקת דוחות, ורישום שגיאות לקובץ לוג.</p>
 <hr />
-<h2 id="_2">דרישות מקדימות</h2>
+<h2 id="_2">📥 הורדת הסקריפט</h2>
+<p><a href="assets/ExchangeOnlineManagement_with_export.ps1">לחץ כאן להורדת הקובץ</a></p>
+<p>שים את הקובץ בתיקיה נגישה, לדוגמה: <code>C:\ps\</code></p>
+<hr />
+<h2 id="_3">📦 מודולים נדרשים</h2>
+<p>לפני ההרצה יש לוודא שהמודולים הבאים מותקנים:</p>
 <ul>
-<li>שרת Ubuntu 20.04 או 22.04 (מומלץ VM נפרדת)</li>
-<li>גישת root</li>
-<li>שרת Active Directory זמין (לדוגמה: <code>dc.example.local</code>)</li>
-<li>חיבור לאינטרנט</li>
+<li><code>ExchangeOnlineManagement</code></li>
+<li><code>Microsoft.Graph</code> (או רכיבים ספציפיים כמו <code>Microsoft.Graph.Users</code>)</li>
 </ul>
+<h3 id="_4">התקנת מודולים:</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Install-Module</span> <span class="n">ExchangeOnlineManagement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<span class="nb">Install-Module</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Graph</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<blockquote>
+<p>ייתכן שתידרש להריץ את הפקודה הבאה אם לא מוגדרת מדיניות:
+<div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div></p>
+</blockquote>
 <hr />
-<h2 id="1">שלב 1: עדכון מערכת והתקנת תלותיות</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apache2<span class="w"> </span>libapache2-mod-wsgi-py3<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv<span class="w"> </span>postgresql
+<h2 id="_5">▶️ הרצת הסקריפט</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="nb">ps</span>
+<span class="p">.\</span><span class="n">ExchangeOnlineManagement_with_export</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
 <hr />
-<h2 id="2-linotp-python-virtualenv">שלב 2: התקנת LinOTP דרך Python virtualenv (שיטה עצמאית)</h2>
-<ol>
-<li>
-<p>צור סביבת עבודה:
-<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/opt/linotp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/opt/linotp
-python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<span class="nb">source</span><span class="w"> </span>venv/bin/activate
-</code></pre></div></p>
-</li>
-<li>
-<p>התקן את LinOTP:
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>linotp
-</code></pre></div></p>
-</li>
-<li>
-<p>הפעל את בסיס הנתונים:
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createuser<span class="w"> </span>linotp
-sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>-O<span class="w"> </span>linotp<span class="w"> </span>linotp
-</code></pre></div></p>
-</li>
-</ol>
+<h2 id="_6">🧠 מבנה הסקריפט בקצרה</h2>
+<ul>
+<li>התחברות אוטומטית ל־Exchange Online (אם לא מחובר)</li>
+<li>התחברות ל־Microsoft Graph</li>
+<li>תפריט פעולות לניהול וייצוא</li>
+<li>ניהול שגיאות גלובלי: נרשמות לקובץ <code>error_log.txt</code></li>
+</ul>
 <hr />
-<h2 id="3">שלב 3: הגדרת קובץ תצורה בסיסי</h2>
-<ol>
-<li>
-<p>צור את הקובץ <code>/etc/linotp/linotp.ini</code>:
-<div class="highlight"><pre><span></span><code><span class="k">[DEFAULT]</span>
-<span class="na">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
-
-<span class="k">[LinOTP]</span>
-<span class="na">sql.uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">postgresql://linotp:סיסמה@localhost/linotp</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>צור קובץ Apache בשם <code>/etc/apache2/sites-available/linotp.conf</code>:
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nb">WSGIDaemonProcess</span><span class="w"> </span>linotp<span class="w"> </span><span class="k">user</span>=www-data<span class="w"> </span><span class="k">group</span>=www-data<span class="w"> </span>threads=5<span class="w"> </span>python-home=/opt/linotp/venv
-<span class="w">    </span><span class="nb">WSGIScriptAlias</span><span class="w"> </span>/<span class="w"> </span><span class="sx">/opt/linotp/venv/lib/python3.8/site-packages/linotp/wsgi.py</span>
-
-<span class="w">    </span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">/opt/linotp/venv/lib/python3.8/site-packages/linotp</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nb">Require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
-<span class="w">    </span><span class="nt">&lt;/Directory&gt;</span>
-
-<span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/linotp_error.log
-<span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/linotp_access.log<span class="w"> </span>combined
-<span class="nt">&lt;/VirtualHost&gt;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>הפעל את השירות:
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>a2ensite<span class="w"> </span>linotp
-sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
-</code></pre></div></p>
-</li>
-</ol>
-<p>בדוק: <code>http://&lt;ip-server&gt;</code> — תופיע ממשק ניהול של LinOTP.</p>
+<h2 id="_7">🛠️ פתרון בעיות נפוצות</h2>
+<table>
+<thead>
+<tr>
+<th>בעיה</th>
+<th>פתרון</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Connect-ExchangeOnline</code> שגיאה</td>
+<td>התקן את המודול: <code>Install-Module ExchangeOnlineManagement</code></td>
+</tr>
+<tr>
+<td><code>Get-MgContext</code> שגיאה</td>
+<td>התקן את המודול: <code>Install-Module Microsoft.Graph</code></td>
+</tr>
+<tr>
+<td>שגיאה ב־Split-Path או <code>$MyInvocation</code></td>
+<td>הרץ מתוך PowerShell רגיל (לא VS Code/ISE)</td>
+</tr>
+<tr>
+<td>שגיאה הקשורה ל־TLS</td>
+<td>הרץ: <code>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12</code></td>
+</tr>
+<tr>
+<td>לא ברור מה הבעיה</td>
+<td>פתח את הקובץ <code>error_log.txt</code> בתיקיית הסקריפט ולבדוק את השורה האחרונה</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="4">שלב 4: הגדרת ממשק ניהול ובסיס נתונים</h2>
-<ol>
-<li>פתח את LinOTP ב־דפדפן</li>
-<li>צור סיסמת admin ראשונית (אם לא נדרש - תמשיך)</li>
-<li>עבור ללשונית <strong>UserIdResolvers</strong> והוסף resolver מסוג LDAP:</li>
-<li>Name: <code>AD</code></li>
-<li>URI: <code>ldap://dc.example.local</code></li>
-<li>BindDN: משתמש בעל הרשאות קריאה ב־AD</li>
-<li>BaseDN: לדוגמה <code>DC=example,DC=local</code></li>
-<li>Scope: <code>Subtree</code></li>
-</ol>
+<h2 id="_8">📂 מיקום לוג שגיאות</h2>
+<p>הקובץ <code>error_log.txt</code> ייווצר אוטומטית בתיקיית הסקריפט ויכלול:
+- שגיאות קטלניות
+- שגיאות לא קריטיות
+- תאריך ושעת השגיאה</p>
 <hr />
-<h2 id="5">שלב 5: יצירת מדיניות ושיוך טוקנים</h2>
-<ol>
-<li>עבור ללשונית <strong>Policies &gt; Add</strong></li>
-<li>Scope: <code>login</code></li>
-<li>Action: <code>authenticate</code></li>
-<li>Realm: <code>AD</code></li>
-<li>
-<p>Users: <code>*</code></p>
-</li>
-<li>
-<p>עבור ל־<strong>Tokens &gt; Enroll Token</strong></p>
-</li>
-<li>בחר את המשתמש</li>
-<li>בחר סוג: <code>TOTP</code></li>
-<li>סרוק את קוד ה־QR עם אפליקציית Google Authenticator</li>
-</ol>
+<h2 id="_9">✅ המלצות</h2>
+<ul>
+<li>הפעל תמיד את PowerShell כ־Administrator.</li>
+<li>בדוק התחברות לפני הרצת פעולות גדולות.</li>
+<li>אל תשמור סיסמאות בקובץ.</li>
+<li>גבה את הסקריפט לפני שינוי.</li>
+</ul>
 <hr />
-<h2 id="6-radius-pfsense">שלב 6: התקנת רכיב RADIUS וחיבור ל־pfSense</h2>
-<ol>
-<li>
-<p>התקן את רכיב LinOTP RADIUS:
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>linotp-radius
-</code></pre></div></p>
-</li>
-<li>
-<p>הגדר את <code>radius.ini</code>:
-<div class="highlight"><pre><span></span><code><span class="k">[LINOTP]</span>
-<span class="na">LinOTPConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/etc/linotp/linotp.ini</span>
-<span class="na">SSLCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
-<span class="na">Realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">AD</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>הפעל את RADIUS:
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>freeradius
-</code></pre></div></p>
-</li>
-<li>
-<p>ב־pfSense:</p>
-</li>
-<li>עבור ל־System &gt; User Manager &gt; Authentication Servers</li>
-<li>הוסף שרת מסוג RADIUS</li>
-<li>כתובת: כתובת ה־LinOTP</li>
-<li>פורט: 1812</li>
-<li>פרוטוקול: PAP</li>
-<li>Shared Secret: תואם להגדרה ב־clients.conf של RADIUS</li>
-</ol>
-<hr />
-<h2 id="_3">סיום</h2>
-<p>שרת LinOTP מותקן ומוכן לאימות מול Active Directory, עם ניהול קודי TOTP לכל משתמש, ומוגדר כשרת RADIUS תואם pfSense. 
-מכאן תוכל להרחיב עם פורטל משתמשים, שכבות הרשאה לפי קבוצות ועוד.</p>
+<p>בהצלחה בניהול Exchange Online!</p>
 
 
 
