@@ -1,8 +1,16 @@
-﻿# Script developed by Oron David with the help of ChatGPT
-# Exchange Online Management Script with Main Menu Structure
+﻿# Exchange Online Management Script with Main Menu Structure
 
 # === Global Error Logger ===
 
+
+function Ensure-MgGraphConnected {
+    param (
+        [string[]]$Scopes = @("User.Read.All", "Directory.Read.All")
+    )
+    if (-not (Get-MgContext)) {
+        Connect-MgGraph -Scopes $Scopes
+    }
+}
 
 # בדיקה אם המודול קיים וטעינה
 if (-not (Get-Module -ListAvailable -Name ExchangeOnlineManagement)) {
@@ -20,6 +28,8 @@ if (-not (Get-PSSession | Where-Object {$_.ComputerName -like "*outlook.office36
     $adminUPN = Read-Host "Enter your admin UPN (e.g., admin@yourdomain.com)"
     Connect-ExchangeOnline -UserPrincipalName $adminUPN -ShowBanner:$false
 }
+
+
 
 
 $global:ScriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Definition
@@ -1074,16 +1084,6 @@ function Find-InactiveLicensedUsers {
     Read-Host
 }
 
-function Ensure-MgGraphConnected {
-    param (
-        [string[]]$Scopes = @("User.Read.All")
-    )
-    if (-not (Get-MgContext)) {
-        Connect-MgGraph -Scopes $Scopes
-    }
-}
-
-
 
 
 
@@ -1168,8 +1168,9 @@ function Get-Mailbox-FullReport {
         [Parameter(Mandatory)]
         [string]$UserPrincipalName
     )
-
+		
     try {
+		Ensure-MgGraphConnected
         Write-Host "Collecting report for mailbox:" $UserPrincipalName -ForegroundColor Cyan
 
         # תיבת דואר
@@ -1183,15 +1184,30 @@ function Get-Mailbox-FullReport {
         $mailboxSize = $stats.TotalItemSize.ToString()
 
         # שימוש ב־Microsoft Graph במקום MSOnline/AzureAD
-        $sku = "N/A"
-        try {
-            $licenseDetails = Get-MgUserLicenseDetail -UserId $UserPrincipalName -ErrorAction Stop
-            if ($licenseDetails) {
-                $sku = $licenseDetails.SkuPartNumber -join ", "
-            }
-        } catch {
-            $sku = "Unable to retrieve licenses"
-        }
+		$sku = "N/A"
+		try {
+			$licenseDetails = Get-MgUserLicenseDetail -UserId $UserPrincipalName -ErrorAction Stop
+			if ($licenseDetails) {
+				$skuList = @()
+				foreach ($detail in $licenseDetails) {
+					switch ($detail.SkuPartNumber) {
+						"O365_BUSINESS_PREMIUM"   { $skuList += "Microsoft 365 Business Standard" }
+						"ENTERPRISEPACK"          { $skuList += "Office 365 E3" }
+						"BUSINESS_BASIC"          { $skuList += "Microsoft 365 Business Basic" }
+						"M365_BUSINESS_PREMIUM"   { $skuList += "Microsoft 365 Business Premium" }
+						"STANDARDPACK"            { $skuList += "Office 365 E1" }
+						"EXCHANGESTANDARD"        { $skuList += "Exchange Online (Plan 1)" }
+						"EXCHANGE_S_ENTERPRISE"   { $skuList += "Exchange Online (Plan 2)" }
+						"O365_BUSINESS"           { $skuList += "Microsoft 365 Apps for Business" }
+						default                   { $skuList += $detail.SkuPartNumber }
+					}
+				}
+				$sku = $skuList -join ", "
+			}
+		} catch {
+			$sku = "Unable to retrieve licenses"
+		}
+
 
         # הפניות מייל
         $forwarding = if ($mailbox.ForwardingSMTPAddress) {
