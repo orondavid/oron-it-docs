@@ -2,15 +2,62 @@
 
 # === Global Error Logger ===
 
-
-function Ensure-MgGraphConnected {
+function Convert-SkuToDisplayName {
     param (
-        [string[]]$Scopes = @("User.Read.All", "Directory.Read.All")
+        [string]$Sku
     )
-    if (-not (Get-MgContext)) {
-        Connect-MgGraph -Scopes $Scopes
+
+    switch ($Sku) {
+        "O365_BUSINESS_PREMIUM" { return "Microsoft 365 Business Standard" }
+        "ENTERPRISEPACK" { return "Office 365 E3" }
+        "BUSINESS_BASIC" { return "Microsoft 365 Business Basic" }
+        "M365_BUSINESS_PREMIUM" { return "Microsoft 365 Business Premium" }
+        "STANDARDPACK" { return "Office 365 E1" }
+        "EXCHANGESTANDARD" { return "Exchange Online (Plan 1)" }
+        "EXCHANGE_S_ENTERPRISE" { return "Exchange Online (Plan 2)" }
+        "O365_BUSINESS" { return "Microsoft 365 Apps for Business" }
+        "EXCHANGEENTERPRISE" { return "Exchange Online (Plan 2)" }
+        "O365_BUSINESS_ESSENTIALS" { return "Microsoft 365 Business Basic (Legacy)" }
+        "Microsoft_Teams_Exploratory_Dept" { return "Microsoft Teams Exploratory" }
+        default { return $Sku }
     }
 }
+
+
+function Write-ErrorLog {
+    param (
+        [string]$FunctionName,
+        [string]$ErrorMessage
+    )
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $logLine = "$timestamp [$FunctionName] ERROR: $ErrorMessage"
+    Add-Content -Path "C:\ps\script_errors.log" -Value $logLine
+}
+
+
+function Ensure-MgGraphConnected {
+    $requiredScopes = @("User.ReadWrite.All", "Directory.AccessAsUser.All", "AuditLog.Read.All", "Directory.Read.All")
+
+    $ctx = Get-MgContext
+    $connectedScopes = if ($ctx) { $ctx.Scopes } else { @() }
+    $missing = $requiredScopes | Where-Object { $_ -notin $connectedScopes }
+
+    if (-not $ctx -or $missing.Count -gt 0) {
+        try {
+            if ($ctx) {
+                Disconnect-MgGraph -ErrorAction SilentlyContinue
+            }
+        }
+        catch {
+            Write-Host "ℹ️  No existing Microsoft Graph session to disconnect." -ForegroundColor DarkGray
+        }
+
+        Write-Host "🔐 Connecting to Microsoft Graph with required scopes..." -ForegroundColor Cyan
+        Connect-MgGraph -Scopes $requiredScopes -NoWelcome
+    }
+}
+
+
 
 # בדיקה אם המודול קיים וטעינה
 if (-not (Get-Module -ListAvailable -Name ExchangeOnlineManagement)) {
@@ -24,12 +71,10 @@ if (-not (Get-Module ExchangeOnlineManagement)) {
 }
 
 # התחברות
-if (-not (Get-PSSession | Where-Object {$_.ComputerName -like "*outlook.office365.com*"})) {
+if (-not (Get-PSSession | Where-Object { $_.ComputerName -like "*outlook.office365.com*" })) {
     $adminUPN = Read-Host "Enter your admin UPN (e.g., admin@yourdomain.com)"
     Connect-ExchangeOnline -UserPrincipalName $adminUPN -ShowBanner:$false
 }
-
-
 
 
 $global:ScriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Definition
@@ -59,30 +104,22 @@ function Ensure-ExchangeConnected {
         if (-not (Get-ConnectionInformation)) {
             Connect-ExchangeOnline -ErrorAction Stop
         }
-    } catch {
+    }
+    catch {
         Write-Host "Could not connect to Exchange Online." -ForegroundColor Red
         exit
     }
 }
 
-function Ensure-GraphConnected {
-    try {
-        if (-not (Get-MgContext)) {
-            Connect-MgGraph -Scopes "User.Read.All", "Directory.Read.All" -NoWelcome
-        }
-    } catch {
-        Write-Host "Could not connect to Microsoft Graph." -ForegroundColor Red
-        exit
-    }
-}
+
 
 function Show-Mailboxes {
-    Ensure-GraphConnected
+    Ensure-MgGraphConnected
 
     Write-Host "`nFetching all users..." -ForegroundColor Cyan
 
     try {
-        $users = Get-MgUser -All -Property Id,DisplayName,UserPrincipalName,Mail | Sort-Object DisplayName
+        $users = Get-MgUser -All -Property Id, DisplayName, UserPrincipalName, Mail | Sort-Object DisplayName
 
         $result = foreach ($user in $users) {
             # בדיקת תיבת דואר
@@ -94,30 +131,35 @@ function Show-Mailboxes {
 
             # סוגי הרישיונות (רשימה מופרדת בפסיקים)
             $licenseTypes = if ($licenseDetails) {
-                ($licenseDetails.SkuPartNumber -join ", ")
-            } else {
+				($licenseDetails.SkuPartNumber | ForEach-Object { Convert-SkuToDisplayName -Sku $_ }) -join ", "
+            }
+            else {
                 ""
             }
 
+
             [PSCustomObject]@{
-                DisplayName        = $user.DisplayName
-                UserPrincipalName  = $user.UserPrincipalName
-                HasMailbox         = $hasMailbox
-                Licensed           = $hasLicense
-                LicenseType        = $licenseTypes
+                DisplayName       = $user.DisplayName
+                UserPrincipalName = $user.UserPrincipalName
+                HasMailbox        = $hasMailbox
+                Licensed          = $hasLicense
+                LicenseType       = $licenseTypes
             }
         }
 
         $result | Format-Table -AutoSize
 
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "result_export.csv"
-        $result | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
-    }
+        $saveToTXT = Read-Host "Do you want to save the output to a TXT file? (Y/N)"
+        if ($saveToTXT -eq 'Y' -or $saveToTXT -eq 'y') {
+            $txtPath = Join-Path -Path $PSScriptRoot -ChildPath "result_export.txt"
+            $result | Format-Table -AutoSize | Out-String | Set-Content -Path $txtPath -Encoding UTF8
+            Write-Host "✅ Output saved to: $txtPath" -ForegroundColor Green
+        }
 
-    } catch {
+
+    }
+    catch {
+        Write-ErrorLog -FunctionName "Show-Mailboxes" -ErrorMessage $_.Exception.Message
         Write-Host "Error fetching users: $_" -ForegroundColor Red
     }
 
@@ -152,31 +194,32 @@ function Show-MailboxSize {
 
     # קלט
     try {
-    $inputRaw = Read-Host "`nEnter the number of the mailbox"
+        $inputRaw = Read-Host "`nEnter the number of the mailbox"
 
-    if (-not [int]::TryParse($inputRaw, [ref]$null)) {
-        throw "Invalid input: '$inputRaw' is not a number."
-    }
+        if (-not [int]::TryParse($inputRaw, [ref]$null)) {
+            throw "Invalid input: '$inputRaw' is not a number."
+        }
 
-    $selection = [int]$inputRaw
+        $selection = [int]$inputRaw
 
-    if ($selection -lt 1 -or $selection -gt $mailboxList.Count) {
-        throw "Invalid selection: $selection is out of range (1-$($mailboxList.Count))."
-    }
+        if ($selection -lt 1 -or $selection -gt $mailboxList.Count) {
+            throw "Invalid selection: $selection is out of range (1-$($mailboxList.Count))."
+        }
 
         $selectedUPN = $mailboxList[$selection - 1].UserPrincipalName
         $result = Get-MailboxStatistics -Identity $selectedUPN | Select DisplayName, TotalItemSize, ItemCount
         $result | Format-Table -AutoSize
 
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "result_export.csv"
-        $result | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
-    }
+        $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+        if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+            $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "result_export.csv"
+            $result | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+            Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+        }
 
     }
     catch {
+        Write-ErrorLog -FunctionName "Show-MailboxSize" -ErrorMessage $_.Exception.Message
         Write-Host "❌ Error: $($_.Exception.Message)" -ForegroundColor Red
     }
 
@@ -189,264 +232,355 @@ function Show-MailboxSize {
 function Show-Forwarding {
     Ensure-ExchangeConnected
 
-    $mailboxes = Get-Mailbox -ResultSize Unlimited | Where-Object {
-        $_.ForwardingAddress -or $_.ForwardingSmtpAddress
-    }
+    try {
+        $mailboxes = Get-Mailbox -ResultSize Unlimited | Where-Object {
+            $_.ForwardingAddress -or $_.ForwardingSmtpAddress
+        }
 
-    $results = foreach ($mbx in $mailboxes) {
-        [PSCustomObject]@{
-            DisplayName               = $mbx.DisplayName
-            UserPrincipalName         = $mbx.UserPrincipalName
-            ForwardingAddress         = $mbx.ForwardingAddress
-            ForwardingSmtpAddress     = $mbx.ForwardingSmtpAddress
-            KeepCopyInOriginalMailbox = $mbx.DeliverToMailboxAndForward
+        $results = foreach ($mbx in $mailboxes) {
+            [PSCustomObject]@{
+                DisplayName               = $mbx.DisplayName
+                UserPrincipalName         = $mbx.UserPrincipalName
+                ForwardingAddress         = $mbx.ForwardingAddress
+                ForwardingSmtpAddress     = $mbx.ForwardingSmtpAddress
+                KeepCopyInOriginalMailbox = $mbx.DeliverToMailboxAndForward
+            }
+        }
+
+        if ($results) {
+            $results | Format-Table -AutoSize
+
+            $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+            if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+                $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
+                $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+                Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+            }
+        }
+        else {
+            Write-Host "No mailboxes with forwarding settings found." -ForegroundColor Green
         }
     }
-
-    if ($results) {
-        $results | Format-Table -AutoSize
-
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
-        $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
-    }
-
-    } else {
-        Write-Host "No mailboxes with forwarding settings found." -ForegroundColor Green
+    catch {
+        Write-ErrorLog -FunctionName "Show-Forwarding" -ErrorMessage $_.Exception.Message
+        Write-Host "❌ Error in Show-Forwarding: $($_.Exception.Message)" -ForegroundColor Red
     }
 
     Pause
 }
 
 
+
 function Show-ArchiveEnabled {
     Ensure-ExchangeConnected
-    Get-Mailbox -ResultSize Unlimited | Where-Object { $_.ArchiveStatus -eq "Active" } |
+    try {
+		
+        Get-Mailbox -ResultSize Unlimited | Where-Object { $_.ArchiveStatus -eq "Active" } |
         Select DisplayName, UserPrincipalName, ArchiveStatus | Format-Table -AutoSize
-	Read-Host "`nPress Enter to return to the main menu"
+        Read-Host "`nPress Enter to return to the main menu"
+    }
+    catch {
+        Write-ErrorLog -FunctionName "Show-ArchiveEnabled" -ErrorMessage $_.Exception.Message
+        Write-Host "❌ Error in Show-ArchiveEnabled: $($_.Exception.Message)" -ForegroundColor Red
+    }
+	
+    Pause
 }
+
 
 function Show-FullAccessPermissions {
     Ensure-ExchangeConnected
-    $results = @()
-    Get-Mailbox -ResultSize Unlimited | ForEach-Object {
-        $mbx = $_
-        $perms = Get-MailboxPermission -Identity $mbx.UserPrincipalName | Where-Object {
-            $_.User -ne "NT AUTHORITY\\SELF" -and $_.AccessRights -contains "FullAccess"
-        } | Select @{Name='Mailbox';Expression={$mbx.DisplayName}}, User, AccessRights
-        $results += $perms
-    }
-    $results | Format-Table -AutoSize
+    try {
+        $results = @()
+        Get-Mailbox -ResultSize Unlimited | ForEach-Object {
+            $mbx = $_
+            $perms = Get-MailboxPermission -Identity $mbx.UserPrincipalName | Where-Object {
+                $_.User -ne "NT AUTHORITY\\SELF" -and $_.AccessRights -contains "FullAccess"
+            } | Select @{Name = 'Mailbox'; Expression = { $mbx.DisplayName } }, User, AccessRights
+            $results += $perms
+        }
+        $results | Format-Table -AutoSize
 
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
-        $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+        $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+        if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+            $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
+            $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+            Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+        }
+    
+        Read-Host "`nPress Enter to return to the main menu"
     }
-
-	Read-Host "`nPress Enter to return to the main menu"
+    catch {
+        Write-ErrorLog -FunctionName "Show-FullAccessPermissions" -ErrorMessage $_.Exception.Message
+        Write-Host "❌ Error in Show-FullAccessPermissions: $($_.Exception.Message)" -ForegroundColor Red
+    }
+	
+    Pause
 }
 
 function Show-SendAsPermissions {
     Ensure-ExchangeConnected
-    Get-RecipientPermission -ResultSize Unlimited | Where-Object {
-        $_.AccessRights -contains "SendAs"
-    } | Select Identity, Trustee, AccessRights | Format-Table -AutoSize
-	Read-Host "`nPress Enter to return to the main menu"
+    try {
+		
+        Get-RecipientPermission -ResultSize Unlimited | Where-Object {
+            $_.AccessRights -contains "SendAs"
+        } | Select Identity, Trustee, AccessRights | Format-Table -AutoSize
+        Read-Host "`nPress Enter to return to the main menu"
+    }
+    catch {
+        Write-ErrorLog -FunctionName "Show-SendAsPermissions" -ErrorMessage $_.Exception.Message
+        Write-Host "❌ Error in Show-SendAsPermissions: $($_.Exception.Message)" -ForegroundColor Red
+    }
+	
+    Pause
 }
 
 function Show-InactiveMailboxes {
     Ensure-ExchangeConnected
-    $threshold = (Get-Date).AddDays(-90)
-    $results = @()
+    try {
+        $threshold = (Get-Date).AddDays(-90)
+        $results = @()
 
-    $mailboxes = Get-Mailbox -ResultSize Unlimited
-    foreach ($mbx in $mailboxes) {
-        try {
-            $stat = Get-MailboxStatistics -Identity $mbx.UserPrincipalName -ErrorAction Stop
-            if ($stat.LastLogonTime -and $stat.LastLogonTime -lt $threshold) {
-                $results += [PSCustomObject]@{
-                    DisplayName       = $mbx.DisplayName
-                    LastLogonTime     = $stat.LastLogonTime
-                    UserPrincipalName = $mbx.UserPrincipalName
+        $mailboxes = Get-Mailbox -ResultSize Unlimited
+        foreach ($mbx in $mailboxes) {
+            try {
+                $stat = Get-MailboxStatistics -Identity $mbx.UserPrincipalName -ErrorAction Stop
+                if ($stat.LastLogonTime -and $stat.LastLogonTime -lt $threshold) {
+                    $results += [PSCustomObject]@{
+                        DisplayName       = $mbx.DisplayName
+                        LastLogonTime     = $stat.LastLogonTime
+                        UserPrincipalName = $mbx.UserPrincipalName
+                    }
                 }
             }
+            catch {
+                Write-Host "❌ Error in Show-InactiveMailboxes: $($_.Exception.Message)" -ForegroundColor Red
+                Write-Warning "Failed to get statistics for $($mbx.UserPrincipalName): $($_.Exception.Message)"
+            }
         }
-        catch {
-            Write-Warning "Failed to get statistics for $($mbx.UserPrincipalName): $_"
+
+        if ($results.Count -gt 0) {
+            $results | Sort-Object LastLogonTime | Format-Table -AutoSize
+            Write-Host "`nTotal inactive mailboxes found (90+ Days): $($results.Count)" -ForegroundColor Yellow
         }
-    }
+        else {
+            Write-Host "No inactive mailboxes found (no one idle for more than 90 days)." -ForegroundColor Green
+        }
 
-    if ($results.Count -gt 0) {
-        $results | Sort-Object LastLogonTime | Format-Table -AutoSize
-        Write-Host "`nTotal inactive mailboxes found (90+ Days): $($results.Count)" -ForegroundColor Yellow
+        Read-Host "`nPress Enter to return to the main menu"
     }
-    else {
-        Write-Host "No inactive mailboxes found (no one idle for more than 90 days)." -ForegroundColor Green
+    catch {
+        Write-ErrorLog -FunctionName "Show-InactiveMailboxes" -ErrorMessage $_.Exception.Message
+        Write-Host "❌ Unexpected error in Show-InactiveMailboxes: $($_.Exception.Message)" -ForegroundColor Red
     }
-
-    Read-Host "`nPress Enter to return to the main menu"
+	
+    Pause
+	
 }
 
 
 
 function Show-SharedMailboxes {
     Ensure-ExchangeConnected
-    Get-Mailbox -ResultSize Unlimited | Where-Object { $_.RecipientTypeDetails -eq "SharedMailbox" } |
-        Select DisplayName, UserPrincipalName, PrimarySmtpAddress | Format-Table -AutoSize
-		
-    Read-Host "`nPress Enter to return to the main menu"
+    try {
 
+        Get-Mailbox -ResultSize Unlimited | Where-Object { $_.RecipientTypeDetails -eq "SharedMailbox" } |
+        Select DisplayName, UserPrincipalName, PrimarySmtpAddress | Format-Table -AutoSize
+            
+        Read-Host "`nPress Enter to return to the main menu"
+    }
+
+    catch {
+        Write-ErrorLog -FunctionName "Show-SharedMailboxes" -ErrorMessage $_.Exception.Message
+    }
+
+    Pause
 }
 
 function Export-MailboxesToCSV {
     Ensure-ExchangeConnected
-    $path = Read-Host "Enter path to save the CSV file (e.g., C:\\MailboxList.csv)"
-    Get-Mailbox -ResultSize Unlimited | Select DisplayName, UserPrincipalName
+    try {
+
+        $path = Read-Host "Enter path to save the CSV file (e.g., C:\\MailboxList.csv)"
+        Get-Mailbox -ResultSize Unlimited | Select DisplayName, UserPrincipalName
         Export-Csv -Path $path -Encoding UTF8 -NoTypeInformation
-    Write-Host "✅ File saved successfully: $path" -ForegroundColor Green
+        Write-Host "✅ File saved successfully: $path" -ForegroundColor Green
+    }
+    catch {
+        Write-ErrorLog -FunctionName "Export-MailboxesToCS" -ErrorMessage $_.Exception.Message
+    }
+
+    Pause
 }
+
 
 function Show-MailboxLicenses {
     Ensure-ExchangeConnected
-    Ensure-GraphConnected
-    $mailboxes = Get-Mailbox -ResultSize Unlimited
-    $results = @()
-    foreach ($mbx in $mailboxes) {
-        $user = Get-MgUser -UserId $mbx.UserPrincipalName -ErrorAction SilentlyContinue
-        $licenses = if ($user) {
-            (Get-MgUserLicenseDetail -UserId $user.Id).SkuPartNumber -join ", "
-        } else {
-            "User not found in Graph"
-        }
-        $results += [PSCustomObject]@{
-            DisplayName = $mbx.DisplayName
-            UserPrincipalName = $mbx.UserPrincipalName
-            Licenses = $licenses
-        }
-    }
-    $results | Format-Table -AutoSize
+    Ensure-MgGraphConnected
+    try {
 
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
-        $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+        $mailboxes = Get-Mailbox -ResultSize Unlimited
+        $results = @()
+        foreach ($mbx in $mailboxes) {
+            $user = Get-MgUser -UserId $mbx.UserPrincipalName -ErrorAction SilentlyContinue
+            $licenses = if ($user) {
+				(Get-MgUserLicenseDetail -UserId $user.Id | ForEach-Object { Convert-SkuToDisplayName -Sku $_.SkuPartNumber }) -join ", "
+            }
+
+            else {
+                "User not found in Graph"
+            }
+            $results += [PSCustomObject]@{
+                DisplayName       = $mbx.DisplayName
+                UserPrincipalName = $mbx.UserPrincipalName
+                Licenses          = $licenses
+            }
+        }
+        $results | Format-Table -AutoSize
+
+        $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+        if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+            $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
+            $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+            Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+        }
+
+        Read-Host "`nPress Enter to return to the main menu"
+    }
+    catch {
+        Write-ErrorLog -FunctionName "Show-MailboxLicenses" -ErrorMessage $_.Exception.Message
     }
 
-	Read-Host "`nPress Enter to return to the main menu"
+    Pause
+
 }
 
 
 
 function Show-MailboxesOverQuota {
     Ensure-ExchangeConnected
+    try {
 
-    Write-Host "Mailboxes over quota" -ForegroundColor Red
+        Write-Host "Mailboxes over quota" -ForegroundColor Red
 
-    $mailboxes = Get-Mailbox -ResultSize Unlimited
+        $mailboxes = Get-Mailbox -ResultSize Unlimited
 
-    foreach ($mbx in $mailboxes) {
-        $stats = Get-MailboxStatistics -Identity $mbx.UserPrincipalName -ErrorAction SilentlyContinue
-        $quotaString = $mbx.ProhibitSendReceiveQuota
-        $sizeString = $stats.TotalItemSize
+        foreach ($mbx in $mailboxes) {
+            $stats = Get-MailboxStatistics -Identity $mbx.UserPrincipalName -ErrorAction SilentlyContinue
+            $quotaString = $mbx.ProhibitSendReceiveQuota
+            $sizeString = $stats.TotalItemSize
 
-        if ($quotaString -and $sizeString) {
-            # Convert quota string to MB
-            if ($quotaString -match "([\d\.]+)\s*(MB|GB|TB)") {
-                $quotaValue = [double]$matches[1]
-                $quotaUnit = $matches[2]
+            if ($quotaString -and $sizeString) {
+                # Convert quota string to MB
+                if ($quotaString -match "([\d\.]+)\s*(MB|GB|TB)") {
+                    $quotaValue = [double]$matches[1]
+                    $quotaUnit = $matches[2]
 
-                switch ($quotaUnit) {
-                    "MB" { $quotaMB = $quotaValue }
-                    "GB" { $quotaMB = $quotaValue * 1024 }
-                    "TB" { $quotaMB = $quotaValue * 1024 * 1024 }
+                    switch ($quotaUnit) {
+                        "MB" { $quotaMB = $quotaValue }
+                        "GB" { $quotaMB = $quotaValue * 1024 }
+                        "TB" { $quotaMB = $quotaValue * 1024 * 1024 }
+                    }
+                }
+
+                # Convert size string to MB
+                if ($sizeString -match "([\d\.]+)\s*(MB|GB|TB)") {
+                    $sizeValue = [double]$matches[1]
+                    $sizeUnit = $matches[2]
+
+                    switch ($sizeUnit) {
+                        "MB" { $currentSizeMB = $sizeValue }
+                        "GB" { $currentSizeMB = $sizeValue * 1024 }
+                        "TB" { $currentSizeMB = $sizeValue * 1024 * 1024 }
+                    }
+                }
+
+                if ($currentSizeMB -gt $quotaMB) {
+                    [PSCustomObject]@{
+                        DisplayName       = $mbx.DisplayName
+                        UserPrincipalName = $mbx.UserPrincipalName
+                        CurrentSizeMB     = [math]::Round($currentSizeMB, 2)
+                        QuotaLimitMB      = [math]::Round($quotaMB, 2)
+                    }
                 }
             }
+        }  Format-Table -AutoSize
 
-            # Convert size string to MB
-            if ($sizeString -match "([\d\.]+)\s*(MB|GB|TB)") {
-                $sizeValue = [double]$matches[1]
-                $sizeUnit = $matches[2]
-
-                switch ($sizeUnit) {
-                    "MB" { $currentSizeMB = $sizeValue }
-                    "GB" { $currentSizeMB = $sizeValue * 1024 }
-                    "TB" { $currentSizeMB = $sizeValue * 1024 * 1024 }
-                }
-            }
-
-            if ($currentSizeMB -gt $quotaMB) {
-                [PSCustomObject]@{
-                    DisplayName       = $mbx.DisplayName
-                    UserPrincipalName = $mbx.UserPrincipalName
-                    CurrentSizeMB     = [math]::Round($currentSizeMB, 2)
-                    QuotaLimitMB      = [math]::Round($quotaMB, 2)
-                }
-            }
-        }
-    }  Format-Table -AutoSize
+    }
+    catch {
+        Write-ErrorLog -FunctionName "Show-MailboxesOverQuota" -ErrorMessage $_.Exception.Message
+    }
 
     Pause
 }
 
 function Show-MailboxesWithoutLicense {
-    Ensure-GraphConnected
+    Ensure-MgGraphConnected
     Ensure-ExchangeConnected
 
-    Write-Host "`n🚫 Mailboxes without a license:`n" -ForegroundColor Yellow
+    try {
+        Write-Host "`n🚫 Mailboxes without a license:`n" -ForegroundColor Yellow
 
-    $mailboxes = Get-Mailbox -ResultSize Unlimited
+        $mailboxes = Get-Mailbox -ResultSize Unlimited
+        $results = foreach ($mbx in $mailboxes) {
+            $user = Get-MgUser -UserId $mbx.UserPrincipalName -ErrorAction SilentlyContinue
+            if ($user) {
+                $licenseDetails = Get-MgUserLicenseDetail -UserId $user.Id -ErrorAction SilentlyContinue
+                $skuList = $licenseDetails | ForEach-Object { Convert-SkuToDisplayName -Sku $_.SkuPartNumber }
 
-    $results = foreach ($mbx in $mailboxes) {
-        $user = Get-MgUser -UserId $mbx.UserPrincipalName -ErrorAction SilentlyContinue
-        if ($user) {
-            $licenses = (Get-MgUserLicenseDetail -UserId $user.Id).SkuPartNumber
-            if (-not $licenses) {
-                [PSCustomObject]@{
-                    DisplayName        = $mbx.DisplayName
-                    UserPrincipalName = $mbx.UserPrincipalName
+                if (-not $skuList -or $skuList.Count -eq 0) {
+                    [PSCustomObject]@{
+                        DisplayName       = $mbx.DisplayName
+                        UserPrincipalName = $mbx.UserPrincipalName
+                        Licenses          = "❌ None"
+                    }
                 }
             }
         }
+
+        if ($results) {
+            $results | Format-Table -AutoSize
+
+            $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+            if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+                $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "mailboxes_without_license.csv"
+                $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+                Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+            }
+        }
+        else {
+            Write-Host "All mailboxes have at least one license." -ForegroundColor Green
+        }
     }
-
-    if ($results) {
-        $results | Format-Table -AutoSize
-
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
-        $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
-    }
-
-    } else {
-        Write-Host "All mailboxes have licenses." -ForegroundColor Green
+    catch {
+        Write-ErrorLog -FunctionName "Show-MailboxesWithoutLicense" -ErrorMessage $_.Exception.Message
     }
 
     Pause
 }
 
 
+
 function Show-UserDistributionGroups {
     Ensure-ExchangeConnected
+    try {
+        $upn = Read-Host "`nEnter the user's UPN (e.g. user@example.com)"
+        Write-Host "Distribution Groups for ${upn}:" -ForegroundColor Yellow
 
-    $upn = Read-Host "`nEnter the user's UPN (e.g. user@example.com)"
-    Write-Host "Distribution Groups for ${upn}:" -ForegroundColor Yellow
+        $groups = Get-DistributionGroup -ResultSize Unlimited | Where-Object {
+            (Get-DistributionGroupMember -Identity $_.Identity -ErrorAction SilentlyContinue) |
+            Where-Object { $_.PrimarySmtpAddress -eq $upn }
+        }
 
-    $groups = Get-DistributionGroup -ResultSize Unlimited | Where-Object {
-        (Get-DistributionGroupMember -Identity $_.Identity -ErrorAction SilentlyContinue) |
-        Where-Object { $_.PrimarySmtpAddress -eq $upn }
+        if ($groups) {
+            $groups | Select DisplayName, PrimarySmtpAddress | Format-Table -AutoSize
+        }
+        else {
+            Write-Host "User is not a member of any distribution groups." -ForegroundColor Red
+        }
     }
-
-    if ($groups) {
-        $groups | Select DisplayName, PrimarySmtpAddress | Format-Table -AutoSize
-    } else {
-        Write-Host "User is not a member of any distribution groups." -ForegroundColor Red
+    catch {
+        Write-ErrorLog -FunctionName "Show-UserDistributionGroups" -ErrorMessage $_.Exception.Message
     }
 
     Pause
@@ -458,8 +592,8 @@ function Show-AllDistributionGroups {
     Write-Host "All Distribution Groups:" -ForegroundColor Cyan
 
     Get-DistributionGroup -ResultSize Unlimited |
-        Select DisplayName, PrimarySmtpAddress, GroupType |
-        Format-Table -AutoSize
+    Select DisplayName, PrimarySmtpAddress, GroupType |
+    Format-Table -AutoSize
 
     Pause
 }
@@ -483,9 +617,9 @@ function Show-ExternalForwardingUsers {
 
         if ($fwd -and ($externalDomains -notcontains ($fwd -split "@")[1])) {
             [PSCustomObject]@{
-                DisplayName         = $mbx.DisplayName
-                UserPrincipalName   = $mbx.UserPrincipalName
-                ForwardingTo        = $fwd
+                DisplayName       = $mbx.DisplayName
+                UserPrincipalName = $mbx.UserPrincipalName
+                ForwardingTo      = $fwd
             }
         }
     }
@@ -493,14 +627,15 @@ function Show-ExternalForwardingUsers {
     if ($results) {
         $results | Format-Table -AutoSize
 
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
-        $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
-    }
+        $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+        if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+            $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "results_export.csv"
+            $results | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+            Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+        }
 
-    } else {
+    }
+    else {
         Write-Host "No external forwarding found." -ForegroundColor Green
     }
 
@@ -509,6 +644,7 @@ function Show-ExternalForwardingUsers {
 
 
 function Show-AvailableLicenses {
+    Ensure-MgGraphConnected
     try {
         # טען מודול נדרש אם לא טעון
         if (-not (Get-Module Microsoft.Graph.Identity.DirectoryManagement)) {
@@ -526,12 +662,11 @@ function Show-AvailableLicenses {
         $skus = Get-MgSubscribedSku -ErrorAction Stop
 
         # עיבוד והצגה
-        $skus | Select SkuPartNumber,
-            @{Name="Total";Expression={$_.PrepaidUnits.Enabled}},
-            @{Name="Assigned";Expression={$_.ConsumedUnits}},
-            @{Name="Available";Expression={$_.PrepaidUnits.Enabled - $_.ConsumedUnits}} |
-            Sort SkuPartNumber |
-            Format-Table -AutoSize | Out-Host
+        $skus | Select @{Name = "License"; Expression = { Convert-SkuToDisplayName -Sku $_.SkuPartNumber } },
+        @{Name = "Total"; Expression = { $_.PrepaidUnits.Enabled } },
+        @{Name = "Assigned"; Expression = { $_.ConsumedUnits } },
+        @{Name = "Available"; Expression = { $_.PrepaidUnits.Enabled - $_.ConsumedUnits } } |
+        Format-Table -AutoSize
     }
     catch {
         Write-Host "❌ Error occurred:" -ForegroundColor Red
@@ -547,7 +682,7 @@ function Show-AvailableLicenses {
 
 
 function Create-NewUserWithLicense {
-    Ensure-GraphConnected
+    Ensure-MgGraphConnected
 
     # User input
     $displayName = Read-Host "Enter display name"
@@ -571,7 +706,8 @@ function Create-NewUserWithLicense {
             $plainPassword -match '[0-9]' -and
             $plainPassword -match '[!@#$%^&*()\-+=]') {
             $isValid = $true
-        } else {
+        }
+        else {
             Write-Host "Password does not meet complexity requirements!" -ForegroundColor Red
             Write-Host "It must contain:" -ForegroundColor Yellow
             Write-Host "- At least 8 characters" -ForegroundColor Yellow
@@ -583,20 +719,21 @@ function Create-NewUserWithLicense {
 
     # Create user
     $userParams = @{
-        AccountEnabled     = $true
-        DisplayName        = $displayName
-        MailNickname       = ($userPrincipalName -split "@")[0]
-        UserPrincipalName  = $userPrincipalName
-        PasswordProfile    = @{
+        AccountEnabled    = $true
+        DisplayName       = $displayName
+        MailNickname      = ($userPrincipalName -split "@")[0]
+        UserPrincipalName = $userPrincipalName
+        PasswordProfile   = @{
             ForceChangePasswordNextSignIn = $true
-            Password = $plainPassword
+            Password                      = $plainPassword
         }
     }
 
     try {
         $newUser = New-MgUser @userParams
         Write-Host "`n✅ User created: $($newUser.UserPrincipalName)" -ForegroundColor Green
-    } catch {
+    }
+    catch {
         Write-Host "`n❌ Failed to create user." -ForegroundColor Red
         Write-Host $_.Exception.Message -ForegroundColor Yellow
         Pause
@@ -612,7 +749,8 @@ function Create-NewUserWithLicense {
     try {
         Update-MgUser -UserId $newUser.Id -UsageLocation $usageLocation
         Write-Host "Usage location set to: $usageLocation" -ForegroundColor Cyan
-    } catch {
+    }
+    catch {
         Write-Host "❌ Failed to set usage location." -ForegroundColor Red
         Write-Host $_.Exception.Message -ForegroundColor Yellow
         Pause
@@ -624,8 +762,8 @@ function Create-NewUserWithLicense {
     if ($assign -eq "y") {
         try {
             $licenses = @(Get-MgSubscribedSku | Where-Object {
-                $_.ConsumedUnits -lt $_.PrepaidUnits.Enabled -and $_.PrepaidUnits.Enabled -gt 0
-            })
+                    $_.ConsumedUnits -lt $_.PrepaidUnits.Enabled -and $_.PrepaidUnits.Enabled -gt 0
+                })
 
             if (-not $licenses) {
                 Write-Host "No available licenses found." -ForegroundColor Yellow
@@ -643,17 +781,20 @@ function Create-NewUserWithLicense {
             $choice = Read-Host "Select license number to assign"
             if ($choice -match '^\d+$' -and $choice -ge 1 -and $choice -le $licenses.Count) {
                 $selectedLicense = $licenses[$choice - 1]
-
                 Set-MgUserLicense -UserId $newUser.Id -AddLicenses @(@{ SkuId = $selectedLicense.SkuId }) -RemoveLicenses @()
-                Write-Host "✅ License assigned: $($selectedLicense.SkuPartNumber)" -ForegroundColor Green
-            } else {
+                $skuName = Convert-SkuToDisplayName -Sku $selectedLicense.SkuPartNumber
+                Write-Host "✅ License assigned: $skuName" -ForegroundColor Green
+            }
+            else {
                 Write-Host "Invalid selection. No license assigned." -ForegroundColor Yellow
             }
-        } catch {
+        }
+        catch {
             Write-Host "❌ Failed to assign license." -ForegroundColor Red
             Write-Host $_.Exception.Message -ForegroundColor Yellow
         }
-    } else {
+    }
+    else {
         Write-Host "User created without license." -ForegroundColor DarkYellow
     }
 
@@ -661,11 +802,11 @@ function Create-NewUserWithLicense {
 }
 
 function Remove-MailboxInteractive {
-    Ensure-GraphConnected
+    Ensure-MgGraphConnected
 
     try {
         # שליפת כל המשתמשים
-        $users = Get-MgUser -All -Property Id,DisplayName,UserPrincipalName | Sort-Object DisplayName
+        $users = Get-MgUser -All -Property Id, DisplayName, UserPrincipalName | Sort-Object DisplayName
 
         if (-not $users -or $users.Count -eq 0) {
             Write-Host "No users found in Azure AD." -ForegroundColor Yellow
@@ -696,7 +837,8 @@ function Remove-MailboxInteractive {
         if ($confirm -eq "YES") {
             Remove-MgUser -UserId $selectedUser.Id -Confirm:$false -ErrorAction Stop
             Write-Host "✅ User deleted successfully from Azure AD." -ForegroundColor Green
-        } else {
+        }
+        else {
             Write-Host "❌ Deletion canceled." -ForegroundColor Cyan
         }
     }
@@ -708,12 +850,10 @@ function Remove-MailboxInteractive {
 }
 
 function Assign-LicenseToUserInteractive {
-    Ensure-GraphConnected
+    Ensure-MgGraphConnected
 
     try {
-        # שליפת כל המשתמשים
-        $users = Get-MgUser -All -Property Id,DisplayName,UserPrincipalName | Sort-Object DisplayName
-
+        $users = Get-MgUser -All -Property Id, DisplayName, UserPrincipalName | Sort-Object DisplayName
         if (-not $users) {
             Write-Host "No users found." -ForegroundColor Yellow
             return
@@ -725,16 +865,8 @@ function Assign-LicenseToUserInteractive {
         }
 
         $userChoice = Read-Host "`nEnter the number of the user"
-        if (-not [int]::TryParse($userChoice, [ref]$null)) {
-            throw "Invalid input: not a number."
-        }
-        $userIndex = [int]$userChoice
-        if ($userIndex -lt 1 -or $userIndex -gt $users.Count) {
-            throw "Invalid user selection."
-        }
-        $selectedUser = $users[$userIndex - 1]
+        $selectedUser = $users[$userChoice - 1]
 
-        # שליפת כל הרשיונות הזמינים בדייר
         $availableLicenses = Get-MgSubscribedSku | Where-Object { $_.ConsumedUnits -lt $_.PrepaidUnits.Enabled }
         if (-not $availableLicenses) {
             Write-Host "No available licenses in the tenant." -ForegroundColor Yellow
@@ -748,24 +880,12 @@ function Assign-LicenseToUserInteractive {
         }
 
         $licenseChoice = Read-Host "`nEnter the number of the license to assign"
-        if (-not [int]::TryParse($licenseChoice, [ref]$null)) {
-            throw "Invalid input: not a number."
-        }
-        $licenseIndex = [int]$licenseChoice
-        if ($licenseIndex -lt 1 -or $licenseIndex -gt $availableLicenses.Count) {
-            throw "Invalid license selection."
-        }
-        $selectedLicense = $availableLicenses[$licenseIndex - 1]
+        $selectedLicense = $availableLicenses[$licenseChoice - 1]
 
-        # הקצאת הרישיון
-        $licenseObject = @{
-            AddLicenses = @(@{SkuId = $selectedLicense.SkuId})
-            RemoveLicenses = @()
-        }
+        Set-MgUserLicense -UserId $selectedUser.Id -AddLicenses @(@{ SkuId = $selectedLicense.SkuId }) -RemoveLicenses @()
 
-        Set-MgUserLicense -UserId $selectedUser.Id -BodyParameter $licenseObject -ErrorAction Stop
-
-        Write-Host "✅ License '$($selectedLicense.SkuPartNumber)' assigned to $($selectedUser.UserPrincipalName)." -ForegroundColor Green
+        $skuName = Convert-SkuToDisplayName -Sku $selectedLicense.SkuPartNumber
+        Write-Host "✅ License assigned: $skuName" -ForegroundColor Green
     }
     catch {
         Write-Host "❌ Error: $($_.Exception.Message)" -ForegroundColor Red
@@ -773,6 +893,7 @@ function Assign-LicenseToUserInteractive {
 
     Pause
 }
+
 
 function Grant-MailboxAccessInteractive {
     Ensure-ExchangeConnected
@@ -823,7 +944,7 @@ function Grant-MailboxAccessInteractive {
                 Write-Host "3. Reviewer (read-only)"
                 Write-Host "4. AvailabilityOnly (free/busy)"
                 $calPerm = Read-Host "Enter your choice (1–4)"
-            } while ($calPerm -notin "1","2","3","4")
+            } while ($calPerm -notin "1", "2", "3", "4")
 
             $accessRight = switch ($calPerm) {
                 "1" { "Owner" }
@@ -853,7 +974,8 @@ function Show-ArchiveEnabledMailboxes {
 
         if (-not $mailboxes) {
             Write-Host "No users found with archive enabled." -ForegroundColor Yellow
-        } else {
+        }
+        else {
             $results = foreach ($mbx in $mailboxes) {
                 $stats = Get-MailboxStatistics -Identity $mbx.UserPrincipalName
 
@@ -864,7 +986,8 @@ function Show-ArchiveEnabledMailboxes {
                     RetentionPolicy   = $mbx.RetentionPolicy
                     ArchiveSizeGB     = if ($stats.TotalArchiveSize -and $stats.TotalArchiveSize.Value) {
                         [math]::Round(($stats.TotalArchiveSize.Value.ToBytes() / 1GB), 2)
-                    } else {
+                    }
+                    else {
                         "N/A"
                     }
                 }
@@ -910,15 +1033,16 @@ function New-InteractiveRetentionPolicy {
 
         try {
             $tag = New-RetentionPolicyTag -Name $tagName `
-                                           -Type All `
-                                           -RetentionAction MoveToArchive `
-                                           -RetentionEnabled $true `
-                                           -AgeLimitForRetention $days `
-                                           -Comment $tagComment `
-                                           -ErrorAction Stop
+                -Type All `
+                -RetentionAction MoveToArchive `
+                -RetentionEnabled $true `
+                -AgeLimitForRetention $days `
+                -Comment $tagComment `
+                -ErrorAction Stop
             $tags += $tag
             Write-Host "✔️ Tag '$tagName' created successfully." -ForegroundColor Green
-        } catch {
+        }
+        catch {
             Write-Host "❌ Failed to create tag '$tagName': $($_.Exception.Message)" -ForegroundColor Red
         }
     }
@@ -932,7 +1056,8 @@ function New-InteractiveRetentionPolicy {
         $tagNames = $tags | Select-Object -ExpandProperty Name
         New-RetentionPolicy -Name $policyName -RetentionPolicyTagLinks $tagNames
         Write-Host "`n✅ Retention policy '$policyName' created with $($tags.Count) tags." -ForegroundColor Green
-    } catch {
+    }
+    catch {
         Write-Host "❌ Failed to create retention policy: $($_.Exception.Message)" -ForegroundColor Red
     }
 
@@ -953,8 +1078,8 @@ function Show-RetentionPolicies {
         }
 
         $policies | Select-Object Name, RetentionPolicyTagLinks, IsDefault |
-            Sort-Object Name |
-            Format-Table -AutoSize
+        Sort-Object Name |
+        Format-Table -AutoSize
 
         Write-Host "`nDone." -ForegroundColor Green
     }
@@ -1030,6 +1155,7 @@ function Assign-RetentionPolicyToUser {
 }
 
 function Find-InactiveLicensedUsers {
+    Ensure-MgGraphConnected
     param (
         [int]$DaysInactive = 90
     )
@@ -1042,7 +1168,7 @@ function Find-InactiveLicensedUsers {
 
         $thresholdDate = (Get-Date).AddDays(-$DaysInactive)
         $licensedUsers = Get-MgUser -All -Property "Id,DisplayName,UserPrincipalName,AssignedLicenses" |
-                         Where-Object { $_.AssignedLicenses.Count -gt 0 }
+        Where-Object { $_.AssignedLicenses.Count -gt 0 }
 
         $results = @()
 
@@ -1066,17 +1192,20 @@ function Find-InactiveLicensedUsers {
                     }
                 }
 
-            } catch {
+            }
+            catch {
                 Write-Warning "Skipped $($user.UserPrincipalName): $($_.Exception.Message)"
             }
         }
 
         if ($results.Count -eq 0) {
             Write-Host "No inactive licensed users found." -ForegroundColor Yellow
-        } else {
+        }
+        else {
             $results | Sort-Object LastLogonTime | Format-Table -AutoSize | Out-Host
         }
-    } catch {
+    }
+    catch {
         Write-Host "Error: $_" -ForegroundColor Red
     }
 
@@ -1114,7 +1243,8 @@ function Incoming-Mail-Traffic-Tracking {
         if ($FilterOption -eq "1") {
             $filteredMessages = $messageTrace
             Write-Host "`n📩 Showing all emails:" -ForegroundColor Yellow
-        } elseif ($FilterOption -eq "2") {
+        }
+        elseif ($FilterOption -eq "2") {
             $filteredMessages = $messageTrace | Where-Object { $_.Status -in @("Failed", "Deferred", "Pending", "Blocked", "Quarantined") }
             Write-Host "`n⚠ Showing only problematic email statuses:" -ForegroundColor Red
         }
@@ -1123,14 +1253,15 @@ function Incoming-Mail-Traffic-Tracking {
         if ($filteredMessages) {
             $filteredMessages | Format-Table Received, SenderAddress, Subject, Status
 
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "filteredMessages_export.csv"
-        $filteredMessages | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
-    }
+            $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+            if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+                $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "filteredMessages_export.csv"
+                $filteredMessages | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+                Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+            }
 
-        } else {
+        }
+        else {
             Write-Host "✅ No matching emails found." -ForegroundColor Green
         }
 
@@ -1142,18 +1273,20 @@ function Incoming-Mail-Traffic-Tracking {
             Write-Host "⚠️ Suspicious login activity detected:" -ForegroundColor Red
             $loginAttempts | Format-Table CreationDate, UserId, IPAddress, Operation
 
-    $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
-    if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
-        $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "loginAttempts_export.csv"
-        $loginAttempts | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
-        Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
-    }
+            $saveToCSV = Read-Host "Do you want to save the output to a CSV file? (Y/N)"
+            if ($saveToCSV -eq 'Y' -or $saveToCSV -eq 'y') {
+                $csvPath = Join-Path -Path $PSScriptRoot -ChildPath "loginAttempts_export.csv"
+                $loginAttempts | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+                Write-Host "✅ Output saved to: $csvPath" -ForegroundColor Green
+            }
 
-        } else {
+        }
+        else {
             Write-Host "✅ No suspicious logins found." -ForegroundColor Green
         }
 
-    } catch {
+    }
+    catch {
         $errorDetails = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] Error:`n$($_.Exception.Message)`nStackTrace:`n$($_.Exception.StackTrace)`nInnerException:`n$($_.Exception.InnerException)"
         Add-Content -Path "$PSScriptRoot\detailed_error_log.txt" -Value $errorDetails
         Write-Host "❌ Detailed error saved to detailed_error_log.txt" -ForegroundColor Yellow
@@ -1163,14 +1296,11 @@ function Incoming-Mail-Traffic-Tracking {
 }
 
 function Get-Mailbox-FullReport {
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory)]
-        [string]$UserPrincipalName
-    )
-		
+    Ensure-MgGraphConnected
+    $UserPrincipalName = Read-Host "Enter the UserPrincipalName (e.g., user@domain.com)"
+	
     try {
-		Ensure-MgGraphConnected
+       
         Write-Host "Collecting report for mailbox:" $UserPrincipalName -ForegroundColor Cyan
 
         # תיבת דואר
@@ -1184,37 +1314,29 @@ function Get-Mailbox-FullReport {
         $mailboxSize = $stats.TotalItemSize.ToString()
 
         # שימוש ב־Microsoft Graph במקום MSOnline/AzureAD
-		$sku = "N/A"
-		try {
-			$licenseDetails = Get-MgUserLicenseDetail -UserId $UserPrincipalName -ErrorAction Stop
-			if ($licenseDetails) {
-				$skuList = @()
-				foreach ($detail in $licenseDetails) {
-					switch ($detail.SkuPartNumber) {
-						"O365_BUSINESS_PREMIUM"   { $skuList += "Microsoft 365 Business Standard" }
-						"ENTERPRISEPACK"          { $skuList += "Office 365 E3" }
-						"BUSINESS_BASIC"          { $skuList += "Microsoft 365 Business Basic" }
-						"M365_BUSINESS_PREMIUM"   { $skuList += "Microsoft 365 Business Premium" }
-						"STANDARDPACK"            { $skuList += "Office 365 E1" }
-						"EXCHANGESTANDARD"        { $skuList += "Exchange Online (Plan 1)" }
-						"EXCHANGE_S_ENTERPRISE"   { $skuList += "Exchange Online (Plan 2)" }
-						"O365_BUSINESS"           { $skuList += "Microsoft 365 Apps for Business" }
-						default                   { $skuList += $detail.SkuPartNumber }
-					}
-				}
-				$sku = $skuList -join ", "
-			}
-		} catch {
-			$sku = "Unable to retrieve licenses"
-		}
+        $sku = "N/A"
+        try {
+            $licenseDetails = Get-MgUserLicenseDetail -UserId $UserPrincipalName -ErrorAction Stop
+            if ($licenseDetails) {
+                $skuList = @()
+                $skuList = $licenseDetails | ForEach-Object { Convert-SkuToDisplayName -Sku $_.SkuPartNumber }
+                $sku = $skuList -join ", "
+
+            }
+        }
+        catch {
+            $sku = "Unable to retrieve licenses"
+        }
 
 
         # הפניות מייל
         $forwarding = if ($mailbox.ForwardingSMTPAddress) {
             "$($mailbox.ForwardingSMTPAddress) (SMTP)"
-        } elseif ($mailbox.ForwardingAddress) {
+        }
+        elseif ($mailbox.ForwardingAddress) {
             "$($mailbox.ForwardingAddress)"
-        } else {
+        }
+        else {
             "None"
         }
 
@@ -1227,20 +1349,22 @@ function Get-Mailbox-FullReport {
         $groupList = if ($groups) { $groups -join ", " } else { "None" }
 
         # הרשאות לתיבות אחרות
-        $permissions = Get-MailboxPermission -User $UserPrincipalName -ErrorAction SilentlyContinue |
-            Where-Object { $_.AccessRights -ne "None" -and $_.IsInherited -eq $false }
+        $permissions = Get-MailboxPermission -Identity $UserPrincipalName -ErrorAction SilentlyContinue |
+        Where-Object { $_.AccessRights -ne "None" -and $_.IsInherited -eq $false }
         $permList = if ($permissions) {
             $permissions | Select-Object Identity, AccessRights | Format-Table -AutoSize | Out-String
-        } else {
+        }
+        else {
             "No explicit mailbox permissions"
         }
 
         # הרשאות ליומן
         $calendarPermissions = Get-MailboxFolderPermission "${UserPrincipalName}:\Calendar" -ErrorAction SilentlyContinue |
-            Where-Object { $_.User -ne "Default" -and $_.User -ne "Anonymous" }
+        Where-Object { $_.User -ne "Default" -and $_.User -ne "Anonymous" }
         $calendarList = if ($calendarPermissions) {
             $calendarPermissions | Select-Object User, AccessRights | Format-Table -AutoSize | Out-String
-        } else {
+        }
+        else {
             "No calendar sharing found"
         }
 
@@ -1248,7 +1372,8 @@ function Get-Mailbox-FullReport {
         $rules = Get-InboxRule -Mailbox $UserPrincipalName -ErrorAction SilentlyContinue
         $ruleList = if ($rules) {
             $rules | Select-Object Name, Enabled, Priority, From, MoveToFolder | Format-Table -AutoSize | Out-String
-        } else {
+        }
+        else {
             "No Inbox rules found"
         }
 
@@ -1275,11 +1400,173 @@ function Get-Mailbox-FullReport {
         Write-Host "Inbox Rules" -ForegroundColor Green
         Write-Output $ruleList
 
-    } catch {
+    }
+    catch {
         Write-Host "Error: $($_.Exception.Message)" -ForegroundColor Red
     }
 
     Pause
+}
+
+
+function Check-M365UserStatus {
+    try {
+        $UserPrincipalName = Read-Host "Enter the UserPrincipalName (e.g., user@domain.com)"
+
+        # ודא חיבור ל־Exchange Online
+        if (-not (Get-ConnectionInformation)) {
+            Connect-ExchangeOnline -ShowBanner:$false
+        }
+
+        # ניסיון לשלוף את המשתמש
+        $user = Get-User -Identity $UserPrincipalName -ErrorAction Stop
+
+        # הצגת המידע
+        Write-Host "`n✅ User found: $($user.DisplayName)" -ForegroundColor Green
+        Write-Host ("Blocked Sign-in : " + ($(if ($user.BlockCredential) { "🚫 Yes" } else { "✅ No" })))
+        Write-Host ("Account Disabled: " + ($(if ($user.AccountDisabled) { "⚠️  Yes" } else { "✅ No" })))
+    
+    }
+    catch {
+        $scriptDirectory = $PSScriptRoot
+        $logFile = Join-Path -Path $scriptDirectory -ChildPath "Error.log"
+        $errorMsg = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Error for user '$UserPrincipalName': $($_.Exception.Message)"
+        Add-Content -Path $logFile -Value $errorMsg
+
+        Write-Host "`n❌ An error occurred: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "Details were saved to: $logFile" -ForegroundColor DarkGray
+    }
+
+    # עצירה לפני החזרה לתפריט
+    Read-Host -Prompt "`nPress Enter to return to the menu"
+}
+
+
+function Reset-M365UserPassword {
+    Ensure-MgGraphConnected
+
+    try {
+        # בדיקה האם המודול מותקן
+        if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.Users)) {
+            Write-Host "`n❌ Required module 'Microsoft.Graph.Users' is not installed." -ForegroundColor Red
+            Write-Host "You can install it using: Install-Module Microsoft.Graph.Users" -ForegroundColor Yellow
+            return
+        }
+
+        # טען את המודול אם עדיין לא טענו אותו
+        if (-not (Get-Module -Name Microsoft.Graph.Users)) {
+            Import-Module Microsoft.Graph.Users
+        }
+
+        # בדוק חיבור לגרף
+        if (-not (Get-MgContext)) {
+            Connect-MgGraph -Scopes "User.ReadWrite.All"
+        }
+
+        # קלט מייל
+        $UserPrincipalName = Read-Host "Enter the UserPrincipalName (e.g., user@domain.com)"
+
+        # שליפת המשתמש
+        $user = Get-MgUser -UserId $UserPrincipalName -ErrorAction Stop
+
+        # סיסמה מותאמת או אוטומטית
+        $choice = Read-Host "Do you want to set a custom password? (Y/N)"
+        if ($choice -eq 'Y' -or $choice -eq 'y') {
+            $newPassword = Read-Host "Enter the new password"
+        }
+        else {
+            $newPassword = -join ((48..57) + (65..90) + (97..122) + (33, 35, 64, 36, 37) | Get-Random -Count 14 | ForEach-Object { [char]$_ })
+        }
+
+        # אילוץ החלפת סיסמה
+        $forceChangeInput = Read-Host "Force user to change password at next sign-in? (Y/N)"
+        $forceChange = $false
+        if ($forceChangeInput -eq 'Y' -or $forceChangeInput -eq 'y') {
+            $forceChange = $true
+        }
+
+        # איפוס הסיסמה
+        Update-MgUser -UserId $UserPrincipalName -PasswordProfile @{
+            Password                      = $newPassword
+            ForceChangePasswordNextSignIn = $forceChange
+        }
+
+        # פלט למשתמש
+        Write-Host "`n✅ Password reset successful for: $UserPrincipalName" -ForegroundColor Green
+        Write-Host "🔐 New Password: $newPassword" -ForegroundColor Yellow
+        if ($forceChange) {
+            Write-Host "🔁 User will be required to change password at next sign-in." -ForegroundColor Cyan
+        }
+        else {
+            Write-Host "ℹ️  User will NOT be required to change password at next sign-in." -ForegroundColor DarkCyan
+        }
+
+    }
+    catch {
+        $scriptDirectory = $PSScriptRoot
+        $logFile = Join-Path -Path $scriptDirectory -ChildPath "Error.log"
+        $errorMsg = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Password reset failed for '$UserPrincipalName': $($_.Exception.Message)"
+        Add-Content -Path $logFile -Value $errorMsg
+
+        if ($_.Exception.Message -like "*403*" -and $newPassword) {
+            Write-Host "`n⚠️ Warning: Microsoft Graph returned '403 Forbidden', but the password might have been changed." -ForegroundColor Yellow
+            Write-Host "🔐 New Password: $newPassword" -ForegroundColor Yellow
+            Write-Host "✅ Please verify manually in the portal or ask the user to test sign-in."
+        }
+        else {
+            Write-Host "`n❌ Failed to reset password: $($_.Exception.Message)" -ForegroundColor Red
+            Write-Host "Details were saved to: $logFile" -ForegroundColor DarkGray
+        }
+    }
+
+    Read-Host -Prompt "`nPress Enter to return to the menu"
+}
+
+
+function Get-M365SigninFailures {
+    Ensure-MgGraphConnected  # אם כבר כתבת אותה
+
+    $UserPrincipalName = Read-Host "Enter the UserPrincipalName (e.g., user@domain.com)"
+    
+    try {
+        $user = Get-MgUser -UserId $UserPrincipalName -ErrorAction Stop
+        $userId = $user.Id
+
+        Write-Host "`n🔍 Fetching recent failed sign-in attempts for $UserPrincipalName ..." -ForegroundColor Cyan
+
+        $logins = Get-MgAuditLogSignIn -Filter "userId eq '$userId' and status/errorCode ne 0" -Top 20
+
+        if ($logins.Count -eq 0) {
+            Write-Host "✅ No failed sign-in attempts found for $UserPrincipalName" -ForegroundColor Green
+            return
+        }
+
+        $output = @()
+        foreach ($log in $logins) {
+            $output += [PSCustomObject]@{
+                Time      = $log.CreatedDateTime
+                ErrorCode = $log.Status.ErrorCode
+                Reason    = $log.Status.FailureReason
+                Client    = $log.AppDisplayName
+                IP        = $log.IpAddress
+            }
+        }
+
+        $output | Format-Table -AutoSize
+
+        $save = Read-Host "`nDo you want to save the results to TXT? (Y/N)"
+        if ($save -eq "Y" -or $save -eq "y") {
+            $path = Join-Path -Path $PSScriptRoot -ChildPath "SigninLog_$($UserPrincipalName.Split('@')[0]).txt"
+            $output | Out-File -FilePath $path -Encoding UTF8
+            Write-Host "`n✅ Saved to $path" -ForegroundColor Yellow
+        }
+
+    }
+    catch {
+        Write-Host "❌ Error: $($_.Exception.Message)" -ForegroundColor Red
+    }
+
+    Read-Host "`nPress Enter to return to the menu"
 }
 
 
@@ -1312,12 +1599,14 @@ function Show-ViewDataMenu {
     Write-Host "14. Show all distribution groups"
     Write-Host "15. Show users with external forwarding"
     Write-Host "16. Show available license types"
-	Write-Host "17. Show Archive Enabled Mailboxes"
-	Write-Host "18. Show-RetentionPolicies"
-	Write-Host "19. Inactive mailboxes with license"
-	Write-Host "20. Incoming Mail Traffic (Message Trace Report)"
-	Write-Host "21. Get Mailbox FullReport"
-    Write-Host "22. Back to Main Menu"
+    Write-Host "17. Show Archive Enabled Mailboxes"
+    Write-Host "18. Show-RetentionPolicies"
+    Write-Host "19. Inactive mailboxes with license"
+    Write-Host "20. Incoming Mail Traffic (Message Trace Report)"
+    Write-Host "21. Get Mailbox FullReport"
+    Write-Host "22. Check Block Mailbox"
+    Write-Host "23. Get login Failures"
+    Write-Host "24. Back to Main Menu"
     Write-Host ""
 }
 
@@ -1328,9 +1617,10 @@ function Show-PerformActionsMenu {
     Write-Host "2. Remove Mailbox"
     Write-Host "3. Assign License To User"
     Write-Host "4. Grant Mailbox Or CalanderAccess"
-	Write-Host "5. Create Archive Retention Policy"
-	Write-Host "6. Assign Retention Policy To User"
-    Write-Host "7. Back to Main Menu"
+    Write-Host "5. Create Archive Retention Policy"
+    Write-Host "6. Assign Retention Policy To User"
+    Write-Host "7. Reset MailBox Password"
+    Write-Host "8. Back to Main Menu"
     Write-Host ""
 }
 
@@ -1351,18 +1641,18 @@ while ($true) {
             $exitViewMenu = $false
             do {
                 Show-ViewDataMenu
-                $viewChoice = Read-Host "Select an option (1-22)"
+                $viewChoice = Read-Host "Select an option (1-24)"
 
                 switch ($viewChoice) {
-                    "1"  { Show-Mailboxes }
-                    "2"  { Show-MailboxSize }
-                    "3"  { Show-Forwarding }
-                    "4"  { Show-ArchiveEnabled }
-                    "5"  { Show-FullAccessPermissions }
-                    "6"  { Show-SendAsPermissions }
-                    "7"  { Show-InactiveMailboxes }
-                    "8"  { Show-SharedMailboxes }
-                    "9"  { Export-MailboxesToCSV }
+                    "1" { Show-Mailboxes }
+                    "2" { Show-MailboxSize }
+                    "3" { Show-Forwarding }
+                    "4" { Show-ArchiveEnabled }
+                    "5" { Show-FullAccessPermissions }
+                    "6" { Show-SendAsPermissions }
+                    "7" { Show-InactiveMailboxes }
+                    "8" { Show-SharedMailboxes }
+                    "9" { Export-MailboxesToCSV }
                     "10" { Show-MailboxLicenses }
                     "11" { Show-MailboxesOverQuota }
                     "12" { Show-MailboxesWithoutLicense }
@@ -1370,12 +1660,14 @@ while ($true) {
                     "14" { Show-AllDistributionGroups }
                     "15" { Show-ExternalForwardingUsers }
                     "16" { Show-AvailableLicenses }
-					"17" { Show-ArchiveEnabledMailboxes }
-					"18" { Show-RetentionPolicies }
-					"19" { Find-InactiveLicensedUsers }
-					"20" { Incoming-Mail-Traffic-Tracking }
-					"21" { Get-Mailbox-FullReport }
-                    "22" { $exitViewMenu = $true }
+                    "17" { Show-ArchiveEnabledMailboxes }
+                    "18" { Show-RetentionPolicies }
+                    "19" { Find-InactiveLicensedUsers }
+                    "20" { Incoming-Mail-Traffic-Tracking }
+                    "21" { Get-Mailbox-FullReport }
+                    "22" { Check-M365UserStatus }
+                    "23" { Get-M365SigninFailures }
+                    "24" { $exitViewMenu = $true }
                     default {
                         Write-Host "Invalid selection. Try again." -ForegroundColor Red
                         Start-Sleep -Seconds 2
@@ -1397,9 +1689,10 @@ while ($true) {
                     "2" { Remove-MailboxInteractive }
                     "3" { Assign-LicenseToUserInteractive }
                     "4" { Grant-MailboxAccessInteractive }
-					"5" { New-InteractiveRetentionPolicy }
-					"6" { Assign-RetentionPolicyToUser }
-                    "7" { $exitActionMenu = $true }
+                    "5" { New-InteractiveRetentionPolicy }
+                    "6" { Assign-RetentionPolicyToUser }
+                    "7" { Reset-M365UserPassword } 
+                    "8" { $exitActionMenu = $true }
                     default {
                         Write-Host "Invalid selection. Try again." -ForegroundColor Red
                         Start-Sleep -Seconds 2
@@ -1409,27 +1702,37 @@ while ($true) {
         }
 
         "3" {
-            Write-Host "Exiting..." -ForegroundColor Yellow
+            Write-Host "`n🔌 Disconnecting all active sessions..." -ForegroundColor Yellow
             try {
                 if (Get-ConnectionInformation) {
                     Disconnect-ExchangeOnline -Confirm:$false
                     Write-Host "✅ Disconnected from Exchange Online." -ForegroundColor Green
-                } else {
-                    Write-Host "No active Exchange Online connection found." -ForegroundColor DarkYellow
+                }
+                else {
+                    Write-Host "ℹ️  No active Exchange Online connection found." -ForegroundColor DarkYellow
                 }
 
-                if (Get-MgContext) {
-                    Disconnect-MgGraph
-                    Write-Host "✅ Disconnected from Microsoft Graph." -ForegroundColor Green
-                } else {
-                    Write-Host "No active Microsoft Graph session found." -ForegroundColor DarkYellow
+                try {
+                    if (Get-MgContext) {
+                        Disconnect-MgGraph
+                        Write-Host "✅ Disconnected from Microsoft Graph." -ForegroundColor Green
+                    }
+                    else {
+                        Write-Host "ℹ️  No Microsoft Graph session found." -ForegroundColor DarkYellow
+                    }
                 }
+                catch {
+                    Write-Host "ℹ️  Microsoft Graph disconnect not required or already closed." -ForegroundColor DarkGray
+                }
+
             }
             catch {
-                Write-Host "❌ Error disconnecting: $($_.Exception.Message)" -ForegroundColor Red
+                Write-Host "`n❌ Error during disconnect: $($_.Exception.Message)" -ForegroundColor Red
             }
-            exit
+
+            Read-Host "`nPress Enter to return to the main menu"
         }
+
 
         default {
             Write-Host "Invalid selection. Try again." -ForegroundColor Red
