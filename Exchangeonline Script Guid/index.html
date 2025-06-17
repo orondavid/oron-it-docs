@@ -1023,7 +1023,7 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      ▶️ הרצת הסקריפט
+      🧠 מבנה הסקריפט בקצרה
     </span>
   </a>
   
@@ -1032,7 +1032,7 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 מבנה הסקריפט בקצרה
+      🛠️ פתרון בעיות נפוצות
     </span>
   </a>
   
@@ -1041,7 +1041,7 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ פתרון בעיות נפוצות
+      📂 מיקום לוג שגיאות
     </span>
   </a>
   
@@ -1050,15 +1050,6 @@
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      📂 מיקום לוג שגיאות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
       ✅ המלצות
     </span>
   </a>
@@ -1066,7 +1057,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       ✅ כך נראה התפריט
     </span>
@@ -1276,7 +1267,7 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      ▶️ הרצת הסקריפט
+      🧠 מבנה הסקריפט בקצרה
     </span>
   </a>
   
@@ -1285,7 +1276,7 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 מבנה הסקריפט בקצרה
+      🛠️ פתרון בעיות נפוצות
     </span>
   </a>
   
@@ -1294,7 +1285,7 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ פתרון בעיות נפוצות
+      📂 מיקום לוג שגיאות
     </span>
   </a>
   
@@ -1303,15 +1294,6 @@
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      📂 מיקום לוג שגיאות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
       ✅ המלצות
     </span>
   </a>
@@ -1319,7 +1301,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       ✅ כך נראה התפריט
     </span>
@@ -1364,17 +1346,21 @@
 <blockquote>
 <p>ייתכן שתידרש להריץ את הפקודה הבאה אם לא מוגדרת מדיניות:
 <div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+ייתכן שתידרש להריץ את הפקודה הבאה אם הקובץ חסום: 
+<div class="highlight"><pre><span></span><code><span class="nb">Unblock-File</span> <span class="n">-patch</span> <span class="n">C</span><span class="p">:\</span><span class="n">ps</span><span class="p">\</span><span class="n">ExchangeOnlineManagement_with_export</span><span class="p">.</span><span class="n">ps1</span>
 
-<span class="nb">Unblock-File</span> <span class="n">-patch</span> <span class="n">C</span><span class="p">:\</span><span class="n">ps</span><span class="p">\</span><span class="n">ExchangeOnlineManagement_with_export</span><span class="p">.</span><span class="n">ps1</span>
+<span class="p">---</span>
+
+<span class="c">## ▶️ הרצת הסקריפט</span>
+
+<span class="p">```</span><span class="n">powershell</span>
+<span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="nb">ps</span>
+<span class="p">.\</span><span class="n">ExchangeOnlineManagement_with_export</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div></p>
 </blockquote>
 <hr />
-<h2 id="_5">▶️ הרצת הסקריפט</h2>
-<div class="highlight"><pre><span></span><code><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="nb">ps</span>
-<span class="p">.\</span><span class="n">ExchangeOnlineManagement_with_export</span><span class="p">.</span><span class="n">ps1</span>
-</code></pre></div>
-<hr />
-<h2 id="_6">🧠 מבנה הסקריפט בקצרה</h2>
+<h2 id="_5">🧠 מבנה הסקריפט בקצרה</h2>
 <ul>
 <li>התחברות אוטומטית ל־Exchange Online (אם לא מחובר)</li>
 <li>התחברות ל־Microsoft Graph</li>
@@ -1382,7 +1368,7 @@
 <li>ניהול שגיאות גלובלי: נרשמות לקובץ <code>error_log.txt</code></li>
 </ul>
 <hr />
-<h2 id="_7">🛠️ פתרון בעיות נפוצות</h2>
+<h2 id="_6">🛠️ פתרון בעיות נפוצות</h2>
 <table>
 <thead>
 <tr>
@@ -1414,18 +1400,18 @@
 </tbody>
 </table>
 <hr />
-<h2 id="_8">📂 מיקום לוג שגיאות</h2>
+<h2 id="_7">📂 מיקום לוג שגיאות</h2>
 <p>הקובץ <code>error_log.txt</code> ייווצר אוטומטית בתיקיית הסקריפט ויכלול:
 - שגיאות</p>
 <hr />
-<h2 id="_9">✅ המלצות</h2>
+<h2 id="_8">✅ המלצות</h2>
 <ul>
 <li>הפעל תמיד את PowerShell כ־Administrator.</li>
 <li>בדוק התחברות לפני הרצת פעולות גדולות.</li>
 <li>אל תשמור סיסמאות בקובץ.</li>
 <li>גבה את הסקריפט לפני שינוי.</li>
 </ul>
-<h2 id="_10">✅ כך נראה התפריט</h2>
+<h2 id="_9">✅ כך נראה התפריט</h2>
 <p><img alt="1.jpg" src="1.jpg" /></p>
 <hr />
 <p>בהצלחה בניהול Exchange Online!</p>
