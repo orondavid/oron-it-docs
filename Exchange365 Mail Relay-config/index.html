@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../squid-reverse-proxy/">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../vmware-install/">
+        <link rel="next" href="../Linotp%20Install%20Ubuntu/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>Exchange365 Mail Relay-Configuraion - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#forward-proxy-squid" class="md-skip">
+        <a href="#exchange-online-microsoft-365" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid
+              Exchange365 Mail Relay-Configuraion
             
           </span>
         </div>
@@ -285,10 +285,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Exchange365%20Mail%20Relay-config/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Exchange365 Mail Relay-Configuraion
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -299,6 +321,293 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microsoft-365" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ חלק ב: מדריך מעשי – הגדרה ב־Microsoft 365 לכל שיטה
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ חלק ב: מדריך מעשי – הגדרה ב־Microsoft 365 לכל שיטה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-smtp-client-submission-smtpoffice365com" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 1. SMTP Client Submission (smtp.office365.com)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 1. SMTP Client Submission (smtp.office365.com)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 תרחיש נפוץ:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 שלבים לביצוע:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 הערה:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-direct-send-mx-365" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 2. Direct Send (שליחה ישירה דרך MX של ה־365)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 2. Direct Send (שליחה ישירה דרך MX של ה־365)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 תרחיש נפוץ:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-365_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 שלבים ב־Microsoft 365:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרה במכשיר:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 דרישות:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 טיפ:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-smtp-relay-exchange-online-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 3. SMTP Relay דרך Exchange Online עם Connector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 3. SMTP Relay דרך Exchange Online עם Connector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 תרחיש נפוץ:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 הגדרת Connector:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 הגדרה במערכת (ERP, מדפסת וכו):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 דרישות נוספות:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spf-dkim-dmarc-microsoft-365" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 מדריך הפעלת SPF, DKIM, DMARC בתוך Microsoft 365
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📘 מדריך הפעלת SPF, DKIM, DMARC בתוך Microsoft 365">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ SPF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkim" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ DKIM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dmarc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ DMARC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-as-send-on-behalf" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 הרשאות שליחה בשם משתמש מסוים (Send As או Send on Behalf)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 הרשאות שליחה בשם משתמש מסוים (Send As או Send on Behalf)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרה ב־PowerShell:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="הגדרה ב־PowerShell:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-on-behalf" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 שליחה בשם (Send on Behalf):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 שליחה כ־(Send As):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימושי כש:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -469,32 +778,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../proxy-forward-install/" class="md-nav__link">
         
   
   
@@ -505,89 +792,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 1: התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 2: גיבוי קובץ ההגדרות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 3: עריכת קובץ ההגדרות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 4: הפעלת השירות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 טסט מהיר:
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1245,65 +1449,269 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-squid" class="md-nav__link">
+  <a href="#microsoft-365" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 1: התקנת Squid
+      🛠️ חלק ב: מדריך מעשי – הגדרה ב־Microsoft 365 לכל שיטה
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+    <nav class="md-nav" aria-label="🛠️ חלק ב: מדריך מעשי – הגדרה ב־Microsoft 365 לכל שיטה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-smtp-client-submission-smtpoffice365com" class="md-nav__link">
     <span class="md-ellipsis">
-      🟩 שלב 2: גיבוי קובץ ההגדרות
+      🔹 1. SMTP Client Submission (smtp.office365.com)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 3: עריכת קובץ ההגדרות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 4: הפעלת השירות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="🔹 1. SMTP Client Submission (smtp.office365.com)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🟢 טסט מהיר:
+      📌 תרחיש נפוץ:
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 שלבים לביצוע:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 הערה:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-direct-send-mx-365" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 2. Direct Send (שליחה ישירה דרך MX של ה־365)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 2. Direct Send (שליחה ישירה דרך MX של ה־365)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 תרחיש נפוץ:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-365_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 שלבים ב־Microsoft 365:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרה במכשיר:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 דרישות:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 טיפ:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-smtp-relay-exchange-online-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 3. SMTP Relay דרך Exchange Online עם Connector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 3. SMTP Relay דרך Exchange Online עם Connector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 תרחיש נפוץ:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 הגדרת Connector:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erp" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 הגדרה במערכת (ERP, מדפסת וכו):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 דרישות נוספות:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spf-dkim-dmarc-microsoft-365" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 מדריך הפעלת SPF, DKIM, DMARC בתוך Microsoft 365
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📘 מדריך הפעלת SPF, DKIM, DMARC בתוך Microsoft 365">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spf" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ SPF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkim" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ DKIM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dmarc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ DMARC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-as-send-on-behalf" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 הרשאות שליחה בשם משתמש מסוים (Send As או Send on Behalf)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 הרשאות שליחה בשם משתמש מסוים (Send As או Send on Behalf)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרה ב־PowerShell:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="הגדרה ב־PowerShell:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-on-behalf" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 שליחה בשם (Send on Behalf):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 שליחה כ־(Send As):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימושי כש:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1323,54 +1731,143 @@
 
 
 
-<h1 id="forward-proxy-squid">התקנת שרת פרוקסי קדמי (Forward Proxy) עם Squid</h1>
-<p>מדריך זה מסביר כיצד להקים שרת פרוקסי קדמי (Forward Proxy) באמצעות Squid על מערכת Ubuntu.</p>
+<h1 id="exchange-online-microsoft-365">מדריך מלא: שליחת מיילים דרך Exchange Online (Microsoft 365) – כל האפשרויות והגדרות מעשיות</h1>
+<p>מדריך זה מחולק לשני חלקים:
+1. הסברים תיאורטיים על אפשרויות השליחה
+2. 📘 <strong>הגדרות מעשיות בכל אחד מהשירותים בתוך Microsoft 365</strong></p>
 <hr />
-<h2 id="1-squid">🟩 שלב 1: התקנת Squid</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>squid<span class="w"> </span>-y
-</code></pre></div>
-<hr />
-<h2 id="2">🟩 שלב 2: גיבוי קובץ ההגדרות</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/squid/squid.conf<span class="w"> </span>/etc/squid/squid.conf.backup
-</code></pre></div>
-<hr />
-<h2 id="3">🟩 שלב 3: עריכת קובץ ההגדרות</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/squid.conf
-</code></pre></div>
-<p>חפש את השורה:</p>
-<div class="highlight"><pre><span></span><code>http_port 3128
-</code></pre></div>
-<p>ודא שהיא לא מוסתרת (ללא #).</p>
-<p>כעת הוסף/שנה את השורות הבאות:</p>
-<div class="highlight"><pre><span></span><code>acl localnet src 192.168.1.0/24
-http_access allow localnet
-http_access deny all
-</code></pre></div>
-<hr />
-<h2 id="4">🟩 שלב 4: הפעלת השירות</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>squid
-sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>squid
-</code></pre></div>
-<hr />
-<h2 id="5-firewall">🟩 שלב 5: פתיחת פורט ב־Firewall (אם מופעל)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3128</span>/tcp
-</code></pre></div>
-<hr />
-<h2 id="6">🟩 שלב 6: הגדרת התחברות מהמחשב הלקוח</h2>
-<p>במחשב שמתחבר דרך הפרוקסי:</p>
+<h2 id="microsoft-365">🛠️ חלק ב: מדריך מעשי – הגדרה ב־Microsoft 365 לכל שיטה</h2>
+<h3 id="1-smtp-client-submission-smtpoffice365com">🔹 1. SMTP Client Submission (<code>smtp.office365.com</code>)</h3>
+<h4 id="_1">📌 תרחיש נפוץ:</h4>
+<p>שליחה מאתר אינטרנט, אפליקציה, סקריפט, או שירות בענן באמצעות תיבת מייל קיימת ב־365</p>
+<h4 id="_2">🔧 שלבים לביצוע:</h4>
+<ol>
+<li>
+<p><strong>בדוק שה־SMTP AUTH פעיל למשתמש</strong>:
+<div class="highlight"><pre><span></span><code><span class="nb">Set-CASMailbox</span> <span class="n">user</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="n">-SmtpClientAuthenticationDisabled</span> <span class="nv">$false</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>אם מופעל MFA למשתמש</strong>:</p>
+</li>
+<li>
+<p>היכנס ל־https://mysignins.microsoft.com → צור App Password</p>
+</li>
+<li>
+<p><strong>הגדרת שליחה במערכת חיצונית</strong>:</p>
+</li>
+<li>SMTP Server: <code>smtp.office365.com</code></li>
+<li>Port: <code>587</code></li>
+<li>TLS: Yes (STARTTLS)</li>
+<li>Username: <code>user@domain.com</code></li>
+<li>Password: סיסמה רגילה או App Password</li>
+</ol>
+<h4 id="_3">🧠 הערה:</h4>
 <ul>
-<li>כתובת שרת: IP של השרת</li>
-<li>פורט: 3128</li>
-<li>פרוטוקול: HTTP Proxy</li>
+<li>ניתן להשתמש בחשבון מערכת ייעודי (כגון noreply@)</li>
+<li>רצוי לא להעניק הרשאות מלאות – רק הרשאות שליחה (אם צריך לשלוח בשם מישהו אחר)</li>
 </ul>
 <hr />
-<h2 id="_1">🟢 טסט מהיר:</h2>
-<p>מהמחשב של הלקוח הרץ:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-x<span class="w"> </span>http://IP-of-proxy:3128<span class="w"> </span>http://example.com
-</code></pre></div>
+<h3 id="2-direct-send-mx-365">🔹 2. Direct Send (שליחה ישירה דרך MX של ה־365)</h3>
+<h4 id="_4">📌 תרחיש נפוץ:</h4>
+<p>שליחה ממדפסת, מערכת ERP או מצלמה רק למשתמשים פנימיים בארגון (אותו דומיין)</p>
+<h4 id="microsoft-365_1">🔧 שלבים ב־Microsoft 365:</h4>
+<p><strong>אין צורך בהגדרה בצד ה־365.</strong></p>
+<h4 id="_5">הגדרה במכשיר:</h4>
+<ul>
+<li>SMTP Server: <code>tenantname-com.mail.protection.outlook.com</code></li>
+<li>Port: <code>25</code></li>
+<li>TLS: אופציונלי (רצוי)</li>
+<li>ללא אימות (no username/password)</li>
+</ul>
+<h4 id="_6">📌 דרישות:</h4>
+<ul>
+<li>תיבת הדוא"ל המקבלת חייבת להיות בתוך Microsoft 365 תחת הדומיין שלך</li>
+<li>אין שליחה לחוץ לארגון</li>
+</ul>
+<h4 id="_7">🧠 טיפ:</h4>
+<ul>
+<li>כתובת MX המדויקת מתקבלת דרך Admin Center → Domains → domain.com → DNS Records</li>
+</ul>
 <hr />
-<p>שרת הפרוקסי שלך מוכן וניתן להשתמש בו כתחנת מעבר לגלישה/גישה לאינטרנט דרך שרת מאובטח.</p>
+<h3 id="3-smtp-relay-exchange-online-connector">🔹 3. SMTP Relay דרך Exchange Online עם Connector</h3>
+<h4 id="_8">📌 תרחיש נפוץ:</h4>
+<p>שרת ERP פנימי שולח מיילים החוצה דרך Microsoft 365 בלי צורך באימות יוזר</p>
+<h4 id="connector">🔧 הגדרת Connector:</h4>
+<ol>
+<li>כניסה ל־<a href="https://admin.exchange.microsoft.com">Exchange Admin Center</a> → Mail Flow → <strong>Connectors</strong></li>
+<li>
+<p>לחץ על ➕ New Connector</p>
+</li>
+<li>
+<p>הגדר:</p>
+</li>
+<li><strong>From:</strong> Your organization’s mail server</li>
+<li><strong>To:</strong> Office 365</li>
+<li>Name: <code>ERP SMTP Relay</code></li>
+<li>Authentication: Based on <strong>IP address</strong></li>
+<li>הוסף את כתובת ה־IP הציבורית של השרת השולח</li>
+<li>
+<p>אפשר TLS</p>
+</li>
+<li>
+<p>שמור וסיים את ההגדרה.</p>
+</li>
+</ol>
+<h4 id="erp">📌 הגדרה במערכת (ERP, מדפסת וכו):</h4>
+<ul>
+<li>SMTP Server: <code>tenantname-com.mail.protection.outlook.com</code></li>
+<li>Port: <code>25</code></li>
+<li>אין אימות (אין שם משתמש וסיסמה)</li>
+<li>TLS: כן</li>
+</ul>
+<h4 id="_9">📌 דרישות נוספות:</h4>
+<ul>
+<li>ודא שרשומת SPF כוללת את ה־IP השולח או רק את <code>include:spf.protection.outlook.com</code></li>
+</ul>
+<hr />
+<h2 id="spf-dkim-dmarc-microsoft-365">📘 מדריך הפעלת SPF, DKIM, DMARC בתוך Microsoft 365</h2>
+<h3 id="spf">✅ SPF</h3>
+<ol>
+<li>כניסה לפאנל ניהול DNS של הדומיין</li>
+<li>הוסף רשומת TXT:
+<div class="highlight"><pre><span></span><code>v=spf1 include:spf.protection.outlook.com -all
+</code></pre></div>
+או הוסף IP ישיר אם נדרש:
+<div class="highlight"><pre><span></span><code>v=spf1 ip4:203.0.113.10 include:spf.protection.outlook.com -all
+</code></pre></div></li>
+</ol>
+<h3 id="dkim">✅ DKIM</h3>
+<ol>
+<li>כניסה ל־Microsoft 365 Defender → Email &amp; Collaboration → Policies &amp; Rules → DKIM</li>
+<li>הפעל DKIM לדומיין</li>
+<li>הוסף 2 רשומות CNAME בפאנל DNS כפי שמוצג לך</li>
+<li>לחץ שוב "Enable" לאחר שה־DNS מתעדכן</li>
+</ol>
+<h3 id="dmarc">✅ DMARC</h3>
+<ol>
+<li>פתח את ניהול ה־DNS</li>
+<li>הוסף רשומת TXT:
+<div class="highlight"><pre><span></span><code>Name: _dmarc
+Value: v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com
+</code></pre></div></li>
+</ol>
+<hr />
+<h2 id="send-as-send-on-behalf">📥 הרשאות שליחה בשם משתמש מסוים (Send As או Send on Behalf)</h2>
+<h3 id="powershell">הגדרה ב־PowerShell:</h3>
+<h4 id="send-on-behalf">📌 שליחה בשם (Send on Behalf):</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Mailbox</span> <span class="n">user2</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="n">-GrantSendOnBehalfTo</span> <span class="n">user1</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div>
+<h4 id="send-as">📌 שליחה כ־(Send As):</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Add-RecipientPermission</span> <span class="n">-Identity</span> <span class="n">user2</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="n">-Trustee</span> <span class="n">user1</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span> <span class="n">-AccessRights</span> <span class="n">SendAs</span>
+</code></pre></div>
+<h3 id="_10">שימושי כש:</h3>
+<ul>
+<li>מערכת צד שלישי שולחת בשם משתמש 365 קיים</li>
+<li>מוניטין הדוא"ל חשוב (חתימה תקינה)</li>
+</ul>
+<hr />
+<p>אם תרצה, נוכל להכין גם דוח בדיקה אוטומטי לוודא שההגדרות שלך תקינות ולתת לך סקריפט שמכסה את הבדיקות.</p>
 
 
 
