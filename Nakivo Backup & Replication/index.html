@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../proxy-forward-explained/">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../nano-guide/">
+        <link rel="next" href="../Exchange365%20Mail%20Relay-config/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>פקודות בסיסיות ב־VIM - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>Nakivo Backup & Replication upgrade - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vim" class="md-skip">
+        <a href="#nakivo-backup-replication-director-transporters" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              פקודות בסיסיות ב־VIM
+              Nakivo Backup & Replication upgrade
             
           </span>
         </div>
@@ -245,18 +245,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -272,7 +274,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -283,10 +285,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Nakivo%20Backup%20%26%20Replication/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Nakivo Backup & Replication upgrade
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -297,6 +321,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: גיבוי ובדיקה סביבה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: זיהוי הגרסה שמותקנת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-nakivo-director" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: עדכון הדירקטור (Nakivo Director)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 3: עדכון הדירקטור (Nakivo Director)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ אני אופצי שניתן לעשות בעדכון
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI (Linux)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-transporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: עדכון Transporters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 4: עדכון Transporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transporter-director" class="md-nav__link">
+    <span class="md-ellipsis">
+      הנחוצה חשובה: הגרסת Transporter חייבה להיות תאמה לגרסת Director!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI (לינוקס):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qnap-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      QNAP NAS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: אישור שהכל השדרוג הצליח בהצלחה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      הערות נוספות:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      קישורים נוספים
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -657,20 +839,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -686,7 +866,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -904,32 +1084,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    פקודות בסיסיות ב־VIM
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vim-guide/" class="md-nav__link">
         
   
   
@@ -940,71 +1098,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתיחת קובץ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      מצבים בעורך
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      מעבר למצב כתיבה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      יציאה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      מחיקה וניווט
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1250,9 +1343,120 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1: גיבוי ובדיקה סביבה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2: זיהוי הגרסה שמותקנת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-nakivo-director" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3: עדכון הדירקטור (Nakivo Director)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 3: עדכון הדירקטור (Nakivo Director)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      פתיחת קובץ
+      ❌ אני אופצי שניתן לעשות בעדכון
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI (Linux)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-transporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4: עדכון Transporters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 4: עדכון Transporters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transporter-director" class="md-nav__link">
+    <span class="md-ellipsis">
+      הנחוצה חשובה: הגרסת Transporter חייבה להיות תאמה לגרסת Director!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI (לינוקס):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qnap-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      QNAP NAS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5: אישור שהכל השדרוג הצליח בהצלחה
     </span>
   </a>
   
@@ -1261,7 +1465,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      מצבים בעורך
+      הערות נוספות:
     </span>
   </a>
   
@@ -1270,25 +1474,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      מעבר למצב כתיבה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      יציאה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      מחיקה וניווט
+      קישורים נוספים
     </span>
   </a>
   
@@ -1310,44 +1496,104 @@
 
 
 
-<h1 id="vim">פקודות בסיסיות בעורך VIM</h1>
-<p><code>vim</code> הוא עורך טקסט מתקדם, חזק אך דורש תרגול. להלן פקודות בסיסיות לעבודה:</p>
+<h1 id="nakivo-backup-replication-director-transporters">מדריך שדרוג Nakivo Backup &amp; Replication (Director ו-Transporters)</h1>
+<p>מדריך זה מפרט את תהליך השדרוג של גרסת Nakivo Backup &amp; Replication, כולל ה-Director וה-Transporters, בשיטות GUI ו-CLI.</p>
 <hr />
-<h2 id="_1">פתיחת קובץ</h2>
-<div class="highlight"><pre><span></span><code>vim<span class="w"> </span>filename.txt
+<h2 id="1">שלב 1: גיבוי ובדיקה סביבה</h2>
+<ul>
+<li>✅ גבה ידני לפני ה-Director (לדוגמה snapshot ל-VM או export למכונה פיזית)</li>
+<li>✅ גבה לכל ה-Transporters (אם הום מורצבים)</li>
+<li>✅ בדיקה: אילו נשמרים גיבויים רצוים בזמן</li>
+</ul>
+<hr />
+<h2 id="2">שלב 2: זיהוי הגרסה שמותקנת</h2>
+<ul>
+<li>
+<p>✉ התחבר לעמוד הגרסה הנכוחית:
+  <a href="https://www.nakivo.com/resources/download/">https://www.nakivo.com/resources/download/</a></p>
+</li>
+<li>
+<p>בדק את הגרסה הנוכחית שלך (למשל: 10.11.2)</p>
+</li>
+</ul>
+<hr />
+<h2 id="3-nakivo-director">שלב 3: עדכון הדירקטור (Nakivo Director)</h2>
+<h3 id="_1">❌ אני אופצי שניתן לעשות בעדכון</h3>
+<h3 id="gui">GUI</h3>
+<ol>
+<li>התחבר ל־Web UI &gt; <code>Settings → Software Update</code></li>
+<li>לחץ "Check for Updates"</li>
+<li>אם קיימת גרסה חדשה, תופיע אפשרות Update.</li>
+<li>אשר את השדרוג והמתן לסיום (הממשק יבצע Restart).</li>
+</ol>
+<h3 id="cli-linux">CLI (Linux)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># עצור את השירות:</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>nakivo-director
+
+<span class="c1"># הורד את גרסת ההתקנה:</span>
+wget<span class="w"> </span>https://download.nakivo.com/res/product/10.11.2.83985/NBR_Installer.sh
+
+<span class="c1"># הפוך לקובץ הרצה:</span>
+chmod<span class="w"> </span>+x<span class="w"> </span>NBR_Installer.sh
+
+<span class="c1"># הרץ את ההתקנה:</span>
+sudo<span class="w"> </span>./NBR_Installer.sh
 </code></pre></div>
 <hr />
-<h2 id="_2">מצבים בעורך</h2>
+<h2 id="4-transporters">שלב 4: עדכון Transporters</h2>
+<h3 id="transporter-director">הנחוצה חשובה: הגרסת Transporter חייבה להיות תאמה לגרסת Director!</h3>
+<h3 id="gui_1">GUI:</h3>
+<ol>
+<li>התחבר ל־Nakivo Web UI</li>
+<li>עבור אל <code>Settings → Nodes</code></li>
+<li>בחר Transporter → לחץ על סמל שלושת הנקודות → <code>Upgrade</code></li>
+</ol>
+<h3 id="cli">CLI (לינוקס):</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># עצור את השירות:</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>nakivo-transporter
+
+<span class="c1"># הורד את הגרסה המתאימה:</span>
+wget<span class="w"> </span>https://download.nakivo.com/res/product/10.11.2.83985/Nakivo_Transporter-Linux-x86_64.sh
+
+<span class="c1"># הפוך לקובץ הרצה:</span>
+chmod<span class="w"> </span>+x<span class="w"> </span>Nakivo_Transporter-Linux-x86_64.sh
+
+<span class="c1"># הרץ את ההתקנה:</span>
+sudo<span class="w"> </span>./Nakivo_Transporter-Linux-x86_64.sh
+</code></pre></div>
+<h3 id="qnap-nas">QNAP NAS:</h3>
+<ol>
+<li>הורד את קובץ ה־<code>.qpkg</code> המתאים מהאתר של Nakivo</li>
+<li>התחבר ל־QNAP App Center</li>
+<li>Install Manually → בחר את הקובץ</li>
+<li>המתן לסיום ההתקנה</li>
+</ol>
+<hr />
+<h2 id="5">שלב 5: אישור שהכל השדרוג הצליח בהצלחה</h2>
 <ul>
-<li>מצב רגיל (ברירת מחדל) – ניווט, מחיקה, העתקה</li>
-<li>מצב עריכה – הכנסת טקסט</li>
-<li>מצב פקודה – לשמירה, יציאה וכו’</li>
+<li>בדוק שכל ה־Transporters מופיעים תחת Settings &gt; Nodes</li>
+<li>בדוק שהגרסה תואמת לזו של ה־Director</li>
+<li>הפעל גיבוי Test לוודא תקינות</li>
 </ul>
 <hr />
-<h2 id="_3">מעבר למצב כתיבה</h2>
+<h2 id="_2">הערות נוספות:</h2>
 <ul>
-<li><code>i</code> – הכנסת טקסט לפני הסמן</li>
-<li><code>a</code> – הכנסת טקסט אחרי הסמן</li>
-<li><code>o</code> – פותח שורה חדשה מתחת</li>
+<li>אין לשדרג Transporter לגרסה גבוהה יותר מזו של ה־Director</li>
+<li>Director תמיד ישדרג ראשון</li>
+<li>שים לב להודעות שדרוג בטאבים של Nodes או Job Failures לאחר שדרוג חלקי</li>
 </ul>
 <hr />
-<h2 id="_4">יציאה</h2>
+<h2 id="_3">קישורים נוספים</h2>
 <ul>
-<li><code>Esc</code> → <code>:w</code> – שמירה</li>
-<li><code>:q</code> – יציאה</li>
-<li><code>:wq</code> – שמירה ויציאה</li>
-<li><code>:q!</code> – יציאה ללא שמירה</li>
+<li>
+<p>דף ההורדה להרשה:
+  <a href="https://www.nakivo.com/resources/download/">https://www.nakivo.com/resources/download/</a></p>
+</li>
+<li>
+<p>דרך שרת לגרסה שאשר לך: <code>Settings → About</code></p>
+</li>
 </ul>
 <hr />
-<h2 id="_5">מחיקה וניווט</h2>
-<ul>
-<li><code>x</code> – מחיקת תו</li>
-<li><code>dd</code> – מחיקת שורה</li>
-<li><code>u</code> – ביטול פעולה</li>
-<li><code>yy</code> – העתקת שורה</li>
-<li><code>p</code> – הדבקה</li>
-<li><code>/מילה</code> – חיפוש</li>
-</ul>
 
 
 
