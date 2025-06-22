@@ -1542,6 +1542,24 @@ sudo<span class="w"> </span>./Nakivo_Transporter-Linux-x86_64.sh
 <li>הפעל גיבוי בדיקה (<code>Test Job</code>) לוודא תקינות מלאה</li>
 </ul>
 <hr />
+<p>ודא שהתהליך פעיל:</p>
+<p>ps | grep transporter</p>
+<p>פלט תקין ייראה כך:</p>
+<p>6276 admin  9644 S   /share/CACHEDEV1_DATA/.qpkg/NBR/transporter/bhsvc -r 9446</p>
+<p>ודא שהפורט מאזין:</p>
+<p>netstat -tunlp | grep 9446</p>
+<p>או:</p>
+<p>ss -tunlp | grep 9446</p>
+<p>שלב 3: ווידוא ב־GUI</p>
+<p>היכנס לממשק הניהול של Nakivo (לדוגמה: https://<Director-IP>:4443).</p>
+<p>עבור ל־Nodes ובדוק שה־QNAP מופיע כ־Transporter עם כתובת ה־IP הנכונה (למשל: 192.168.16.159).</p>
+<p>שלב 4: שינוי שם ה־Node</p>
+<p>עבור למסך Nodes.</p>
+<p>לחץ על שלוש הנקודות מימין לשם ה־Transporter.</p>
+<p>בחר Edit.</p>
+<p>שנה את שם ה־Node כרצונך (למשל "QNAP 99 Transporter").</p>
+<p>אם ברצונך להסיר Transporter ישן או לא פעיל:</p>
+<p>לחץ על שלוש הנקודות ליד השם ובחר Remove.</p>
 <h2 id="_1">📝 הערות חשובות</h2>
 <ul>
 <li>אין לשדרג Transporter לפני שדרוג Director</li>
