@@ -468,9 +468,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#qnap" class="md-nav__link">
+  <a href="#x86-arm" class="md-nav__link">
     <span class="md-ellipsis">
-      בדיקת גרסה של QNAP
+      בדיקת אם זו מערכת x86 או ARM:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת גרסת מערכת:
     </span>
   </a>
   
@@ -509,7 +518,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       📝 הערות חשובות
     </span>
@@ -518,7 +527,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       🔗 קישורים חשובים
     </span>
@@ -1524,9 +1533,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#qnap" class="md-nav__link">
+  <a href="#x86-arm" class="md-nav__link">
     <span class="md-ellipsis">
-      בדיקת גרסה של QNAP
+      בדיקת אם זו מערכת x86 או ARM:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת גרסת מערכת:
     </span>
   </a>
   
@@ -1565,7 +1583,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       📝 הערות חשובות
     </span>
@@ -1574,7 +1592,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       🔗 קישורים חשובים
     </span>
@@ -1692,8 +1710,11 @@ sudo<span class="w"> </span>./Nakivo_Transporter-Linux-x86_64.sh
 <span class="c1"># או:</span>
 ss<span class="w"> </span>-tunlp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">9446</span>
 </code></pre></div>
-<h3 id="qnap">בדיקת גרסה של QNAP</h3>
+<h3 id="x86-arm">בדיקת אם זו מערכת x86 או ARM:</h3>
 <div class="highlight"><pre><span></span><code>uname<span class="w"> </span>-m
+</code></pre></div>
+<h3 id="_2">בדיקת גרסת מערכת:</h3>
+<div class="highlight"><pre><span></span><code>uname<span class="w"> </span>-a
 </code></pre></div>
 <h3 id="director-transporter">בדיקת קישוריות מה־Director ל־Transporter:</h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-vk<span class="w"> </span>https://&lt;transporter-ip&gt;:9446
@@ -1716,7 +1737,7 @@ ss<span class="w"> </span>-tunlp<span class="w"> </span><span class="p">|</span>
 <li>לא פעיל? ניתן לבחור <code>Remove</code> ולמחוק את ה־Node</li>
 </ol>
 <hr />
-<h2 id="_2">📝 הערות חשובות</h2>
+<h2 id="_3">📝 הערות חשובות</h2>
 <ul>
 <li>אין לשדרג Transporter לפני שדרוג Director</li>
 <li>ודא שאתה מוריד את הגרסאות <strong>התואמות לארכיטקטורה</strong> (x86_64 / ARM)</li>
@@ -1724,7 +1745,7 @@ ss<span class="w"> </span>-tunlp<span class="w"> </span><span class="p">|</span>
 <li>ניתן להשתמש ב־Onboard Transporter של ה־Director אם אין צורך ב־Transporter חיצוני</li>
 </ul>
 <hr />
-<h2 id="_3">🔗 קישורים חשובים</h2>
+<h2 id="_4">🔗 קישורים חשובים</h2>
 <ul>
 <li>
 <p>🔽 דף ההורדות:
