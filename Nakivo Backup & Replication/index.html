@@ -440,7 +440,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-transporter-qnap-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 אימות ב־CLI ש־Transporter פעיל (QNAP / Linux)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 אימות ב־CLI ש־Transporter פעיל (QNAP / Linux)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת תהליך רץ:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9446" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת פורט פתוח (9446):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#director-transporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת קישוריות מה־Director ל־Transporter:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 ווידוא דרך GUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transporter-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 שינוי שם Transporter ב־GUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       📝 הערות חשובות
     </span>
@@ -449,7 +509,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       🔗 קישורים חשובים
     </span>
@@ -1427,7 +1487,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cli-transporter-qnap-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 אימות ב־CLI ש־Transporter פעיל (QNAP / Linux)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 אימות ב־CLI ש־Transporter פעיל (QNAP / Linux)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת תהליך רץ:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9446" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת פורט פתוח (9446):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#director-transporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת קישוריות מה־Director ל־Transporter:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 ווידוא דרך GUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transporter-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 שינוי שם Transporter ב־GUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       📝 הערות חשובות
     </span>
@@ -1436,7 +1556,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       🔗 קישורים חשובים
     </span>
@@ -1504,7 +1624,7 @@ sudo<span class="w"> </span>./NBR_Installer.sh
 </code></pre></div>
 <hr />
 <h2 id="4-transporters">🔹 שלב 4: שדרוג Transporters</h2>
-<p>🛑 חשוב: גרסת ה־Transporter <strong>חייבת להיות תואמת</strong> לגרסת ה־Director.<br />
+<p>🛑 חשוב: גרסת ה־Transporter <strong>חייבת להיות תואמת</strong> לגרסת ה־Director.
 אין לשדרג Transporter לפני Director!</p>
 <h3 id="gui_1">🖥️ GUI</h3>
 <ol>
@@ -1542,32 +1662,48 @@ sudo<span class="w"> </span>./Nakivo_Transporter-Linux-x86_64.sh
 <li>הפעל גיבוי בדיקה (<code>Test Job</code>) לוודא תקינות מלאה</li>
 </ul>
 <hr />
-<p>ודא שהתהליך פעיל:</p>
-<p>ps | grep transporter</p>
-<p>פלט תקין ייראה כך:</p>
-<p>6276 admin  9644 S   /share/CACHEDEV1_DATA/.qpkg/NBR/transporter/bhsvc -r 9446</p>
-<p>ודא שהפורט מאזין:</p>
-<p>netstat -tunlp | grep 9446</p>
-<p>או:</p>
-<p>ss -tunlp | grep 9446</p>
-<p>שלב 3: ווידוא ב־GUI</p>
-<p>היכנס לממשק הניהול של Nakivo (לדוגמה: https://<Director-IP>:4443).</p>
-<p>עבור ל־Nodes ובדוק שה־QNAP מופיע כ־Transporter עם כתובת ה־IP הנכונה (למשל: 192.168.16.159).</p>
-<p>שלב 4: שינוי שם ה־Node</p>
-<p>עבור למסך Nodes.</p>
-<p>לחץ על שלוש הנקודות מימין לשם ה־Transporter.</p>
-<p>בחר Edit.</p>
-<p>שנה את שם ה־Node כרצונך (למשל "QNAP 99 Transporter").</p>
-<p>אם ברצונך להסיר Transporter ישן או לא פעיל:</p>
-<p>לחץ על שלוש הנקודות ליד השם ובחר Remove.</p>
-<h2 id="_1">📝 הערות חשובות</h2>
+<h2 id="cli-transporter-qnap-linux">🧪 אימות ב־CLI ש־Transporter פעיל (QNAP / Linux)</h2>
+<h3 id="_1">בדיקת תהליך רץ:</h3>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>transporter
+</code></pre></div>
+<p>פלט תקין לדוגמה:</p>
+<div class="highlight"><pre><span></span><code>6276 admin  9644 S   /share/CACHEDEV1_DATA/.qpkg/NBR/transporter/bhsvc -r 9446
+</code></pre></div>
+<h3 id="9446">בדיקת פורט פתוח (9446):</h3>
+<div class="highlight"><pre><span></span><code>netstat<span class="w"> </span>-tunlp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">9446</span>
+<span class="c1"># או:</span>
+ss<span class="w"> </span>-tunlp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">9446</span>
+</code></pre></div>
+<h3 id="director-transporter">בדיקת קישוריות מה־Director ל־Transporter:</h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-vk<span class="w"> </span>https://&lt;transporter-ip&gt;:9446
+</code></pre></div>
+<p>אם הכל תקין, תראה תקשורת TLS מתחילה (או שגיאת אישור – זה בסדר אם אין תעודת SSL).</p>
+<hr />
+<h2 id="gui_2">🔹 ווידוא דרך GUI</h2>
+<ul>
+<li>התחבר ל־Web UI של Nakivo (לדוגמה: <code>https://192.0.2.10:4443</code>)</li>
+<li>עבור ל־<code>Settings → Nodes</code></li>
+<li>ודא שה־QNAP מופיע כ־Transporter עם כתובת ה־IP הנכונה (למשל <code>192.0.2.50</code>)</li>
+</ul>
+<hr />
+<h2 id="transporter-gui">🔹 שינוי שם Transporter ב־GUI</h2>
+<ol>
+<li>עבור ל־Settings → Nodes</li>
+<li>לחץ על שלוש הנקודות ליד שם ה־Transporter</li>
+<li>בחר <code>Edit</code></li>
+<li>שנה את שם ה־Node (למשל "Backup NAS")</li>
+<li>לא פעיל? ניתן לבחור <code>Remove</code> ולמחוק את ה־Node</li>
+</ol>
+<hr />
+<h2 id="_2">📝 הערות חשובות</h2>
 <ul>
 <li>אין לשדרג Transporter לפני שדרוג Director</li>
 <li>ודא שאתה מוריד את הגרסאות <strong>התואמות לארכיטקטורה</strong> (x86_64 / ARM)</li>
 <li>ניתן לבצע Export Configuration לפני השדרוג (כולל הגדרות, משימות, פרטי גישה)</li>
+<li>ניתן להשתמש ב־Onboard Transporter של ה־Director אם אין צורך ב־Transporter חיצוני</li>
 </ul>
 <hr />
-<h2 id="_2">🔗 קישורים חשובים</h2>
+<h2 id="_3">🔗 קישורים חשובים</h2>
 <ul>
 <li>
 <p>🔽 דף ההורדות:
