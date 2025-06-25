@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../ubuntu-install/">
-      
-      
-        <link rel="next" href="../squid-reverse-proxy/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>התקנת Apache HTTP Server על Ubuntu - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>מדריך רישיונות Microsoft 365 ו־Office 365 לעסקים - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu-server" class="md-skip">
+        <a href="#microsoft-365-office-365" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              התקנת Apache HTTP Server על Ubuntu
+              מדריך רישיונות Microsoft 365 ו־Office 365 לעסקים
             
           </span>
         </div>
@@ -273,20 +269,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -302,7 +296,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -474,32 +468,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    התקנת Apache HTTP Server על Ubuntu
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../web-server-ubuntu/" class="md-nav__link">
         
   
   
@@ -510,89 +482,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: עדכון מערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת Apache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-80-443" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: פתיחת פורט 80 ו-443 בחומת האש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: בדיקת גישה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-php" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5 (אופציונלי): התקנת PHP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 (אופציונלי): התקנת MySQL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיום
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1342,63 +1231,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1: עדכון מערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2: התקנת Apache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-80-443" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3: פתיחת פורט 80 ו-443 בחומת האש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4: בדיקת גישה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-php" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5 (אופציונלי): התקנת PHP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 (אופציונלי): התקנת MySQL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      סיום
+      הקדמה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      טבלת השוואת רישיונות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      הסבר עמודות הטבלה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      הערות חשובות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      קישורים שימושיים
     </span>
   </a>
   
@@ -1420,52 +1291,169 @@
 
 
 
-<h1 id="ubuntu-server">מדריך התקנת שרת ווב על Ubuntu Server</h1>
-<p>מדריך זה מיועד להתקנה בסיסית של שרת ווב (Apache) על מערכת Ubuntu Server עדכנית.</p>
+<h1 id="microsoft-365-office-365">מדריך רישיונות Microsoft 365 ו־Office 365 לעסקים</h1>
+<h2 id="_1">הקדמה</h2>
+<p>בחירת רישיון נכון ב־Microsoft 365 (או Office 365) היא החלטה חשובה לכל ארגון. לכל רישיון יש שילוב ייחודי של שירותים – תיבת דואר (Exchange), תוכנות אופיס להתקנה (Word, Excel, וכו’), שירותי ענן (OneDrive, Teams, SharePoint) ורכיבי אבטחה.<br />
+המדריך מרכז את כל סוגי הרישיונות המרכזיים וההבדלים ביניהם בטבלה ברורה.</p>
 <hr />
-<h2 id="1">שלב 1: עדכון מערכת</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</code></pre></div>
+<h2 id="_2">טבלת השוואת רישיונות</h2>
+<table>
+<thead>
+<tr>
+<th>שם הרישיון</th>
+<th>Exchange Online</th>
+<th>Office מותקן (Word, Excel, וכו’)</th>
+<th>OneDrive</th>
+<th>Teams</th>
+<th>SharePoint</th>
+<th>אבטחה מתקדמת (Intune, DLP)</th>
+<th>הערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exchange Online (Plan 1)</strong></td>
+<td>כן</td>
+<td>לא</td>
+<td>לא</td>
+<td>לא</td>
+<td>לא</td>
+<td>לא</td>
+<td>דואר בלבד, 50GB</td>
+</tr>
+<tr>
+<td><strong>Exchange Online (Plan 2)</strong></td>
+<td>כן (מתקדם)</td>
+<td>לא</td>
+<td>לא</td>
+<td>לא</td>
+<td>לא</td>
+<td>לא</td>
+<td>דואר, 100GB, Archiving</td>
+</tr>
+<tr>
+<td><strong>Microsoft 365 Apps for Business</strong></td>
+<td>לא</td>
+<td>כן</td>
+<td>כן</td>
+<td>לא</td>
+<td>לא</td>
+<td>לא</td>
+<td>Office, OneDrive בלבד</td>
+</tr>
+<tr>
+<td><strong>Microsoft 365 Business Basic</strong></td>
+<td>כן (בענן בלבד)</td>
+<td>לא</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>לא</td>
+<td>בלי Office מותקן</td>
+</tr>
+<tr>
+<td><strong>Microsoft 365 Business Standard</strong></td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>לא</td>
+<td>חבילה מלאה</td>
+</tr>
+<tr>
+<td><strong>Microsoft 365 Business Premium</strong></td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כמו Standard + אבטחה</td>
+</tr>
+<tr>
+<td><strong>Office 365 E1</strong></td>
+<td>כן (בענן בלבד)</td>
+<td>לא</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>לא</td>
+<td>כמו Basic, לא כולל Office</td>
+</tr>
+<tr>
+<td><strong>Office 365 E3</strong></td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>חלקי</td>
+<td>Enterprise, עד 100GB דואר</td>
+</tr>
+<tr>
+<td><strong>Office 365 E5</strong></td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן (הכי מתקדם)</td>
+<td>אבטחה, אנליטיקות, טלפוניה</td>
+</tr>
+<tr>
+<td><strong>Microsoft 365 E3</strong></td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן (חלקי)</td>
+<td>E3 + Windows + אבטחה</td>
+</tr>
+<tr>
+<td><strong>Microsoft 365 E5</strong></td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן</td>
+<td>כן (מלא)</td>
+<td>החבילה הכי יקרה והכי מלאה</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="2-apache">שלב 2: התקנת Apache</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
-</code></pre></div>
-<p>בדוק ש-Apache פועל:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
-</code></pre></div>
+<h2 id="_3">הסבר עמודות הטבלה</h2>
+<ul>
+<li><strong>Exchange Online</strong> – תיבת דואר בענן (כולל לוח שנה, אנשי קשר, 50GB או 100GB לפי רישיון).</li>
+<li><strong>Office מותקן</strong> – Word, Excel, PowerPoint, Outlook וכו’ להתקנה מקומית על המחשב.</li>
+<li><strong>OneDrive</strong> – שטח אחסון בענן (לרוב 1TB למשתמש).</li>
+<li><strong>Teams</strong> – מערכת שיתוף, צ'אט, שיחות וידאו, ישיבות ושיתוף מסך.</li>
+<li><strong>SharePoint</strong> – אינטראנט ארגוני, שיתוף קבצים, ניהול מסמכים.</li>
+<li><strong>אבטחה מתקדמת (Intune, DLP)</strong> – ניהול מכשירים, מניעת אובדן מידע, אבטחה ארגונית ברמות גבוהות.</li>
+<li><strong>הערות</strong> – דגשים ויתרונות ייחודיים לכל חבילה.</li>
+</ul>
 <hr />
-<h2 id="3-80-443">שלב 3: פתיחת פורט 80 ו-443 בחומת האש</h2>
-<p>אם UFW פעיל:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Apache Full&#39;</span>
-</code></pre></div>
-<p>בדוק את מצב החומת אש:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status
-</code></pre></div>
+<h2 id="_4">הערות חשובות</h2>
+<ul>
+<li><strong>Business Standard</strong> – הרישיון המומלץ לעסקים קטנים ובינוניים (כולל הכל למעט אבטחה מתקדמת).</li>
+<li><strong>Business Premium</strong> – כולל גם רכיבי אבטחה וניהול מכשירים.</li>
+<li><strong>E3/E5</strong> – חבילות Enterprise לעסקים גדולים, עם פיצ'רים מתקדמים ואבטחה משופרת.</li>
+<li>Office 365 (E1, E3, E5) – שמות ותיקים, ברוב המקרים היום ממליצים לבחור Microsoft 365.</li>
+<li><strong>ניתן לרכוש Add-ons</strong> (כמו אבטחה, ארכיון, תיבות דואר גדולות) לרוב החבילות.</li>
+<li>התאמת רישיון נכונה חוסכת עלויות ומייעלת את העבודה הארגונית.</li>
+</ul>
 <hr />
-<h2 id="4">שלב 4: בדיקת גישה</h2>
-<p>פתח דפדפן והכנס את כתובת ה-IP של השרת:<br />
-<code>http://&lt;כתובת-IP&gt;</code><br />
-אם Apache מותקן כראוי, תראה דף ברירת מחדל.</p>
+<h2 id="_5">קישורים שימושיים</h2>
+<ul>
+<li><a href="https://www.microsoft.com/he-il/microsoft-365/business">מדריך רישוי רשמי של Microsoft</a></li>
+<li><a href="https://www.microsoft.com/he-il/microsoft-365/compare-microsoft-365-enterprise-plans">השוואת רישיונות (מיקרוסופט)</a></li>
+</ul>
 <hr />
-<h2 id="5-php">שלב 5 (אופציונלי): התקנת PHP</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php<span class="w"> </span>libapache2-mod-php<span class="w"> </span>-y
-</code></pre></div>
-<p>צור קובץ בדיקה:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;?php phpinfo(); ?&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/var/www/html/info.php
-</code></pre></div>
-<p>גש אליו דרך:<br />
-<code>http://&lt;כתובת-IP&gt;/info.php</code></p>
-<hr />
-<h2 id="6-mysql">שלב 6 (אופציונלי): התקנת MySQL</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server<span class="w"> </span>-y
-sudo<span class="w"> </span>mysql_secure_installation
-</code></pre></div>
-<hr />
-<h2 id="_1">סיום</h2>
-<p>שרת הווב שלך מוכן לפעולה!<br />
-מומלץ להסיר את קובץ info.php לאחר הבדיקה:
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>/var/www/html/info.php
-</code></pre></div></p>
+<blockquote>
+<p><strong>להתייעצות והתאמה מדויקת לארגון – מומלץ להיעזר ביועץ Microsoft מוסמך.</strong></p>
+</blockquote>
 
 
 
