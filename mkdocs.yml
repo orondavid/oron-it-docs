@@ -52,6 +52,10 @@ extra_css:
 <script data-goatcounter="https://davidoron7.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
+extra_javascript:
+  - js/goatcounter.js
+
+
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
