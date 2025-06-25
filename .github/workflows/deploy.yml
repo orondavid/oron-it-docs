@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # חשוב!
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,6 +23,8 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material
 
-      - name: Build and Deploy
+      - name: Deploy to GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdocs gh-deploy --force
+          mkdocs gh-deploy --force --remote-branch gh-pages --remote-name origin
