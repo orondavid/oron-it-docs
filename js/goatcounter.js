@@ -1,7 +1,14 @@
-// מונע קידוד כפול של כתובת העמוד (path)
 window.goatcounter = {
     path: function() {
         return decodeURIComponent(window.location.pathname);
+    },
+    title: function() {
+        // מסיר תווים בעייתיים ומחזיר שם עמוד פשוט
+        return document.title.replace(/[^\w\s\-א-ת]/g, '').substring(0, 100);
+    },
+    referrer: function() {
+        // מחזיר כתובת מקור תקינה, או none אם לא קיים
+        return document.referrer || 'none';
     }
 };
 
