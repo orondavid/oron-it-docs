@@ -1390,24 +1390,132 @@
 המדריך מרכז את כל סוגי הרישיונות המרכזיים וההבדלים ביניהם בטבלה ברורה.</p>
 <hr />
 <h2 id="_2">טבלת השוואת רישיונות</h2>
-<div style="overflow-x: auto;">
-
-| רישיון                       | דואר | אופיס | OneDrive | Teams | SharePoint | אבטחה | הערה                    |
-|------------------------------|:----:|:-----:|:--------:|:-----:|:----------:|:-----:|-------------------------|
-| Exchange Online (Plan 1)     | ✅   | ❌    | ❌       | ❌    | ❌         | ❌    | דואר בלבד, 50GB         |
-| Exchange Online (Plan 2)     | ✅   | ❌    | ❌       | ❌    | ❌         | ❌    | 100GB, Archiving        |
-| M365 Apps for Business       | ❌   | ✅    | ✅       | ❌    | ❌         | ❌    | אופיס+OneDrive בלבד     |
-| M365 Business Basic          | ✅   | ❌    | ✅       | ✅    | ✅         | ❌    | בלי Office מותקן        |
-| M365 Business Standard       | ✅   | ✅    | ✅       | ✅    | ✅         | ❌    | חבילה מלאה              |
-| M365 Business Premium        | ✅   | ✅    | ✅       | ✅    | ✅         | ✅    | כמו Standard + אבטחה    |
-| Office 365 E1                | ✅   | ❌    | ✅       | ✅    | ✅         | ❌    | כמו Basic, לא כולל Office |
-| Office 365 E3                | ✅   | ✅    | ✅       | ✅    | ✅         | 🟧    | Enterprise, 100GB דואר  |
-| Office 365 E5                | ✅   | ✅    | ✅       | ✅    | ✅         | ✅    | אבטחה, אנליטיקות, טלפוניה |
-| M365 E3                      | ✅   | ✅    | ✅       | ✅    | ✅         | 🟧    | E3 + Windows + אבטחה    |
-| M365 E5                      | ✅   | ✅    | ✅       | ✅    | ✅         | ✅    | הכי יקרה והכי מלאה      |
-
-</div>
-
+<table>
+<thead>
+<tr>
+<th>רישיון</th>
+<th style="text-align: center;">דואר</th>
+<th style="text-align: center;">אופיס</th>
+<th style="text-align: center;">OneDrive</th>
+<th style="text-align: center;">Teams</th>
+<th style="text-align: center;">SharePoint</th>
+<th style="text-align: center;">אבטחה</th>
+<th>הערה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exchange Online (Plan 1)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td>דואר בלבד, 50GB</td>
+</tr>
+<tr>
+<td>Exchange Online (Plan 2)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td>100GB, Archiving</td>
+</tr>
+<tr>
+<td>M365 Apps for Business</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td>אופיס+OneDrive בלבד</td>
+</tr>
+<tr>
+<td>M365 Business Basic</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td>בלי Office מותקן</td>
+</tr>
+<tr>
+<td>M365 Business Standard</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td>חבילה מלאה</td>
+</tr>
+<tr>
+<td>M365 Business Premium</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>כמו Standard + אבטחה</td>
+</tr>
+<tr>
+<td>Office 365 E1</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td>כמו Basic, לא כולל Office</td>
+</tr>
+<tr>
+<td>Office 365 E3</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">🟧</td>
+<td>Enterprise, 100GB דואר</td>
+</tr>
+<tr>
+<td>Office 365 E5</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>אבטחה, אנליטיקות, טלפוניה</td>
+</tr>
+<tr>
+<td>M365 E3</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">🟧</td>
+<td>E3 + Windows + אבטחה</td>
+</tr>
+<tr>
+<td>M365 E5</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td>הכי יקרה והכי מלאה</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="_3">הסבר עמודות הטבלה</h2>
 <ul>
