@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Exchange365%20Mail%20Relay/">
+        <link rel="prev" href="../windows-firewall-guide/">
       
       
-        <link rel="next" href="../wireshark-guide/">
+        <link rel="next" href="../aad-broker-troubleshooting/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>מדריך Sysinternals - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>Export Mailbox to PST via eDiscovery - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sysinternals-it" class="md-skip">
+        <a href="#pst-microsoft-365" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              מדריך Sysinternals
+              Export Mailbox to PST via eDiscovery
             
           </span>
         </div>
@@ -273,18 +273,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -300,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -633,10 +635,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Export%20Mailbox%20to%20PST%20via%20eDiscovery/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Export Mailbox to PST via eDiscovery
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -647,6 +671,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✔️ דרישות מקדימות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ediscovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. הקצאת הרשאות eDiscovery (במידת הצורך)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. יצירת Case חדש
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. יצירת Search לתיבת הדואר
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ייצוא התוצאות (Export)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pst" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. הורדת קובץ ה-PST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ מבנה הקבצים המתקבלים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 טיפים חשובים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✔️ סיום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -731,20 +856,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -760,7 +883,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -840,32 +963,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    מדריך Sysinternals
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sysinternals-tools/" class="md-nav__link">
         
   
   
@@ -876,131 +977,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 התקנה / הפעלה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 כלים עיקריים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔧 כלים עיקריים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#process-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Explorer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#process-monitor-procmon" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Monitor (ProcMon)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Autoruns
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#psexec" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 PsExec
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tcpview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 TCPView
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rammap" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 RAMMap
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bginfo" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 BgInfo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ הערות חשובות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 שימושים נפוצים
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1478,7 +1454,52 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 התקנה / הפעלה
+      ✔️ דרישות מקדימות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ediscovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. הקצאת הרשאות eDiscovery (במידת הצורך)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. יצירת Case חדש
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. יצירת Search לתיבת הדואר
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ייצוא התוצאות (Export)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pst" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. הורדת קובץ ה-PST
     </span>
   </a>
   
@@ -1487,85 +1508,16 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🔧 כלים עיקריים
+      🗂️ מבנה הקבצים המתקבלים
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🔧 כלים עיקריים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#process-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Explorer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#process-monitor-procmon" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Process Monitor (ProcMon)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 Autoruns
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#psexec" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 PsExec
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tcpview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 TCPView
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rammap" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 RAMMap
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bginfo" class="md-nav__link">
-    <span class="md-ellipsis">
-      🟢 BgInfo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ הערות חשובות
+      💡 טיפים חשובים
     </span>
   </a>
   
@@ -1574,7 +1526,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 שימושים נפוצים
+      ✔️ סיום
     </span>
   </a>
   
@@ -1596,109 +1548,91 @@
 
 
 
-<h1 id="sysinternals-it">כלים חיוניים מ־Sysinternals – מדריך למנהלי IT</h1>
-<p>Sysinternals היא חבילת כלים של Microsoft לפתרון תקלות וניטור מתקדם במערכות Windows.<br />
-כל הכלים ניידים (Portable) וניתנים להרצה מיידית.</p>
+<h1 id="pst-microsoft-365">הורדת קובץ PST מתיבת דואר ב-Microsoft 365</h1>
+<p>מדריך זה מסביר כיצד לבצע ייצוא של תיבת דואר לקובץ PST באמצעות eDiscovery בממשק ה-Compliance של Microsoft 365.<br />
+השיטה עדכנית לשנת 2025 ומתאימה למנהלי מערכת.</p>
 <hr />
-<h2 id="_1">🔹 התקנה / הפעלה</h2>
-<p>ניתן להוריד את כל הכלים מכאן:
-<a href="https://docs.microsoft.com/en-us/sysinternals/">https://docs.microsoft.com/en-us/sysinternals/</a></p>
-<p>או להריץ ישירות מהאינטרנט:
-<div class="highlight"><pre><span></span><code><span class="se">\l</span>ive.sysinternals.com<span class="w">  </span>ools
-</code></pre></div></p>
-<hr />
-<h2 id="_2">🔧 כלים עיקריים</h2>
-<h3 id="process-explorer">🟢 Process Explorer</h3>
-<p>תחליף משודרג ל־Task Manager<br />
-- מציג את עץ התהליכים
-- בודק אילו קבצים פתוחים ע"י איזה תהליך
-- מאפשר לסגור תהליכים נעולים</p>
-<h3 id="process-monitor-procmon">🟢 Process Monitor (ProcMon)</h3>
+<h2 id="_1">✔️ דרישות מקדימות</h2>
 <ul>
-<li>מציג בזמן אמת כל גישה:</li>
-<li>לקבצים</li>
-<li>ל־Registry</li>
-<li>לרשת</li>
-<li>כלי עוצמתי לאיתור בעיות נסתרות (Permission Denied, File Not Found)</li>
-</ul>
-<h3 id="autoruns">🟢 Autoruns</h3>
-<ul>
-<li>מציג את כל מה שנטען באתחול</li>
-<li>כולל:</li>
-<li>תוכנות</li>
-<li>DLL-ים</li>
-<li>Scheduled Tasks</li>
-<li>תוספי דפדפן</li>
-<li>ניתן לבטל פריטים לא רצויים</li>
-</ul>
-<h3 id="psexec">🟢 PsExec</h3>
-<ul>
-<li>הרצת פקודה או תוכנה מרחוק (כולל על שרתים)
-<div class="highlight"><pre><span></span><code>psexec<span class="w"> </span><span class="se">\H</span>OST<span class="w"> </span>cmd
-</code></pre></div></li>
-</ul>
-<h3 id="tcpview">🟢 TCPView</h3>
-<ul>
-<li>מציג את כל החיבורים הפתוחים:</li>
-<li>פורטים</li>
-<li>פרוטוקולים</li>
-<li>תהליך אחראי</li>
-</ul>
-<h3 id="rammap">🟢 RAMMap</h3>
-<ul>
-<li>ניתוח מפורט של שימוש בזיכרון</li>
-<li>כולל חלוקה לפי עמודים, קבצים, מערכות</li>
-</ul>
-<h3 id="bginfo">🟢 BgInfo</h3>
-<ul>
-<li>מציג מידע על שולחן העבודה (IP, שם מחשב, דומיין ועוד)</li>
-<li>מצוין עבור סביבת ניהול עם הרבה תחנות</li>
+<li>הרשאות מתאימות ב-Compliance:</li>
+<li><strong>eDiscovery Manager</strong>  </li>
+<li>או <strong>Compliance Administrator</strong></li>
+<li>רישיון תואם הכולל יכולות eDiscovery (לרוב: Business Premium, E3, E5).</li>
+<li>גישה לממשק:<br />
+  https://compliance.microsoft.com</li>
 </ul>
 <hr />
-<h2 id="_3">🛡️ הערות חשובות</h2>
+<h2 id="1-ediscovery">1. הקצאת הרשאות eDiscovery (במידת הצורך)</h2>
+<ol>
+<li>היכנס ל־<strong>Compliance Portal</strong>.</li>
+<li>עבור ל־<strong>Permissions</strong> → <strong>Roles</strong>.</li>
+<li>פתח <strong>eDiscovery Manager</strong>.</li>
+<li>הוסף את החשבון שלך ל:</li>
+<li><strong>eDiscovery Manager</strong></li>
+<li>או <strong>eDiscovery Administrator</strong></li>
+<li>המתן עד 30 דקות להחלת הרשאות.</li>
+</ol>
+<hr />
+<h2 id="2-case">2. יצירת Case חדש</h2>
+<ol>
+<li>בתפריט הצד: <strong>eDiscovery</strong> &gt; <strong>Standard</strong>.</li>
+<li>לחץ <strong>Create a case</strong>.</li>
+<li>בחר שם לקייס (למשל: <em>Mailbox Export – UserName</em>).</li>
+<li>פתח את ה-Case שנוצר.</li>
+</ol>
+<hr />
+<h2 id="3-search">3. יצירת Search לתיבת הדואר</h2>
+<ol>
+<li>בתוך ה-Case בחר <strong>Searches</strong>.</li>
+<li>לחץ <strong>New search</strong>.</li>
+<li>בחר <strong>Choose users, groups, or teams</strong>.</li>
+<li>הוסף את תיבת הדואר שברצונך לייצא.</li>
+<li>השאר את תנאי החיפוש ריקים (כדי לייצא את כל התיבה).</li>
+<li>לחץ <strong>Save &amp; run</strong>.</li>
+</ol>
+<blockquote>
+<p>ייתכן שהחיפוש ייקח מספר דקות עד שעות – בהתאם לגודל התיבה.</p>
+</blockquote>
+<hr />
+<h2 id="4-export">4. ייצוא התוצאות (Export)</h2>
+<ol>
+<li>לאחר סיום החיפוש – פתח את ה-Search.</li>
+<li>לחץ <strong>Export results</strong>.</li>
+<li>סמן:</li>
+<li><strong>Include unindexed items</strong></li>
+<li><strong>Export all items, including ones that have unrecognized format</strong></li>
+<li>לחץ <strong>Export</strong>.</li>
+</ol>
+<hr />
+<h2 id="5-pst">5. הורדת קובץ ה-PST</h2>
+<ol>
+<li>עבור ל־<strong>Exports</strong> בתוך אותו Case.</li>
+<li>בחר את פעילות הייצוא.</li>
+<li>לחץ <strong>Download results</strong>.</li>
+<li>הורד את כלי ההורדה: <strong>Export Tool (.exe)</strong>.</li>
+<li>העתק את מפתח ההורדה (Export Key).</li>
+<li>הפעל את הכלי, הדבק את המפתח ובחר תיקייה הורדה.</li>
+<li>קובצי PST ירדו למחשב (לעיתים מספר חלקים – לפי גודל התיבה).</li>
+</ol>
+<hr />
+<h2 id="_2">🗂️ מבנה הקבצים המתקבלים</h2>
 <ul>
-<li>מומלץ להריץ כ־Administrator לקבלת תוצאה מלאה</li>
-<li>רבים מהכלים דורשים אישור UAC</li>
-<li>מומלץ לבדוק עדכונים – הכלים מתעדכנים תדיר</li>
+<li><code>ExportedResults.pst</code> – קובץ ה-PST.</li>
+<li><code>Results.csv</code> – פירוט הפריטים שיוצאו.</li>
+<li><code>Errors.csv</code> – פריטים שלא יובאו (אם יש).</li>
 </ul>
 <hr />
-<h2 id="_4">🧪 שימושים נפוצים</h2>
-<table>
-<thead>
-<tr>
-<th>משימה</th>
-<th>הכלי</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>מערכת איטית מאוד</td>
-<td>Process Explorer + ProcMon</td>
-</tr>
-<tr>
-<td>תוכנה לא עולה בלי סיבה</td>
-<td>Autoruns + Event Viewer</td>
-</tr>
-<tr>
-<td>לא יודעים מי תפס קובץ</td>
-<td>Process Explorer</td>
-</tr>
-<tr>
-<td>בדיקת נוזקה באתחול</td>
-<td>Autoruns</td>
-</tr>
-<tr>
-<td>ניטור הרשאות בקבצים</td>
-<td>ProcMon</td>
-</tr>
-<tr>
-<td>חקירת תקשורת</td>
-<td>TCPView</td>
-</tr>
-</tbody>
-</table>
+<h2 id="_3">💡 טיפים חשובים</h2>
+<ul>
+<li>אין אפשרות לייצא PST ישירות מה־Admin Center – רק דרך eDiscovery.</li>
+<li>מומלץ להריץ את כלי ההורדה ממחשב יציב עם אינטרנט מהיר.</li>
+<li>אם כפתור <strong>Export</strong> לא מופיע – לרוב זו בעיית הרשאות.</li>
+</ul>
 <hr />
-<p>Sysinternals הם "ארגז הכלים הסודי" של כל איש IT מקצועי.</p>
+<h2 id="_4">✔️ סיום</h2>
+<p>לאחר הורדת קובץ ה-PST, ניתן לפתוח אותו ב-Outlook באמצעות:<br />
+<strong>File → Open &amp; Export → Open Outlook Data File</strong></p>
+<hr />
 
 
 
