@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#raw-bitlocker" class="md-skip">
+        <a href="#raw-bitlocker-cmd-testdisk" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -670,19 +670,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    BitLocker_RAW_Recovery_Guide
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -694,34 +681,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✨ תקציר
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1396,23 +1355,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✨ תקציר
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1427,107 +1369,149 @@
 
 
 
-<h1 id="raw-bitlocker">מדריך: טיפול במחיצה שהפכה ל־RAW לאחר ביטול BitLocker</h1>
-<h2 id="_1">✨ תקציר</h2>
-<p>במקרים מסוימים לאחר הסרת BitLocker, מחיצה יכולה להפוך מ־NTFS ל־RAW.<br />
-במצב כזה Windows אינו מזהה את מערכת הקבצים ולכן הכונן “נעלם” או אינו ניתן לטעינה.<br />
-החדשות הטובות: <strong>המידע עדיין קיים</strong>, ובדרך כלל אפשר לשחזר את המחיצה ללא אובדן נתונים.</p>
-<p>המדריך הבא מסביר איך לבדוק, לאבחן ולתקן את התקלה בצורה בטוחה.</p>
+<h1 id="raw-bitlocker-cmd-testdisk">מדריך: טיפול בדיסק שהפך ל־RAW לאחר הסרת BitLocker (CMD בלבד + TestDisk)</h1>
+<p>מדריך מלא לעבודה בסביבת <strong>WinRE</strong> כאשר Windows אינו עולה, והגישה היחידה היא דרך <strong>CMD בלבד</strong>.</p>
 <hr />
-<h1 id="1">1. זיהוי התקלה</h1>
-<h2 id="11">1.1 סימנים לכך שהמחיצה נפגעה</h2>
-<ul>
-<li>Windows מבקש לפרמט את הכונן.</li>
-<li>Disk Management מציג את המחיצה כ־<strong>RAW</strong>.</li>
-<li>מערכת ההפעלה לא עולה (אם זו מחיצת מערכת).</li>
-<li><code>manage-bde -status</code> מציג Fully Decrypted אבל הדיסק לא מזוהה.</li>
-</ul>
-<hr />
-<h1 id="2">2. בדיקות ראשוניות</h1>
-<h2 id="21-bitlocker">2.1 בדיקת מצב BitLocker</h2>
-<p>פתח CMD כמנהל והריץ:</p>
-<div class="highlight"><pre><span></span><code>manage-bde -status
-</code></pre></div>
-<p>וודא:
-- <strong>Fully Decrypted</strong>
-- Percentage Encrypted = 0%
-- No Protectors</p>
-<p>אם זה תקין → הבעיה <strong>לא</strong> בביטלוקר.</p>
-<hr />
-<h2 id="22-diskpart">2.2 בדיקת המחיצה באמצעות DiskPart</h2>
-<p>פתח CMD והרץ:</p>
+<h1 id="1-cmd">חלק 1 – אבחון הבעיה דרך CMD בלבד</h1>
+<h2 id="11-diskpart">1.1 פתיחת DiskPart ובדיקת דיסקים</h2>
 <div class="highlight"><pre><span></span><code>diskpart
 list disk
 list volume
 </code></pre></div>
-<p>אם אחת המחיצות מופיעה כך:</p>
+<h3 id="_1">מה לחפש?</h3>
 <ul>
-<li><strong>RAW</strong>  </li>
-<li>גודל תקין (למשל 150GB)  </li>
-<li>Type = Partition  </li>
+<li>מחיצה שמופיעה כ־<strong>RAW</strong></li>
+<li>מחיצה בגודל תקין אך ללא File System</li>
+<li>מחיצה שמופיעה בלי אות כונן</li>
 </ul>
-<p>זה אומר שמערכת הקבצים נפגעה אך המחיצה קיימת.</p>
 <hr />
-<h1 id="3-testdisk">3. פתרון הבעיה – שחזור המחיצה עם TestDisk</h1>
-<p><strong>חשוב: לא לבצע פורמט ולא להריץ chkdsk על RAW.</strong></p>
-<h2 id="31">3.1 הורדה</h2>
-<p>הורד את התוכנה TestDisk (חינמית):
-https://www.cgsecurity.org/wiki/TestDisk_Download</p>
-<p>פתוח כ־Administrator.</p>
+<h2 id="12-bitlocker">1.2 בדיקת מצב BitLocker (אם רלוונטי)</h2>
+<div class="highlight"><pre><span></span><code>manage-bde -status
+</code></pre></div>
+<p>וודא:
+- Fully Decrypted<br />
+- No Protectors<br />
+- Percentage Encrypted = 0%</p>
+<p>אם BitLocker כבר הוסר — הבעיה במחיצה, לא בהצפנה.</p>
 <hr />
-<h1 id="4">4. תהליך שחזור המחיצה</h1>
-<h2 id="41">4.1 פתיחת סריקה</h2>
+<h2 id="13">1.3 ניסיון להציג את המחיצה</h2>
+<p>נסה לתת אות כונן:</p>
+<div class="highlight"><pre><span></span><code>select volume X
+assign letter=Z
+</code></pre></div>
+<p>אם עדיין RAW → מערכת הקבצים פגומה.</p>
+<hr />
+<h1 id="2-cmd">חלק 2 – פעולות תיקון דרך CMD (ללא כלים חיצוניים)</h1>
+<h2 id="21-boot-sector">2.1 ניסיון תיקון Boot Sector</h2>
+<div class="highlight"><pre><span></span><code>bootrec /fixboot
+bootrec /fixmbr
+bootrec /scanos
+bootrec /rebuildbcd
+</code></pre></div>
+<p>תוצאות אפשריות:
+- אם המחיצה מזוהה → ה-Bootloader תוקן.
+- אם לא מזוהה → בעיית GPT/NTFS.</p>
+<hr />
+<h2 id="22-gpt">2.2 בדיקת מחיצות GPT</h2>
+<div class="highlight"><pre><span></span><code>diskpart
+sel disk 0
+detail disk
+</code></pre></div>
+<p>אם כתוב:
+- <strong>GPT: Yes</strong> → מערכת GPT<br />
+- <strong>GPT: No</strong> → MBR</p>
+<hr />
+<h2 id="23-efi-windows">2.3 ניסיון לשחזר EFI (אם Windows לא עולה)</h2>
+<div class="highlight"><pre><span></span><code>diskpart
+sel disk 0
+list vol
+sel vol X  (מחיצת EFI, בדרך כלל 100–300MB)
+assign letter=S
+exit
+</code></pre></div>
+<p>שחזור קבצי EFI:</p>
+<div class="highlight"><pre><span></span><code>bcdboot C:\Windows /s S: /f UEFI
+</code></pre></div>
+<p>אם מצליח → ה-Bootloader תוקן.</p>
+<hr />
+<h2 id="24-ntfs-not-raw">2.4 בדיקת NTFS (רק אם NOT RAW!)</h2>
+<div class="highlight"><pre><span></span><code>chkdsk Z: /f
+</code></pre></div>
+<p>⚠️ <strong>לא להריץ chkdsk על RAW</strong> — עלול לפגוע במידע.</p>
+<hr />
+<h1 id="3-testdisk-cmd">חלק 3 – שחזור מלא באמצעות TestDisk (כלי חיצוני מתוך CMD)</h1>
+<p>כאשר המחיצה RAW — Windows לא יכול לשקם אותה רק עם פקודות מובנות.</p>
+<p>לכן משתמשים ב־TestDisk שמריצים דרך USB מה־CMD.</p>
+<hr />
+<h2 id="31-testdisk-usb">3.1 הרצת TestDisk מתוך USB</h2>
 <ol>
-<li>בחר <strong>Create</strong>.</li>
-<li>בחר את הדיסק הפיזי הנכון (לפי גודל).</li>
-<li>בחר מחיצות מסוג:<br />
-   <div class="highlight"><pre><span></span><code>EFI GPT
-</code></pre></div></li>
+<li>
+<p>הורד TestDisk:<br />
+   https://www.cgsecurity.org/wiki/TestDisk_Download</p>
+</li>
+<li>
+<p>העתק ל־USB.</p>
+</li>
+<li>
+<p>חבר USB וב-WinRE הרץ:
+<div class="highlight"><pre><span></span><code>E:\testdisk_win.exe
+</code></pre></div>
+או האות המתאימה.</p>
+</li>
 </ol>
 <hr />
-<h2 id="42">4.2 חיפוש המחיצות</h2>
-<p>בחר:</p>
-<div class="highlight"><pre><span></span><code>Analyse
+<h2 id="32">3.2 סריקת מחיצות</h2>
+<p>בחר:
+<div class="highlight"><pre><span></span><code>Create
+Select Disk (לפי הגודל)
+EFI GPT
+Analyse
 Quick Search
-</code></pre></div>
-<p>TestDisk יסרוק את הדיסק ויחפש מחיצות אבודות.</p>
+</code></pre></div></p>
+<p>TestDisk יזהה מחיצות שנעלמו.</p>
 <hr />
-<h2 id="43">4.3 זיהוי המחיצה התקינה</h2>
-<p>אתה אמור לראות מחיצה מסוג:</p>
-<div class="highlight"><pre><span></span><code>* HPFS - NTFS   (בערך בגודל של המחיצה המקורית)
-</code></pre></div>
-<p>בחר אותה ולחץ:</p>
+<h2 id="33-cmd-testdisk">3.3 הצגת קבצים מתוך CMD ב-TestDisk</h2>
+<p>סמן את המחיצה בגודל 150GB (NTFS המקורי):</p>
 <div class="highlight"><pre><span></span><code>P
 </code></pre></div>
-<p>כדי לראות קבצים.<br />
-אם אתה רואה את התיקיות → המידע קיים!</p>
+<p>אם אתה רואה את הקבצים → המידע קיים במלואו.</p>
 <hr />
-<h2 id="44">4.4 כתיבת טבלת המחיצות מחדש</h2>
-<p>לאחר זיהוי המחיצה:</p>
+<h2 id="34-gptmbr">3.4 שחזור GPT/MBR</h2>
+<p>אם המחיצה תקינה:</p>
 <div class="highlight"><pre><span></span><code>Write
 </code></pre></div>
-<p>TestDisk ישחזר את ה־GPT/MBR ויתקן את מבנה המחיצה.</p>
+<p>TestDisk ישחזר את מבנה המחיצה המקורי מבלי לפגוע בנתונים.</p>
 <p>הפעל מחדש את המחשב.</p>
 <hr />
-<h1 id="5">5. לאחר התיקון</h1>
-<p>לאחר הפעלה מחדש אתה אמור לראות:
-- המחיצה חזרה להיות <strong>NTFS</strong>
-- הכונן מופיע
-- Windows עולה כרגיל (אם זו מחיצת מערכת)
-- כל הקבצים קיימים</p>
+<h1 id="4">חלק 4 – בדיקה לאחר התיקון</h1>
+<h2 id="41">4.1 בדיקת מחיצות מחדש</h2>
+<div class="highlight"><pre><span></span><code>diskpart
+list volume
+</code></pre></div>
+<p>המחיצה אמורה להיות:
+- <strong>NTFS</strong>
+- עם אות כונן תקינה</p>
 <hr />
-<h1 id="6">6. טיפים חשובים</h1>
+<h2 id="42">4.2 בדיקה שהדיסק עלה תקין</h2>
+<p>אם זו מחיצת מערכת:
+- Windows אמור לעלות רגיל
+- כל הקבצים אמורים להימצא</p>
+<hr />
+<h1 id="5">חלק 5 – טיפים חשובים</h1>
 <ul>
-<li>לעולם לא לפרמט מחיצת RAW אם הנתונים חשובים.</li>
-<li>לא להריץ <code>chkdsk /f</code> על RAW.</li>
-<li>אם Quick Search לא מוצא — השתמש ב־<strong>Deeper Search</strong>.</li>
-<li>מומלץ לבצע גיבוי אחרי תיקון מוצלח.</li>
+<li>לעולם לא לבצע <strong>פורמט</strong> למחיצת RAW אם הנתונים חשובים.</li>
+<li>לא להריץ <code>chkdsk</code> על RAW.</li>
+<li>TestDisk הוא הכלי הבטוח ביותר לתיקון metadata.</li>
+<li>לאחר השחזור מומלץ לבצע גיבוי מלא.</li>
 </ul>
 <hr />
-<h1 id="7">7. סיכום</h1>
-<p>תקלה זו אינה מחיקה של מידע אלא פגיעה ב־metadata של המחיצה.<br />
-בעזרת TestDisk ניתן לשחזר את המחיצה כמעט תמיד ללא אובדן נתונים.</p>
-<p>במידה ואתה נתקע בשלב מסוים — אפשר לשלוח צילום מסך, ואכוון בדיוק מה ללחוץ.</p>
+<h1 id="_2">סיכום</h1>
+<ul>
+<li>הפקודות של CMD מאפשרות לתקן Bootloader, EFI, ולזהות בעיות.  </li>
+<li>אם המחיצה הפכה ל־RAW — רק שחזור טבלת מחיצות או NTFS metadata יחזיר אותה.  </li>
+<li>TestDisk מאפשר לבצע שחזור מלא מתוך CMD ללא צורך ב-Windows תקין.</li>
+</ul>
+<p>המדריך כולל את כל השלבים הדרושים להתמודדות מלאה עם הבעיה כאשר Windows אינו עולה כלל.</p>
 
 
 
