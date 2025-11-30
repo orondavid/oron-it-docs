@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../squid-explained/">
+        <link rel="prev" href="../nano-guide/">
       
       
-        <link rel="next" href="../ubuntu-explained/">
+        <link rel="next" href="../VBAexcel-macro/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>הסבר לפקודות שרת ווב - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>proxmox_guide - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu" class="md-skip">
+        <a href="#-proxmox" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר לפקודות שרת ווב
+              proxmox_guide
             
           </span>
         </div>
@@ -978,32 +978,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר לפקודות שרת ווב
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../web-server-explained/" class="md-nav__link">
         
   
   
@@ -1014,80 +992,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      עדכון מערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Apache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      חומת אש (UFW)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#php" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת PHP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת MySQL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסרת קובץ בדיקה
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1189,10 +1093,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../proxmox_guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    proxmox_guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1203,6 +1129,254 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. רפליקציה ב-Proxmox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. רפליקציה ב-Proxmox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מהי רפליקציה?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      איך הרפליקציה עובדת?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרישות בסיסיות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. הגיבוי המובנה של Proxmox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proxmox-backup-server-pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Proxmox Backup Server (PBS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Proxmox Backup Server (PBS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות PBS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      עלות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. הבדל בין גיבוי לרפליקציה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-zfs-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ZFS – מערכת הקבצים המומלצת ל-Proxmox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. ZFS – מערכת הקבצים המומלצת ל-Proxmox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות ZFS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ram-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. צריכת RAM של ZFS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-raid-raid-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. RAID חומרתי לעומת RAID תוכנתי של ZFS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. RAID חומרתי לעומת RAID תוכנתי של ZFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      למה לא RAID חומרתי?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      למה כן RAID תוכנתי של ZFS?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-raid-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. סוגי RAID מומלצים ב-ZFS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. סוגי RAID מומלצים ב-ZFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raidz1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAIDZ1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raidz2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAIDZ2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raidz3" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAIDZ3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid10-mirrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID10 (Mirrors)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. בחירת מערך RAID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      מסקנה מקצועית
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1471,54 +1645,228 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. רפליקציה ב-Proxmox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. רפליקציה ב-Proxmox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      עדכון מערכת
+      מהי רפליקציה?
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#apache" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Apache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      חומת אש (UFW)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#php" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת PHP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mysql" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת MySQL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      הסרת קובץ בדיקה
+      איך הרפליקציה עובדת?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרישות בסיסיות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. הגיבוי המובנה של Proxmox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proxmox-backup-server-pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Proxmox Backup Server (PBS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Proxmox Backup Server (PBS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות PBS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      עלות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. הבדל בין גיבוי לרפליקציה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-zfs-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ZFS – מערכת הקבצים המומלצת ל-Proxmox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. ZFS – מערכת הקבצים המומלצת ל-Proxmox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות ZFS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ram-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. צריכת RAM של ZFS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-raid-raid-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. RAID חומרתי לעומת RAID תוכנתי של ZFS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. RAID חומרתי לעומת RAID תוכנתי של ZFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      למה לא RAID חומרתי?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      למה כן RAID תוכנתי של ZFS?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-raid-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. סוגי RAID מומלצים ב-ZFS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. סוגי RAID מומלצים ב-ZFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raidz1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAIDZ1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raidz2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAIDZ2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raidz3" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAIDZ3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raid10-mirrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAID10 (Mirrors)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. בחירת מערך RAID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      מסקנה מקצועית
     </span>
   </a>
   
@@ -1540,73 +1888,160 @@
 
 
 
-<h1 id="ubuntu">הסבר לפקודות התקנת שרת ווב על Ubuntu</h1>
-<p>מדריך זה מסביר מה כל פקודה עושה בתהליך התקנת שרת ווב על Ubuntu Server.</p>
-<hr />
-<h2 id="_1">עדכון מערכת</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</code></pre></div>
+<h1 id="-proxmox">מדריך: גיבוי, רפליקציה ומערכות קבצים ב-Proxmox</h1>
+<p>מסמך זה מסכם את כל ההבנות וההמלצות לבניית סביבת Proxmox יציבה, מהירה ועמידה לתקלות.<br />
+הוא כולל הסברים על רפליקציה, גיבוי, ZFS, RAID ותכנון נכון של הסטורג'.</p>
+<h2 id="1-proxmox">1. רפליקציה ב-Proxmox</h2>
+<h3 id="_1">מהי רפליקציה?</h3>
+<p>רפליקציה היא יכולת מובנית ב-Proxmox שמאפשרת ליצור עותק חי ומוכן להפעלה של כל VM בשרת אחר בתוך ה-Cluster.</p>
+<h3 id="_2">איך הרפליקציה עובדת?</h3>
+<p>הרפליקציה מבוססת על ZFS Snapshots:
+- נוצרת תמונת מצב (Snapshot) של ה-VM
+- רק השינויים מועברים לשרת השני (Incremental)
+- בשרת היעד נוצר VM זהה ומוכן להפעלה
+- במקרה תקלה ניתן להפעיל מייד את ה-VM בשרת השני
+- עם HA ה-VM עולה אוטומטית ללא מגע אדם</p>
+<h3 id="_3">דרישות בסיסיות</h3>
 <ul>
-<li><code>sudo</code> – מריץ את הפקודה כמשתמש מנהל (root)</li>
-<li><code>apt update</code> – מרענן את רשימת החבילות מהמאגר</li>
-<li><code>apt upgrade -y</code> – משדרג את כל החבילות למעודכנות ביותר, <code>-y</code> מאשר אוטומטית</li>
+<li>שני שרתים ב-Cluster אחד</li>
+<li>שני השרתים צריכים להשתמש ב-ZFS כ-Storage</li>
 </ul>
-<hr />
-<h2 id="apache">התקנת Apache</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>-y
-</code></pre></div>
+<h2 id="2-proxmox">2. הגיבוי המובנה של Proxmox</h2>
+<p>Proxmox כולל מנגנון גיבוי בסיסי (VZDUMP):
+- גיבוי מלא
+- Snapshot backup
+- תזמונים (Schedules)
+- שמירת מספר נקודות בזמן (Retention)
+- שחזור מלא (Restore)</p>
+<h2 id="3-proxmox-backup-server-pbs">3. Proxmox Backup Server (PBS)</h2>
+<p>PBS הוא שרת גיבוי ייעודי ל-Proxmox.</p>
+<h3 id="pbs">יתרונות PBS</h3>
 <ul>
-<li><code>apt install apache2</code> – מתקין את שרת ה־Web Apache</li>
+<li>Deduplication עמוק</li>
+<li>גיבוי Incremental אמיתי</li>
+<li>הצפנת נתונים</li>
+<li>ביצועים גבוהים</li>
+<li>שמירה יעילה של Snapshots</li>
+<li>התאמה מלאה ל-Proxmox</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
-</code></pre></div>
+<h3 id="_4">עלות</h3>
+<p>PBS הוא חינמי לחלוטין (קוד פתוח).</p>
+<h2 id="4">4. הבדל בין גיבוי לרפליקציה</h2>
+<table>
+<thead>
+<tr>
+<th>פעולה</th>
+<th>גיבוי</th>
+<th>רפליקציה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>מה נשמר</td>
+<td>קובץ גיבוי</td>
+<td>VM חי בשרת אחר</td>
+</tr>
+<tr>
+<td>זמן שחזור</td>
+<td>דורש Restore</td>
+<td>מיידי</td>
+</tr>
+<tr>
+<td>מתאים ל</td>
+<td>מחיקה, Ransomware, טעות אנוש</td>
+<td>קריסת שרת (DR)</td>
+</tr>
+<tr>
+<td>היסטוריה</td>
+<td>כן</td>
+<td>לרוב לא</td>
+</tr>
+<tr>
+<td>צורך תוכנות נוספות</td>
+<td>לא חובה</td>
+<td>דורש ZFS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-zfs-proxmox">5. ZFS – מערכת הקבצים המומלצת ל-Proxmox</h2>
+<h3 id="zfs">יתרונות ZFS</h3>
 <ul>
-<li>מציג את מצב השירות – האם רץ, מופעל באתחול וכו'</li>
+<li>Snapshots מהירים</li>
+<li>רפליקציה מובנית</li>
+<li>Self-Healing</li>
+<li>הגנה מפני Silent Data Corruption</li>
+<li>ביצועים טובים ל-VMs</li>
+<li>Compression מובנה</li>
+<li>ניהול דיסקים מלא ללא תלות בבקר RAID</li>
 </ul>
-<hr />
-<h2 id="ufw">חומת אש (UFW)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Apache Full&#39;</span>
-</code></pre></div>
+<h2 id="6-ram-zfs">6. צריכת RAM של ZFS</h2>
+<p>ZFS משתמש בזיכרון RAM של ההוסט בלבד.<br />
+מומלץ:
+- מינימום: 8GB
+- מומלץ: 16GB ומעלה
+- לסביבות כבדות: 32GB–64GB</p>
+<h2 id="7-raid-raid-zfs">7. RAID חומרתי לעומת RAID תוכנתי של ZFS</h2>
+<h3 id="raid">למה לא RAID חומרתי?</h3>
 <ul>
-<li>מאפשר תעבורה בפורטים 80 (HTTP) ו־443 (HTTPS) דרך UFW</li>
+<li>אין Self-Healing</li>
+<li>אין בדיקת Checksums</li>
+<li>אין הגנה מלאה מפני Corruption</li>
+<li>אין רפליקציה אמיתית</li>
+<li>Rebuild מסוכן יותר</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>status
-</code></pre></div>
+<h3 id="raid-zfs">למה כן RAID תוכנתי של ZFS?</h3>
 <ul>
-<li>מציג את מצב החומת אש והחוקים המוגדרים</li>
+<li>אמינות גבוהה</li>
+<li>תיקון שגיאות</li>
+<li>ביצועים יציבים</li>
+<li>Snapshots</li>
+<li>רפליקציה בין Nodes</li>
+<li>DR איכותי</li>
 </ul>
-<hr />
-<h2 id="php">התקנת PHP</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>php<span class="w"> </span>libapache2-mod-php<span class="w"> </span>-y
-</code></pre></div>
-<ul>
-<li>מתקין את PHP ואת התמיכה שלו בתוך Apache (מודול mod-php)</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;?php phpinfo(); ?&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/var/www/html/info.php
-</code></pre></div>
-<ul>
-<li>יוצר קובץ <code>info.php</code> שמציג את הגדרות PHP בדפדפן</li>
-</ul>
-<hr />
-<h2 id="mysql">התקנת MySQL</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>mysql-server<span class="w"> </span>-y
-</code></pre></div>
-<ul>
-<li>מתקין את שרת מסד הנתונים MySQL</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mysql_secure_installation
-</code></pre></div>
-<ul>
-<li>אשף הגדרות אבטחה בסיסי של MySQL (סיסמה, הסרת משתמשים אנונימיים וכו')</li>
-</ul>
-<hr />
-<h2 id="_2">הסרת קובץ בדיקה</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>/var/www/html/info.php
-</code></pre></div>
-<ul>
-<li>מוחק את קובץ info.php (מומלץ לאחר השימוש מטעמי אבטחה)</li>
-</ul>
-<hr />
+<h2 id="8-raid-zfs">8. סוגי RAID מומלצים ב-ZFS</h2>
+<h3 id="raidz1">RAIDZ1</h3>
+<p>מתאים ל-3 דיסקים קטנים.</p>
+<h3 id="raidz2">RAIDZ2</h3>
+<p>הבחירה המומלצת ביותר.<br />
+מאפשר שרידות של שני דיסקים.</p>
+<h3 id="raidz3">RAIDZ3</h3>
+<p>לסביבות גדולות או רגישות.</p>
+<h3 id="raid10-mirrors">RAID10 (Mirrors)</h3>
+<p>ביצועים מעולים, שרידות גבוהה.</p>
+<h2 id="9-raid">9. בחירת מערך RAID</h2>
+<table>
+<thead>
+<tr>
+<th>תרחיש</th>
+<th>המלצה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>שלושה דיסקים</td>
+<td>RAIDZ1</td>
+</tr>
+<tr>
+<td>ארבעה עד שמונה דיסקים</td>
+<td>RAIDZ2</td>
+</tr>
+<tr>
+<td>עומס כבד של וירטואליזציה</td>
+<td>RAID10</td>
+</tr>
+<tr>
+<td>שרידות מקסימלית</td>
+<td>RAIDZ3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">מסקנה מקצועית</h2>
+<p>כדי לבנות סביבת Proxmox יציבה:
+- להשתמש ב-ZFS ולא ב-RAID חומרתי
+- להגדיר רפליקציה בין שני Nodes
+- לגבות באמצעות PBS
+- להקצות לפחות 16GB RAM
+- לבחור RAIDZ2 או RAID10 לפי הצורך</p>
 
 
 
