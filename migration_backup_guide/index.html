@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../proxy-forward-explained/">
+        <link rel="prev" href="../proxmox_vs_vmware/">
       
       
-        <link rel="next" href="../nano-guide/">
+        <link rel="next" href="../VBAexcel-macro/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>פקודות בסיסיות ב־VIM - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>migration_backup_guide - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vim" class="md-skip">
+        <a href="#esxi-proxmox" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              פקודות בסיסיות ב־VIM
+              migration_backup_guide
             
           </span>
         </div>
@@ -1047,32 +1047,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    פקודות בסיסיות ב־VIM
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vim-guide/" class="md-nav__link">
         
   
   
@@ -1083,71 +1061,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתיחת קובץ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      מצבים בעורך
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      מעבר למצב כתיבה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      יציאה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      מחיקה וניווט
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1226,10 +1139,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../migration_backup_guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    migration_backup_guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1240,6 +1175,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מבוא
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ovf" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 1 – גיבוי OVF (ייצוא תקני)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="חלק 1 – גיבוי OVF (ייצוא תקני)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלבים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-clone-vmdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 2 – Clone של VMDK
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="חלק 2 – Clone של VMDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלבים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 3 – שמירה כפולה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 4 – בדיקת תקינות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 5 – למה לא להסתפק בשיטה אחת?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 6 – מה לא עושים לפני גיבוי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 7 – סיכום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1510,43 +1567,100 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      פתיחת קובץ
+      מבוא
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#1-ovf" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 1 – גיבוי OVF (ייצוא תקני)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="חלק 1 – גיבוי OVF (ייצוא תקני)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      מצבים בעורך
+      שלבים:
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#2-clone-vmdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 2 – Clone של VMDK
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="חלק 2 – Clone של VMDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      מעבר למצב כתיבה
+      שלבים:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 3 – שמירה כפולה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      יציאה
+      חלק 4 – בדיקת תקינות
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      מחיקה וניווט
+      חלק 5 – למה לא להסתפק בשיטה אחת?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 6 – מה לא עושים לפני גיבוי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      חלק 7 – סיכום
     </span>
   </a>
   
@@ -1568,44 +1682,77 @@
 
 
 
-<h1 id="vim">פקודות בסיסיות בעורך VIM</h1>
-<p><code>vim</code> הוא עורך טקסט מתקדם, חזק אך דורש תרגול. להלן פקודות בסיסיות לעבודה:</p>
-<hr />
-<h2 id="_1">פתיחת קובץ</h2>
-<div class="highlight"><pre><span></span><code>vim<span class="w"> </span>filename.txt
-</code></pre></div>
-<hr />
-<h2 id="_2">מצבים בעורך</h2>
+<h1 id="esxi-proxmox">מדריך גיבוי לפני מעבר מ־ESXi ל־Proxmox</h1>
+<p><em>(שיטה מומלצת: OVF + Clone VMDK)</em></p>
+<h2 id="_1">מבוא</h2>
+<p>לפני מעבר של שרתים וירטואליים מ־VMware ESXi אל Proxmox, חשוב לבצע גיבוי מלא, אמין ובטוח של כל ה־VMים.<br />
+המטרה: לוודא שבכל מצב – גם אם הייבוא נכשל, הקבצים נפגמים או יש טעות בתהליך – ניתן <strong>לשחזר כל VM במלואו</strong>.</p>
+<p>השיטה המומלצת ביותר משלבת:
+1. <strong>ייצוא OVF</strong> – תקני ונקי לייבוא ישיר ל־Proxmox<br />
+2. <strong>Clone של תיקיית ה־VM (VMDK)</strong> – עותק דיסק גולמי ומלא</p>
+<p>כך מתקבלות שתי שיטות גיבוי שונות, שכל אחת יכולה להציל את המערכת במקרה תקלה.</p>
+<h2 id="1-ovf">חלק 1 – גיבוי OVF (ייצוא תקני)</h2>
+<h3 id="_2">שלבים:</h3>
+<ol>
+<li>היכנס ל־vSphere / ESXi.</li>
+<li>לחץ לחיצה ימנית על ה־VM.</li>
+<li>בחר: <strong>Export → Export OVF Template</strong>.</li>
+<li>הורד את הקבצים: <code>ovf</code>, <code>vmdk</code>, <code>mf</code>.</li>
+</ol>
+<h2 id="2-clone-vmdk">חלק 2 – Clone של VMDK</h2>
+<h3 id="_3">שלבים:</h3>
+<ol>
+<li>היכנס ל־ESXi ב־SSH או WinSCP.</li>
+<li>עבור לתיקיית ה־VM.</li>
+<li>העתק את כל הקבצים (כולל VMDK) למיקום חיצוני.</li>
+</ol>
+<h2 id="3">חלק 3 – שמירה כפולה</h2>
+<p>שמור את הגיבויים במיקום חיצוני + עותק נוסף ב-NAS/שרת נוסף.</p>
+<h2 id="4">חלק 4 – בדיקת תקינות</h2>
+<p>בדוק פתיחת OVF ובדוק VMDK עם:
+<div class="highlight"><pre><span></span><code>qemu-img check disk.vmdk
+</code></pre></div></p>
+<h2 id="5">חלק 5 – למה לא להסתפק בשיטה אחת?</h2>
+<table>
+<thead>
+<tr>
+<th>שיטה</th>
+<th>יתרונות</th>
+<th>חסרונות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OVF</td>
+<td>תקני, קל לייבוא</td>
+<td>עלול להיכשל</td>
+</tr>
+<tr>
+<td>VMDK Clone</td>
+<td>אמין וגולמי</td>
+<td>דורש ייבוא ידני</td>
+</tr>
+<tr>
+<td>Nakivo/Veeam</td>
+<td>מעולה למי שיש</td>
+<td>לא תמיד Full RAW</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">חלק 6 – מה לא עושים לפני גיבוי</h2>
 <ul>
-<li>מצב רגיל (ברירת מחדל) – ניווט, מחיקה, העתקה</li>
-<li>מצב עריכה – הכנסת טקסט</li>
-<li>מצב פקודה – לשמירה, יציאה וכו’</li>
+<li>לא משנים רשת  </li>
+<li>לא מוחקים datastore  </li>
+<li>לא משדרגים ESXi  </li>
+<li>לא מוחקים snapshots  </li>
 </ul>
-<hr />
-<h2 id="_3">מעבר למצב כתיבה</h2>
-<ul>
-<li><code>i</code> – הכנסת טקסט לפני הסמן</li>
-<li><code>a</code> – הכנסת טקסט אחרי הסמן</li>
-<li><code>o</code> – פותח שורה חדשה מתחת</li>
-</ul>
-<hr />
-<h2 id="_4">יציאה</h2>
-<ul>
-<li><code>Esc</code> → <code>:w</code> – שמירה</li>
-<li><code>:q</code> – יציאה</li>
-<li><code>:wq</code> – שמירה ויציאה</li>
-<li><code>:q!</code> – יציאה ללא שמירה</li>
-</ul>
-<hr />
-<h2 id="_5">מחיקה וניווט</h2>
-<ul>
-<li><code>x</code> – מחיקת תו</li>
-<li><code>dd</code> – מחיקת שורה</li>
-<li><code>u</code> – ביטול פעולה</li>
-<li><code>yy</code> – העתקת שורה</li>
-<li><code>p</code> – הדבקה</li>
-<li><code>/מילה</code> – חיפוש</li>
-</ul>
+<h2 id="7">חלק 7 – סיכום</h2>
+<p>הדרך הבטוחה ביותר:
+1. OVF<br />
+2. Clone VMDK<br />
+3. שמירה כפולה<br />
+4. בדיקת תקינות<br />
+5. רק אז ממשיכים למיגרציה  </p>
 
 
 
