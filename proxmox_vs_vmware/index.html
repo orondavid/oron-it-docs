@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../nano-guide/">
+        <link rel="prev" href="../proxmox_backup/">
       
       
         <link rel="next" href="../VBAexcel-macro/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>proxmox_guide - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>proxmox_vs_vmware - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-proxmox" class="md-skip">
+        <a href="#proxmox-ve-vmware-vsphereesxi" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              proxmox_guide
+              proxmox_vs_vmware
             
           </span>
         </div>
@@ -1093,6 +1093,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox_backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    proxmox_backup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1110,7 +1133,7 @@
   
   
   <span class="md-ellipsis">
-    proxmox_guide
+    proxmox_vs_vmware
     
   </span>
   
@@ -1123,7 +1146,7 @@
   
   
   <span class="md-ellipsis">
-    proxmox_guide
+    proxmox_vs_vmware
     
   </span>
   
@@ -1146,226 +1169,370 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-proxmox" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. רפליקציה ב-Proxmox
+      1. הקדמה
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. רפליקציה ב-Proxmox">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. השוואה טכנית כללית
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. השוואה טכנית כללית">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#proxmox-ve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-esxi-vsphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware ESXi / vSphere
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. יכולות וירטואליזציה
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. יכולות וירטואליזציה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Machines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Machines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ניהול Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ניהול Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-high-availability-dr" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. High Availability ו-DR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. High Availability ו-DR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. יכולות ניהול וממשק משתמש
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. יכולות ניהול וממשק משתמש">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. רפליקציה
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. רפליקציה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. גיבויים
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. גיבויים">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. רישוי ועלויות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. רישוי ועלויות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-ve_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-vsphereesxi" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware vSphere/ESXi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. יציבות ובשלות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. יציבות ובשלות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. למי כל פתרון מתאים?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. למי כל פתרון מתאים?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-ve_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VE – מתאים ל:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware – מתאים ל:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. סיכום
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      מהי רפליקציה?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      איך הרפליקציה עובדת?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      דרישות בסיסיות
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-proxmox" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. הגיבוי המובנה של Proxmox
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-proxmox-backup-server-pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Proxmox Backup Server (PBS)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Proxmox Backup Server (PBS)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      יתרונות PBS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      עלות
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. הבדל בין גיבוי לרפליקציה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-zfs-proxmox" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. ZFS – מערכת הקבצים המומלצת ל-Proxmox
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. ZFS – מערכת הקבצים המומלצת ל-Proxmox">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      יתרונות ZFS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ram-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. צריכת RAM של ZFS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-raid-raid-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. RAID חומרתי לעומת RAID תוכנתי של ZFS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. RAID חומרתי לעומת RAID תוכנתי של ZFS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#raid" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה לא RAID חומרתי?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה כן RAID תוכנתי של ZFS?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-raid-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. סוגי RAID מומלצים ב-ZFS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8. סוגי RAID מומלצים ב-ZFS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#raidz1" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAIDZ1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raidz2" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAIDZ2
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raidz3" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAIDZ3
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid10-mirrors" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID10 (Mirrors)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-raid" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. בחירת מערך RAID
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       מסקנה מקצועית
     </span>
@@ -1645,226 +1812,370 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-proxmox" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. רפליקציה ב-Proxmox
+      1. הקדמה
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. רפליקציה ב-Proxmox">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. השוואה טכנית כללית
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. השוואה טכנית כללית">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#proxmox-ve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-esxi-vsphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware ESXi / vSphere
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. יכולות וירטואליזציה
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. יכולות וירטואליזציה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Machines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Virtual Machines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. ניהול Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ניהול Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-high-availability-dr" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. High Availability ו-DR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. High Availability ו-DR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. יכולות ניהול וממשק משתמש
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. יכולות ניהול וממשק משתמש">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. רפליקציה
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. רפליקציה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. גיבויים
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. גיבויים">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. רישוי ועלויות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. רישוי ועלויות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-ve_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware-vsphereesxi" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware vSphere/ESXi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. יציבות ובשלות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. יציבות ובשלות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. למי כל פתרון מתאים?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. למי כל פתרון מתאים?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proxmox-ve_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox VE – מתאים ל:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware – מתאים ל:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. סיכום
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      מהי רפליקציה?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      איך הרפליקציה עובדת?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      דרישות בסיסיות
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-proxmox" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. הגיבוי המובנה של Proxmox
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-proxmox-backup-server-pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Proxmox Backup Server (PBS)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Proxmox Backup Server (PBS)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      יתרונות PBS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      עלות
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. הבדל בין גיבוי לרפליקציה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-zfs-proxmox" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. ZFS – מערכת הקבצים המומלצת ל-Proxmox
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. ZFS – מערכת הקבצים המומלצת ל-Proxmox">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      יתרונות ZFS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ram-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. צריכת RAM של ZFS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-raid-raid-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. RAID חומרתי לעומת RAID תוכנתי של ZFS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. RAID חומרתי לעומת RAID תוכנתי של ZFS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#raid" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה לא RAID חומרתי?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה כן RAID תוכנתי של ZFS?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-raid-zfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. סוגי RAID מומלצים ב-ZFS
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8. סוגי RAID מומלצים ב-ZFS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#raidz1" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAIDZ1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raidz2" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAIDZ2
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raidz3" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAIDZ3
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid10-mirrors" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID10 (Mirrors)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-raid" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. בחירת מערך RAID
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       מסקנה מקצועית
     </span>
@@ -1888,160 +2199,267 @@
 
 
 
-<h1 id="-proxmox">מדריך: גיבוי, רפליקציה ומערכות קבצים ב-Proxmox</h1>
-<p>מסמך זה מסכם את כל ההבנות וההמלצות לבניית סביבת Proxmox יציבה, מהירה ועמידה לתקלות.<br />
-הוא כולל הסברים על רפליקציה, גיבוי, ZFS, RAID ותכנון נכון של הסטורג'.</p>
-<h2 id="1-proxmox">1. רפליקציה ב-Proxmox</h2>
-<h3 id="_1">מהי רפליקציה?</h3>
-<p>רפליקציה היא יכולת מובנית ב-Proxmox שמאפשרת ליצור עותק חי ומוכן להפעלה של כל VM בשרת אחר בתוך ה-Cluster.</p>
-<h3 id="_2">איך הרפליקציה עובדת?</h3>
-<p>הרפליקציה מבוססת על ZFS Snapshots:
-- נוצרת תמונת מצב (Snapshot) של ה-VM
-- רק השינויים מועברים לשרת השני (Incremental)
-- בשרת היעד נוצר VM זהה ומוכן להפעלה
-- במקרה תקלה ניתן להפעיל מייד את ה-VM בשרת השני
-- עם HA ה-VM עולה אוטומטית ללא מגע אדם</p>
-<h3 id="_3">דרישות בסיסיות</h3>
+<h1 id="proxmox-ve-vmware-vsphereesxi">מדריך השוואה: Proxmox VE לעומת VMware vSphere/ESXi</h1>
+<p>מדריך זה מציג השוואה מקיפה בין Proxmox VE לבין VMware vSphere/ESXi, הן מבחינה טכנית והן מבחינת עלויות ורישוי. מטרת המסמך היא לסייע בבחירת הפלטפורמה המתאימה ביותר לסביבת וירטואליזציה, תוך התייחסות להבדלים מעשיים, יתרונות, חסרונות ועלויות תפעול.</p>
+<hr />
+<h2 id="1">1. הקדמה</h2>
+<p>VMware נחשבת לפלטפורמת הווירטואליזציה הוותיקה והנפוצה ביותר בעולם הארגוני, אך בשנים האחרונות עלויות הרישוי והמורכבות בניהול הסביבה עלו משמעותית.<br />
+Proxmox VE הפכה לאלטרנטיבה חזקה, יציבה ומודרנית, המציעה יכולות מתקדמות ללא עלויות רישוי גבוהות.</p>
+<hr />
+<h2 id="2">2. השוואה טכנית כללית</h2>
+<h3 id="proxmox-ve">Proxmox VE</h3>
 <ul>
-<li>שני שרתים ב-Cluster אחד</li>
-<li>שני השרתים צריכים להשתמש ב-ZFS כ-Storage</li>
+<li>מבוסס על Debian.</li>
+<li>משתמש ב-KVM להרצת מכונות וירטואליות.</li>
+<li>תומך ב-LXC Containers.</li>
+<li>כולל יכולות ניהול מתקדמות בחינם:</li>
+<li>Cluster</li>
+<li>High Availability (HA)</li>
+<li>Live Migration</li>
+<li>Storage Management</li>
+<li>Firewall מובנה</li>
+<li>רפליקציה מבוססת ZFS</li>
 </ul>
-<h2 id="2-proxmox">2. הגיבוי המובנה של Proxmox</h2>
-<p>Proxmox כולל מנגנון גיבוי בסיסי (VZDUMP):
-- גיבוי מלא
-- Snapshot backup
-- תזמונים (Schedules)
-- שמירת מספר נקודות בזמן (Retention)
-- שחזור מלא (Restore)</p>
-<h2 id="3-proxmox-backup-server-pbs">3. Proxmox Backup Server (PBS)</h2>
-<p>PBS הוא שרת גיבוי ייעודי ל-Proxmox.</p>
-<h3 id="pbs">יתרונות PBS</h3>
+<h3 id="vmware-esxi-vsphere">VMware ESXi / vSphere</h3>
 <ul>
-<li>Deduplication עמוק</li>
-<li>גיבוי Incremental אמיתי</li>
-<li>הצפנת נתונים</li>
-<li>ביצועים גבוהים</li>
-<li>שמירה יעילה של Snapshots</li>
-<li>התאמה מלאה ל-Proxmox</li>
+<li>Hypervisor ייעודי ומוקשח של VMware.</li>
+<li>ניהול מתקדם באמצעות vCenter (דורש רישוי).</li>
+<li>תמיכה באקו־סיסטם רחב:</li>
+<li>DRS (איזון עומסים)</li>
+<li>vMotion מלא</li>
+<li>Storage vMotion</li>
+<li>NSX</li>
+<li>vSAN</li>
+<li>מיועד בעיקר לסביבות גדולות ומורכבות.</li>
 </ul>
-<h3 id="_4">עלות</h3>
-<p>PBS הוא חינמי לחלוטין (קוד פתוח).</p>
-<h2 id="4">4. הבדל בין גיבוי לרפליקציה</h2>
-<table>
-<thead>
-<tr>
-<th>פעולה</th>
-<th>גיבוי</th>
-<th>רפליקציה</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>מה נשמר</td>
-<td>קובץ גיבוי</td>
-<td>VM חי בשרת אחר</td>
-</tr>
-<tr>
-<td>זמן שחזור</td>
-<td>דורש Restore</td>
-<td>מיידי</td>
-</tr>
-<tr>
-<td>מתאים ל</td>
-<td>מחיקה, Ransomware, טעות אנוש</td>
-<td>קריסת שרת (DR)</td>
-</tr>
-<tr>
-<td>היסטוריה</td>
-<td>כן</td>
-<td>לרוב לא</td>
-</tr>
-<tr>
-<td>צורך תוכנות נוספות</td>
-<td>לא חובה</td>
-<td>דורש ZFS</td>
-</tr>
-</tbody>
-</table>
-<h2 id="5-zfs-proxmox">5. ZFS – מערכת הקבצים המומלצת ל-Proxmox</h2>
-<h3 id="zfs">יתרונות ZFS</h3>
+<hr />
+<h2 id="3">3. יכולות וירטואליזציה</h2>
+<h3 id="virtual-machines">Virtual Machines</h3>
+<p>שתי הפלטפורמות תומכות ב־VMs בצורה מלאה.</p>
+<h4 id="proxmox">Proxmox</h4>
 <ul>
-<li>Snapshots מהירים</li>
-<li>רפליקציה מובנית</li>
+<li>תמיכה ב-KVM.</li>
+<li>תמיכה מעולה בתמונות דיסק qcow2 ו-raw.</li>
+<li>תמיכה ב־VirtIO ליעילות גבוהה.</li>
+</ul>
+<h4 id="vmware">VMware</h4>
+<ul>
+<li>מכונות וירטואליות בפורמט VMDK.</li>
+<li>התאמה גבוהה למערכות Enterprise.</li>
+<li>תמיכה ב-“VM Hardware Versions”.</li>
+</ul>
+<hr />
+<h2 id="4-storage">4. ניהול Storage</h2>
+<h3 id="proxmox_1">Proxmox</h3>
+<ul>
+<li>תמיכה מובנית במערכת הקבצים ZFS.</li>
+<li>Snapshots ורפליקציה כחלק מהמערכת.</li>
+<li>תמיכה ב:</li>
+<li>LVM / LVM-Thin</li>
+<li>Ceph</li>
+<li>NFS</li>
+<li>iSCSI</li>
+<li>ZFS מאפשר:</li>
 <li>Self-Healing</li>
-<li>הגנה מפני Silent Data Corruption</li>
-<li>ביצועים טובים ל-VMs</li>
-<li>Compression מובנה</li>
-<li>ניהול דיסקים מלא ללא תלות בבקר RAID</li>
+<li>רפליקציה אינקרמנטלית</li>
+<li>הגנה מפני Silent Corruption</li>
 </ul>
-<h2 id="6-ram-zfs">6. צריכת RAM של ZFS</h2>
-<p>ZFS משתמש בזיכרון RAM של ההוסט בלבד.<br />
-מומלץ:
-- מינימום: 8GB
-- מומלץ: 16GB ומעלה
-- לסביבות כבדות: 32GB–64GB</p>
-<h2 id="7-raid-raid-zfs">7. RAID חומרתי לעומת RAID תוכנתי של ZFS</h2>
-<h3 id="raid">למה לא RAID חומרתי?</h3>
+<h3 id="vmware_1">VMware</h3>
 <ul>
-<li>אין Self-Healing</li>
-<li>אין בדיקת Checksums</li>
-<li>אין הגנה מלאה מפני Corruption</li>
-<li>אין רפליקציה אמיתית</li>
-<li>Rebuild מסוכן יותר</li>
+<li>תומך ב־VMFS (מערכת קבצים ייעודית).</li>
+<li>יכולות Storage מתקדמות דורשות רישוי:</li>
+<li>Storage vMotion</li>
+<li>vSAN (רישוי נוסף)</li>
+<li>תלוי לרוב בפתרונות חיצוניים:</li>
+<li>SAN</li>
+<li>NAS</li>
+<li>Storage Arrays ייעודיים</li>
 </ul>
-<h3 id="raid-zfs">למה כן RAID תוכנתי של ZFS?</h3>
+<hr />
+<h2 id="5-high-availability-dr">5. High Availability ו-DR</h2>
+<h3 id="proxmox_2">Proxmox</h3>
 <ul>
-<li>אמינות גבוהה</li>
-<li>תיקון שגיאות</li>
-<li>ביצועים יציבים</li>
-<li>Snapshots</li>
-<li>רפליקציה בין Nodes</li>
-<li>DR איכותי</li>
+<li>HA כלול בחינם.</li>
+<li>רפליקציה בין Nodes באמצעות ZFS.</li>
+<li>יכולת Failover אוטומטי.</li>
+<li>דורש Cluster ו-ZFS על שני השרתים.</li>
 </ul>
-<h2 id="8-raid-zfs">8. סוגי RAID מומלצים ב-ZFS</h2>
-<h3 id="raidz1">RAIDZ1</h3>
-<p>מתאים ל-3 דיסקים קטנים.</p>
-<h3 id="raidz2">RAIDZ2</h3>
-<p>הבחירה המומלצת ביותר.<br />
-מאפשר שרידות של שני דיסקים.</p>
-<h3 id="raidz3">RAIDZ3</h3>
-<p>לסביבות גדולות או רגישות.</p>
-<h3 id="raid10-mirrors">RAID10 (Mirrors)</h3>
-<p>ביצועים מעולים, שרידות גבוהה.</p>
-<h2 id="9-raid">9. בחירת מערך RAID</h2>
+<h3 id="vmware_2">VMware</h3>
+<ul>
+<li>HA דורש רישוי vSphere.</li>
+<li>vMotion ו-DRS דורשים רישוי מתקדם.</li>
+<li>SRM (Disaster Recovery Manager) הוא מוצר נוסף בתשלום.</li>
+</ul>
+<hr />
+<h2 id="6">6. יכולות ניהול וממשק משתמש</h2>
+<h3 id="proxmox_3">Proxmox</h3>
+<ul>
+<li>ממשק Web מודרני ונוח.</li>
+<li>ניהול Cluster פשוט דרך GUI.</li>
+<li>שליטה מלאה דרך CLI מבוסס Linux.</li>
+<li>תוספים משתלבים (PBS, Ceph).</li>
+</ul>
+<h3 id="vmware_3">VMware</h3>
+<ul>
+<li>vCenter הוא הכלי המרכזי לניהול.</li>
+<li>ממשק Web מתקדם, יציב ואינטואיטיבי.</li>
+<li>ניהול אלפי שרתים בקלות.</li>
+<li>דורש רישוי נוסף עבור רוב הפונקציות.</li>
+</ul>
+<hr />
+<h2 id="7">7. רפליקציה</h2>
+<h3 id="proxmox_4">Proxmox</h3>
+<ul>
+<li>רפליקציה מובנית על בסיס ZFS.</li>
+<li>Incremental ויעילה מאוד.</li>
+<li>מאפשרת VM מוכן להפעלה בשרת השני.</li>
+</ul>
+<h3 id="vmware_4">VMware</h3>
+<ul>
+<li>רפליקציה דורשת:</li>
+<li>vSphere Replication (רישוי)</li>
+<li>או פתרונות חיצוניים כמו Veeam</li>
+</ul>
+<hr />
+<h2 id="8">8. גיבויים</h2>
+<h3 id="proxmox_5">Proxmox</h3>
+<ul>
+<li>גיבוי מובנה (VZDUMP).</li>
+<li>פתרון ייעודי: Proxmox Backup Server (PBS) – חינמי.</li>
+<li>Dedup, הצפנה, Incremental אמיתי.</li>
+</ul>
+<h3 id="vmware_5">VMware</h3>
+<ul>
+<li>אין גיבוי מובנה משמעותי.</li>
+<li>תלות בגיבוי חיצוני:</li>
+<li>Veeam</li>
+<li>Nakivo</li>
+<li>Rubrik</li>
+<li>יכול להיות יקר מאוד.</li>
+</ul>
+<hr />
+<h2 id="9">9. רישוי ועלויות</h2>
+<h3 id="proxmox-ve_1">Proxmox VE</h3>
+<ul>
+<li>המערכת חינמית לחלוטין.</li>
+<li>אפשרות למנוי תמיכה (לא חובה).</li>
+<li>אין עלות פר-מעבד או פר-ליבה.</li>
+<li>כל הפיצ'רים זמינים ללא תשלום:</li>
+<li>HA</li>
+<li>Cluster</li>
+<li>רפליקציה</li>
+<li>Live Migration</li>
+<li>ZFS</li>
+</ul>
+<h3 id="vmware-vsphereesxi">VMware vSphere/ESXi</h3>
+<p>הרישוי מורכב ויקר:
+- רישוי ESXi לפי CPU.
+- תוספת תשלום עבור:
+  - vCenter
+  - Enterprise Plus
+  - HA
+  - DRS
+  - vMotion
+  - vSAN
+  - NSX
+- עלויות תחזוקה שנתיות גבוהות.</p>
+<hr />
+<h2 id="10">10. יציבות ובשלות</h2>
+<h3 id="proxmox_6">Proxmox</h3>
+<ul>
+<li>יציב מאוד.</li>
+<li>משמש ארגונים גדולים ו-HPC.</li>
+<li>עדכונים שוטפים.</li>
+<li>קהילה רחבה וקוד פתוח.</li>
+</ul>
+<h3 id="vmware_6">VMware</h3>
+<ul>
+<li>נחשב לסטנדרט ארגוני ותיק.</li>
+<li>יציבות גבוהה מאוד.</li>
+<li>אקו־סיסטם נרחב.</li>
+</ul>
+<hr />
+<h2 id="11">11. למי כל פתרון מתאים?</h2>
+<h3 id="proxmox-ve_2">Proxmox VE – מתאים ל:</h3>
+<ul>
+<li>עסקים קטנים ובינוניים.</li>
+<li>MSPs ו-IT שמנהלים מספר אתרים.</li>
+<li>ארגונים שרוצים DR אמיתי בעלות נמוכה.</li>
+<li>סביבות מעבדה, DevOps ו-LXC Containers.</li>
+<li>מי שרוצה שליטה מלאה בסטורג'.</li>
+</ul>
+<h3 id="vmware_7">VMware – מתאים ל:</h3>
+<ul>
+<li>ארגונים גדולים עם תקציב גבוה.</li>
+<li>סביבות עם תלות ב:</li>
+<li>NSX</li>
+<li>vSAN</li>
+<li>SRM</li>
+<li>מוצרים Enterprise של VMware</li>
+<li>מי שצריך ניהול אלפי שרתים במרכזי נתונים גדולים.</li>
+</ul>
+<hr />
+<h2 id="12">12. סיכום</h2>
 <table>
 <thead>
 <tr>
-<th>תרחיש</th>
-<th>המלצה</th>
+<th>נושא</th>
+<th>Proxmox VE</th>
+<th>VMware vSphere</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>שלושה דיסקים</td>
-<td>RAIDZ1</td>
+<td>רישוי</td>
+<td>חינמי</td>
+<td>יקר ומורכב</td>
 </tr>
 <tr>
-<td>ארבעה עד שמונה דיסקים</td>
-<td>RAIDZ2</td>
+<td>HA</td>
+<td>כלול</td>
+<td>בתשלום</td>
 </tr>
 <tr>
-<td>עומס כבד של וירטואליזציה</td>
-<td>RAID10</td>
+<td>רפליקציה</td>
+<td>כלולה (ZFS)</td>
+<td>בתשלום או חיצוני</td>
 </tr>
 <tr>
-<td>שרידות מקסימלית</td>
-<td>RAIDZ3</td>
+<td>גיבוי</td>
+<td>PBS חינמי</td>
+<td>תלוי תוכנה חיצונית</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>ZFS מובנה</td>
+<td>תלוי פתרונות חיצוניים</td>
+</tr>
+<tr>
+<td>ניהול</td>
+<td>Web GUI קל ופשוט</td>
+<td>vCenter חזק אך דורש רישוי</td>
+</tr>
+<tr>
+<td>עלות כוללת</td>
+<td>נמוכה</td>
+<td>גבוהה</td>
+</tr>
+<tr>
+<td>התאמה ל-SMB</td>
+<td>מצוין</td>
+<td>פחות משתלם</td>
+</tr>
+<tr>
+<td>התאמה לארגונים גדולים</td>
+<td>טובה</td>
+<td>מצוין</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_5">מסקנה מקצועית</h2>
-<p>כדי לבנות סביבת Proxmox יציבה:
-- להשתמש ב-ZFS ולא ב-RAID חומרתי
-- להגדיר רפליקציה בין שני Nodes
-- לגבות באמצעות PBS
-- להקצות לפחות 16GB RAM
-- לבחור RAIDZ2 או RAID10 לפי הצורך</p>
+<hr />
+<h2 id="_1">מסקנה מקצועית</h2>
+<p>Proxmox מספקת פתרון וירטואליזציה מלא, מודרני וגמיש, ללא עלויות רישוי כבדות.<br />
+VMware עדיין מובילה בסביבות ענק ובארגונים הזקוקים לפתרונות Enterprise מורכבים, אך העלויות שלה הפכו אותה לפחות כדאית לסביבות קטנות ובינוניות.</p>
 
 
 
