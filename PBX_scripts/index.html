@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#scripts-directory" class="md-skip">
-          לדלג לתוכן
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1217,8 +1212,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1490,8 +1483,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1507,35 +1498,61 @@
 
 
 
-<p>SCRIPTS &amp; SCHEDULING SUMMARY -- PBX02 ================================</p>
-<h1 id="scripts-directory">Scripts directory:</h1>
-<p>/usr/local/sbin/</p>
-<p>List scripts: ls -l /usr/local/sbin/</p>
-<h1 id="scripts-and-purpose">Scripts and purpose:</h1>
-<p>1) weekly-recordings-check.sh Location:
-/usr/local/sbin/weekly-recordings-check.sh</p>
-<p>Description: - Cleans old call recordings from:
+  <h1>PBX_scripts</h1>
+
+<div dir="ltr">
+
+# Scripts & Scheduling Summary – PBX02
+
+SCRIPTS & SCHEDULING SUMMARY -- PBX02 ================================
+
+# Scripts directory:
+
+/usr/local/sbin/
+
+List scripts: ls -l /usr/local/sbin/
+
+# Scripts and purpose:
+
+1\) weekly-recordings-check.sh Location:
+/usr/local/sbin/weekly-recordings-check.sh
+
+Description: - Cleans old call recordings from:
 /var/spool/asterisk/monitor - Deletes files older than 30 days - Writes
-a log file - Sends a summary email after execution</p>
-<p>2) disk-usage-weekly-alert.sh Location:
-/usr/local/sbin/disk-usage-weekly-alert.sh</p>
-<p>Description: - Checks disk usage for: /var/spool/asterisk/monitor - If
+a log file - Sends a summary email after execution
+
+2\) disk-usage-weekly-alert.sh Location:
+/usr/local/sbin/disk-usage-weekly-alert.sh
+
+Description: - Checks disk usage for: /var/spool/asterisk/monitor - If
 disk usage is 80% or higher: - Sends a warning email - If disk usage is
-below 80%: - Writes log only (no email)</p>
-<h1 id="cron-scheduling">Cron scheduling:</h1>
-<p>View current cron jobs: crontab -l</p>
-<p>Active schedule: 0 20 * * 6 /usr/local/sbin/weekly-recordings-check.sh
-0 21 * * 6 /usr/local/sbin/disk-usage-weekly-alert.sh</p>
-<p>Meaning: - Saturday 20:00 -- recordings cleanup - Saturday 21:00 -- disk
-usage check after cleanup</p>
-<h1 id="log-files">Log files:</h1>
-<p>Recordings cleanup log: /var/log/recordings-weekly-check.log</p>
-<p>Disk usage alert log: /var/log/disk-usage-weekly-alert.log</p>
-<p>View logs: tail -n 20 /var/log/recordings-weekly-check.log tail -n 20
-/var/log/disk-usage-weekly-alert.log</p>
-<h1 id="manual-execution">Manual execution:</h1>
-<p>/usr/local/sbin/weekly-recordings-check.sh
-/usr/local/sbin/disk-usage-weekly-alert.sh</p>
+below 80%: - Writes log only (no email)
+
+# Cron scheduling:
+
+View current cron jobs: crontab -l
+
+Active schedule: 0 20 \* \* 6 /usr/local/sbin/weekly-recordings-check.sh
+0 21 \* \* 6 /usr/local/sbin/disk-usage-weekly-alert.sh
+
+Meaning: - Saturday 20:00 -- recordings cleanup - Saturday 21:00 -- disk
+usage check after cleanup
+
+# Log files:
+
+Recordings cleanup log: /var/log/recordings-weekly-check.log
+
+Disk usage alert log: /var/log/disk-usage-weekly-alert.log
+
+View logs: tail -n 20 /var/log/recordings-weekly-check.log tail -n 20
+/var/log/disk-usage-weekly-alert.log
+
+# Manual execution:
+
+/usr/local/sbin/weekly-recordings-check.sh
+/usr/local/sbin/disk-usage-weekly-alert.sh
+
+</div>
 
 
 
