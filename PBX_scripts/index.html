@@ -1537,6 +1537,82 @@ usage check after cleanup</p>
 <h1 id="manual-execution">Manual execution:</h1>
 <p>/usr/local/sbin/weekly-recordings-check.sh
 /usr/local/sbin/disk-usage-weekly-alert.sh</p>
+<h1 id="mail-delivery-configuration-pbx">Mail Delivery Configuration – PBX</h1>
+<h2 id="overview">Overview</h2>
+<p>This server sends email notifications using a lightweight SMTP client configuration.
+No full Mail Transfer Agent (MTA) such as Postfix or Exim is installed.</p>
+<hr />
+<h2 id="mail-system-components">Mail System Components</h2>
+<ul>
+<li><strong>Mail client:</strong> <code>mail</code> (GNU mailutils)</li>
+<li><strong>Mail delivery engine:</strong> <strong>msmtp</strong></li>
+<li><strong>sendmail binary:</strong> symlink to <code>msmtp</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>/usr/sbin/sendmail -&gt; /usr/bin/msmtp
+</code></pre></div>
+<hr />
+<h2 id="configuration-file">Configuration File</h2>
+<ul>
+<li><strong>Main configuration file:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>/etc/msmtprc
+</code></pre></div>
+<p>This file defines:
+- SMTP server address
+- Port
+- Authentication credentials
+- TLS settings
+- Sender address</p>
+<blockquote>
+<p>The file should be readable only by root due to stored credentials.</p>
+</blockquote>
+<p>Recommended permissions:
+<div class="highlight"><pre><span></span><code>-rw------- 1 root root /etc/msmtprc
+</code></pre></div></p>
+<hr />
+<h2 id="mail-flow">Mail Flow</h2>
+<div class="highlight"><pre><span></span><code>Script / Cron job
+  → mail
+  → sendmail
+  → msmtp
+  → External SMTP server
+</code></pre></div>
+<p>All scripts rely on this flow to send email notifications.</p>
+<hr />
+<h2 id="log-file">Log File</h2>
+<p>If enabled in <code>/etc/msmtprc</code>, msmtp writes logs to:</p>
+<div class="highlight"><pre><span></span><code>/var/log/msmtp.log
+</code></pre></div>
+<hr />
+<h2 id="scripts-directory_1">Scripts Directory</h2>
+<p>All custom maintenance and monitoring scripts are located in:</p>
+<div class="highlight"><pre><span></span><code>/usr/local/sbin/
+</code></pre></div>
+<p>These scripts use the system <code>mail</code> command for notifications.</p>
+<hr />
+<h2 id="testing-mail-delivery">Testing Mail Delivery</h2>
+<p>Manual test using <code>mail</code>:
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;test mail&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>mail<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span>user@example.com
+</code></pre></div></p>
+<p>Direct test using <code>msmtp</code>:
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;test mail&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>msmtp<span class="w"> </span>user@example.com
+</code></pre></div></p>
+<hr />
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Email delivery depends entirely on <strong>msmtp</strong></li>
+<li>No background mail daemon is running</li>
+<li>If emails are not received:</li>
+<li>Check <code>/etc/msmtprc</code></li>
+<li>Check <code>/var/log/msmtp.log</code> (if configured)</li>
+<li>Verify SMTP connectivity and credentials</li>
+</ul>
+<hr />
+<h2 id="quick-reminder">Quick Reminder</h2>
+<blockquote>
+<p>Mail notifications are sent via <strong>msmtp</strong>, configured in <code>/etc/msmtprc</code>.
+Scripts are located in <code>/usr/local/sbin</code> and send emails using the <code>mail</code> command.</p>
+</blockquote>
 
 
 
