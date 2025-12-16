@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../NK2_to_Outlook_Contacts/">
+        <link rel="prev" href="../PBX_scripts/">
       
+      
+        <link rel="next" href="../VBAexcel-macro/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>כלים ניידים ושימושיים - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>Powershell_Remoting_Command_reference - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#it" class="md-skip">
+        <a href="#powershell-remoting-smb" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              כלים ניידים ושימושיים
+              Powershell_Remoting_Command_reference
             
           </span>
         </div>
@@ -752,18 +754,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -779,7 +783,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -1227,10 +1231,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Powershell_Remoting_Command_reference/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Powershell_Remoting_Command_reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1241,6 +1267,134 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-powershell-remoting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. הפעלת PowerShell Remoting (בשרת היעד)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-interactive-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. התחברות לשרת מרוחק (Interactive Session)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הרצת פקודה מרחוק (ללא Session)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. בדיקת משתמשים מקומיים וקבוצות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-smb-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. יצירת תיקייה ושיתוף (SMB Share)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. בדיקת חיבור לשיתוף (ללא מיפוי כונן)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. בדיקת אימות משתמש (סיסמה) מול שרת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. מיפוי שיתוף עם אות כונן
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. צפייה במיפויים קיימים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. ניתוק חיבורים ומיפויים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. בדיקת מי מחובר לשיתופים (בשרת)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      הערות חשובות
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1257,20 +1411,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1286,7 +1438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             סקריפטים כלים ופקודות
@@ -1458,32 +1610,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    כלים ניידים ושימושיים
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../portable-tools/" class="md-nav__link">
         
   
   
@@ -1494,194 +1624,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 כלים כלליים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧰 כלים כלליים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nirsoft-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 NirSoft Utilities
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sysinternals-suite" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Sysinternals Suite
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🖥️ מידע על מערכת
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🖥️ מידע על מערכת">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpu-z" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 CPU-Z
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hwinfo" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 HWiNFO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#speccy-piriform" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Speccy (של Piriform)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 תחזוקה ושימושיות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📦 תחזוקה ושימושיות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rufus" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Rufus
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#everything" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Everything
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns-sysinternals" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Autoruns (מתוך Sysinternals)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌐 רשת וניטור
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🌐 רשת וניטור">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wireshark" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Wireshark
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-ip-scanner" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Advanced IP Scanner
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#putty" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 PuTTY
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 הערות
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1721,168 +1663,108 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-powershell-remoting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. הפעלת PowerShell Remoting (בשרת היעד)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-interactive-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. התחברות לשרת מרוחק (Interactive Session)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הרצת פקודה מרחוק (ללא Session)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. בדיקת משתמשים מקומיים וקבוצות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-smb-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. יצירת תיקייה ושיתוף (SMB Share)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. בדיקת חיבור לשיתוף (ללא מיפוי כונן)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. בדיקת אימות משתמש (סיסמה) מול שרת
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. מיפוי שיתוף עם אות כונן
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. צפייה במיפויים קיימים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. ניתוק חיבורים ומיפויים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. בדיקת מי מחובר לשיתופים (בשרת)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 כלים כלליים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧰 כלים כלליים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nirsoft-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 NirSoft Utilities
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sysinternals-suite" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Sysinternals Suite
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🖥️ מידע על מערכת
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🖥️ מידע על מערכת">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpu-z" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 CPU-Z
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hwinfo" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 HWiNFO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#speccy-piriform" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Speccy (של Piriform)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 תחזוקה ושימושיות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📦 תחזוקה ושימושיות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rufus" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Rufus
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#everything" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Everything
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns-sysinternals" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Autoruns (מתוך Sysinternals)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌐 רשת וניטור
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🌐 רשת וניטור">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wireshark" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Wireshark
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-ip-scanner" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Advanced IP Scanner
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#putty" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 PuTTY
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 הערות
+      הערות חשובות
     </span>
   </a>
   
@@ -1904,56 +1786,124 @@
 
 
 
-<h1 id="it">💡 שימושיות וכלים ניידים לטכנאי IT</h1>
-<p>אוסף כלים ניידים (Portable) שמומלץ לכל איש IT להחזיק על דיסק און קי, תיקיית רשת או תחנה אישית – לפתרון תקלות, אבחון מהיר וניטור.</p>
+<h1 id="powershell-remoting-smb">PowerShell Remoting &amp; SMB – פקודות חיוניות</h1>
+<p>מסמך זה מרכז <strong>רק פקודות רלוונטיות</strong>, ללא כפילויות, עבור עבודה עם <strong>PowerShell Remoting</strong>, בדיקות גישה, שיתופים (SMB) ומיפוי כוננים.<br />
+כל פקודה מלווה בהסבר קצר ומדויק.</p>
 <hr />
-<h2 id="_1">🧰 כלים כלליים</h2>
-<h3 id="nirsoft-utilities">🔹 NirSoft Utilities</h3>
-<p>אוסף של מאות כלים קטנים – סיסמאות שמורות, פעילות רשת, תוכנות באתחול ועוד<br />
-🔗 <a href="https://www.nirsoft.net">https://www.nirsoft.net</a></p>
-<h3 id="sysinternals-suite">🔹 Sysinternals Suite</h3>
-<p>כלים של Microsoft לניטור, פתרון תקלות והרצת פקודות מתקדמות<br />
-🔗 <a href="https://learn.microsoft.com/en-us/sysinternals/">https://learn.microsoft.com/en-us/sysinternals/</a></p>
+<h2 id="1-powershell-remoting">1. הפעלת PowerShell Remoting (בשרת היעד)</h2>
+<p><div class="highlight"><pre><span></span><code><span class="nb">Enable-PSRemoting</span> <span class="n">-Force</span>
+</code></pre></div>
+מפעיל WinRM, יוצר Listener ופותח Firewall (5985).</p>
+<p>בדיקה:
+<div class="highlight"><pre><span></span><code><span class="nb">Test-WsMan</span>
+</code></pre></div>
+מאמת ש-WinRM פעיל מקומית.</p>
 <hr />
-<h2 id="_2">🖥️ מידע על מערכת</h2>
-<h3 id="cpu-z">🔹 CPU-Z</h3>
-<p>מידע על המעבד, לוח אם, זיכרון וכו'<br />
-🔗 <a href="https://www.cpuid.com/softwares/cpu-z.html">https://www.cpuid.com/softwares/cpu-z.html</a></p>
-<h3 id="hwinfo">🔹 HWiNFO</h3>
-<p>מידע מדויק על כל רכיבי החומרה כולל טמפ' בזמן אמת<br />
-🔗 <a href="https://www.hwinfo.com/">https://www.hwinfo.com/</a></p>
-<h3 id="speccy-piriform">🔹 Speccy (של Piriform)</h3>
-<p>סקירה גרפית ונוחה של פרטי המחשב<br />
-🔗 <a href="https://www.ccleaner.com/speccy">https://www.ccleaner.com/speccy</a></p>
+<h2 id="2-interactive-session">2. התחברות לשרת מרוחק (Interactive Session)</h2>
+<p><div class="highlight"><pre><span></span><code><span class="nb">Enter-PSSession</span> <span class="n">-ComputerName</span> <span class="n">WEB</span><span class="p">-</span><span class="n">1</span>
+</code></pre></div>
+פותח סשן PowerShell אינטראקטיבי לשרת יעד (בדומיין).</p>
+<p>עם משתמש וסיסמה:
+<div class="highlight"><pre><span></span><code><span class="nv">$cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<span class="nb">Enter-PSSession</span> <span class="n">-ComputerName</span> <span class="n">WEB</span><span class="p">-</span><span class="n">1</span> <span class="n">-Credential</span> <span class="nv">$cred</span>
+</code></pre></div>
+נדרש ב-Workgroup או כשמשתמש מקומי.</p>
+<p>יציאה מהסשן:
+<div class="highlight"><pre><span></span><code><span class="nb">Exit-PSSession</span>
+</code></pre></div></p>
 <hr />
-<h2 id="_3">📦 תחזוקה ושימושיות</h2>
-<h3 id="rufus">🔹 Rufus</h3>
-<p>יצירת דיסק USB אתחול להתקנת Windows/Linux<br />
-🔗 <a href="https://rufus.ie">https://rufus.ie</a></p>
-<h3 id="everything">🔹 Everything</h3>
-<p>מנוע חיפוש מהיר במיוחד על המחשב – לפי שם קובץ<br />
-🔗 <a href="https://www.voidtools.com/">https://www.voidtools.com/</a></p>
-<h3 id="autoruns-sysinternals">🔹 Autoruns (מתוך Sysinternals)</h3>
-<p>ניהול אתחול ומעקב אחרי תוכנות שמופעלות ברקע<br />
-🔗 <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns">https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns</a></p>
+<h2 id="3-session">3. הרצת פקודה מרחוק (ללא Session)</h2>
+<p><div class="highlight"><pre><span></span><code><span class="nb">Invoke-Command</span> <span class="n">-ComputerName</span> <span class="n">WEB</span><span class="p">-</span><span class="n">1</span> <span class="n">-ScriptBlock</span> <span class="p">{</span> <span class="nb">Get-SmbShare</span> <span class="p">}</span>
+</code></pre></div>
+מריץ פקודה חד-פעמית בשרת היעד.</p>
+<p>עם Credential:
+<div class="highlight"><pre><span></span><code><span class="nb">Invoke-Command</span> <span class="n">-ComputerName</span> <span class="n">WEB</span><span class="p">-</span><span class="n">1</span> <span class="n">-Credential</span> <span class="nv">$cred</span> <span class="n">-ScriptBlock</span> <span class="p">{</span> <span class="nb">Get-SmbShare</span> <span class="p">}</span>
+</code></pre></div></p>
 <hr />
-<h2 id="_4">🌐 רשת וניטור</h2>
-<h3 id="wireshark">🔹 Wireshark</h3>
-<p>ניתוח תעבורת רשת (Sniffer)<br />
-🔗 <a href="https://www.wireshark.org/">https://www.wireshark.org/</a></p>
-<h3 id="advanced-ip-scanner">🔹 Advanced IP Scanner</h3>
-<p>סריקה מהירה של מחשבים ברשת<br />
-🔗 <a href="https://www.advanced-ip-scanner.com/">https://www.advanced-ip-scanner.com/</a></p>
-<h3 id="putty">🔹 PuTTY</h3>
-<p>חיבור SSH, Telnet, Serial – חובה לאנשי לינוקס/נתבים<br />
-🔗 <a href="https://www.putty.org/">https://www.putty.org/</a></p>
+<h2 id="4">4. בדיקת משתמשים מקומיים וקבוצות</h2>
+<p><div class="highlight"><pre><span></span><code><span class="nb">Get-LocalUser</span>
+</code></pre></div>
+מציג משתמשים מקומיים בשרת שאליו מחוברים.</p>
+<p>משתמש ספציפי:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-LocalUser</span> <span class="n">-Name</span> <span class="s2">&quot;administrator&quot;</span>
+</code></pre></div></p>
+<p>חברי קבוצת Administrators:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-LocalGroupMember</span> <span class="n">-Group</span> <span class="s2">&quot;Administrators&quot;</span>
+</code></pre></div></p>
 <hr />
-<h2 id="_5">🧩 הערות</h2>
+<h2 id="5-smb-share">5. יצירת תיקייה ושיתוף (SMB Share)</h2>
+<p>יצירת תיקייה פיזית:
+<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="s2">&quot;D:\Data\Shared&quot;</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span>
+</code></pre></div></p>
+<p>יצירת Share:
+<div class="highlight"><pre><span></span><code><span class="nb">New-SmbShare</span> <span class="n">-Name</span> <span class="s2">&quot;DATA&quot;</span> <span class="n">-Path</span> <span class="s2">&quot;D:\Data\Shared&quot;</span> <span class="n">-FullAccess</span> <span class="s2">&quot;Administrators&quot;</span> <span class="n">-ChangeAccess</span> <span class="s2">&quot;Everyone&quot;</span>
+</code></pre></div></p>
+<p>בדיקת שיתופים:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-SmbShare</span>
+</code></pre></div></p>
+<p>הרשאות Share:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-SmbShareAccess</span> <span class="n">-Name</span> <span class="n">DATA</span>
+</code></pre></div></p>
+<hr />
+<h2 id="6">6. בדיקת חיבור לשיתוף (ללא מיפוי כונן)</h2>
+<p>בדיקה פשוטה:
+<div class="highlight"><pre><span></span><code><span class="nb">Test-Path</span> <span class="s2">&quot;\\WEB-1\DATA&quot;</span>
+</code></pre></div>
+True = יש גישה, False = אין גישה.</p>
+<hr />
+<h2 id="7">7. בדיקת אימות משתמש (סיסמה) מול שרת</h2>
+<p>בדיקת אימות בלבד (מומלץ):
+<div class="highlight"><pre><span></span><code>net use \\WEB-1\IPC$ /user:WEB-1\administrator *
+</code></pre></div>
+אם הצליח – הסיסמה תקינה.</p>
+<p>ניקוי:
+<div class="highlight"><pre><span></span><code>net use \\WEB-1\IPC$ /delete
+</code></pre></div></p>
+<hr />
+<h2 id="8">8. מיפוי שיתוף עם אות כונן</h2>
+<p>מיפוי קבוע:
+<div class="highlight"><pre><span></span><code>net use Z: \\WEB-1\DATA /persistent:yes
+</code></pre></div></p>
+<p>עם משתמש וסיסמה:
+<div class="highlight"><pre><span></span><code>net use Z: \\WEB-1\DATA /user:WEB-1\administrator *
+</code></pre></div></p>
+<p>בדיקה:
+<div class="highlight"><pre><span></span><code>dir Z:
+</code></pre></div></p>
+<hr />
+<h2 id="9">9. צפייה במיפויים קיימים</h2>
+<p><div class="highlight"><pre><span></span><code>net use
+</code></pre></div>
+מציג את כל מיפויי הרשת של המשתמש הנוכחי.</p>
+<hr />
+<h2 id="10">10. ניתוק חיבורים ומיפויים</h2>
+<p>ניתוק שיתוף ספציפי:
+<div class="highlight"><pre><span></span><code>net use \\WEB-1\DATA /delete
+</code></pre></div></p>
+<p>ניתוק לפי אות:
+<div class="highlight"><pre><span></span><code>net use Z: /delete
+</code></pre></div></p>
+<p>ניקוי כל המיפויים:
+<div class="highlight"><pre><span></span><code>net use * /delete /y
+</code></pre></div></p>
+<hr />
+<h2 id="11">11. בדיקת מי מחובר לשיתופים (בשרת)</h2>
+<p><div class="highlight"><pre><span></span><code><span class="nb">Get-SmbSession</span>
+</code></pre></div>
+מציג חיבורי SMB פעילים.</p>
+<p>קבצים פתוחים:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-SmbOpenFile</span>
+</code></pre></div></p>
+<hr />
+<h2 id="_1">הערות חשובות</h2>
 <ul>
-<li>מרבית הכלים ניידים – אין צורך בהתקנה</li>
-<li>מומלץ לעדכן את התיקייה כל כמה חודשים</li>
-<li>חלק מהכלים דורשים הרצה כ־Administrator</li>
+<li>מיפויי כוננים הם <strong>פר משתמש</strong> (לא גלובליים).</li>
+<li>הרשאה אפקטיבית = <strong>Share + NTFS</strong>.</li>
+<li>ב-Workgroup נדרש שימוש ב-Credential ו/או TrustedHosts.</li>
+<li>אין דרך להציג סיסמה מ-Get-Credential – רק לאמת באמצעות חיבור אמיתי.</li>
 </ul>
+<hr />
+<p>מסמך זה מתאים לשילוב באתר תיעוד (MkDocs / Markdown) ולשימוש תפעולי יומיומי.</p>
 
 
 
