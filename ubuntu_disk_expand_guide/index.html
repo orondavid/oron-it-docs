@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ubuntu-lvm" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1258,6 +1263,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ubuntu_disk_expand_guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1270,6 +1290,145 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. בדיקת מצב קיים (לפני שינויים)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. (אופציונלי) הרחבת מחיצה בדיסק
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. (אופציונלי) הרחבת מחיצה בדיסק">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#growpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      התקנת כלי growpart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרחבת המחיצה
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-physical-volume-pv" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הרחבת Physical Volume (PV)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-logical-volume-lv" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. הרחבת Logical Volume (LV)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. הרחבת מערכת הקבצים (ext4)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. הרחבת מערכת הקבצים (ext4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת סוג מערכת הקבצים
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרחבת מערכת הקבצים
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. אימות סופי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      תקלות נפוצות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכום תמציתי (זרימת עבודה)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1529,6 +1688,136 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. בדיקת מצב קיים (לפני שינויים)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. (אופציונלי) הרחבת מחיצה בדיסק
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. (אופציונלי) הרחבת מחיצה בדיסק">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#growpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      התקנת כלי growpart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרחבת המחיצה
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-physical-volume-pv" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הרחבת Physical Volume (PV)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-logical-volume-lv" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. הרחבת Logical Volume (LV)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ext4" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. הרחבת מערכת הקבצים (ext4)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. הרחבת מערכת הקבצים (ext4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת סוג מערכת הקבצים
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרחבת מערכת הקבצים
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. אימות סופי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      תקלות נפוצות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכום תמציתי (זרימת עבודה)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1544,188 +1833,97 @@
 
 
 
-  <h1>ubuntu_disk_expand_guide</h1>
-
-<!-- RTL: מומלץ להציג את הדף עם כיוון כתיבה מימין לשמאל -->
-<div dir="rtl">
-
-# הרחבת נפח דיסק לשרת Ubuntu שרץ על VMware (LVM + ext4) – מדריך שלב־אחר־שלב
-
-מדריך זה מסביר כיצד להגדיל נפח דיסק לשרת **Ubuntu** שרץ על **מכונה וירטואלית ב‑VMware (ESXi/Workstation/vSphere)**, כאשר מערכת ההפעלה מותקנת בתצורת **LVM** ומערכת הקבצים היא **ext4**.
-
-> מומלץ לבצע Snapshot/גיבוי לפני שינויי דיסק, במיוחד בסביבת Production.
-
----
-
-## דרישות מוקדמות (מה אנחנו מניחים)
-
-- הגדלת הדיסק בוצעה/תבוצע בצד VMware (VMDK גדל).
-- באובונטו יש LVM, בדומה למבנה הבא:
-  - דיסק: `/dev/sda`
-  - מחיצת LVM: `/dev/sda3`
-  - VG: `ubuntu-vg`
-  - LV: `ubuntu-lv`
-  - Mount: `/`
-
----
-
-## שלב 1 – הגדלת הדיסק בצד VMware (VMDK)
-
-**מטרה:** להגדיל את הדיסק הווירטואלי כך שלינוקס “יראה” דיסק גדול יותר.
-
-1. כבה את ה‑VM (Power Off).
-2. Edit Settings → Hard Disk.
-3. הגדל את **Provisioned Size** (למשל מ‑50GB ל‑100GB).
-4. שמור והפעל את ה‑VM.
-
-> הערה: שלב זה מגדיל את הדיסק הווירטואלי בלבד. עדיין לא הוגדלו מחיצות/LVM בתוך לינוקס.
-
----
-
-## שלב 2 – אימות שהדיסק גדל בלינוקס
-
-### 2.1 הצגת דיסקים ומחיצות
-<div class="highlight"><pre><span></span><code>lsblk
+<h1 id="ubuntu-lvm">הרחבת נפח דיסק בלינוקס (Ubuntu + LVM)</h1>
+<p>מסמך זה מרכז <strong>רק את השלבים והפקודות הרלוונטיות</strong> להרחבת נפח דיסק<br />
+בשרת <strong>Ubuntu</strong> שרץ על <strong>מכונה וירטואלית (VMware)</strong>, עם <strong>LVM</strong> ומערכת קבצים <strong>ext4</strong>.<br />
+כל פקודה מלווה בהסבר קצר, תפעולי וברור.</p>
+<blockquote>
+<p>מומלץ לבצע Snapshot / גיבוי לפני עבודה בסביבת Production.</p>
+</blockquote>
+<hr />
+<h2 id="1">1. בדיקת מצב קיים (לפני שינויים)</h2>
+<p><div class="highlight"><pre><span></span><code>lsblk
 </code></pre></div>
-
-**הסבר קצר:** מציג את מבנה הדיסקים/מחיצות/Volumes. כאן נוודא שהדיסק `/dev/sda` גדל.
-
-### 2.2 אימות נפחים מנקודת מבט של מערכת הקבצים
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
+מציג את מבנה הדיסקים, המחיצות וה־LVM.</p>
+<p><div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
 </code></pre></div>
-
-**הסבר קצר:** מציג כמה מקום *באמת* זמין במערכות הקבצים. בשלב זה לרוב נראה ש־`/` עדיין בגודל הישן.
-
----
-
-## שלב 3 – (רלוונטי לעתים) הרחבת מחיצת ה‑LVM בדיסק
-
-> אם `lsblk` מראה שהדיסק (`/dev/sda`) גדל אבל מחיצת ה‑LVM (למשל `/dev/sda3`) **לא** גדלה, צריך להרחיב את המחיצה.
-
-### 3.1 התקנת כלי growpart (אם חסר)
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+מציג כמה נפח זמין בפועל במערכות הקבצים.</p>
+<hr />
+<h2 id="2">2. (אופציונלי) הרחבת מחיצה בדיסק</h2>
+<blockquote>
+<p>נדרש רק אם הדיסק גדל ב־VMware<br />
+אך מחיצת ה־LVM (לדוגמה <code>sda3</code>) <strong>לא</strong> גדלה.</p>
+</blockquote>
+<h3 id="growpart">התקנת כלי growpart</h3>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cloud-guest-utils
 </code></pre></div>
-
-**הסבר קצר:** מתקין את `growpart` שמאפשר להרחיב מחיצה על דיסק קיים.
-
-### 3.2 הרחבת המחיצה (דוגמה למחיצה 3)
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>growpart<span class="w"> </span>/dev/sda<span class="w"> </span><span class="m">3</span>
+מתקין כלי להרחבת מחיצות קיימות.</p>
+<h3 id="_1">הרחבת המחיצה</h3>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>growpart<span class="w"> </span>/dev/sda<span class="w"> </span><span class="m">3</span>
 </code></pre></div>
-
-**הסבר קצר:** מרחיב את גבולות המחיצה `/dev/sda3` כך שתנצל את כל השטח החדש בדיסק.
-
-> אם אצלך המחיצה אינה `3` (כלומר לא `sda3`) — יש להתאים בהתאם למה שמוצג ב־`lsblk`.
-
-### 3.3 אימות
+מרחיב את המחיצה <code>/dev/sda3</code> כך שתנצל את כל הדיסק.</p>
+<p>בדיקה:
 <div class="highlight"><pre><span></span><code>lsblk
+</code></pre></div></p>
+<hr />
+<h2 id="3-physical-volume-pv">3. הרחבת Physical Volume (PV)</h2>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pvresize<span class="w"> </span>/dev/sda3
 </code></pre></div>
-
-**הסבר קצר:** מאשר שהמחיצה עצמה גדלה.
-
----
-
-## שלב 4 – הרחבת ה‑Physical Volume (PV) של LVM
-
-### 4.1 הרחבת ה‑PV (דוגמה: `/dev/sda3`)
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pvresize<span class="w"> </span>/dev/sda3
-</code></pre></div>
-
-**הסבר קצר:** אומר ל‑LVM “לסרוק מחדש” את המחיצה ולזהות את השטח החדש שנוסף אליה.  
-בשלב זה השטח מתווסף ל‑Volume Group, אך עדיין לא מוקצה ל־Logical Volume.
-
-### 4.2 בדיקת מצב PV וכמה שטח פנוי יש ב‑VG
+מעדכן את LVM שיש יותר שטח פיזי זמין במחיצה.</p>
+<p>בדיקה:
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pvs
 </code></pre></div>
-
-**הסבר קצר:** מציג את ה‑PV ואת כמות השטח הפנוי (עמודת `PFree`).  
-אם `PFree` גדול מ־0 — יש שטח פנוי שניתן להקצות.
-
----
-
-## שלב 5 – הרחבת ה‑Logical Volume (LV)
-
-### 5.1 הקצאת כל השטח הפנוי ל־LV של `/`
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>lvextend<span class="w"> </span>-l<span class="w"> </span>+100%FREE<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
+עמודת <code>PFree</code> מציגה כמה שטח פנוי יש ב־Volume Group.</p>
+<hr />
+<h2 id="4-logical-volume-lv">4. הרחבת Logical Volume (LV)</h2>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>lvextend<span class="w"> </span>-l<span class="w"> </span>+100%FREE<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
 </code></pre></div>
-
-**הסבר קצר:** לוקח את כל השטח הפנוי ב‑VG (`+100%FREE`) ומוסיף אותו ל‑Logical Volume של `ubuntu-lv`.  
-זה עדיין לא מרחיב את מערכת הקבצים — רק את ה‑LV.
-
-### 5.2 אימות גודל ה‑LV
+מקצה את כל השטח הפנוי ב־VG ל־Logical Volume של <code>/</code>.</p>
+<p>בדיקה:
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>lvs
 </code></pre></div>
-
-**הסבר קצר:** מציג את ה‑Logical Volumes ואת הגודל שלהם (כדי לוודא שה‑LV גדל).
-
----
-
-## שלב 6 – הרחבת מערכת הקבצים (ext4)
-
-### 6.1 אימות סוג מערכת הקבצים (מומלץ)
-<div class="highlight"><pre><span></span><code>lsblk<span class="w"> </span>-f
+מאשר שה־LV אכן גדל.</p>
+<hr />
+<h2 id="5-ext4">5. הרחבת מערכת הקבצים (ext4)</h2>
+<h3 id="_2">בדיקת סוג מערכת הקבצים</h3>
+<p><div class="highlight"><pre><span></span><code>lsblk<span class="w"> </span>-f
 </code></pre></div>
-
-**הסבר קצר:** מציג את סוג מערכת הקבצים (עמודת `FSTYPE`). נוודא שה־`/` הוא `ext4`.
-
-### 6.2 הרחבת מערכת הקבצים של ext4 (Online)
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
+מאשר שמערכת הקבצים היא <code>ext4</code>.</p>
+<h3 id="_3">הרחבת מערכת הקבצים</h3>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
 </code></pre></div>
-
-**הסבר קצר:** מרחיב את מערכת הקבצים `ext4` כך שתשתמש בכל הנפח החדש של ה‑LV.  
-בדרך כלל ניתן לבצע זאת כשהמערכת מחוברת (Online), כפי שמופיע בפלט.
-
----
-
-## שלב 7 – אימות סופי
-
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h<span class="w"> </span>/
+מרחיב את ext4 על כל נפח ה־LV החדש (Online, ללא ריסטארט).</p>
+<hr />
+<h2 id="6">6. אימות סופי</h2>
+<p><div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h<span class="w"> </span>/
 </code></pre></div>
-
-**הסבר קצר:** מאשר שה־`/` גדל בפועל ושיש נפח פנוי בהתאם.
-
----
-
-## תקלות נפוצות וטיפים
-
-- **`PFree` נשאר 0 אחרי `pvresize`**  
-  בדרך כלל אומר שהמחיצה עצמה לא הורחבה. חזור לשלב 3 ובדוק `growpart`.
-
-- **`resize2fs` נכשל**  
-  בדוק שסוג מערכת הקבצים הוא באמת `ext4` (`lsblk -f`).  
-  אם מדובר ב־XFS, משתמשים ב־`xfs_growfs` במקום.
-
-- **המלצה לפרודקשן**  
-  לבצע Snapshot/Backup לפני שינויי דיסק, ולתעד את לפני/אחרי (`lsblk`, `pvs`, `lvs`, `df -h`).
-
----
-
-## דוגמת רצף פקודות “לפי הסדר” (LVM + ext4)
-
-> יש להתאים את מספר המחיצה (למשל `3`) ואת שמות ה‑VG/LV במידת הצורך.
-
-<div class="highlight"><pre><span></span><code><span class="c1"># 1) (אם צריך) הרחבת המחיצה</span>
-sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cloud-guest-utils
-sudo<span class="w"> </span>growpart<span class="w"> </span>/dev/sda<span class="w"> </span><span class="m">3</span>
-
-<span class="c1"># 2) הרחבת PV</span>
-sudo<span class="w"> </span>pvresize<span class="w"> </span>/dev/sda3
-sudo<span class="w"> </span>pvs
-
-<span class="c1"># 3) הרחבת LV</span>
-sudo<span class="w"> </span>lvextend<span class="w"> </span>-l<span class="w"> </span>+100%FREE<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
-sudo<span class="w"> </span>lvs
-
-<span class="c1"># 4) הרחבת Filesystem (ext4)</span>
-sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
-
-<span class="c1"># 5) אימות</span>
-df<span class="w"> </span>-h<span class="w"> </span>/
+מאשר שה־<code>/</code> גדל בפועל ושיש נפח פנוי זמין.</p>
+<hr />
+<h2 id="_4">תקלות נפוצות</h2>
+<ul>
+<li>
+<p><strong>אין <code>PFree</code> אחרי <code>pvresize</code></strong><br />
+  → המחיצה עצמה לא הורחבה (בדוק <code>growpart</code>).</p>
+</li>
+<li>
+<p><strong><code>resize2fs</code> נכשל</strong><br />
+  → בדוק שסוג מערכת הקבצים הוא ext4<br />
+  (ב־XFS משתמשים ב־<code>xfs_growfs</code>).</p>
+</li>
+</ul>
+<hr />
+<h2 id="_5">סיכום תמציתי (זרימת עבודה)</h2>
+<div class="highlight"><pre><span></span><code>VMware Disk  →  Partition  →  PV  →  LV  →  Filesystem
 </code></pre></div>
-
----
-
+<p>או בקיצור:
+1. הדיסק גדל<br />
+2. המחיצה גדלה<br />
+3. LVM מזהה שטח<br />
+4. הנפח מוקצה<br />
+5. מערכת הקבצים מתרחבת  </p>
+<hr />
+<p>מסמך זה מיועד לשימוש תפעולי שוטף ולשילוב באתר תיעוד מבוסס Markdown / MkDocs.</p>
 </div>
 
 
