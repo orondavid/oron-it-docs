@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../linux-explained/">
+        <link rel="prev" href="../Assign-MessageTrace/">
       
       
-        <link rel="next" href="../web-server-explained/">
+        <link rel="next" href="../m365-licenses-guide/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>הסבר לפקודות Squid - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>vmware_to_proxmox_full_walkthrough - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#squid-reverse-proxy" class="md-skip">
+        <a href="#vmware-proxmox" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר לפקודות Squid
+              vmware_to_proxmox_full_walkthrough
             
           </span>
         </div>
@@ -840,10 +840,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../vmware_to_proxmox_full_walkthrough/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    vmware_to_proxmox_full_walkthrough
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -854,6 +876,383 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 1 – עקרונות יסוד (לפני שמתחילים)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 1 – עקרונות יסוד (לפני שמתחילים)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-storage-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 סוגי Storage ב־Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-block-vs-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Block vs File (הבנה קריטית)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 2 – הכנת דיסק פיזי ל־data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 2 – הכנת דיסק פיזי ל־data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 זיהוי הדיסק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 יצירת GPT + מחיצה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 יצירת מערכת קבצים
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Mount קבוע
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-storage-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 3 – הוספת Storage ל־Proxmox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 4 – העתקת קבצי VMware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 4 – העתקת קבצי VMware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 מבנה תיקיות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-vmdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 העתקת VMDK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vmdk-raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 5 – המרת VMDK ל־RAW
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 6 – יצירת VM (שלד בלבד)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 7 – חיבור הדיסק המומר ל־VM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 7 – חיבור הדיסק המומר ל־VM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 חיבור דרך CLI (מומלץ)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-add-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 למה לא דרך Add Disk?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-virtio-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 8 – התקנת VirtIO Drivers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 8 – התקנת VirtIO Drivers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 הורדה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-iso" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 חיבור ISO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 התקנה בתוך Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sata-scsi-virtio" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 9 – מעבר מ־SATA ל־SCSI (VirtIO)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 9 – מעבר מ־SATA ל־SCSI (VirtIO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-virtio" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1 – הוספת דיסק VirtIO קטן (דמה)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2 – עליית Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3 – כיבוי VM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sata" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4 – ניתוק דיסק SATA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-scsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5 – חיבור מחדש כ־SCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-boot-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6 – Boot Order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 10 – פתרון תקלות נפוצות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 10 – פתרון תקלות נפוצות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-inaccessible_boot_device" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 INACCESSIBLE_BOOT_DEVICE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-cpu-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 CPU 100%
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 שינוי CPU תוך כדי עבודה?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 11 – תצוגה (Display)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 12 – סיכום Best Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 13 – מבנה מומלץ באתר
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1001,32 +1400,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר לפקודות Squid
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../squid-explained/" class="md-nav__link">
         
   
   
@@ -1037,104 +1414,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      עדכון המערכת
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      גיבוי הקובץ המקורי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      עריכת קובץ הקונפיגורציה
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="עריכת קובץ הקונפיגורציה">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסבר על ההגדרות בקובץ:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      הפעלת השירות מחדש
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3128-ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתיחת פורט 3128 בחומת האש (UFW)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squid_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקת לוגים של Squid
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1702,46 +1981,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      עדכון המערכת
+      פרק 1 – עקרונות יסוד (לפני שמתחילים)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squid" class="md-nav__link">
-    <span class="md-ellipsis">
-      התקנת Squid
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      גיבוי הקובץ המקורי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      עריכת קובץ הקונפיגורציה
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="עריכת קובץ הקונפיגורציה">
+    <nav class="md-nav" aria-label="פרק 1 – עקרונות יסוד (לפני שמתחילים)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#11-storage-proxmox" class="md-nav__link">
     <span class="md-ellipsis">
-      הסבר על ההגדרות בקובץ:
+      1.1 סוגי Storage ב־Proxmox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-block-vs-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Block vs File (הבנה קריטית)
     </span>
   </a>
   
@@ -1753,27 +2014,324 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#2-data" class="md-nav__link">
     <span class="md-ellipsis">
-      הפעלת השירות מחדש
+      פרק 2 – הכנת דיסק פיזי ל־data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 2 – הכנת דיסק פיזי ל־data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 זיהוי הדיסק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 יצירת GPT + מחיצה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 יצירת מערכת קבצים
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Mount קבוע
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-storage-proxmox" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 3 – הוספת Storage ל־Proxmox
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3128-ufw" class="md-nav__link">
+  <a href="#4-vmware" class="md-nav__link">
     <span class="md-ellipsis">
-      פתיחת פורט 3128 בחומת האש (UFW)
+      פרק 4 – העתקת קבצי VMware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 4 – העתקת קבצי VMware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 מבנה תיקיות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-vmdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 העתקת VMDK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vmdk-raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 5 – המרת VMDK ל־RAW
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#squid_1" class="md-nav__link">
+  <a href="#6-vm" class="md-nav__link">
     <span class="md-ellipsis">
-      בדיקת לוגים של Squid
+      פרק 6 – יצירת VM (שלד בלבד)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 7 – חיבור הדיסק המומר ל־VM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 7 – חיבור הדיסק המומר ל־VM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 חיבור דרך CLI (מומלץ)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-add-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 למה לא דרך Add Disk?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-virtio-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 8 – התקנת VirtIO Drivers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 8 – התקנת VirtIO Drivers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 הורדה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-iso" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 חיבור ISO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 התקנה בתוך Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-sata-scsi-virtio" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 9 – מעבר מ־SATA ל־SCSI (VirtIO)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 9 – מעבר מ־SATA ל־SCSI (VirtIO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-virtio" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1 – הוספת דיסק VirtIO קטן (דמה)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2 – עליית Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3 – כיבוי VM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sata" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4 – ניתוק דיסק SATA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-scsi" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5 – חיבור מחדש כ־SCSI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-boot-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6 – Boot Order
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 10 – פתרון תקלות נפוצות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פרק 10 – פתרון תקלות נפוצות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-inaccessible_boot_device" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 INACCESSIBLE_BOOT_DEVICE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-cpu-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 CPU 100%
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 שינוי CPU תוך כדי עבודה?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 11 – תצוגה (Display)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 12 – סיכום Best Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      פרק 13 – מבנה מומלץ באתר
     </span>
   </a>
   
@@ -1795,78 +2353,248 @@
 
 
 
-<h1 id="squid-reverse-proxy">הסבר לפקודות התקנת Squid Reverse Proxy</h1>
-<p>עמוד זה מסביר את משמעות כל פקודה במדריך התקנת Squid כ־Reverse Proxy.</p>
+<h1 id="vmware-proxmox">מדריך מלא: מיגרציה מ־VMware ל־Proxmox (שלב־אחר־שלב)</h1>
+<p>מדריך זה מסכם <strong>בצורה רציפה, נקייה וללא כפילויות</strong> את כל התהליך שבוצע:
+- הכנת דיסק פיזי
+- הגדרת Storage
+- העתקת VMDK
+- המרה ל־RAW
+- חיבור ל־VM
+- התקנת VirtIO
+- מעבר מ־SATA ל־SCSI
+- פתרון תקלות Boot / CPU / ביצועים</p>
+<p>המדריך מותאם לפרסום באתר תיעוד (Markdown).</p>
 <hr />
-<h2 id="_1">עדכון המערכת</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</code></pre></div>
+<h2 id="1">פרק 1 – עקרונות יסוד (לפני שמתחילים)</h2>
+<h3 id="11-storage-proxmox">1.1 סוגי Storage ב־Proxmox</h3>
+<table>
+<thead>
+<tr>
+<th>Storage</th>
+<th>סוג</th>
+<th>שימוש מומלץ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>local</td>
+<td>Directory</td>
+<td>ISO, Backups, Templates</td>
+</tr>
+<tr>
+<td>local-lvm</td>
+<td>LVM-thin</td>
+<td>VMים (Block) – לא חובה</td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td><strong>Directory (ext4/xfs)</strong></td>
+<td><strong>VMים, Import, Nakivo, עבודה ידנית</strong></td>
+</tr>
+<tr>
+<td>data-lvm</td>
+<td>LVM-thin</td>
+<td>אופציונלי בלבד</td>
+</tr>
+</tbody>
+</table>
+<p><strong>הבחירה במדריך:</strong></p>
+<blockquote>
+<p>כל ה־VMים יושבים על <code>data</code> (Directory, ext4)</p>
+</blockquote>
+<hr />
+<h3 id="12-block-vs-file">1.2 Block vs File (הבנה קריטית)</h3>
 <ul>
-<li><code>sudo</code> – מריץ את הפקודה עם הרשאות root</li>
-<li><code>apt update</code> – רענון רשימת החבילות</li>
-<li><code>apt upgrade -y</code> – שדרוג כל החבילות באופן אוטומטי</li>
+<li><strong>LVM / ZFS</strong> → דיסק VM הוא <em>בלוק</em> (לא רואים קובץ)</li>
+<li><strong>EXT4 / XFS</strong> → דיסק VM הוא <em>קובץ</em> (<code>raw</code> / <code>qcow2</code>)</li>
+</ul>
+<p><strong>למה בחרנו File-based?</strong>
+- קל לייבוא מ־VMware
+- נוח לגיבוי (Nakivo / PBS)
+- קל להעברה / בדיקה / שחזור</p>
+<hr />
+<h2 id="2-data">פרק 2 – הכנת דיסק פיזי ל־data</h2>
+<h3 id="21">2.1 זיהוי הדיסק</h3>
+<div class="highlight"><pre><span></span><code>lsblk
+</code></pre></div>
+<p>בדוגמה:
+<div class="highlight"><pre><span></span><code>sdb  3.3T  disk
+└─sdb1 3.3T part
+</code></pre></div></p>
+<hr />
+<h3 id="22-gpt">2.2 יצירת GPT + מחיצה</h3>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>parted
+parted<span class="w"> </span>/dev/sdb<span class="w"> </span>--script<span class="w"> </span>mklabel<span class="w"> </span>gpt
+parted<span class="w"> </span>/dev/sdb<span class="w"> </span>--script<span class="w"> </span>mkpart<span class="w"> </span>primary<span class="w"> </span><span class="m">0</span>%<span class="w"> </span><span class="m">100</span>%
+</code></pre></div>
+<hr />
+<h3 id="23">2.3 יצירת מערכת קבצים</h3>
+<div class="highlight"><pre><span></span><code>mkfs.ext4<span class="w"> </span>/dev/sdb1
+</code></pre></div>
+<hr />
+<h3 id="24-mount">2.4 Mount קבוע</h3>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/data
+blkid<span class="w"> </span>/dev/sdb1
+</code></pre></div>
+<p>עריכת fstab:
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/fstab
+</code></pre></div></p>
+<p>הוספה:
+<div class="highlight"><pre><span></span><code>UUID=XXXX-XXXX  /mnt/data  ext4  defaults  0  2
+</code></pre></div></p>
+<p>בדיקה:
+<div class="highlight"><pre><span></span><code>mount<span class="w"> </span>-a
+df<span class="w"> </span>-h<span class="w"> </span>/mnt/data
+</code></pre></div></p>
+<hr />
+<h2 id="3-storage-proxmox">פרק 3 – הוספת Storage ל־Proxmox</h2>
+<div class="highlight"><pre><span></span><code>pvesm<span class="w"> </span>add<span class="w"> </span>dir<span class="w"> </span>data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--path<span class="w"> </span>/mnt/data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--content<span class="w"> </span>images,iso,backup,import
+</code></pre></div>
+<p>בדיקה ב־GUI:</p>
+<blockquote>
+<p>Datacenter → Storage → data</p>
+</blockquote>
+<hr />
+<h2 id="4-vmware">פרק 4 – העתקת קבצי VMware</h2>
+<h3 id="41">4.1 מבנה תיקיות</h3>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/data/images/100
+</code></pre></div>
+<h3 id="42-vmdk">4.2 העתקת VMDK</h3>
+<p>באמצעות WinSCP / SCP:
+<div class="highlight"><pre><span></span><code>Dev.vmdk → /mnt/data/images/100/
+</code></pre></div></p>
+<hr />
+<h2 id="5-vmdk-raw">פרק 5 – המרת VMDK ל־RAW</h2>
+<div class="highlight"><pre><span></span><code>qemu-img<span class="w"> </span>convert<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>vmdk<span class="w"> </span>-O<span class="w"> </span>raw<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/mnt/data/images/100/Dev.vmdk<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/mnt/data/images/100/vm-100-disk-0.raw
+</code></pre></div>
+<p>בדיקה:
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lh<span class="w"> </span>/mnt/data/images/100
+</code></pre></div></p>
+<hr />
+<h2 id="6-vm">פרק 6 – יצירת VM (שלד בלבד)</h2>
+<p>ב־GUI:
+- BIOS: <strong>OVMF (UEFI)</strong>
+- Machine: <strong>q35</strong>
+- Disk: קטן זמני (או ללא)
+- OS Type: Windows 10/11</p>
+<hr />
+<h2 id="7-vm">פרק 7 – חיבור הדיסק המומר ל־VM</h2>
+<h3 id="71-cli">7.1 חיבור דרך CLI (מומלץ)</h3>
+<div class="highlight"><pre><span></span><code>qm<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>-scsi0<span class="w"> </span>data:100/vm-100-disk-0.raw
+</code></pre></div>
+<p>בדיקה:
+<div class="highlight"><pre><span></span><code>qm<span class="w"> </span>config<span class="w"> </span><span class="m">100</span>
+</code></pre></div></p>
+<hr />
+<h3 id="72-add-disk">7.2 למה לא דרך Add Disk?</h3>
+<ul>
+<li>Add Disk → יוצר דיסק חדש</li>
+<li>Import Disk → מייבא ל־LVM</li>
+<li><strong>Attach קובץ קיים → רק CLI או Unused Disk</strong></li>
 </ul>
 <hr />
-<h2 id="squid">התקנת Squid</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>squid<span class="w"> </span>-y
-</code></pre></div>
-<ul>
-<li>מתקין את חבילת Squid – שרת proxy נפוץ</li>
-</ul>
+<h2 id="8-virtio-drivers">פרק 8 – התקנת VirtIO Drivers</h2>
+<h3 id="81">8.1 הורדה</h3>
+<p>להוריד:
+<div class="highlight"><pre><span></span><code>virtio-win.iso
+</code></pre></div></p>
 <hr />
-<h2 id="_2">גיבוי הקובץ המקורי</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/squid/squid.conf<span class="w"> </span>/etc/squid/squid.conf.bak
-</code></pre></div>
-<ul>
-<li>יוצר עותק גיבוי של קובץ ההגדרות לפני ביצוע שינויים</li>
-</ul>
+<h3 id="82-iso">8.2 חיבור ISO</h3>
+<p>VM → Hardware → CD/DVD → Mount ISO</p>
 <hr />
-<h2 id="_3">עריכת קובץ הקונפיגורציה</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/squid.conf
-</code></pre></div>
-<ul>
-<li>פותח את הקובץ לעריכה בעורך טקסט <code>nano</code></li>
-</ul>
+<h3 id="83-windows">8.3 התקנה בתוך Windows</h3>
+<p>להריץ:
+<div class="highlight"><pre><span></span><code>virtio-win-guest-tools.exe
+</code></pre></div></p>
+<p>כולל:
+- Storage
+- Network
+- Balloon
+- QEMU Agent</p>
+<p><strong>לאחר ההתקנה → Restart</strong></p>
 <hr />
-<h3 id="_4">הסבר על ההגדרות בקובץ:</h3>
-<p><div class="highlight"><pre><span></span><code>http_port 3128 accel vhost allow-direct
+<h2 id="9-sata-scsi-virtio">פרק 9 – מעבר מ־SATA ל־SCSI (VirtIO)</h2>
+<h3 id="1-virtio">שלב 1 – הוספת דיסק VirtIO קטן (דמה)</h3>
+<p>VM → Add → Hard Disk → SCSI → 3GB</p>
+<h3 id="2-windows">שלב 2 – עליית Windows</h3>
+<p>בדיקה ב־Device Manager:
+- Red Hat VirtIO SCSI Controller</p>
+<h3 id="3-vm">שלב 3 – כיבוי VM</h3>
+<h3 id="4-sata">שלב 4 – ניתוק דיסק SATA</h3>
+<p>GUI → Detach (לא Delete)</p>
+<h3 id="5-scsi">שלב 5 – חיבור מחדש כ־SCSI</h3>
+<div class="highlight"><pre><span></span><code>qm<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>-scsi1<span class="w"> </span>data:100/vm-100-disk-0.raw
 </code></pre></div>
-- מגדיר את הפורט ש־Squid יאזין עליו כ־Reverse Proxy</p>
-<p><div class="highlight"><pre><span></span><code>cache_peer 192.168.1.100 parent 80 0 no-query originserver name=webserver
-</code></pre></div>
-- מגדיר את שרת היעד שאליו מועברת התעבורה</p>
-<p><div class="highlight"><pre><span></span><code>acl our_sites dstdomain yourdomain.com
-</code></pre></div>
-- יוצר ACL (רשימת בקרת גישה) שמאפשרת גישה לדומיין מסוים</p>
-<p><div class="highlight"><pre><span></span><code>http_access allow our_sites
-</code></pre></div>
-- מתיר גישה על סמך הכלל שנקבע למעלה</p>
+<h3 id="6-boot-order">שלב 6 – Boot Order</h3>
+<p>להגדיר:
+<div class="highlight"><pre><span></span><code>scsi1 ראשון
+</code></pre></div></p>
 <hr />
-<h2 id="_5">הפעלת השירות מחדש</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>squid
-</code></pre></div>
-<ul>
-<li>מפעיל מחדש את שירות Squid עם ההגדרות החדשות</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>squid
-</code></pre></div>
-<ul>
-<li>מציג את סטטוס השירות: האם פעיל, שגיאות, וכו’</li>
-</ul>
+<h2 id="10">פרק 10 – פתרון תקלות נפוצות</h2>
+<h3 id="101-inaccessible_boot_device">10.1 INACCESSIBLE_BOOT_DEVICE</h3>
+<p>סיבה:
+- מעבר ל־SCSI בלי VirtIO</p>
+<p>פתרון:
+- דיסק דמה
+- התקנת דרייבר
+- רק אז מעבר</p>
 <hr />
-<h2 id="3128-ufw">פתיחת פורט 3128 בחומת האש (UFW)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">3128</span>/tcp
+<h3 id="102-cpu-100">10.2 CPU 100%</h3>
+<p>פתרון:
+- CPU type: <code>host</code>
+- Cores: 4
+- התקנת VirtIO</p>
+<div class="highlight"><pre><span></span><code>qm<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>-cpu<span class="w"> </span>host<span class="w"> </span>-cores<span class="w"> </span><span class="m">4</span>
 </code></pre></div>
-<ul>
-<li>מאפשר חיבורים לפורט 3128 בפרוטוקול TCP</li>
-</ul>
 <hr />
-<h2 id="squid_1">בדיקת לוגים של Squid</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/squid/access.log
+<h3 id="103-cpu">10.3 שינוי CPU תוך כדי עבודה?</h3>
+<table>
+<thead>
+<tr>
+<th>פעולה</th>
+<th>דורש כיבוי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>שינוי cores</td>
+<td>כן</td>
+</tr>
+<tr>
+<td>שינוי cpu type</td>
+<td>כן</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-display">פרק 11 – תצוגה (Display)</h2>
+<p>מומלץ:
+- Display: <strong>Default</strong> או <strong>SPICE</strong>
+- אין צורך בדרייבר GPU</p>
+<p>VirtIO-GPU → רק לשימושים גרפיים מיוחדים</p>
+<hr />
+<h2 id="12-best-practice">פרק 12 – סיכום Best Practice</h2>
+<p>✔ דיסקי VM → <code>data</code> (ext4)
+✔ פורמט דיסק → <code>raw</code>
+✔ Controller → <code>VirtIO SCSI single</code>
+✔ CPU → <code>host</code>
+✔ תמיד להתקין VirtIO לפני מעבר
+✔ לא למחוק VMDK לפני שה־VM עולה</p>
+<hr />
+<h2 id="13">פרק 13 – מבנה מומלץ באתר</h2>
+<div class="highlight"><pre><span></span><code>/docs
+  /proxmox
+    vmware-to-proxmox.md
+    storage-design.md
+    virtio-drivers.md
 </code></pre></div>
-<ul>
-<li>מציג את השורות האחרונות בקובץ לוג הפעולות של Squid בזמן אמת</li>
-</ul>
+<hr />
+<p><strong>סיום</strong></p>
+<p>זהו מדריך מלא, נקי וחוזר־לייצור, המתאים לעבודה בפרודקשן ולתיעוד ארגוני.</p>
 
 
 
