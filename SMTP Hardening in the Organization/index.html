@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#smtp" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1327,6 +1332,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    SMTP Hardening in the Organization
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1339,6 +1359,220 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. מטרות ההקשחה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. הקשחה ברמת הרשת (Firewall)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. הקשחה ברמת הרשת (Firewall)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 חסימות חובה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 פתיחות נדרשות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 המלצות נוספות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-microsoft-365-exchange-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הקשחה ב-Microsoft 365 / Exchange Online
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. הקשחה ב-Microsoft 365 / Exchange Online">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-outlook-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 משתמשים רגילים (Outlook / Web)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 משתמש ייעודי לסורקים (Service Account)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. סורקים / מדפסות / מערכות אוטומטיות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. סורקים / מדפסות / מערכות אוטומטיות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      תצורה מאושרת
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      תצורות אסורות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. הצפנה ו-TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-anti-spoofing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. הגנה מפני זיוף (Anti-Spoofing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. ניטור, בקרה והתראות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ניטור, בקרה והתראות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 ניטור שוטף
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 התראות מומלצות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. בדיקות תקופתיות (Audit)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. צ'ק ליסט סופי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. הערות סיום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1598,6 +1832,211 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. מטרות ההקשחה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-firewall" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. הקשחה ברמת הרשת (Firewall)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. הקשחה ברמת הרשת (Firewall)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 חסימות חובה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 פתיחות נדרשות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 המלצות נוספות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-microsoft-365-exchange-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הקשחה ב-Microsoft 365 / Exchange Online
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. הקשחה ב-Microsoft 365 / Exchange Online">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-outlook-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 משתמשים רגילים (Outlook / Web)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 משתמש ייעודי לסורקים (Service Account)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. סורקים / מדפסות / מערכות אוטומטיות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. סורקים / מדפסות / מערכות אוטומטיות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      תצורה מאושרת
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      תצורות אסורות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. הצפנה ו-TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-anti-spoofing" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. הגנה מפני זיוף (Anti-Spoofing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. ניטור, בקרה והתראות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ניטור, בקרה והתראות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 ניטור שוטף
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 התראות מומלצות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. בדיקות תקופתיות (Audit)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. צ'ק ליסט סופי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. הערות סיום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1613,9 +2052,137 @@
 
 
 
-  <h1>SMTP Hardening in the Organization</h1>
-
-
+<h1 id="smtp">הקשחת SMTP בארגון</h1>
+<p>מסמך זה מרכז את עקרונות ההקשחה, ההגדרות והבדיקות הנדרשות להקשחת פרוטוקול SMTP בארגון, בסביבה העובדת עם:</p>
+<ul>
+<li>משתמשים דרך Outlook (אפליקציה)</li>
+<li>משתמשים דרך Outlook Web (OWA)</li>
+<li>סורקים / מדפסות / מערכות אוטומטיות</li>
+<li>משתמש ייעודי לשליחת דוא"ל (Service Account)</li>
+</ul>
+<hr />
+<h2 id="1">1. מטרות ההקשחה</h2>
+<ul>
+<li>מניעת שליחת Spam ו-Malware מתוך הארגון</li>
+<li>חסימת SMTP לא מאובטח</li>
+<li>צמצום משטח תקיפה (Attack Surface)</li>
+<li>הפרדת משתמשים רגילים מחשבונות שירות</li>
+<li>עמידה ב-Best Practices של Microsoft וארגוני אבטחה</li>
+</ul>
+<hr />
+<h2 id="2-firewall">2. הקשחה ברמת הרשת (Firewall)</h2>
+<h3 id="21">2.1 חסימות חובה</h3>
+<ul>
+<li>חסימת <strong>Outbound TCP 25</strong> לכל היעדים באינטרנט</li>
+<li>חסימת SMTP ללא הצפנה (Plain SMTP)</li>
+</ul>
+<h3 id="22">2.2 פתיחות נדרשות</h3>
+<ul>
+<li><strong>Outbound TCP 587</strong> לשרתי Microsoft 365 בלבד</li>
+<li><strong>Outbound TCP 443</strong> (Outlook / OWA / Modern Auth)</li>
+</ul>
+<h3 id="23">2.3 המלצות נוספות</h3>
+<ul>
+<li>הגבלת 587 ל-FQDN / IPs של Microsoft בלבד</li>
+<li>ניטור ניסיונות יציאה על פורט 25</li>
+</ul>
+<hr />
+<h2 id="3-microsoft-365-exchange-online">3. הקשחה ב-Microsoft 365 / Exchange Online</h2>
+<h3 id="31-outlook-web">3.1 משתמשים רגילים (Outlook / Web)</h3>
+<ul>
+<li>SMTP AUTH: <strong>Disabled</strong></li>
+<li>שליחת דוא"ל דרך Outlook בלבד</li>
+<li>MFA מופעל (Conditional Access)</li>
+<li>ללא שימוש בפרוטוקול SMTP ישיר</li>
+</ul>
+<h3 id="32-service-account">3.2 משתמש ייעודי לסורקים (Service Account)</h3>
+<ul>
+<li>SMTP AUTH: <strong>Enabled</strong> (רק למשתמש זה)</li>
+<li>פורט: <strong>587 בלבד</strong></li>
+<li>הצפנה: <strong>STARTTLS חובה</strong></li>
+<li>ללא MFA</li>
+<li>ללא גישת Outlook / OWA</li>
+<li>ללא הרשאות אדמין</li>
+<li>ללא רישוי מיותר (רק אם נדרש בפועל)</li>
+</ul>
+<hr />
+<h2 id="4">4. סורקים / מדפסות / מערכות אוטומטיות</h2>
+<h3 id="_1">תצורה מאושרת</h3>
+<ul>
+<li>SMTP Server: <code>smtp.office365.com</code></li>
+<li>Port: <strong>587</strong></li>
+<li>Encryption: <strong>STARTTLS</strong></li>
+<li>Authentication: משתמש ייעודי בלבד</li>
+</ul>
+<h3 id="_2">תצורות אסורות</h3>
+<ul>
+<li>שליחה ישירה לאינטרנט</li>
+<li>שימוש בפורט 25</li>
+<li>שימוש במשתמש רגיל</li>
+<li>שליחה ללא הצפנה</li>
+</ul>
+<hr />
+<h2 id="5-tls">5. הצפנה ו-TLS</h2>
+<ul>
+<li>אכיפת <strong>TLS 1.2 ומעלה בלבד</strong></li>
+<li>
+<p>ביטול:</p>
+</li>
+<li>
+<p>SSL</p>
+</li>
+<li>TLS 1.0</li>
+<li>TLS 1.1</li>
+<li>אין לאפשר SMTP ללא הצפנה בשום תרחיש</li>
+</ul>
+<hr />
+<h2 id="6-anti-spoofing">6. הגנה מפני זיוף (Anti-Spoofing)</h2>
+<p>חובה להגדיר בדומיין:</p>
+<ul>
+<li><strong>SPF</strong> – כולל Microsoft 365 בלבד</li>
+<li><strong>DKIM</strong> – מופעל</li>
+<li><strong>DMARC</strong> – לפחות <code>p=quarantine</code>, מומלץ <code>p=reject</code></li>
+</ul>
+<p>ללא סעיף זה – ההקשחה הפנימית אינה מספקת.</p>
+<hr />
+<h2 id="7">7. ניטור, בקרה והתראות</h2>
+<h3 id="71">7.1 ניטור שוטף</h3>
+<ul>
+<li>Message Trace – מעקב אחרי שליחה</li>
+<li>Sign-in Logs – SMTP AUTH</li>
+<li>זיהוי ניסיונות התחברות חריגים</li>
+</ul>
+<h3 id="72">7.2 התראות מומלצות</h3>
+<ul>
+<li>כשלי SMTP AUTH</li>
+<li>שליחה חריגה ממשתמש ייעודי</li>
+<li>ניסיונות יציאה על פורט 25</li>
+</ul>
+<hr />
+<h2 id="8-audit">8. בדיקות תקופתיות (Audit)</h2>
+<p>מומלץ אחת לרבעון:</p>
+<ul>
+<li>בדיקה מי משתמש ב-SMTP AUTH</li>
+<li>אימות שאין שימוש בפורט 25</li>
+<li>בדיקת TLS וגרסאות הצפנה</li>
+<li>סקירת חשבונות שירות</li>
+</ul>
+<hr />
+<h2 id="9">9. צ'ק ליסט סופי</h2>
+<ul>
+<li>[ ] פורט 25 חסום ביציאה</li>
+<li>[ ] פורט 587 פתוח ומוגבל</li>
+<li>[ ] SMTP AUTH מבוטל למשתמשים רגילים</li>
+<li>[ ] SMTP AUTH פעיל רק למשתמש ייעודי</li>
+<li>[ ] TLS 1.2+ בלבד</li>
+<li>[ ] SPF / DKIM / DMARC מוגדרים</li>
+<li>[ ] ניטור והתראות פעילים</li>
+</ul>
+<hr />
+<h2 id="10">10. הערות סיום</h2>
+<p>מסמך זה נועד לשמש בסיס הקשחה ארגוני. כל חריגה (Legacy Systems, סורקים ישנים, צד ג') מחייבת ניתוח סיכון ותיעוד מפורש.</p>
+<hr />
+<p><strong>שם המסמך:</strong> הקשחת SMTP בארגון</p>
 
 
 
