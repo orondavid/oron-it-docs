@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../ubuntu_disk_expand_guide/">
+        <link rel="prev" href="../Assign-MessageTrace/">
       
       
-        <link rel="next" href="../VBAexcel-macro/">
+        <link rel="next" href="../vmware_to_proxmox_full_walkthrough/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>SMTP Hardening in the Organization - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>forti_gate_sd_wan_failover_configuration - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#smtp" class="md-skip">
+        <a href="#fortigate-sd-wan-load-balancing-failover-primary-backup" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SMTP Hardening in the Organization
+              forti_gate_sd_wan_failover_configuration
             
           </span>
         </div>
@@ -840,10 +840,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../forti_gate_sd_wan_failover_configuration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    forti_gate_sd_wan_failover_configuration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -854,6 +876,254 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מטרת המדריך
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרות התחלה (Prerequisites)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancing-failover" class="md-nav__link">
+    <span class="md-ellipsis">
+      רקע חשוב – מה ההבדל בין Load Balancing ל־Failover
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="רקע חשוב – מה ההבדל בין Load Balancing ל־Failover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Balancing (המצב הקיים)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failover אמיתי (המטרה)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-sd-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1 – ביטול חלוקת עומסים (שינוי מצב SD-WAN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 1 – ביטול חלוקת עומסים (שינוי מצב SD-WAN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2 – בדיקת Health Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sd-wan-rule-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3 – הגדרת SD-WAN Rule במצב Priority
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 3 – הגדרת SD-WAN Rule במצב Priority">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרך GUI (מומלץ)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרך CLI (חלופה)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implicit-sd-wan-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4 – טיפול ב־Implicit SD-WAN Rule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-firewall-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5 – בדיקת Firewall Policies (קריטי)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6 – NAT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 7 – בדיקות לאחר ההגדרה
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 7 – בדיקות לאחר ההגדרה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקה לוגית
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failover_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת Failover מעשית
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      השפעה על מערכת קיימת – מה חשוב לדעת
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="השפעה על מערכת קיימת – מה חשוב לדעת">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה לא מושפע
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה כן משתנה
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכום
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      המלצות תפעוליות
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1346,32 +1616,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    SMTP Hardening in the Organization
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../SMTP%20Hardening%20in%20the%20Organization/" class="md-nav__link">
         
   
   
@@ -1382,179 +1630,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. מטרות ההקשחה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. הקשחה ברמת הרשת (Firewall)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. הקשחה ברמת הרשת (Firewall)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 חסימות חובה
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 פתיחות נדרשות
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 המלצות נוספות
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-microsoft-365-exchange-online" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. הקשחה ב-Microsoft 365 / Exchange Online
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. הקשחה ב-Microsoft 365 / Exchange Online">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-outlook-web" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 משתמשים רגילים (Outlook / Web)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-service-account" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 משתמש ייעודי לסורקים (Service Account)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. סורקים / מדפסות / מערכות אוטומטיות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. סורקים / מדפסות / מערכות אוטומטיות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      תצורה מאושרת
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      תצורות אסורות
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tls" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. הצפנה ו-TLS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-anti-spoofing" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. הגנה מפני זיוף (Anti-Spoofing)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. ניטור, בקרה והתראות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. צ'ק ליסט סופי
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1823,112 +1898,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. מטרות ההקשחה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. הקשחה ברמת הרשת (Firewall)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. הקשחה ברמת הרשת (Firewall)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 חסימות חובה
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 פתיחות נדרשות
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 המלצות נוספות
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-microsoft-365-exchange-online" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. הקשחה ב-Microsoft 365 / Exchange Online
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. הקשחה ב-Microsoft 365 / Exchange Online">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-outlook-web" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 משתמשים רגילים (Outlook / Web)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-service-account" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 משתמש ייעודי לסורקים (Service Account)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. סורקים / מדפסות / מערכות אוטומטיות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. סורקים / מדפסות / מערכות אוטומטיות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      תצורה מאושרת
+      מטרת המדריך
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרות התחלה (Prerequisites)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancing-failover" class="md-nav__link">
+    <span class="md-ellipsis">
+      רקע חשוב – מה ההבדל בין Load Balancing ל־Failover
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="רקע חשוב – מה ההבדל בין Load Balancing ל־Failover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Balancing (המצב הקיים)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#failover" class="md-nav__link">
     <span class="md-ellipsis">
-      תצורות אסורות
+      Failover אמיתי (המטרה)
     </span>
   </a>
   
@@ -1940,18 +1949,93 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-tls" class="md-nav__link">
+  <a href="#1-sd-wan" class="md-nav__link">
     <span class="md-ellipsis">
-      5. הצפנה ו-TLS
+      שלב 1 – ביטול חלוקת עומסים (שינוי מצב SD-WAN)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 1 – ביטול חלוקת עומסים (שינוי מצב SD-WAN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2 – בדיקת Health Check
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-anti-spoofing" class="md-nav__link">
+  <a href="#3-sd-wan-rule-priority" class="md-nav__link">
     <span class="md-ellipsis">
-      6. הגנה מפני זיוף (Anti-Spoofing)
+      שלב 3 – הגדרת SD-WAN Rule במצב Priority
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 3 – הגדרת SD-WAN Rule במצב Priority">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרך GUI (מומלץ)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרך CLI (חלופה)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implicit-sd-wan-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4 – טיפול ב־Implicit SD-WAN Rule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-firewall-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5 – בדיקת Firewall Policies (קריטי)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6 – NAT
     </span>
   </a>
   
@@ -1960,16 +2044,82 @@
         <li class="md-nav__item">
   <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
-      7. ניטור, בקרה והתראות
+      שלב 7 – בדיקות לאחר ההגדרה
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 7 – בדיקות לאחר ההגדרה">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקה לוגית
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failover_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקת Failover מעשית
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      השפעה על מערכת קיימת – מה חשוב לדעת
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="השפעה על מערכת קיימת – מה חשוב לדעת">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה לא מושפע
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה כן משתנה
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכום
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      8. צ'ק ליסט סופי
+      המלצות תפעוליות
     </span>
   </a>
   
@@ -1991,116 +2141,162 @@
 
 
 
-<h1 id="smtp">הקשחת SMTP בארגון</h1>
-<p>מסמך זה מרכז את עקרונות ההקשחה, ההגדרות והבדיקות הנדרשות להקשחת פרוטוקול SMTP בארגון, בסביבה העובדת עם:</p>
+<h1 id="fortigate-sd-wan-load-balancing-failover-primary-backup">FortiGate SD-WAN – מעבר מ־Load Balancing ל־Failover (Primary / Backup)</h1>
+<h2 id="_1">מטרת המדריך</h2>
+<p>מדריך זה מסביר <strong>שלב־אחר־שלב</strong> כיצד להגדיר ב־FortiGate מצב <strong>Failover אמיתי</strong> (קו ראשי + קו גיבוי), במקום מצב של <strong>חלוקת עומסים (Load Balancing)</strong> –
+מבלי לפספס אף הגדרה קריטית, ותוך הבנה מלאה של ההשפעה על המערכת הקיימת.</p>
+<hr />
+<h2 id="prerequisites">הגדרות התחלה (Prerequisites)</h2>
+<p>לפני שמבצעים שינוי:</p>
 <ul>
-<li>משתמשים דרך Outlook (אפליקציה)</li>
-<li>משתמשים דרך Outlook Web (OWA)</li>
-<li>סורקים / מדפסות / מערכות אוטומטיות</li>
-<li>משתמש ייעודי לשליחת דוא"ל (Service Account)</li>
+<li>✔ שני קווי האינטרנט פעילים ותקינים</li>
+<li>✔ מוגדר SD-WAN</li>
+<li>✔ קיים לפחות Health Check אחד פעיל</li>
+<li>✔ יש גישת CLI ל־FortiGate</li>
+</ul>
+<p>⚠️ <strong>מומלץ לבצע את השינוי מחוץ לשעות פעילות</strong> (ייתכן ניתוק קצר).</p>
+<hr />
+<h2 id="load-balancing-failover">רקע חשוב – מה ההבדל בין Load Balancing ל־Failover</h2>
+<h3 id="load-balancing">Load Balancing (המצב הקיים)</h3>
+<ul>
+<li>התעבורה מתחלקת בין שני הקווים</li>
+<li>יש העדפה ל־WAN1, אך WAN2 עדיין בשימוש</li>
+<li>אין החלטה חדה מתי קו “נפל”</li>
+<li>חיבורים ארוכי טווח (RDP / VPN) עלולים ליפול</li>
+</ul>
+<h3 id="failover">Failover אמיתי (המטרה)</h3>
+<ul>
+<li>כל התעבורה יוצאת דרך WAN1</li>
+<li>WAN2 נכנס לפעולה <strong>רק</strong> כאשר WAN1 נכשל לפי SLA</li>
+<li>מעבר חד וברור</li>
+<li>יציבות גבוהה יותר למשתמשים</li>
 </ul>
 <hr />
-<h2 id="1">1. מטרות ההקשחה</h2>
+<h2 id="1-sd-wan">שלב 1 – ביטול חלוקת עומסים (שינוי מצב SD-WAN)</h2>
+<h3 id="cli">CLI</h3>
+<div class="highlight"><pre><span></span><code>config<span class="w"> </span>system<span class="w"> </span>sdwan
+<span class="w">    </span><span class="nb">set</span><span class="w"> </span>load-balance-mode<span class="w"> </span>priority
+end
+</code></pre></div>
+<p>🔹 פקודה זו מבטלת Load Balancing
+🔹 מאפשרת עבודה במצב Primary / Backup בלבד</p>
+<hr />
+<h2 id="2-health-check">שלב 2 – בדיקת Health Check</h2>
+<p>בדיקה:
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span>sys<span class="w"> </span>sdwan<span class="w"> </span>health-check
+</code></pre></div></p>
+<p>ודא:
+- wan1 = alive
+- wan2 = alive
+- latency / packet loss בגבולות שהוגדרו</p>
+<p>⚠️ ללא Health Check תקין – <strong>לא יתבצע Failover</strong></p>
+<hr />
+<h2 id="3-sd-wan-rule-priority">שלב 3 – הגדרת SD-WAN Rule במצב Priority</h2>
+<h3 id="gui">דרך GUI (מומלץ)</h3>
+<div class="highlight"><pre><span></span><code>Network → SD-WAN → SD-WAN Rules
+</code></pre></div>
+<p>ערוך את ה־Rule הראשי (לדוגמה: <code>Prefer</code>):</p>
 <ul>
-<li>מניעת שליחת Spam ו-Malware מתוך הארגון</li>
-<li>חסימת SMTP לא מאובטח</li>
-<li>צמצום משטח תקיפה (Attack Surface)</li>
-<li>הפרדת משתמשים רגילים מחשבונות שירות</li>
-<li>עמידה ב-Best Practices של Microsoft וארגוני אבטחה</li>
+<li>Source: <code>all</code></li>
+<li>Destination: <code>all</code></li>
+<li>Strategy / Mode: <strong>Priority</strong></li>
+<li>Interface Order:</li>
+<li>WAN1 (Primary)</li>
+<li>WAN2 (Backup)</li>
+<li>Performance SLA:
+  ✔ בחר Health Check אחד לפחות</li>
+</ul>
+<p>שמור את ההגדרות.</p>
+<hr />
+<h3 id="cli_1">דרך CLI (חלופה)</h3>
+<div class="highlight"><pre><span></span><code>config<span class="w"> </span>system<span class="w"> </span>sdwan
+<span class="w">    </span>config<span class="w"> </span>service
+<span class="w">        </span>edit<span class="w"> </span><span class="m">1</span>
+<span class="w">            </span><span class="nb">set</span><span class="w"> </span>name<span class="w"> </span><span class="s2">&quot;Internet_Failover&quot;</span>
+<span class="w">            </span><span class="nb">set</span><span class="w"> </span>src<span class="w"> </span><span class="s2">&quot;all&quot;</span>
+<span class="w">            </span><span class="nb">set</span><span class="w"> </span>dst<span class="w"> </span><span class="s2">&quot;all&quot;</span>
+<span class="w">            </span><span class="nb">set</span><span class="w"> </span>priority-members<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span>
+<span class="w">            </span><span class="nb">set</span><span class="w"> </span>health-check<span class="w"> </span><span class="s2">&quot;Default_Google Search&quot;</span>
+<span class="w">        </span>next
+<span class="w">    </span>end
+end
+</code></pre></div>
+<hr />
+<h2 id="4-implicit-sd-wan-rule">שלב 4 – טיפול ב־Implicit SD-WAN Rule</h2>
+<p>בדוק ב־GUI:
+<div class="highlight"><pre><span></span><code>Network → SD-WAN → SD-WAN Rules
+</code></pre></div></p>
+<p>אם קיים Rule בשם:
+<div class="highlight"><pre><span></span><code>Implicit (sd-wan)
+Criteria: Volume
+</code></pre></div></p>
+<p>🔹 מומלץ <strong>לנטרל (Disable)</strong> אותו
+🔹 או לוודא שהוא <strong>לא משפיע</strong> על תעבורה רגילה</p>
+<hr />
+<h2 id="5-firewall-policies">שלב 5 – בדיקת Firewall Policies (קריטי)</h2>
+<p>כל Policy שיוצאת לאינטרנט חייבת להיות מוגדרת כך:</p>
+<ul>
+<li>Outgoing Interface: <strong>SD-WAN</strong></li>
+</ul>
+<p>❌ אם מוגדר WAN1 או WAN2 ישירות – Failover לא יעבוד</p>
+<hr />
+<h2 id="6-nat">שלב 6 – NAT</h2>
+<ul>
+<li>אין צורך לשנות הגדרות NAT קיימות</li>
+<li>NAT על SD-WAN ממשיך לעבוד</li>
+<li>כתובת המקור מתעדכנת אוטומטית לפי הקו הפעיל</li>
 </ul>
 <hr />
-<h2 id="2-firewall">2. הקשחה ברמת הרשת (Firewall)</h2>
-<h3 id="21">2.1 חסימות חובה</h3>
-<ul>
-<li>חסימת <strong>Outbound TCP 25</strong> לכל היעדים באינטרנט</li>
-<li>חסימת SMTP ללא הצפנה (Plain SMTP)</li>
-</ul>
-<h3 id="22">2.2 פתיחות נדרשות</h3>
-<ul>
-<li><strong>Outbound TCP 587</strong> לשרתי Microsoft 365 בלבד</li>
-<li><strong>Outbound TCP 443</strong> (Outlook / OWA / Modern Auth)</li>
-</ul>
-<h3 id="23">2.3 המלצות נוספות</h3>
-<ul>
-<li>הגבלת 587 ל-FQDN / IPs של Microsoft בלבד</li>
-<li>ניטור ניסיונות יציאה על פורט 25</li>
-</ul>
+<h2 id="7">שלב 7 – בדיקות לאחר ההגדרה</h2>
+<h3 id="_2">בדיקה לוגית</h3>
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span>sys<span class="w"> </span>sdwan<span class="w"> </span>service
+</code></pre></div>
+<p>מצופה:
+- WAN1 = active
+- WAN2 = standby</p>
 <hr />
-<h2 id="3-microsoft-365-exchange-online">3. הקשחה ב-Microsoft 365 / Exchange Online</h2>
-<h3 id="31-outlook-web">3.1 משתמשים רגילים (Outlook / Web)</h3>
-<ul>
-<li>SMTP AUTH: <strong>Disabled</strong></li>
-<li>שליחת דוא"ל דרך Outlook בלבד</li>
-<li>MFA מופעל (Conditional Access)</li>
-<li>ללא שימוש בפרוטוקול SMTP ישיר</li>
-</ul>
-<h3 id="32-service-account">3.2 משתמש ייעודי לסורקים (Service Account)</h3>
-<ul>
-<li>SMTP AUTH: <strong>Enabled</strong> (רק למשתמש זה)</li>
-<li>פורט: <strong>587 בלבד</strong></li>
-<li>הצפנה: <strong>STARTTLS חובה</strong></li>
-<li>ללא MFA</li>
-<li>ללא גישת Outlook / OWA</li>
-<li>ללא הרשאות אדמין</li>
-<li>ללא רישוי מיותר (רק אם נדרש בפועל)</li>
-</ul>
+<h3 id="failover_1">בדיקת Failover מעשית</h3>
+<ol>
+<li>ממחשב פנימי:
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>-t
+</code></pre></div></li>
+<li>נתק פיזית את WAN1</li>
+<li>מצופה:</li>
+<li>1–3 packet loss</li>
+<li>המשך תעבורה דרך WAN2</li>
+</ol>
 <hr />
-<h2 id="4">4. סורקים / מדפסות / מערכות אוטומטיות</h2>
-<h3 id="_1">תצורה מאושרת</h3>
+<h2 id="_3">השפעה על מערכת קיימת – מה חשוב לדעת</h2>
+<h3 id="_4">מה <strong>לא</strong> מושפע</h3>
 <ul>
-<li>SMTP Server: <code>smtp.office365.com</code></li>
-<li>Port: <strong>587</strong></li>
-<li>Encryption: <strong>STARTTLS</strong></li>
-<li>Authentication: משתמש ייעודי בלבד</li>
+<li>גלישה רגילה</li>
+<li>Firewall Policies (אם מוגדרות נכון)</li>
+<li>NAT</li>
+<li>חיבורים חדשים</li>
 </ul>
-<h3 id="_2">תצורות אסורות</h3>
+<h3 id="_5">מה <strong>כן</strong> משתנה</h3>
 <ul>
-<li>שליחה ישירה לאינטרנט</li>
-<li>שימוש בפורט 25</li>
-<li>שימוש במשתמש רגיל</li>
-<li>שליחה ללא הצפנה</li>
+<li>חלוקת עומסים מתבטלת</li>
+<li>WAN2 ישמש רק כגיבוי</li>
+<li>חיבורים קיימים (RDP / VPN) ייפלו בזמן מעבר</li>
 </ul>
+<p>⚠️ זו מגבלה של TCP/IP והאינטרנט – לא של FortiGate</p>
 <hr />
-<h2 id="5-tls">5. הצפנה ו-TLS</h2>
+<h2 id="_6">סיכום</h2>
 <ul>
-<li>אכיפת <strong>TLS 1.2 ומעלה בלבד</strong></li>
-<li>
-<p>ביטול:</p>
-</li>
-<li>
-<p>SSL</p>
-</li>
-<li>TLS 1.0</li>
-<li>TLS 1.1</li>
-<li>אין לאפשר SMTP ללא הצפנה בשום תרחיש</li>
+<li>שינוי מרכזי אחד: <code>load-balance-mode priority</code></li>
+<li>SD-WAN Rule עם Priority + SLA</li>
+<li>ביטול Implicit Load Balancing</li>
+<li>אין צורך בשינויים נוספים אם Policies מוגדרות דרך SD-WAN</li>
 </ul>
+<p>✔ לאחר יישום נכון – מתקבל Failover יציב, ברור וצפוי</p>
 <hr />
-<h2 id="6-anti-spoofing">6. הגנה מפני זיוף (Anti-Spoofing)</h2>
-<p>חובה להגדיר בדומיין:</p>
+<h2 id="_7">המלצות תפעוליות</h2>
 <ul>
-<li><strong>SPF</strong> – כולל Microsoft 365 בלבד</li>
-<li><strong>DKIM</strong> – מופעל</li>
-<li><strong>DMARC</strong> – לפחות <code>p=quarantine</code>, מומלץ <code>p=reject</code></li>
+<li>בצע בדיקת Failover אחת לחודש</li>
+<li>תעד את ההגדרות</li>
+<li>אל תחזיר Load Balancing ללא צורך עסקי ברור</li>
 </ul>
-<p>ללא סעיף זה – ההקשחה הפנימית אינה מספקת.</p>
-<hr />
-<h2 id="7">7. ניטור, בקרה והתראות</h2>
-<ul>
-<li>כשלי SMTP AUTH</li>
-<li>ניסיונות יציאה על פורט 25</li>
-</ul>
-<hr />
-<h2 id="8">8. צ'ק ליסט סופי</h2>
-<ul>
-<li>[ ] פורט 25 חסום ביציאה</li>
-<li>[ ] פורט 587 פתוח ומוגבל</li>
-<li>[ ] SMTP AUTH מבוטל למשתמשים רגילים</li>
-<li>[ ] SMTP AUTH פעיל רק למשתמש ייעודי</li>
-<li>[ ] TLS 1.2+ בלבד</li>
-<li>[ ] SPF / DKIM / DMARC מוגדרים</li>
-<li>[ ] ניטור והתראות פעילים</li>
-</ul>
-<hr />
 
 
 
