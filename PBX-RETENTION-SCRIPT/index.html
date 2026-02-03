@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Powershell_Remoting_Command_reference/">
+        <link rel="prev" href="../Assign-MessageTrace/">
       
       
-        <link rel="next" href="../SMTP%20Hardening%20in%20the%20Organization/">
+        <link rel="next" href="../forti_gate_sd_wan_failover_configuration/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>ubuntu_disk_expand_guide - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>PBX-RETENTION-SCRIPT - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu-lvm-ext4" class="md-skip">
+        <a href="#freepbx-asterisk-recordings-retention-weekly-cleanup-memo" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ubuntu_disk_expand_guide
+              PBX-RETENTION-SCRIPT
             
           </span>
         </div>
@@ -840,10 +840,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../PBX-RETENTION-SCRIPT/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PBX-RETENTION-SCRIPT
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -854,6 +876,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-key-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Key Paths
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scheduler-cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Scheduler – CRON
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Scheduler – CRON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-where-cron-jobs-are-defined-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Where CRON jobs are defined (paths)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-commands-to-locate-cron-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Commands to locate CRON configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1369,32 +1453,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    ubuntu_disk_expand_guide
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ubuntu_disk_expand_guide/" class="md-nav__link">
         
   
   
@@ -1405,182 +1467,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      מבנה כללי (לשם הבנה)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-vmware" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 1 – הגדלת הדיסק בצד VMware
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2 – בדיקת מצב קיים בלינוקס
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-growpart" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3 – בדיקת צורך בהרחבת מחיצה (growpart)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="שלב 3 – בדיקת צורך בהרחבת מחיצה (growpart)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#growpart" class="md-nav__link">
-    <span class="md-ellipsis">
-      מצב א' – אין צורך ב־growpart
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#growpart_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      מצב ב' – נדרש growpart
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 התקנת הכלי (אם נדרש)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 הרחבת המחיצה
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-physical-volume-pv" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4 – הרחבת Physical Volume (PV)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-logical-volume-lv" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5 – הרחבת Logical Volume (LV)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ext4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 – הרחבת מערכת הקבצים (ext4)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="שלב 6 – הרחבת מערכת הקבצים (ext4)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקת סוג מערכת הקבצים
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      הרחבת מערכת הקבצים
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 7 – אימות סופי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      תקלות נפוצות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיכום זרימת עבודה
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1872,73 +1758,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1-key-paths" class="md-nav__link">
     <span class="md-ellipsis">
-      מבנה כללי (לשם הבנה)
+      1) Key Paths
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-vmware" class="md-nav__link">
+  <a href="#2-scheduler-cron" class="md-nav__link">
     <span class="md-ellipsis">
-      שלב 1 – הגדלת הדיסק בצד VMware
+      2) Scheduler – CRON
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 2 – בדיקת מצב קיים בלינוקס
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-growpart" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 3 – בדיקת צורך בהרחבת מחיצה (growpart)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="שלב 3 – בדיקת צורך בהרחבת מחיצה (growpart)">
+    <nav class="md-nav" aria-label="2) Scheduler – CRON">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#growpart" class="md-nav__link">
+  <a href="#21-where-cron-jobs-are-defined-paths" class="md-nav__link">
     <span class="md-ellipsis">
-      מצב א' – אין צורך ב־growpart
+      2.1 Where CRON jobs are defined (paths)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#growpart_1" class="md-nav__link">
+  <a href="#22-commands-to-locate-cron-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      מצב ב' – נדרש growpart
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 התקנת הכלי (אם נדרש)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 הרחבת המחיצה
+      2.2 Commands to locate CRON configuration
     </span>
   </a>
   
@@ -1946,84 +1796,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-physical-volume-pv" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 4 – הרחבת Physical Volume (PV)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-logical-volume-lv" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 5 – הרחבת Logical Volume (LV)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ext4" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 6 – הרחבת מערכת הקבצים (ext4)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="שלב 6 – הרחבת מערכת הקבצים (ext4)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקת סוג מערכת הקבצים
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      הרחבת מערכת הקבצים
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      שלב 7 – אימות סופי
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      תקלות נפוצות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      סיכום זרימת עבודה
-    </span>
-  </a>
   
 </li>
       
@@ -2043,145 +1815,62 @@
 
 
 
-<h1 id="ubuntu-lvm-ext4">הרחבת נפח דיסק בלינוקס (Ubuntu + LVM + ext4)</h1>
-<p>מדריך זה מציג תהליך <strong>מסודר, בטוח וברור</strong> להרחבת נפח דיסק<br />
-בשרת <strong>Ubuntu</strong> שרץ על <strong>מכונה וירטואלית (VMware)</strong>,<br />
-כאשר מערכת האחסון מבוססת <strong>LVM</strong> ומערכת הקבצים היא <strong>ext4</strong>.</p>
-<p>המדריך כולל <strong>בדיקת החלטה מובנית</strong> האם נדרש להשתמש ב־<code>growpart</code> או לא.</p>
+<h1 id="freepbx-asterisk-recordings-retention-weekly-cleanup-memo">FreePBX / Asterisk – Recordings Retention (Weekly Cleanup) – Memo</h1>
 <blockquote>
-<p>מומלץ לבצע Snapshot / גיבוי לפני עבודה בסביבת Production.</p>
+<p><strong>Host:</strong> <code>pbx02</code><br />
+<strong>Recordings path:</strong> <code>/var/spool/asterisk/monitor</code><br />
+<strong>Purpose:</strong> Delete recordings older than <strong>60 days</strong> and report disk usage + deletion count via email.</p>
 </blockquote>
 <hr />
-<h2 id="_1">מבנה כללי (לשם הבנה)</h2>
-<div class="highlight"><pre><span></span><code>VMware Disk (VMDK)
-   ↓
-Partition (sda3)
-   ↓
-Physical Volume (PV)
-   ↓
-Volume Group (VG)
-   ↓
-Logical Volume (LV)
-   ↓
-Filesystem (ext4)
-</code></pre></div>
-<hr />
-<h2 id="1-vmware">שלב 1 – הגדלת הדיסק בצד VMware</h2>
-<p><strong>מטרה:</strong> הגדלת הדיסק הווירטואלי (VMDK).</p>
-<ol>
-<li>כבה את ה־VM. (לא חייב)</li>
-<li>Edit Settings → Hard Disk.</li>
-<li>הגדל את נפח הדיסק (לדוגמה מ־50GB ל־100GB).</li>
-<li>שמור והפעל את ה־VM.</li>
-</ol>
-<blockquote>
-<p>בשלב זה רק הדיסק גדל. לינוקס עדיין לא משתמש בנפח החדש.</p>
-</blockquote>
-<hr />
-<h2 id="2">שלב 2 – בדיקת מצב קיים בלינוקס</h2>
-<div class="highlight"><pre><span></span><code>lsblk
-</code></pre></div>
-<p>בודקים:
-- גודל הדיסק (<code>/dev/sda</code>)
-- גודל המחיצה האחרונה (<code>/dev/sda3</code>)</p>
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
-</code></pre></div>
-<p>מציג את הנפח הזמין בפועל (צפוי להישאר בגודל הישן).</p>
-<hr />
-<h2 id="3-growpart">שלב 3 – בדיקת צורך בהרחבת מחיצה (<code>growpart</code>)</h2>
-<h3 id="growpart">מצב א' – אין צורך ב־<code>growpart</code></h3>
-<div class="highlight"><pre><span></span><code>sda     100G
-└─sda3   96.9G
-</code></pre></div>
-<p><strong>פירוש:</strong>
-- הדיסק גדל
-- המחיצה כבר תופסת כמעט את כל הדיסק</p>
-<p>➡️ אין צורך להרחיב מחיצה.<br />
-ניתן לדלג לשלב 4 (<code>pvresize</code>).</p>
-<hr />
-<h3 id="growpart_1">מצב ב' – נדרש <code>growpart</code></h3>
-<div class="highlight"><pre><span></span><code>sda     100G
-└─sda3   48G
-</code></pre></div>
-<p><strong>פירוש:</strong>
-- הדיסק גדל
-- המחיצה נשארה בגודל הישן
-- קיים שטח לא מנוצל</p>
-<p>➡️ יש להרחיב את המחיצה לפני המשך עבודה.</p>
-<hr />
-<h3 id="31">3.1 התקנת הכלי (אם נדרש)</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cloud-guest-utils
-</code></pre></div>
-<p>מתקין את הכלי <code>growpart</code>.</p>
-<hr />
-<h3 id="32">3.2 הרחבת המחיצה</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>growpart<span class="w"> </span>/dev/sda<span class="w"> </span><span class="m">3</span>
-</code></pre></div>
-<p>מרחיב את המחיצה <code>/dev/sda3</code> כך שתנצל את כל הדיסק.</p>
-<p>בדיקה:
-<div class="highlight"><pre><span></span><code>lsblk
-</code></pre></div></p>
-<hr />
-<h2 id="4-physical-volume-pv">שלב 4 – הרחבת Physical Volume (PV)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pvresize<span class="w"> </span>/dev/sda3
-</code></pre></div>
-<p>מעדכן את LVM שיש יותר שטח פיזי במחיצה.</p>
-<p>בדיקה:
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pvs
-</code></pre></div></p>
-<p>עמודת <code>PFree</code> מציינת שטח פנוי ב־Volume Group.</p>
-<hr />
-<h2 id="5-logical-volume-lv">שלב 5 – הרחבת Logical Volume (LV)</h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>lvextend<span class="w"> </span>-l<span class="w"> </span>+100%FREE<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
-</code></pre></div>
-<p>מקצה את כל השטח הפנוי ב־VG ל־Logical Volume של <code>/</code>.</p>
-<p>בדיקה:
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>lvs
-</code></pre></div></p>
-<hr />
-<h2 id="6-ext4">שלב 6 – הרחבת מערכת הקבצים (ext4)</h2>
-<h3 id="_2">בדיקת סוג מערכת הקבצים</h3>
-<div class="highlight"><pre><span></span><code>lsblk<span class="w"> </span>-f
-</code></pre></div>
-<p>יש לוודא שמערכת הקבצים היא <code>ext4</code>.</p>
-<hr />
-<h3 id="_3">הרחבת מערכת הקבצים</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>resize2fs<span class="w"> </span>/dev/ubuntu-vg/ubuntu-lv
-</code></pre></div>
-<p>מרחיב את ext4 על כל נפח ה־LV החדש<br />
-(Online – ללא ריסטארט).</p>
-<hr />
-<h2 id="7">שלב 7 – אימות סופי</h2>
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h<span class="w"> </span>/
-</code></pre></div>
-<p>יש לוודא:
-- שה־<code>/</code> בגודל החדש
-- שקיים נפח פנוי בהתאם</p>
-<hr />
-<h2 id="_4">תקלות נפוצות</h2>
+<h2 id="1-key-paths">1) Key Paths</h2>
 <ul>
+<li><strong>Recordings directory (Asterisk / FreePBX default monitor path)</strong></li>
 <li>
-<p><strong>אין <code>PFree</code> אחרי <code>pvresize</code></strong><br />
-  → המחיצה לא הורחבה (בדוק שלב 3).</p>
+<p><code>/var/spool/asterisk/monitor</code></p>
 </li>
 <li>
-<p><strong><code>resize2fs</code> נכשל</strong><br />
-  → בדוק שסוג מערכת הקבצים הוא ext4<br />
-  (ב־XFS משתמשים ב־<code>xfs_growfs</code>).</p>
+<p><strong>Retention cleanup script</strong></p>
 </li>
+<li>
+<p><code>/usr/local/sbin/weekly-recordings-check.sh</code></p>
+</li>
+<li>
+<p><strong>Cleanup log</strong></p>
+</li>
+<li>
+<p><code>/var/log/recordings-weekly-check.log</code></p>
+</li>
+<li>
+<p><strong>Cleanup error log (trap on script errors)</strong></p>
+</li>
+<li>
+<p><code>/var/log/weekly-recordings-error.log</code></p>
+</li>
+<li>
+<p><strong>Root mail fallback (when local mail delivery fails)</strong></p>
+</li>
+<li><code>/root/dead.letter</code></li>
 </ul>
 <hr />
-<h2 id="_5">סיכום זרימת עבודה</h2>
-<div class="highlight"><pre><span></span><code>VMware → Disk
-Linux  → Partition (אופציונלי growpart)
-LVM    → PV → VG → LV
-FS     → ext4 resize
-</code></pre></div>
+<h2 id="2-scheduler-cron">2) Scheduler – CRON</h2>
+<h3 id="21-where-cron-jobs-are-defined-paths">2.1 Where CRON jobs are defined (paths)</h3>
+<ul>
+<li><strong>Root crontab</strong></li>
+<li><code>/var/spool/cron/crontabs/root</code></li>
+<li><strong>System-wide crontab</strong></li>
+<li><code>/etc/crontab</code></li>
+<li><strong>Cron include directories</strong></li>
+<li><code>/etc/cron.d/</code></li>
+<li><code>/etc/cron.hourly/</code></li>
+<li><code>/etc/cron.daily/</code></li>
+<li><code>/etc/cron.weekly/</code></li>
+<li><code>/etc/cron.monthly/</code></li>
+</ul>
 <hr />
-<p>מסמך זה מיועד לשימוש תפעולי שוטף<br />
-ולשילוב באתר תיעוד מבוסס Markdown / MkDocs.</p>
-</div>
+<h3 id="22-commands-to-locate-cron-configuration">2.2 Commands to locate CRON configuration</h3>
+<p>Show root CRON jobs:
+```bash
+sudo crontab -l</p>
 
 
 
