@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../vmware_to_proxmox_full_walkthrough/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../m365-licenses-guide/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>forti_gate_email_authentication_troubleshooting - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#fortigate-email-based-authentication-2fa" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
-    <a href="/." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-header__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              forti_gate_email_authentication_troubleshooting
             
           </span>
         </div>
@@ -205,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
+    <a href=".." title="Docs4IT – מדריכים, פתרונות וידע מהשטח" class="md-nav__button md-logo" aria-label="Docs4IT – מדריכים, פתרונות וידע מהשטח" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -223,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -245,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -305,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Graylog/" class="md-nav__link">
+      <a href="../Graylog/" class="md-nav__link">
         
   
   
@@ -328,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Nakivo%20Backup%20%26%20Replication/" class="md-nav__link">
+      <a href="../Nakivo%20Backup%20%26%20Replication/" class="md-nav__link">
         
   
   
@@ -351,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Exchange365%20Mail%20Relay-config/" class="md-nav__link">
+      <a href="../Exchange365%20Mail%20Relay-config/" class="md-nav__link">
         
   
   
@@ -374,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Linotp%20Install%20Ubuntu/" class="md-nav__link">
+      <a href="../Linotp%20Install%20Ubuntu/" class="md-nav__link">
         
   
   
@@ -397,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Linotp-debian12-guide/" class="md-nav__link">
+      <a href="../Linotp-debian12-guide/" class="md-nav__link">
         
   
   
@@ -420,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Pfsense%20Vpn%20Linotp/" class="md-nav__link">
+      <a href="../Pfsense%20Vpn%20Linotp/" class="md-nav__link">
         
   
   
@@ -443,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/secure-vpn-pfsense-2fa/" class="md-nav__link">
+      <a href="../secure-vpn-pfsense-2fa/" class="md-nav__link">
         
   
   
@@ -466,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ubuntu-install/" class="md-nav__link">
+      <a href="../ubuntu-install/" class="md-nav__link">
         
   
   
@@ -489,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/web-server-ubuntu/" class="md-nav__link">
+      <a href="../web-server-ubuntu/" class="md-nav__link">
         
   
   
@@ -512,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/squid-reverse-proxy/" class="md-nav__link">
+      <a href="../squid-reverse-proxy/" class="md-nav__link">
         
   
   
@@ -535,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/proxy-forward-install/" class="md-nav__link">
+      <a href="../proxy-forward-install/" class="md-nav__link">
         
   
   
@@ -558,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vmware-install/" class="md-nav__link">
+      <a href="../vmware-install/" class="md-nav__link">
         
   
   
@@ -581,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vmware-esxi-8-create-vm/" class="md-nav__link">
+      <a href="../vmware-esxi-8-create-vm/" class="md-nav__link">
         
   
   
@@ -604,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/windows-firewall-guide/" class="md-nav__link">
+      <a href="../windows-firewall-guide/" class="md-nav__link">
         
   
   
@@ -627,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Export%20Mailbox%20to%20PST%20via%20eDiscovery/" class="md-nav__link">
+      <a href="../Export%20Mailbox%20to%20PST%20via%20eDiscovery/" class="md-nav__link">
         
   
   
@@ -650,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/BitLocker_RAW_Recovery_Guide/" class="md-nav__link">
+      <a href="../BitLocker_RAW_Recovery_Guide/" class="md-nav__link">
         
   
   
@@ -673,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Proxmox_Installation/" class="md-nav__link">
+      <a href="../Proxmox_Installation/" class="md-nav__link">
         
   
   
@@ -741,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/aad-broker-troubleshooting/" class="md-nav__link">
+      <a href="../aad-broker-troubleshooting/" class="md-nav__link">
         
   
   
@@ -768,18 +777,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -795,7 +806,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -809,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Assign-MessageTrace/" class="md-nav__link">
+      <a href="../Assign-MessageTrace/" class="md-nav__link">
         
   
   
@@ -832,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/forti_gate_sd_wan_failover_configuration/" class="md-nav__link">
+      <a href="../forti_gate_sd_wan_failover_configuration/" class="md-nav__link">
         
   
   
@@ -855,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vmware_to_proxmox_full_walkthrough/" class="md-nav__link">
+      <a href="../vmware_to_proxmox_full_walkthrough/" class="md-nav__link">
         
   
   
@@ -875,10 +886,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/forti_gate_email_authentication_troubleshooting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    forti_gate_email_authentication_troubleshooting
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -889,6 +922,254 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מטרת הבדיקות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Debug אפליקטיבי של מנגנון שליחת מייל (הבדיקה החשובה ביותר)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Debug אפליקטיבי של מנגנון שליחת מייל (הבדיקה החשובה ביותר)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      פקודות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמאות לפלט
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      מסקנה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      עצירת Debug (חובה בסיום)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-test-mail" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. בדיקת שליחה יזומה של מייל (Test Mail)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. בדיקת שליחה יזומה של מייל (Test Mail)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fortios" class="md-nav__link">
+    <span class="md-ellipsis">
+      פקודות (תלויות גרסת FortiOS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימוש
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sniffer-smtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Sniffer – בדיקת תעבורת SMTP ברמת רשת
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Sniffer – בדיקת תעבורת SMTP ברמת רשת">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      פקודה כללית
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      חשוב לדעת
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sniffer-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Sniffer ממוקד לפי WAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sniffer ממוקד לפי WAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימוש
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-session-smtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. בדיקת Session פעיל של SMTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. בדיקת Session פעיל של SMTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. שילוב בדיקות – אבחון מלא
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-2fa" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. דגשים חשובים לאימות במייל (2FA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -901,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/m365-licenses-guide/" class="md-nav__link">
+      <a href="../m365-licenses-guide/" class="md-nav__link">
         
   
   
@@ -924,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Exchange365%20Mail%20Relay/" class="md-nav__link">
+      <a href="../Exchange365%20Mail%20Relay/" class="md-nav__link">
         
   
   
@@ -947,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/sysinternals-tools/" class="md-nav__link">
+      <a href="../sysinternals-tools/" class="md-nav__link">
         
   
   
@@ -970,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/wireshark-guide/" class="md-nav__link">
+      <a href="../wireshark-guide/" class="md-nav__link">
         
   
   
@@ -993,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vmware-explained/" class="md-nav__link">
+      <a href="../vmware-explained/" class="md-nav__link">
         
   
   
@@ -1016,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/linux-explained/" class="md-nav__link">
+      <a href="../linux-explained/" class="md-nav__link">
         
   
   
@@ -1039,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/squid-explained/" class="md-nav__link">
+      <a href="../squid-explained/" class="md-nav__link">
         
   
   
@@ -1062,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/web-server-explained/" class="md-nav__link">
+      <a href="../web-server-explained/" class="md-nav__link">
         
   
   
@@ -1085,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ubuntu-explained/" class="md-nav__link">
+      <a href="../ubuntu-explained/" class="md-nav__link">
         
   
   
@@ -1108,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/proxy-forward-explained/" class="md-nav__link">
+      <a href="../proxy-forward-explained/" class="md-nav__link">
         
   
   
@@ -1131,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/vim-guide/" class="md-nav__link">
+      <a href="../vim-guide/" class="md-nav__link">
         
   
   
@@ -1154,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/nano-guide/" class="md-nav__link">
+      <a href="../nano-guide/" class="md-nav__link">
         
   
   
@@ -1177,7 +1458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/proxmox_backup/" class="md-nav__link">
+      <a href="../proxmox_backup/" class="md-nav__link">
         
   
   
@@ -1200,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/proxmox_vs_vmware/" class="md-nav__link">
+      <a href="../proxmox_vs_vmware/" class="md-nav__link">
         
   
   
@@ -1223,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/migration_backup_guide/" class="md-nav__link">
+      <a href="../migration_backup_guide/" class="md-nav__link">
         
   
   
@@ -1246,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fortigate_upgrade_plan/" class="md-nav__link">
+      <a href="../fortigate_upgrade_plan/" class="md-nav__link">
         
   
   
@@ -1269,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/powershell-remoting/" class="md-nav__link">
+      <a href="../powershell-remoting/" class="md-nav__link">
         
   
   
@@ -1292,7 +1573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/PBX_scripts/" class="md-nav__link">
+      <a href="../PBX_scripts/" class="md-nav__link">
         
   
   
@@ -1315,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Powershell_Remoting_Command_reference/" class="md-nav__link">
+      <a href="../Powershell_Remoting_Command_reference/" class="md-nav__link">
         
   
   
@@ -1338,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ubuntu_disk_expand_guide/" class="md-nav__link">
+      <a href="../ubuntu_disk_expand_guide/" class="md-nav__link">
         
   
   
@@ -1361,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/SMTP%20Hardening%20in%20the%20Organization/" class="md-nav__link">
+      <a href="../SMTP%20Hardening%20in%20the%20Organization/" class="md-nav__link">
         
   
   
@@ -1429,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/VBAexcel-macro/" class="md-nav__link">
+      <a href="../VBAexcel-macro/" class="md-nav__link">
         
   
   
@@ -1452,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/iperf%20bandwidth%20guid/" class="md-nav__link">
+      <a href="../iperf%20bandwidth%20guid/" class="md-nav__link">
         
   
   
@@ -1475,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Exchangeonline%20Script%20Guid/" class="md-nav__link">
+      <a href="../Exchangeonline%20Script%20Guid/" class="md-nav__link">
         
   
   
@@ -1498,7 +1779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/it-scripts/" class="md-nav__link">
+      <a href="../it-scripts/" class="md-nav__link">
         
   
   
@@ -1521,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/windows-maintenance/" class="md-nav__link">
+      <a href="../windows-maintenance/" class="md-nav__link">
         
   
   
@@ -1544,7 +1825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/WPA_Boot_Analysis_Guide/" class="md-nav__link">
+      <a href="../WPA_Boot_Analysis_Guide/" class="md-nav__link">
         
   
   
@@ -1567,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/NK2_to_Outlook_Contacts/" class="md-nav__link">
+      <a href="../NK2_to_Outlook_Contacts/" class="md-nav__link">
         
   
   
@@ -1590,7 +1871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/portable-tools/" class="md-nav__link">
+      <a href="../portable-tools/" class="md-nav__link">
         
   
   
@@ -1630,6 +1911,244 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מטרת הבדיקות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Debug אפליקטיבי של מנגנון שליחת מייל (הבדיקה החשובה ביותר)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Debug אפליקטיבי של מנגנון שליחת מייל (הבדיקה החשובה ביותר)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      פקודות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמאות לפלט
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      מסקנה
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      עצירת Debug (חובה בסיום)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-test-mail" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. בדיקת שליחה יזומה של מייל (Test Mail)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. בדיקת שליחה יזומה של מייל (Test Mail)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fortios" class="md-nav__link">
+    <span class="md-ellipsis">
+      פקודות (תלויות גרסת FortiOS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימוש
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sniffer-smtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Sniffer – בדיקת תעבורת SMTP ברמת רשת
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Sniffer – בדיקת תעבורת SMTP ברמת רשת">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      פקודה כללית
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      חשוב לדעת
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sniffer-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Sniffer ממוקד לפי WAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sniffer ממוקד לפי WAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימוש
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-session-smtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. בדיקת Session פעיל של SMTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. בדיקת Session פעיל של SMTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה בודק
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. שילוב בדיקות – אבחון מלא
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-2fa" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. דגשים חשובים לאימות במייל (2FA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1641,8 +2160,168 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="fortigate-email-based-authentication-2fa">FortiGate – פקודות בדיקה ואבחון של אימות במייל (Email-based Authentication / 2FA)</h1>
+<p>מדריך זה מרכז <strong>פקודות CLI חיוניות ב-FortiGate</strong> לבדיקת שליחת מיילי אימות (2FA, Alerts),
+כולל <strong>הסבר קצר וברור לכל פקודה</strong>, ומה ניתן להסיק מהפלט.</p>
+<p>המדריך מתאים לשימוש תפעולי, Troubleshooting בזמן אמת, ותיעוד באתר ידע.</p>
+<hr />
+<h2 id="_1">מטרת הבדיקות</h2>
+<ul>
+<li>להבין האם FortiGate <strong>ניסה לשלוח מייל אימות</strong></li>
+<li>לדעת האם השליחה <strong>הצליחה או נכשלה</strong></li>
+<li>לזהות האם הבעיה בפורטיגייט או בצד שרת המייל</li>
+<li>לבדוק מאיזה WAN יצאה תעבורת ה-SMTP</li>
+</ul>
+<hr />
+<h2 id="1-debug">1. Debug אפליקטיבי של מנגנון שליחת מייל (הבדיקה החשובה ביותר)</h2>
+<h3 id="_2">פקודות</h3>
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span>debug<span class="w"> </span>application<span class="w"> </span>alertmail<span class="w"> </span>-1
+diagnose<span class="w"> </span>debug<span class="w"> </span><span class="nb">enable</span>
+</code></pre></div>
+<h3 id="_3">מה זה בודק</h3>
+<ul>
+<li>לוגיקה פנימית של FortiGate לשליחת מייל</li>
+<li>ניסיון חיבור לשרת SMTP</li>
+<li>הצלחה / כשל ב־TLS, Authentication ושליחה</li>
+</ul>
+<h3 id="_4">דוגמאות לפלט</h3>
+<p>פלט תקין:
+<div class="highlight"><pre><span></span><code>alertmail: connecting to smtp.office365.com:587
+alertmail: authentication success
+alertmail: mail sent successfully
+</code></pre></div></p>
+<p>פלט שגיאה:
+<div class="highlight"><pre><span></span><code>alertmail: smtp connect failed
+alertmail: tls handshake failed
+alertmail: authentication failed
+</code></pre></div></p>
+<h3 id="_5">מסקנה</h3>
+<ul>
+<li>אם מופיע <code>mail sent successfully</code> → המייל נשלח מהפורטיגייט</li>
+<li>שגיאה → בעיה בהגדרות SMTP או בקישוריות</li>
+</ul>
+<hr />
+<h3 id="debug">עצירת Debug (חובה בסיום)</h3>
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span>debug<span class="w"> </span>disable
+diagnose<span class="w"> </span>debug<span class="w"> </span>reset
+</code></pre></div>
+<hr />
+<h2 id="2-test-mail">2. בדיקת שליחה יזומה של מייל (Test Mail)</h2>
+<h3 id="fortios">פקודות (תלויות גרסת FortiOS)</h3>
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span><span class="nb">test</span><span class="w"> </span>application<span class="w"> </span>alertmail<span class="w"> </span><span class="m">1</span>
+diagnose<span class="w"> </span><span class="nb">test</span><span class="w"> </span>application<span class="w"> </span>alertmail<span class="w"> </span><span class="m">2</span>
+</code></pre></div>
+<h3 id="_6">מה זה בודק</h3>
+<ul>
+<li>בדיקה יזומה של חיבור ושליחת מייל</li>
+<li>לא תלוי ב-2FA או התחברות משתמש</li>
+</ul>
+<h3 id="_7">שימוש</h3>
+<p>מתאים לווידוא ראשוני שהגדרות SMTP תקינות.</p>
+<hr />
+<h2 id="3-sniffer-smtp">3. Sniffer – בדיקת תעבורת SMTP ברמת רשת</h2>
+<h3 id="_8">פקודה כללית</h3>
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span>sniffer<span class="w"> </span>packet<span class="w"> </span>any<span class="w"> </span><span class="s2">&quot;port 25 or port 465 or port 587&quot;</span><span class="w"> </span><span class="m">4</span>
+</code></pre></div>
+<h3 id="_9">מה זה בודק</h3>
+<ul>
+<li>האם יוצאת תעבורת SMTP</li>
+<li>דרך איזה WAN</li>
+<li>האם יש תגובה משרת היעד</li>
+</ul>
+<h3 id="_10">חשוב לדעת</h3>
+<ul>
+<li>לא רואים תוכן מייל (TLS)</li>
+<li>זו בדיקת תעבורה בלבד, לא Payload</li>
+</ul>
+<hr />
+<h2 id="4-sniffer-wan">4. Sniffer ממוקד לפי WAN</h2>
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span>sniffer<span class="w"> </span>packet<span class="w"> </span>wan1<span class="w"> </span><span class="s2">&quot;port 587&quot;</span><span class="w"> </span><span class="m">4</span>
+diagnose<span class="w"> </span>sniffer<span class="w"> </span>packet<span class="w"> </span>wan2<span class="w"> </span><span class="s2">&quot;port 587&quot;</span><span class="w"> </span><span class="m">4</span>
+</code></pre></div>
+<h3 id="_11">שימוש</h3>
+<ul>
+<li>אימות מאיזה קו אינטרנט נשלח המייל</li>
+<li>שימושי במיוחד בסביבת SD-WAN</li>
+</ul>
+<hr />
+<h2 id="5-session-smtp">5. בדיקת Session פעיל של SMTP</h2>
+<div class="highlight"><pre><span></span><code>diagnose<span class="w"> </span>sys<span class="w"> </span>session<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">587</span>
+</code></pre></div>
+<h3 id="_12">מה זה בודק</h3>
+<ul>
+<li>האם קיים Session פתוח לשרת SMTP</li>
+<li>דרך איזה Interface</li>
+</ul>
+<hr />
+<h2 id="6">6. שילוב בדיקות – אבחון מלא</h2>
+<table>
+<thead>
+<tr>
+<th>מצב</th>
+<th>מה רואים</th>
+<th>מסקנה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debug מראה mail sent</td>
+<td>אין מייל</td>
+<td>בעיה בצד המקבל</td>
+</tr>
+<tr>
+<td>Debug מראה שגיאה</td>
+<td>אין שליחה</td>
+<td>בעיה ב-SMTP</td>
+</tr>
+<tr>
+<td>Sniffer רואה תעבורה</td>
+<td>Debug שקט</td>
+<td>בעיה אפליקטיבית</td>
+</tr>
+<tr>
+<td>אין Sniffer ואין Debug</td>
+<td>אין ניסיון שליחה</td>
+<td>2FA לא הופעל</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-2fa">7. דגשים חשובים לאימות במייל (2FA)</h2>
+<ul>
+<li>FortiGate לא שולח מייל כפול לאותו אירוע</li>
+<li>ניסיון התחברות חוזר מבטל קוד קודם</li>
+<li>מומלץ Timeout של 60 שניות ומעלה</li>
+<li>חובה לבדוק Spam / Quarantine בצד המקבל</li>
+</ul>
+<hr />
+<h2 id="_13">סיכום</h2>
+<ul>
+<li>הבדיקה המרכזית: <code>diagnose debug application alertmail</code></li>
+<li>Sniffer משמש לאימות רשת בלבד</li>
+<li>Debug אינו Sniffing ואינו פוגע בפרטיות</li>
+<li>שילוב Debug + Sniffer נותן תמונת מצב מלאה</li>
+</ul>
+<hr />
+<p>✔ מדריך זה מומלץ לשימוש כ-Runbook תפעולי
+✔ מתאים לשילוב באתר תיעוד (Markdown)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1678,12 +2357,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="/js/goatcounter.js"></script>
+        <script src="../js/goatcounter.js"></script>
       
     
   </body>
