@@ -1791,9 +1791,6 @@ performance in NAKIVO Backup &amp; Replication environments.</p>
 <p>echo | openssl s_client -connect <code>&lt;IP&gt;</code>{=html}:9446 -showcerts
 2&gt;/dev/null | openssl x509 -noout -fingerprint -sha256</p>
 <hr />
-<h2 id="test-additional-transporter-data-ports">Test Additional Transporter Data Ports</h2>
-<p>nc -vz <code>&lt;IP&gt;</code>{=html} 9448</p>
-<hr />
 <h1 id="2-network-packet-capture">🌐 2. Network Packet Capture</h1>
 <h2 id="capture-traffic-tcpdump">Capture Traffic (TCPDump)</h2>
 <p>tcpdump -i any host <code>&lt;IP&gt;</code>{=html} and port 9446 -w nakivo_capture.pcap</p>
@@ -1823,13 +1820,26 @@ performance in NAKIVO Backup &amp; Replication environments.</p>
 <h2 id="search-transporter-connectivity-errors">Search Transporter Connectivity Errors</h2>
 <p>grep -Ei "transporter|connection|timeout|reset" controller.log</p>
 <hr />
-<h1 id="4-certificate-security-troubleshooting">🔐 4. Certificate &amp; Security Troubleshooting</h1>
-<h2 id="check-transporter-security-folder">Check Transporter Security Folder</h2>
-<p>ls -l userdata/security</p>
+<h1 id="4-transporter-certificate-service-troubleshooting">🔐 4. Transporter Certificate &amp; Service Troubleshooting</h1>
+<h2 id="navigate-to-transporter-directory">Navigate to Transporter Directory</h2>
+<p>cd /share/CACHEDEV1_DATA/.qpkg/NBR cd transporter/ ls</p>
 <hr />
-<h2 id="reset-transporter-certificate-advanced">Reset Transporter Certificate (Advanced)</h2>
-<p>service transporter stop mv userdata/security
-userdata/security.bak_\$(date +%F) service transporter start</p>
+<h2 id="view-current-transporter-certificate">View Current Transporter Certificate</h2>
+<p>openssl x509 -in certificate.pem -noout -text</p>
+<hr />
+<h2 id="check-transporter-services-status">Check Transporter Services Status</h2>
+<p>./nkv-bhtest status ./nkv-bhsvc status</p>
+<hr />
+<h2 id="stop-transporter-service">Stop Transporter Service</h2>
+<p>./nkv-bhsvc stop</p>
+<hr />
+<h2 id="remove-transporter-certificate-force-regeneration">Remove Transporter Certificate (Force Regeneration)</h2>
+<p>⚠️ This will force Transporter to generate a new certificate and may
+require re-registration in Director.</p>
+<p>rm certificate.pem</p>
+<hr />
+<h2 id="start-transporter-service">Start Transporter Service</h2>
+<p>./nkv-bhsvc start</p>
 <hr />
 <h1 id="5-service-management">⚙️ 5. Service Management</h1>
 <h2 id="restart-nakivo-director">Restart NAKIVO Director</h2>
