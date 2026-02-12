@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../NK2_to_Outlook_Contacts/">
+        <link rel="prev" href="../Assign-MessageTrace/">
       
+      
+        <link rel="next" href="../Mark%20of%20the%20Web/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>כלים ניידים ושימושיים - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>forti_gate_ipsec_nat_overlap_solution - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#it" class="md-skip">
+        <a href="#overlap-ipsec-remote-access-nat-fortigate" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              כלים ניידים ושימושיים
+              forti_gate_ipsec_nat_overlap_solution
             
           </span>
         </div>
@@ -798,18 +800,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -825,7 +829,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -859,10 +863,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../forti_gate_ipsec_nat_overlap_solution/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    forti_gate_ipsec_nat_overlap_solution
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -873,6 +899,167 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מטרה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      עיקרון עבודה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1 – בחירת רשת וירטואלית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-address-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2 – Address Objects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 2 – Address Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      רשת פנימית אמיתית
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      רשת וירטואלית ל־IPsec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipsec_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      טווח לקוחות IPsec
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-virtual-ip-dnat" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 3 – יצירת Virtual IP (DNAT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-policy-ipsec-lan-dnat" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 4 – Policy: IPsec → LAN (DNAT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-policy-lan-ipsec" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 5 – Policy חזרה: LAN → IPsec
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-split-tunnel-ipsec-mode-cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6 – Split Tunnel ב־IPsec (Mode-CFG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 7 – DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 8 – בדיקות בצד הלקוח
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      תוצאה סופית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      הערות
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1487,20 +1674,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1516,7 +1701,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             סקריפטים כלים ופקודות
@@ -1688,32 +1873,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    כלים ניידים ושימושיים
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../portable-tools/" class="md-nav__link">
         
   
   
@@ -1724,194 +1887,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 כלים כלליים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧰 כלים כלליים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nirsoft-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 NirSoft Utilities
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sysinternals-suite" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Sysinternals Suite
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🖥️ מידע על מערכת
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🖥️ מידע על מערכת">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cpu-z" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 CPU-Z
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hwinfo" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 HWiNFO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#speccy-piriform" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Speccy (של Piriform)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 תחזוקה ושימושיות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📦 תחזוקה ושימושיות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rufus" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Rufus
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#everything" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Everything
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns-sysinternals" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Autoruns (מתוך Sysinternals)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌐 רשת וניטור
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🌐 רשת וניטור">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wireshark" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Wireshark
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-ip-scanner" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Advanced IP Scanner
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#putty" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 PuTTY
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 הערות
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1953,68 +1928,62 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 כלים כלליים
+      מטרה
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🧰 כלים כלליים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nirsoft-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 NirSoft Utilities
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sysinternals-suite" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Sysinternals Suite
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      🖥️ מידע על מערכת
+      עיקרון עבודה
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🖥️ מידע על מערכת">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 1 – בחירת רשת וירטואלית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-address-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 2 – Address Objects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="שלב 2 – Address Objects">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cpu-z" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 CPU-Z
+      רשת פנימית אמיתית
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hwinfo" class="md-nav__link">
+  <a href="#ipsec" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 HWiNFO
+      רשת וירטואלית ל־IPsec
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#speccy-piriform" class="md-nav__link">
+  <a href="#ipsec_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Speccy (של Piriform)
+      טווח לקוחות IPsec
     </span>
   </a>
   
@@ -2026,93 +1995,72 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#3-virtual-ip-dnat" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 תחזוקה ושימושיות
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📦 תחזוקה ושימושיות">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rufus" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Rufus
+      שלב 3 – יצירת Virtual IP (DNAT)
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#everything" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#4-policy-ipsec-lan-dnat" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Everything
+      שלב 4 – Policy: IPsec → LAN (DNAT)
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#autoruns-sysinternals" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#5-policy-lan-ipsec" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Autoruns (מתוך Sysinternals)
+      שלב 5 – Policy חזרה: LAN → IPsec
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#6-split-tunnel-ipsec-mode-cfg" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 6 – Split Tunnel ב־IPsec (Mode-CFG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 7 – DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      שלב 8 – בדיקות בצד הלקוח
+    </span>
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      🌐 רשת וניטור
+      תוצאה סופית
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🌐 רשת וניטור">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wireshark" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Wireshark
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-ip-scanner" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Advanced IP Scanner
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#putty" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 PuTTY
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 הערות
+      הערות
     </span>
   </a>
   
@@ -2134,55 +2082,116 @@
 
 
 
-<h1 id="it">💡 שימושיות וכלים ניידים לטכנאי IT</h1>
-<p>אוסף כלים ניידים (Portable) שמומלץ לכל איש IT להחזיק על דיסק און קי, תיקיית רשת או תחנה אישית – לפתרון תקלות, אבחון מהיר וניטור.</p>
+<h1 id="overlap-ipsec-remote-access-nat-fortigate">פתרון Overlap ב־IPsec Remote Access באמצעות NAT (FortiGate)</h1>
+<blockquote>
+<p>מסמך זה כתוב <strong>מימין לשמאל</strong> ומיועד לייבוא / שימוש כקובץ Markdown.</p>
+</blockquote>
 <hr />
-<h2 id="_1">🧰 כלים כלליים</h2>
-<h3 id="nirsoft-utilities">🔹 NirSoft Utilities</h3>
-<p>אוסף של מאות כלים קטנים – סיסמאות שמורות, פעילות רשת, תוכנות באתחול ועוד<br />
-🔗 <a href="https://www.nirsoft.net">https://www.nirsoft.net</a></p>
-<h3 id="sysinternals-suite">🔹 Sysinternals Suite</h3>
-<p>כלים של Microsoft לניטור, פתרון תקלות והרצת פקודות מתקדמות<br />
-🔗 <a href="https://learn.microsoft.com/en-us/sysinternals/">https://learn.microsoft.com/en-us/sysinternals/</a></p>
+<h2 id="_1">מטרה</h2>
+<p>לאפשר חיבור <strong>IPsec Remote Access</strong> גם כאשר:
+- רשת הבית של המשתמש: <code>192.168.1.0/24</code>
+- הרשת הארגונית: <code>192.168.1.0/24</code></p>
+<p>זאת באמצעות <strong>עטיפת הרשת הארגונית (NAT)</strong> לרשת וירטואלית שונה, ללא שינוי בפועל של השרתים.</p>
+<p>בדוגמה זו:
+- הרשת הווירטואלית שתוצג ללקוח: <code>10.99.0.0/24</code></p>
 <hr />
-<h2 id="_2">🖥️ מידע על מערכת</h2>
-<h3 id="cpu-z">🔹 CPU-Z</h3>
-<p>מידע על המעבד, לוח אם, זיכרון וכו'<br />
-🔗 <a href="https://www.cpuid.com/softwares/cpu-z.html">https://www.cpuid.com/softwares/cpu-z.html</a></p>
-<h3 id="hwinfo">🔹 HWiNFO</h3>
-<p>מידע מדויק על כל רכיבי החומרה כולל טמפ' בזמן אמת<br />
-🔗 <a href="https://www.hwinfo.com/">https://www.hwinfo.com/</a></p>
-<h3 id="speccy-piriform">🔹 Speccy (של Piriform)</h3>
-<p>סקירה גרפית ונוחה של פרטי המחשב<br />
-🔗 <a href="https://www.ccleaner.com/speccy">https://www.ccleaner.com/speccy</a></p>
-<hr />
-<h2 id="_3">📦 תחזוקה ושימושיות</h2>
-<h3 id="rufus">🔹 Rufus</h3>
-<p>יצירת דיסק USB אתחול להתקנת Windows/Linux<br />
-🔗 <a href="https://rufus.ie">https://rufus.ie</a></p>
-<h3 id="everything">🔹 Everything</h3>
-<p>מנוע חיפוש מהיר במיוחד על המחשב – לפי שם קובץ<br />
-🔗 <a href="https://www.voidtools.com/">https://www.voidtools.com/</a></p>
-<h3 id="autoruns-sysinternals">🔹 Autoruns (מתוך Sysinternals)</h3>
-<p>ניהול אתחול ומעקב אחרי תוכנות שמופעלות ברקע<br />
-🔗 <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns">https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns</a></p>
-<hr />
-<h2 id="_4">🌐 רשת וניטור</h2>
-<h3 id="wireshark">🔹 Wireshark</h3>
-<p>ניתוח תעבורת רשת (Sniffer)<br />
-🔗 <a href="https://www.wireshark.org/">https://www.wireshark.org/</a></p>
-<h3 id="advanced-ip-scanner">🔹 Advanced IP Scanner</h3>
-<p>סריקה מהירה של מחשבים ברשת<br />
-🔗 <a href="https://www.advanced-ip-scanner.com/">https://www.advanced-ip-scanner.com/</a></p>
-<h3 id="putty">🔹 PuTTY</h3>
-<p>חיבור SSH, Telnet, Serial – חובה לאנשי לינוקס/נתבים<br />
-🔗 <a href="https://www.putty.org/">https://www.putty.org/</a></p>
-<hr />
-<h2 id="_5">🧩 הערות</h2>
+<h2 id="_2">עיקרון עבודה</h2>
 <ul>
-<li>מרבית הכלים ניידים – אין צורך בהתקנה</li>
-<li>מומלץ לעדכן את התיקייה כל כמה חודשים</li>
-<li>חלק מהכלים דורשים הרצה כ־Administrator</li>
+<li>הלקוח <strong>לא יראה</strong> את <code>192.168.1.0/24</code></li>
+<li>כל גישה ל־<code>10.99.0.x</code> תתורגם פנימית ל־<code>192.168.1.x</code></li>
+<li>כך נמנעת חפיפת רשתות (overlap)</li>
+</ul>
+<hr />
+<h2 id="1">שלב 1 – בחירת רשת וירטואלית</h2>
+<p>בחר רשת שאינה קיימת בשום מקום אחר:</p>
+<div class="highlight"><pre><span></span><code>10.99.0.0/24
+</code></pre></div>
+<hr />
+<h2 id="2-address-objects">שלב 2 – Address Objects</h2>
+<h3 id="_3">רשת פנימית אמיתית</h3>
+<div class="highlight"><pre><span></span><code>Name: LAN_REAL
+Subnet: 192.168.1.0/24
+</code></pre></div>
+<h3 id="ipsec">רשת וירטואלית ל־IPsec</h3>
+<div class="highlight"><pre><span></span><code>Name: LAN_NAT_IPSEC
+Subnet: 10.99.0.0/24
+</code></pre></div>
+<h3 id="ipsec_1">טווח לקוחות IPsec</h3>
+<div class="highlight"><pre><span></span><code>Name: IPSEC_CLIENTS
+Subnet: 172.16.120.0/24
+</code></pre></div>
+<hr />
+<h2 id="3-virtual-ip-dnat">שלב 3 – יצירת Virtual IP (DNAT)</h2>
+<p><strong>Policy &amp; Objects → Virtual IPs</strong></p>
+<div class="highlight"><pre><span></span><code>Name: VIP_IPSEC_LAN
+External IP range: 10.99.0.1 - 10.99.0.254
+Mapped IP range:   192.168.1.1 - 192.168.1.254
+Interface: IPsec_Interface
+</code></pre></div>
+<p>משמעות:
+- פנייה ל־<code>10.99.0.x</code> → מנותבת ל־<code>192.168.1.x</code></p>
+<hr />
+<h2 id="4-policy-ipsec-lan-dnat">שלב 4 – Policy: IPsec → LAN (DNAT)</h2>
+<div class="highlight"><pre><span></span><code>Incoming Interface: IPsec_Interface
+Outgoing Interface: LAN
+Source: IPSEC_CLIENTS
+Destination: VIP_IPSEC_LAN
+Service: ALL
+NAT: Disabled
+</code></pre></div>
+<hr />
+<h2 id="5-policy-lan-ipsec">שלב 5 – Policy חזרה: LAN → IPsec</h2>
+<div class="highlight"><pre><span></span><code>Incoming Interface: LAN
+Outgoing Interface: IPsec_Interface
+Source: LAN_REAL
+Destination: IPSEC_CLIENTS
+Service: ALL
+NAT: Disabled
+</code></pre></div>
+<hr />
+<h2 id="6-split-tunnel-ipsec-mode-cfg">שלב 6 – Split Tunnel ב־IPsec (Mode-CFG)</h2>
+<p>ב־Phase1 → Mode-CFG:</p>
+<ul>
+<li>Enable Split Tunnel: <strong>Enabled</strong></li>
+<li>Internal Networks:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>10.99.0.0/24
+</code></pre></div>
+<p>❌ אין לפרסם <code>192.168.1.0/24</code></p>
+<hr />
+<h2 id="7-dns">שלב 7 – DNS</h2>
+<p>יש להגדיר DNS <strong>שאינו</strong> מהרשת החופפת:</p>
+<p>דוגמה:
+<div class="highlight"><pre><span></span><code>10.99.0.10
+</code></pre></div>
+או DNS חיצוני עם records מתאימים.</p>
+<p>❌ אין להשתמש ב־<code>192.168.1.200</code></p>
+<hr />
+<h2 id="8">שלב 8 – בדיקות בצד הלקוח</h2>
+<p>לאחר התחברות ל־IPsec:</p>
+<div class="highlight"><pre><span></span><code>route print
+</code></pre></div>
+<p>אמור להופיע:
+<div class="highlight"><pre><span></span><code>10.99.0.0    255.255.255.0    via IPsec
+</code></pre></div></p>
+<p>בדיקת גישה:
+<div class="highlight"><pre><span></span><code>ping 10.99.0.50
+</code></pre></div>
+(בפועל יגיע ל־<code>192.168.1.50</code>)</p>
+<hr />
+<h2 id="_4">תוצאה סופית</h2>
+<ul>
+<li>אין חפיפת רשתות</li>
+<li>האינטרנט עובד כרגיל</li>
+<li>IPsec עובד מכל רשת ביתית</li>
+<li>אין שינוי ברשת הבית</li>
+<li>אין שינוי בשרתים הארגוניים</li>
+</ul>
+<hr />
+<h2 id="_5">הערות</h2>
+<ul>
+<li>הפתרון מתאים גם ל־SSL-VPN באותה מתודולוגיה</li>
+<li>מומלץ לתעד את הרשת הווירטואלית ולהימנע משימוש בה בשום מקום אחר</li>
 </ul>
 
 
