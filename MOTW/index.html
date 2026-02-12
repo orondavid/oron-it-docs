@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../forti_gate_email_authentication_troubleshooting/">
+        <link rel="prev" href="../Assign-MessageTrace/">
       
       
-        <link rel="next" href="../Exchange365%20Mail%20Relay/">
+        <link rel="next" href="../PBX-RETENTION-SCRIPT/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Microsoft 365 Licensing Guide - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>MOTW - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#microsoft-365-office-365" class="md-skip">
+        <a href="#preview-windows" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Microsoft 365 Licensing Guide
+              MOTW
             
           </span>
         </div>
@@ -863,10 +863,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../MOTW/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MOTW
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -877,6 +899,188 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מושגי יסוד (בקצרה)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      עיקרון מפתח (חשוב)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-motw" class="md-nav__link">
+    <span class="md-ellipsis">
+      פתרון 1 (מומלץ): השארת MOTW פעיל + ניקוי נקודתי
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פתרון 1 (מומלץ): השארת MOTW פעיל + ניקוי נקודתי">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      למה זה טוב?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motw-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניקוי MOTW לקבצים קיימים (PowerShell)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motw" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקה אם לקובץ יש MOTW
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      פתרון 2: מניעת סימון קבצים כ"מוגנים" (גלובלי)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פתרון 2: מניעת סימון קבצים כ&#34;מוגנים&#34; (גלובלי)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpo-local-gpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרך GPO (דומיין או Local GPO)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      מה זה עושה?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרג'יסטרי שנכתב בפועל
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-office-gpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      פתרון 3: שליטה בפתיחת קבצים ב-Office (כמו ב-GPO שהוצג)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פתרון 3: שליטה בפתיחת קבצים ב-Office (כמו ב-GPO שהוצג)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#office" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמאות למדיניות Office
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adobe-acrobat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adobe Acrobat – הבהרה חשובה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      השוואת פתרונות (סיכום)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      המלצה מקצועית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקות מהירות
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -978,32 +1182,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Microsoft 365 Licensing Guide
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../m365-licenses-guide/" class="md-nav__link">
         
   
   
@@ -1014,71 +1196,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      הקדמה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      טבלת השוואת רישיונות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסבר עמודות הטבלה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      הערות חשובות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      קישורים שימושיים
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1809,7 +1926,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      הקדמה
+      מושגי יסוד (בקצרה)
     </span>
   </a>
   
@@ -1818,34 +1935,151 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      טבלת השוואת רישיונות
+      עיקרון מפתח (חשוב)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#1-motw" class="md-nav__link">
+    <span class="md-ellipsis">
+      פתרון 1 (מומלץ): השארת MOTW פעיל + ניקוי נקודתי
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פתרון 1 (מומלץ): השארת MOTW פעיל + ניקוי נקודתי">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      הסבר עמודות הטבלה
+      למה זה טוב?
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#motw-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניקוי MOTW לקבצים קיימים (PowerShell)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motw" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקה אם לקובץ יש MOTW
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      פתרון 2: מניעת סימון קבצים כ"מוגנים" (גלובלי)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פתרון 2: מניעת סימון קבצים כ&#34;מוגנים&#34; (גלובלי)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpo-local-gpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      דרך GPO (דומיין או Local GPO)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      הערות חשובות
+      מה זה עושה?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      הרג'יסטרי שנכתב בפועל
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-office-gpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      פתרון 3: שליטה בפתיחת קבצים ב-Office (כמו ב-GPO שהוצג)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="פתרון 3: שליטה בפתיחת קבצים ב-Office (כמו ב-GPO שהוצג)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#office" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמאות למדיניות Office
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adobe-acrobat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adobe Acrobat – הבהרה חשובה
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      קישורים שימושיים
+      השוואת פתרונות (סיכום)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      המלצה מקצועית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקות מהירות
     </span>
   </a>
   
@@ -1867,169 +2101,153 @@
 
 
 
-<h1 id="microsoft-365-office-365">מדריך רישיונות Microsoft 365 ו־Office 365 לעסקים</h1>
-<h2 id="_1">הקדמה</h2>
-<p>בחירת רישיון נכון ב־Microsoft 365 (או Office 365) היא החלטה חשובה לכל ארגון. לכל רישיון יש שילוב ייחודי של שירותים – תיבת דואר (Exchange), תוכנות אופיס להתקנה (Word, Excel, וכו’), שירותי ענן (OneDrive, Teams, SharePoint) ורכיבי אבטחה.<br />
-המדריך מרכז את כל סוגי הרישיונות המרכזיים וההבדלים ביניהם בטבלה ברורה.</p>
+<!-- RTL -->
+
+<h1 id="preview-windows">מניעת בעיות תצוגה מוקדמת (Preview) ופתיחת קבצים מוגנים ב-Windows</h1>
+<p>מדריך זה מסביר <strong>כיצד להימנע מבעיות Preview ב-File Explorer</strong> וכיצד <strong>לשלוט בפתיחת קבצים שמוגדרים כמוגנים (Mark of the Web – MOTW)</strong>, באמצעות <strong>Registry</strong> או <strong>Group Policy (GPO)</strong>, כולל הקשר להגדרות Office/Adobe.</p>
 <hr />
-<h2 id="_2">טבלת השוואת רישיונות</h2>
+<h2 id="_1">מושגי יסוד (בקצרה)</h2>
+<ul>
+<li><strong>MOTW – Mark of the Web</strong>: סימון ש-Windows מוסיף לקבצים שהגיעו מהאינטרנט/מייל. הסימון חוסם Preview ולעיתים פתיחה חלקה.</li>
+<li><strong>Attachment Manager</strong>: מנגנון Windows שמנהל את ה-MOTW.</li>
+<li><strong>Trusted Locations (Office / Adobe)</strong>: משפיע <em>רק</em> על האפליקציה עצמה — <strong>לא</strong> על Explorer Preview.</li>
+</ul>
+<hr />
+<h2 id="_2">עיקרון מפתח (חשוב)</h2>
+<blockquote>
+<p><strong>Explorer Preview נשלט ע"י Windows בלבד.</strong>
+אין ל-Windows מושג של "Trusted Folder" לקבצים. הפתרון היחיד הוא <strong>שליטה ב-MOTW</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="1-motw">פתרון 1 (מומלץ): השארת MOTW פעיל + ניקוי נקודתי</h2>
+<h3 id="_3">למה זה טוב?</h3>
+<ul>
+<li>שומר על אבטחה כללית</li>
+<li>פותר Preview</li>
+<li>שליטה לפי סוג קובץ (למשל PDF)</li>
+</ul>
+<h3 id="motw-powershell">ניקוי MOTW לקבצים קיימים (PowerShell)</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Unblock-File</span> <span class="s2">&quot;C:\Users\&lt;USER&gt;\Downloads\*.pdf&quot;</span>
+</code></pre></div>
+<h3 id="motw">בדיקה אם לקובץ יש MOTW</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Item</span> <span class="s2">&quot;C:\Path\file.pdf&quot;</span> <span class="n">-Stream</span> <span class="p">*</span>
+</code></pre></div>
+<blockquote>
+<p>אם מופיע <code>Zone.Identifier</code> — הקובץ מסומן.</p>
+</blockquote>
+<hr />
+<h2 id="2">פתרון 2: מניעת סימון קבצים כ"מוגנים" (גלובלי)</h2>
+<p>⚠️ <strong>פתרון גורף — פחות מומלץ</strong></p>
+<h3 id="gpo-local-gpo">דרך GPO (דומיין או Local GPO)</h3>
+<p><strong>נתיב:</strong>
+<div class="highlight"><pre><span></span><code>User Configuration
+└─ Administrative Templates
+   └─ Windows Components
+      └─ Attachment Manager
+         └─ Do not preserve zone information in file attachments = Enabled
+</code></pre></div></p>
+<h3 id="_4">מה זה עושה?</h3>
+<ul>
+<li>Windows <strong>לא יוסיף MOTW</strong> לקבצים חדשים</li>
+<li>Explorer Preview יעבוד</li>
+<li>משפיע על <em>כל</em> סוגי הקבצים</li>
+</ul>
+<h3 id="_5">הרג'יסטרי שנכתב בפועל</h3>
+<div class="highlight"><pre><span></span><code>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+&quot;SaveZoneInformation&quot;=dword:00000001
+</code></pre></div>
+<blockquote>
+<p>שינוי זה <strong>לא מנקה קבצים קיימים</strong> — יש להריץ <code>Unblock-File</code> פעם אחת.</p>
+</blockquote>
+<hr />
+<h2 id="3-office-gpo">פתרון 3: שליטה בפתיחת קבצים ב-Office (כמו ב-GPO שהוצג)</h2>
+<blockquote>
+<p>פתרון זה <strong>לא משפיע על Explorer Preview</strong> — רק על פתיחה בתוך Office.</p>
+</blockquote>
+<h3 id="office">דוגמאות למדיניות Office</h3>
+<ul>
+<li><strong>Do not open files from the Internet zone in Protected View</strong></li>
+<li><strong>Disable Protected View for files from the Internet</strong></li>
+</ul>
+<p><strong>השפעה:</strong>
+- קבצים נפתחים ישירות ב-Office
+- MOTW עדיין קיים
+- Preview ב-Explorer עדיין עשוי להיחסם</p>
+<hr />
+<h2 id="adobe-acrobat">Adobe Acrobat – הבהרה חשובה</h2>
+<ul>
+<li><strong>Privileged / Trusted Locations</strong> ב-Acrobat:</li>
+<li>משפיע רק בתוך Acrobat</li>
+<li><strong>לא</strong> מבטל MOTW</li>
+<li><strong>לא</strong> פותר Preview</li>
+</ul>
+<hr />
+<h2 id="_6">השוואת פתרונות (סיכום)</h2>
 <table>
 <thead>
 <tr>
-<th>רישיון</th>
-<th style="text-align: center;">דואר</th>
-<th style="text-align: center;">אופיס</th>
-<th style="text-align: center;">OneDrive</th>
-<th style="text-align: center;">Teams</th>
-<th style="text-align: center;">SharePoint</th>
-<th style="text-align: center;">אבטחה</th>
-<th>הערה</th>
+<th>פתרון</th>
+<th>Preview ב-Explorer</th>
+<th>אבטחה</th>
+<th>שליטה</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Exchange Online (Plan 1)</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td>דואר בלבד, 50GB</td>
+<td>Unblock נקודתי</td>
+<td>✅</td>
+<td>גבוהה</td>
+<td>לפי סיומת</td>
 </tr>
 <tr>
-<td>Exchange Online (Plan 2)</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td>100GB, Archiving</td>
+<td>GPO Attachment Manager</td>
+<td>✅</td>
+<td>נמוכה יותר</td>
+<td>גלובלי</td>
 </tr>
 <tr>
-<td>M365 Apps for Business</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">❌</td>
-<td>אופיס+OneDrive בלבד</td>
+<td>GPO Office</td>
+<td>❌</td>
+<td>בינונית</td>
+<td>אפליקטיבי</td>
 </tr>
 <tr>
-<td>M365 Business Basic</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td>בלי Office מותקן</td>
-</tr>
-<tr>
-<td>M365 Business Standard</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td>חבילה מלאה</td>
-</tr>
-<tr>
-<td>M365 Business Premium</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>כמו Standard + אבטחה</td>
-</tr>
-<tr>
-<td>Office 365 E1</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td>כמו Basic, לא כולל Office</td>
-</tr>
-<tr>
-<td>Office 365 E3</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">🟧</td>
-<td>Enterprise, 100GB דואר</td>
-</tr>
-<tr>
-<td>Office 365 E5</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>אבטחה, אנליטיקות, טלפוניה</td>
-</tr>
-<tr>
-<td>M365 E3</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">🟧</td>
-<td>E3 + Windows + אבטחה</td>
-</tr>
-<tr>
-<td>M365 E5</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-<td>הכי יקרה והכי מלאה</td>
+<td>Trusted Locations (Adobe)</td>
+<td>❌</td>
+<td>בינונית</td>
+<td>אפליקטיבי</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="_3">הסבר עמודות הטבלה</h2>
+<h2 id="_7">המלצה מקצועית</h2>
 <ul>
-<li><strong>Exchange Online</strong> – תיבת דואר בענן (כולל לוח שנה, אנשי קשר, 50GB או 100GB לפי רישיון).</li>
-<li><strong>Office מותקן</strong> – Word, Excel, PowerPoint, Outlook וכו’ להתקנה מקומית על המחשב.</li>
-<li><strong>OneDrive</strong> – שטח אחסון בענן (לרוב 1TB למשתמש).</li>
-<li><strong>Teams</strong> – מערכת שיתוף, צ'אט, שיחות וידאו, ישיבות ושיתוף מסך.</li>
-<li><strong>SharePoint</strong> – אינטראנט ארגוני, שיתוף קבצים, ניהול מסמכים.</li>
-<li><strong>אבטחה מתקדמת (Intune, DLP)</strong> – ניהול מכשירים, מניעת אובדן מידע, אבטחה ארגונית ברמות גבוהות.</li>
-<li><strong>הערות</strong> – דגשים ויתרונות ייחודיים לכל חבילה.</li>
+<li><strong>ארגון / מחשב רגיש:</strong></li>
+<li>להשאיר MOTW פעיל</li>
+<li>
+<p>Script / Scheduled Task ל-<code>Unblock-File</code> (PDF בלבד)</p>
+</li>
+<li>
+<p><strong>עמדת עבודה מבודדת:</strong></p>
+</li>
+<li>GPO: Do not preserve zone information</li>
 </ul>
 <hr />
-<h2 id="_4">הערות חשובות</h2>
+<h2 id="_8">בדיקות מהירות</h2>
 <ul>
-<li><strong>Business Standard</strong> – הרישיון המומלץ לעסקים קטנים ובינוניים (כולל הכל למעט אבטחה מתקדמת).</li>
-<li><strong>Business Premium</strong> – כולל גם רכיבי אבטחה וניהול מכשירים.</li>
-<li><strong>E3/E5</strong> – חבילות Enterprise לעסקים גדולים, עם פיצ'רים מתקדמים ואבטחה משופרת.</li>
-<li>Office 365 (E1, E3, E5) – שמות ותיקים, ברוב המקרים היום ממליצים לבחור Microsoft 365.</li>
-<li><strong>ניתן לרכוש Add-ons</strong> (כמו אבטחה, ארכיון, תיבות דואר גדולות) לרוב החבילות.</li>
-<li>התאמת רישיון נכונה חוסכת עלויות ומייעלת את העבודה הארגונית.</li>
+<li>
+<p>בדיקת רג'יסטרי:
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ItemProperty</span> <span class="s2">&quot;HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>בדיקת מדיניות מוחלת:
+<div class="highlight"><pre><span></span><code>gpresult /r
+</code></pre></div></p>
+</li>
 </ul>
 <hr />
-<h2 id="_5">קישורים שימושיים</h2>
-<ul>
-<li><a href="https://www.microsoft.com/he-il/microsoft-365/business">מדריך רישוי רשמי של Microsoft</a></li>
-<li><a href="https://www.microsoft.com/he-il/microsoft-365/compare-microsoft-365-enterprise-plans">השוואת רישיונות (מיקרוסופט)</a></li>
-</ul>
-<hr />
-<blockquote>
-<p><strong>להתייעצות והתאמה מדויקת לארגון – מומלץ להיעזר ביועץ Microsoft מוסמך.</strong></p>
-</blockquote>
+<p><strong>סוף המדריך</strong></p>
 
 
 
