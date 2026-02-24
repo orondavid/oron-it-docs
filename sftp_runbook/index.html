@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../wireshark-guide/">
+        <link rel="prev" href="../Assign-MessageTrace/">
       
       
-        <link rel="next" href="../linux-explained/">
+        <link rel="next" href="../forti_gate_ipsec_nat_overlap_solution/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>הסבר להתקנת Vmware - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>sftp_runbook - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#vmware-player" class="md-skip">
-          לדלג לתוכן
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              הסבר להתקנת Vmware
+              sftp_runbook
             
           </span>
         </div>
@@ -863,10 +858,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sftp_runbook/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -877,6 +879,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1116,32 +1119,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    הסבר להתקנת Vmware
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vmware-explained/" class="md-nav__link">
         
   
   
@@ -1152,62 +1133,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vmware-player_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 למה לבחור ב־VMware Player?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 הסבר על הגדרות VM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vmware-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 VMware Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ דרישות מערכת
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1834,52 +1759,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vmware-player_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 למה לבחור ב־VMware Player?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vm" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 הסבר על הגדרות VM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vmware-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 VMware Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ דרישות מערכת
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1895,54 +1774,236 @@
 
 
 
-<h1 id="vmware-player">הסבר לפעולות במדריך התקנת VMware Player</h1>
-<hr />
-<h2 id="vmware-player_1">🔹 למה לבחור ב־VMware Player?</h2>
-<ul>
-<li>מאפשר ליצור ולהריץ מכונות וירטואליות בקלות</li>
-<li>קל לתפעול – מתאים ללמידה, בדיקות ולסימולציה</li>
-<li>הגרסה החינמית מספיקה לרוב השימושים האישיים</li>
-</ul>
-<hr />
-<h2 id="vm">🔹 הסבר על הגדרות VM</h2>
-<ul>
-<li><strong>ISO Image</strong> – קובץ התקנה של מערכת הפעלה (למשל Ubuntu)</li>
-<li><strong>Virtual Disk</strong> – קובץ שמכיל את כל הדיסק של המכונה הווירטואלית</li>
-<li><strong>RAM</strong> – מומלץ להקצות לפחות 2GB ללינוקס ו־4GB לחלונות</li>
-<li>
-<p><strong>Networking</strong> – ניתן לבחור בין NAT, Bridge ו־Host-only:</p>
-</li>
-<li>
-<p><strong>Bridge</strong> – IP כמו שאר הרשת (מומלץ לבדיקה מול שרתים)</p>
-<p>המכונה מקבלת IP כמו כל מחשב אחר ברשת</p>
-<p>מתחברת ישירות לראוטר/רשת הפיזית</p>
-</li>
-</ul>
-<p>✅ מאפשר גישה ישירה אל ומה־VM (כמו שרת ברשת)</p>
-<ul>
-<li>
-<p><strong>NAT</strong> – המכונה מקבלת כתובת פרטית ויוצאת דרך המארח</p>
-</li>
-<li>
-<p><strong>Host-only</strong> – תקשורת רק מול מחשב המארח</p>
-</li>
-</ul>
-<hr />
-<h2 id="vmware-tools">🔹 VMware Tools</h2>
-<ul>
-<li>התקנתם מוסיפה:</li>
-<li>גרירה ושחרור בין מערכת מארחת לאורחת</li>
-<li>שיתוף תיקיות</li>
-<li>רזולוציית מסך דינמית</li>
-</ul>
-<hr />
-<h2 id="_1">🛡️ דרישות מערכת</h2>
-<ul>
-<li>Windows 10/11 או Linux עם תמיכה ב־Virtualization</li>
-<li>לפחות 8GB RAM ו־20GB דיסק פנוי</li>
-</ul>
-<hr />
-<p>VMware הוא פתרון חזק וגמיש לניהול מערכות בסביבה וירטואלית.</p>
+  <h1>sftp_runbook</h1>
+
+<div dir="rtl" lang="he">
+
+# שרת SFTP עם 2FA (Google Authenticator) + Chroot + Windows Share (CIFS) — מדריך תפעול (MkDocs)
+
+> מסמך זה מיועד לאתר **MkDocs** (Markdown).  
+> כולל נתיבים, פקודות תפעול, יצירת/מחיקת משתמשים, בדיקות לוגים, ונקודות Troubleshooting נפוצות.
+
+---
+
+## תרשים זרימה (ברמת רכיבים)
+
+OpenSSH (SFTP)  
+→ Chroot לכל משתמש  
+→ Bind Mount לתיקיית המשתמש  
+→ CIFS Mount לשיתוף Windows  
+→ Windows File Server (SMB)
+
+---
+
+## נתיבים חשובים
+
+### Chroot ונתיבי משתמש
+- `/srv/sftp/chroot/<user>` — תיקיית ה־chroot של המשתמש  
+- `/srv/sftp/chroot/<user>/uploads` — תיקיית העלאות בתוך ה־chroot  
+- `/srv/sftp/chroot/<user>/.ga` — תיקיית Google Authenticator בתוך ה־chroot  
+- `/srv/sftp/chroot/<user>/.ga/.google_authenticator` — קובץ ה־secret של 2FA
+
+### שיתוף Windows (CIFS) + Bind
+- `/srv/sftp-windows` — נקודת ה־mount הראשית של שיתוף Windows (CIFS)  
+- `/srv/sftp-windows/<user>` — תיקיית משתמש בתוך השיתוף (מקור ל־bind)  
+
+### קבצי קונפיגורציה
+- `/etc/ssh/sshd_config` — הגדרות SSH  
+- `/etc/pam.d/sshd` — PAM עבור SSH (כולל 2FA)  
+- `/etc/fstab` — מיפויים קבועים (CIFS + bind mounts)  
+
+### לוגים
+- `/var/log/auth.log` — לוג התחברויות SSH/2FA  
+- `dmesg` — הודעות kernel (כולל CIFS)
+
+---
+
+## Mountים (CIFS + Bind)
+
+### בדיקה מה מחובר
+<div class="highlight"><pre><span></span><code>mount<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sftp
+</code></pre></div>
+או תצוגה היררכית:
+<div class="highlight"><pre><span></span><code>findmnt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sftp
+</code></pre></div>
+
+### טעינת mountים מה־fstab
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-a
+</code></pre></div>
+
+### בדיקה מפורטת עם פלט
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-av
+</code></pre></div>
+
+### אחרי שינוי ב־fstab (חשוב)
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+sudo<span class="w"> </span>mount<span class="w"> </span>-a
+</code></pre></div>
+
+### חיפוש שורות רלוונטיות ב־fstab
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-nE<span class="w"> </span><span class="s1">&#39;\scifs\s|sftp-windows|/srv/sftp/chroot&#39;</span><span class="w"> </span>/etc/fstab
+</code></pre></div>
+
+### מבנה מומלץ ב־fstab (דוגמה)
+<div class="highlight"><pre><span></span><code>//fs01.meida.int/sftp-uploads /srv/sftp-windows cifs credentials=/etc/samba/sftp-credentials,vers=3.0,uid=0,gid=988,forceuid,forcegid,file_mode=0770,dir_mode=0770,nounix,serverino,noperm 0 0
+/srv/sftp-windows/client1 /srv/sftp/chroot/client1/uploads none bind 0 0
+/srv/sftp-windows/client2 /srv/sftp/chroot/client2/uploads none bind 0 0
+/srv/sftp-windows/oron    /srv/sftp/chroot/oron/uploads    none bind 0 0
+</code></pre></div>
+
+---
+
+## ניהול משתמשים
+
+### יצירת משתמש SFTP חדש (מומלץ דרך הסקריפט)
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>~/add-sftp-user.sh<span class="w"> </span>&lt;user&gt;
+</code></pre></div>
+
+הסקריפט אמור לבצע (במינימום):
+- יצירת משתמש וקבוצה/שיוך לקבוצה `sftpusers` (אם רלוונטי)  
+- יצירת תיקיות: `chroot`, `uploads`, `.ga`  
+- יצירת קובץ `.google_authenticator` בתיקייה:  
+  `/srv/sftp/chroot/<user>/.ga/.google_authenticator`  
+- הרשאות:  
+  - תיקיית `chroot` בבעלות `root:root`  
+  - תיקיית `.ga` בבעלות המשתמש והרשאה `700`  
+  - קובץ `.google_authenticator` הרשאה `600`  
+
+### מחיקת משתמש
+מחיקת משתמש (כולל home רגיל אם קיים):
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>userdel<span class="w"> </span>-r<span class="w"> </span>&lt;user&gt;
+</code></pre></div>
+
+מחיקת תיקיות SFTP (אם נדרש):
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/srv/sftp/chroot/&lt;user&gt;
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/srv/sftp-windows/&lt;user&gt;
+</code></pre></div>
+
+> שים לב: מחיקה ב־`/srv/sftp-windows/<user>` תמחק גם מה־Windows share.
+
+---
+
+## 2FA רק למשתמשי SFTP (קבוצת sftpusers)
+
+### בדיקת מי נמצא בקבוצה
+<div class="highlight"><pre><span></span><code>getent<span class="w"> </span>group<span class="w"> </span>sftpusers
+</code></pre></div>
+או בדיקת משתמש ספציפי:
+<div class="highlight"><pre><span></span><code>id<span class="w"> </span>&lt;user&gt;
+</code></pre></div>
+
+### הוספה לקבוצה (יחייב 2FA)
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>sftpusers<span class="w"> </span>&lt;user&gt;
+</code></pre></div>
+
+### הסרה מהקבוצה (יבטל 2FA למשתמש)
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gpasswd<span class="w"> </span>-d<span class="w"> </span>&lt;user&gt;<span class="w"> </span>sftpusers
+</code></pre></div>
+
+### PAM: החלת 2FA רק על הקבוצה sftpusers
+
+בקובץ:
+- `/etc/pam.d/sshd`
+
+הבלוק המומלץ (רק למשתמשים בקבוצה — אחרים מדלגים):
+<div class="highlight"><pre><span></span><code># If NOT in sftpusers -&gt; skip GA line
+auth  [success=1 default=ignore] pam_succeed_if.so user notingroup sftpusers
+auth  required  pam_google_authenticator.so secret=/srv/sftp/chroot/${USER}/.ga/.google_authenticator
+</code></pre></div>
+
+לאחר שינוי:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+</code></pre></div>
+
+---
+
+## לוגים ו־Troubleshooting
+
+### צפייה חיה בלוג התחברויות
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/auth.log
+</code></pre></div>
+
+### חיפוש שגיאות נפוצות
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;sshd|pam_google_authenticator|Authentication failure|Invalid verification code&quot;</span><span class="w"> </span>/var/log/auth.log
+</code></pre></div>
+
+### בדיקת שגיאות CIFS מהקרנל
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>cifs
+</code></pre></div>
+
+---
+
+## זמן מערכת (קריטי ל־TOTP / 2FA)
+
+### בדיקה
+<div class="highlight"><pre><span></span><code>timedatectl
+</code></pre></div>
+
+### הפעלת NTP
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+
+---
+
+## WinSCP: “Upload הצליח אבל יש Permission denied / מבקש סיסמה שוב”
+
+### למה זה קורה?
+כאשר אתה **מעלה קובץ מהמחשב**, WinSCP לרוב עושה `write` וזהו.  
+כאשר אתה **יוצר/עורך קובץ דרך ה־Editor של WinSCP**, הוא מנסה לאחר ההעלאה לבצע פעולות נוספות כמו:
+- שינוי הרשאות (`chmod` / `SETSTAT`)
+- שינוי timestamp
+- rename לקובץ זמני
+
+בגלל שהיעד אצלך הוא **CIFS (Windows share)**, לא תמיד ניתן ליישם פעולות POSIX, ואז מתקבל:
+- `Permission denied`
+- לעיתים WinSCP יציג prompt נוסף לסיסמה/אימות (כתגובה לכשל בשלב שאחרי ההעלאה)
+
+### פתרון מומלץ בצד הקליינט (WinSCP)
+ב־WinSCP:
+- **Preferences → Transfer**
+  - בטל **Preserve timestamp**
+- **Preferences → Transfer → Endurance**
+  - סמן **Ignore permission errors**
+
+> ההעלאה עצמה לרוב כבר הצליחה; הכשל הוא בשלב “אחרי ההעלאה” (הרשאות/זמן).
+
+---
+
+## פקודות בדיקה כלליות
+
+### סטטוס SSH
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
+</code></pre></div>
+
+### הפעלה מחדש
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+</code></pre></div>
+
+### מי מחובר
+<div class="highlight"><pre><span></span><code>w
+</code></pre></div>
+או:
+<div class="highlight"><pre><span></span><code>who
+</code></pre></div>
+
+### בדיקת פורט SSH מאזין
+<div class="highlight"><pre><span></span><code>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssh
+</code></pre></div>
+
+---
+
+## המלצות תפעול
+- להשתמש ב־**DNS/FQDN** בשורת ה־CIFS (`//fs01.meida.int/...`) ולא ב־IP  
+- אחרי שינוי `fstab` תמיד להריץ:
+  <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+sudo<span class="w"> </span>mount<span class="w"> </span>-a
+</code></pre></div>
+- לשמור גיבוי ל־secrets של 2FA:
+  - `/srv/sftp/chroot/*/.ga/.google_authenticator`
+
+---
+
+</div>
 
 
 
