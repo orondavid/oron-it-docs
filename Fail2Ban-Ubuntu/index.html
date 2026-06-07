@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Exchangeonline%20Script%20Guid/">
+        <link rel="prev" href="../SFTP-Ubuntu/">
       
       
-        <link rel="next" href="../windows-maintenance/">
+        <link rel="next" href="../forti_gate_pf_sense_site_to_site_vpn_guide/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>סקריפטים שימושיים - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>Fail2Ban-Ubuntu - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#sftp-fail2ban-ubuntu" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              סקריפטים שימושיים
+              Fail2Ban-Ubuntu
             
           </span>
         </div>
@@ -823,18 +823,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -850,7 +852,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -884,10 +886,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Fail2Ban-Ubuntu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Fail2Ban-Ubuntu
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -898,6 +922,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מבוא
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail2ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      כיצד Fail2Ban עובד
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1604,20 +1666,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1633,7 +1693,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             סקריפטים כלים ופקודות
@@ -1713,32 +1773,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    סקריפטים שימושיים
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../it-scripts/" class="md-nav__link">
         
   
   
@@ -1749,137 +1787,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#powershell-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      🪟 PowerShell (Windows)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🪟 PowerShell (Windows)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 בדיקת אנטי־וירוס
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#30" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 מחשבים לא פעילים 30 יום בדומיין
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 הפקת דוח מערכת
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 ניקוי הגדרות רשת
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bash-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      🐧 Bash (Linux)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🐧 Bash (Linux)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 גיבוי תיקיות
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 התרעה על שטח דיסק
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 איתור עומס CPU
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 מעקב לוגים בזמן אמת
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 שימושים נפוצים
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2011,111 +1918,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#powershell-windows" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      🪟 PowerShell (Windows)
+      מבוא
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="🪟 PowerShell (Windows)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 בדיקת אנטי־וירוס
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#30" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 מחשבים לא פעילים 30 יום בדומיין
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 הפקת דוח מערכת
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 ניקוי הגדרות רשת
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bash-linux" class="md-nav__link">
+  <a href="#fail2ban" class="md-nav__link">
     <span class="md-ellipsis">
-      🐧 Bash (Linux)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🐧 Bash (Linux)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 גיבוי תיקיות
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 התרעה על שטח דיסק
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 איתור עומס CPU
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 מעקב לוגים בזמן אמת
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 שימושים נפוצים
+      כיצד Fail2Ban עובד
     </span>
   </a>
   
@@ -2137,50 +1951,233 @@
 
 
 
-<h1 id="_1">סקריפטים שימושיים לניהול מערכות</h1>
-<p>מדריך זה מרכז סקריפטים שימושיים שיכולים לחסוך זמן, לייעל תהליכים ולשפר את העבודה היומיומית של טכנאים ומנהלי IT.</p>
-<hr />
-<h2 id="powershell-windows">🪟 PowerShell (Windows)</h2>
-<h3 id="_2">🔹 בדיקת אנטי־וירוס</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-MpComputerStatus</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">AMServiceEnabled</span><span class="p">,</span> <span class="n">AntispywareEnabled</span><span class="p">,</span> <span class="n">RealTimeProtectionEnabled</span>
-</code></pre></div>
-<h3 id="30">🔹 מחשבים לא פעילים 30 יום בדומיין</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">Search-ADAccount</span> <span class="n">-ComputersOnly</span> <span class="n">-AccountInactive</span> <span class="n">-TimeSpan</span> <span class="n">30</span><span class="p">.</span><span class="n">00</span><span class="p">:</span><span class="n">00</span><span class="p">:</span><span class="n">00</span> <span class="p">|</span> <span class="nb">Select </span><span class="n">Name</span>
-</code></pre></div>
-<h3 id="_3">🔹 הפקת דוח מערכת</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-ComputerInfo</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">C</span><span class="p">:\</span><span class="n">system_info</span><span class="p">.</span><span class="n">txt</span>
-</code></pre></div>
-<h3 id="_4">🔹 ניקוי הגדרות רשת</h3>
-<div class="highlight"><pre><span></span><code><span class="n">ipconfig</span> <span class="p">/</span><span class="n">flushdns</span>
-<span class="n">netsh</span> <span class="n">winsock</span> <span class="n">reset</span>
-<span class="n">netsh</span> <span class="n">int</span> <span class="n">ip</span> <span class="n">reset</span>
-</code></pre></div>
-<hr />
-<h2 id="bash-linux">🐧 Bash (Linux)</h2>
-<h3 id="_5">🔹 גיבוי תיקיות</h3>
-<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-czvf<span class="w"> </span>backup_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>.tar.gz<span class="w"> </span>/etc<span class="w"> </span>/home<span class="w"> </span>/var/www
-</code></pre></div>
-<h3 id="_6">🔹 התרעה על שטח דיסק</h3>
-<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>mail<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;Disk Report&quot;</span><span class="w"> </span>admin@domain.com
-</code></pre></div>
-<h3 id="cpu">🔹 איתור עומס CPU</h3>
-<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-eo<span class="w"> </span>pid,comm,%cpu<span class="w"> </span>--sort<span class="o">=</span>-%cpu<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
-</code></pre></div>
-<h3 id="_7">🔹 מעקב לוגים בזמן אמת</h3>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/syslog
-</code></pre></div>
-<hr />
-<h2 id="_8">🎯 שימושים נפוצים</h2>
+<h1 id="sftp-fail2ban-ubuntu">הגנה על שרת SFTP באמצעות Fail2Ban ב-Ubuntu</h1>
+<h2 id="_1">מבוא</h2>
+<p>שרת SFTP החשוף לאינטרנט מקבל באופן קבוע ניסיונות התחברות אוטומטיים (Brute Force Attacks) מצד בוטים וסורקים המחפשים משתמשים ידועים כגון:</p>
 <ul>
-<li>תחזוקה שוטפת</li>
-<li>ניטור וזיהוי תקלות</li>
-<li>ניהול משתמשים</li>
-<li>גיבויים ואבטחת מידע</li>
+<li>root</li>
+<li>admin</li>
+<li>ubuntu</li>
+<li>postgres</li>
+<li>jenkins</li>
+</ul>
+<p>מטרת Fail2Ban היא לזהות ניסיונות התחברות כושלים ולחסום אוטומטית את כתובת ה-IP התוקפת למשך זמן מוגדר.</p>
+<hr />
+<h2 id="fail2ban">כיצד Fail2Ban עובד</h2>
+<p>Fail2Ban מנטר את קבצי הלוג של המערכת.</p>
+<p>כאשר הוא מזהה מספר כשלי התחברות מאותה כתובת IP בפרק זמן קצר, הוא מוסיף חוק Firewall שחוסם את הכתובת.</p>
+<p>לדוגמה:</p>
+<div class="highlight"><pre><span></span><code>5 ניסיונות כושלים
+תוך 10 דקות
+=
+חסימה ל-24 שעות
+</code></pre></div>
+<hr />
+<h1 id="fail2ban_1">התקנת Fail2Ban</h1>
+<h2 id="_2">עדכון רשימות החבילות</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<h2 id="fail2ban_2">התקנת Fail2Ban</h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fail2ban<span class="w"> </span>-y
+</code></pre></div>
+<hr />
+<h1 id="_3">בדיקת סטטוס השירות</h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>fail2ban
+</code></pre></div>
+<p>פלט תקין:</p>
+<div class="highlight"><pre><span></span><code>Active: active (running)
+</code></pre></div>
+<hr />
+<h1 id="_4">הפעלת השירות באתחול</h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>fail2ban
+</code></pre></div>
+<hr />
+<h1 id="_5">קובץ ההגדרות</h1>
+<p>מומלץ ליצור קובץ הגדרות מקומי:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/fail2ban/jail.local
+</code></pre></div>
+<p>דוגמה:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[DEFAULT]</span>
+
+<span class="na">ignoreip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">127.0.0.1/8</span>
+<span class="na">bantime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">86400</span>
+<span class="na">findtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">600</span>
+<span class="na">maxretry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
+
+<span class="k">[sshd]</span>
+
+<span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ssh</span>
+<span class="na">logpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/auth.log</span>
+<span class="na">backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+</code></pre></div>
+<hr />
+<h1 id="_6">הסבר על כל שורה</h1>
+<h2 id="ignoreip">ignoreip</h2>
+<div class="highlight"><pre><span></span><code><span class="na">ignoreip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">127.0.0.1/8</span>
+</code></pre></div>
+<p>כתובות שלא ייחסמו לעולם.</p>
+<p>ניתן להוסיף גם כתובות ניהול:</p>
+<div class="highlight"><pre><span></span><code><span class="na">ignoreip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">127.0.0.1/8 5.29.134.195</span>
+</code></pre></div>
+<hr />
+<h2 id="bantime">bantime</h2>
+<div class="highlight"><pre><span></span><code><span class="na">bantime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">86400</span>
+</code></pre></div>
+<p>משך החסימה בשניות.</p>
+<p>דוגמאות:</p>
+<table>
+<thead>
+<tr>
+<th>ערך</th>
+<th>משמעות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>600</td>
+<td>10 דקות</td>
+</tr>
+<tr>
+<td>3600</td>
+<td>שעה</td>
+</tr>
+<tr>
+<td>86400</td>
+<td>יום</td>
+</tr>
+<tr>
+<td>604800</td>
+<td>שבוע</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="findtime">findtime</h2>
+<div class="highlight"><pre><span></span><code><span class="na">findtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">600</span>
+</code></pre></div>
+<p>חלון הזמן שבו נספרים הכישלונות.</p>
+<p>600 שניות = 10 דקות.</p>
+<hr />
+<h2 id="maxretry">maxretry</h2>
+<div class="highlight"><pre><span></span><code><span class="na">maxretry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
+</code></pre></div>
+<p>מספר ניסיונות כושלים המותרים לפני חסימה.</p>
+<hr />
+<h2 id="enabled">enabled</h2>
+<div class="highlight"><pre><span></span><code><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+</code></pre></div>
+<p>מפעיל את ההגנה על שירות SSH/SFTP.</p>
+<hr />
+<h2 id="port">port</h2>
+<div class="highlight"><pre><span></span><code><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ssh</span>
+</code></pre></div>
+<p>הפורט שעליו Fail2Ban יגן.</p>
+<p>ניתן גם להגדיר:</p>
+<div class="highlight"><pre><span></span><code><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2222</span>
+</code></pre></div>
+<p>אם SSH עובד על פורט מותאם אישית.</p>
+<hr />
+<h2 id="logpath">logpath</h2>
+<div class="highlight"><pre><span></span><code><span class="na">logpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/auth.log</span>
+</code></pre></div>
+<p>קובץ הלוג שממנו Fail2Ban קורא את אירועי ההתחברות.</p>
+<hr />
+<h2 id="backend">backend</h2>
+<div class="highlight"><pre><span></span><code><span class="na">backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+</code></pre></div>
+<p>מנגנון קריאת הלוגים.</p>
+<p>ברוב המקרים Auto הוא ההגדרה המומלצת.</p>
+<hr />
+<h1 id="_7">טעינת ההגדרות</h1>
+<p>לאחר כל שינוי:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>fail2ban
+</code></pre></div>
+<hr />
+<h1 id="-jail-ssh">בדיקת ה-Jail של SSH</h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>status<span class="w"> </span>sshd
+</code></pre></div>
+<p>דוגמה לפלט:</p>
+<div class="highlight"><pre><span></span><code>Status for the jail: sshd
+
+Currently banned: 2
+
+Banned IP list:
+43.228.157.6
+45.198.224.114
+</code></pre></div>
+<hr />
+<h1 id="_8">הצגת ההגדרות הפעילות</h1>
+<p>בדיקת מספר ניסיונות מותרים:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>get<span class="w"> </span>sshd<span class="w"> </span>maxretry
+</code></pre></div>
+<p>בדיקת חלון הזמן:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>get<span class="w"> </span>sshd<span class="w"> </span>findtime
+</code></pre></div>
+<p>בדיקת זמן החסימה:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>fail2ban-client<span class="w"> </span>get<span class="w"> </span>sshd<span class="w"> </span>bantime
+</code></pre></div>
+<hr />
+<h1 id="fail2ban_3">צפייה בלוג של Fail2Ban</h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-50<span class="w"> </span>/var/log/fail2ban.log
+</code></pre></div>
+<p>דוגמה:</p>
+<div class="highlight"><pre><span></span><code>Ban 45.198.224.114
+Ban 43.228.157.6
+</code></pre></div>
+<hr />
+<h1 id="ip">שחרור כתובת IP חסומה</h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>fail2ban-client<span class="w"> </span><span class="nb">set</span><span class="w"> </span>sshd<span class="w"> </span>unbanip<span class="w"> </span><span class="m">1</span>.2.3.4
+</code></pre></div>
+<p>דוגמה:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>fail2ban-client<span class="w"> </span><span class="nb">set</span><span class="w"> </span>sshd<span class="w"> </span>unbanip<span class="w"> </span><span class="m">45</span>.198.224.114
+</code></pre></div>
+<hr />
+<h1 id="root-login">בדיקת Root Login</h1>
+<p>בדיקת ההגדרה האפקטיבית:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sshd<span class="w"> </span>-T<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>permitrootlogin
+</code></pre></div>
+<p>פלט אפשרי:</p>
+<div class="highlight"><pre><span></span><code>permitrootlogin without-password
+</code></pre></div>
+<p>משמעות:</p>
+<ul>
+<li>כניסה עם סיסמה ל-root חסומה.</li>
+<li>כניסה עם מפתח SSH עדיין אפשרית.</li>
+</ul>
+<p>מומלץ להגדיר:</p>
+<div class="highlight"><pre><span></span><code>PermitRootLogin no
+</code></pre></div>
+<p>כך לא תתאפשר כניסה ישירה ל-root כלל.</p>
+<hr />
+<h1 id="_9">בדיקת לוגי התחברות</h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-100<span class="w"> </span>/var/log/auth.log
+</code></pre></div>
+<p>דוגמאות:</p>
+<p>התחברות מוצלחת:</p>
+<div class="highlight"><pre><span></span><code>Accepted password for iteam
+</code></pre></div>
+<p>כישלון התחברות:</p>
+<div class="highlight"><pre><span></span><code>Failed password for root
+</code></pre></div>
+<p>ניסיון עם משתמש לא קיים:</p>
+<div class="highlight"><pre><span></span><code>Invalid user postgres
+</code></pre></div>
+<hr />
+<h1 id="sftp">המלצות אבטחה לשרת SFTP</h1>
+<ul>
+<li>שימוש בסיסמה חזקה.</li>
+<li>שימוש במפתח SSH לכל משתמש.</li>
+<li>Disable Root Login.</li>
+<li>Fail2Ban פעיל.</li>
+<li>עדכוני אבטחה שוטפים.</li>
+<li>Chroot לכל משתמש SFTP.</li>
+<li>שמירת לוגים לפחות 90 יום.</li>
+<li>גיבוי קובצי ההגדרות.</li>
 </ul>
 <hr />
-<blockquote>
-<p>ניתן להעתיק ולהתאים את הסקריפטים לצרכים הספציפיים שלך</p>
-</blockquote>
+<h1 id="_10">סיכום</h1>
+<p>Fail2Ban הוא שכבת הגנה חשובה לשרתי SSH ו-SFTP. הוא מפחית משמעותית ניסיונות Brute Force, מזהה פעילות חשודה בזמן אמת ומבצע חסימה אוטומטית של כתובות IP תוקפות ללא צורך בהתערבות מנהל המערכת.</p>
 
 
 
