@@ -6,13 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="מדריך להתקנה מחדש של HP DesignJet 750C Plus C4709B כ-Plotter פנימי של AutoCAD באמצעות HPGL/2 ויצירת קובצי PLT.">
       
       
       
-        <link rel="prev" href="../Assign-MessageTrace/">
+      
+        <link rel="prev" href="../Proxmox_Installation/">
       
       
-        <link rel="next" href="../forti_gate_ipsec_nat_overlap_solution/">
+        <link rel="next" href="../aad-broker-troubleshooting/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>sftp_runbook - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
+        <title>התקנה מחדש של מדפסת Plotter ב-AutoCAD ליצירת קובצי PLT - Docs4IT – מדריכים, פתרונות וידע מהשטח</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sftp-2fa-google-authenticator-chroot-windows-share-cifs-runbook" class="md-skip">
+        <a href="#plotter-autocad-plt" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              sftp_runbook
+              התקנה מחדש של מדפסת Plotter ב-AutoCAD ליצירת קובצי PLT
             
           </span>
         </div>
@@ -273,18 +275,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -300,7 +304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             התקנות
@@ -725,10 +729,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../autocad-plotter-plt-guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    autocad-plotter-plt-guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -739,6 +765,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-plotter-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. פתיחת Plotter Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-plotter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. בחירת דגם ה-Plotter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הגדרת הפלט לקובץ PLT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pc3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. סיום יצירת ה-PC3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-plotter" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. בחירת ה-Plotter החדש
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. הגדרת גודל נייר מותאם אישית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. בדיקת ההדפסה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-plotters" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. מחיקת Plotters ישנים או כפולים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-pc3-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. PC3 שנמחק עדיין מופיע ברשימת PLOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      בדיקות תקלה שימושיות
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכום
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -846,20 +991,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -875,7 +1018,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             הסברים
@@ -1001,32 +1144,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    sftp_runbook
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../sftp_runbook/" class="md-nav__link">
         
   
   
@@ -1037,299 +1158,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      תוכן העניינים
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ארכיטקטורה בקצרה
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      נתיבים חשובים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="נתיבים חשובים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chroot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chroot ונתיבי משתמש
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-cifs-bind" class="md-nav__link">
-    <span class="md-ellipsis">
-      שיתוף Windows (CIFS) + Bind
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      קבצי קונפיגורציה
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      לוגים
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-cifs-bind" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mountים (CIFS + Bind)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mountים (CIFS + Bind)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקה מה מחובר
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mount-fstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      טעינת mountים מה־fstab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      אחרי שינוי ב־fstab (חשוב)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fstab_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      חיפוש שורות רלוונטיות ב־fstab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fstab_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      דוגמה למבנה מומלץ ב־fstab
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      ניהול משתמשים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ניהול משתמשים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sftp" class="md-nav__link">
-    <span class="md-ellipsis">
-      יצירת משתמש SFTP חדש (דרך הסקריפט)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      מחיקת משתמש
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2fa-sftp-sftpusers" class="md-nav__link">
-    <span class="md-ellipsis">
-      2FA רק למשתמשי SFTP (קבוצת sftpusers)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2FA רק למשתמשי SFTP (קבוצת sftpusers)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      לראות מי בקבוצה
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2fa" class="md-nav__link">
-    <span class="md-ellipsis">
-      הוספה לקבוצה (יחייב 2FA)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2fa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסרה מהקבוצה (יבטל 2FA)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pam-2fa-sftpusers" class="md-nav__link">
-    <span class="md-ellipsis">
-      PAM – החלת 2FA רק על חברי sftpusers
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      לוגים ו־Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#totp" class="md-nav__link">
-    <span class="md-ellipsis">
-      זמן מערכת (קריטי ל־TOTP)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#winscp-upload-permission-denied" class="md-nav__link">
-    <span class="md-ellipsis">
-      WinSCP – “Upload הצליח אבל Permission denied / מבקש סיסמה שוב”
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="WinSCP – “Upload הצליח אבל Permission denied / מבקש סיסמה שוב”">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה זה קורה?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#winscp" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתרון מומלץ בצד הקליינט (WinSCP)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      פקודות בדיקה כלליות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rtl-mkdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      הערה למראה RTL ב־MkDocs (חשוב)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2219,9 +2047,90 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-plotter-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. פתיחת Plotter Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-plotter" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. בחירת דגם ה-Plotter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. הגדרת הפלט לקובץ PLT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pc3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. סיום יצירת ה-PC3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-plotter" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. בחירת ה-Plotter החדש
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. הגדרת גודל נייר מותאם אישית
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. בדיקת ההדפסה
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-plotters" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. מחיקת Plotters ישנים או כפולים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-pc3-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. PC3 שנמחק עדיין מופיע ברשימת PLOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      ארכיטקטורה בקצרה
+      בדיקות תקלה שימושיות
     </span>
   </a>
   
@@ -2230,262 +2139,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      נתיבים חשובים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="נתיבים חשובים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chroot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chroot ונתיבי משתמש
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-cifs-bind" class="md-nav__link">
-    <span class="md-ellipsis">
-      שיתוף Windows (CIFS) + Bind
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      קבצי קונפיגורציה
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      לוגים
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-cifs-bind" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mountים (CIFS + Bind)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mountים (CIFS + Bind)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      בדיקה מה מחובר
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mount-fstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      טעינת mountים מה־fstab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fstab" class="md-nav__link">
-    <span class="md-ellipsis">
-      אחרי שינוי ב־fstab (חשוב)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fstab_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      חיפוש שורות רלוונטיות ב־fstab
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fstab_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      דוגמה למבנה מומלץ ב־fstab
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      ניהול משתמשים
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ניהול משתמשים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sftp" class="md-nav__link">
-    <span class="md-ellipsis">
-      יצירת משתמש SFTP חדש (דרך הסקריפט)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      מחיקת משתמש
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2fa-sftp-sftpusers" class="md-nav__link">
-    <span class="md-ellipsis">
-      2FA רק למשתמשי SFTP (קבוצת sftpusers)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2FA רק למשתמשי SFTP (קבוצת sftpusers)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      לראות מי בקבוצה
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2fa" class="md-nav__link">
-    <span class="md-ellipsis">
-      הוספה לקבוצה (יחייב 2FA)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2fa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      הסרה מהקבוצה (יבטל 2FA)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pam-2fa-sftpusers" class="md-nav__link">
-    <span class="md-ellipsis">
-      PAM – החלת 2FA רק על חברי sftpusers
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      לוגים ו־Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#totp" class="md-nav__link">
-    <span class="md-ellipsis">
-      זמן מערכת (קריטי ל־TOTP)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#winscp-upload-permission-denied" class="md-nav__link">
-    <span class="md-ellipsis">
-      WinSCP – “Upload הצליח אבל Permission denied / מבקש סיסמה שוב”
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="WinSCP – “Upload הצליח אבל Permission denied / מבקש סיסמה שוב”">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה זה קורה?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#winscp" class="md-nav__link">
-    <span class="md-ellipsis">
-      פתרון מומלץ בצד הקליינט (WinSCP)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      פקודות בדיקה כלליות
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rtl-mkdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      הערה למראה RTL ב־MkDocs (חשוב)
+      סיכום
     </span>
   </a>
   
@@ -2507,203 +2161,145 @@
 
 
 
-<h1 id="sftp-2fa-google-authenticator-chroot-windows-share-cifs-runbook">שרת SFTP עם 2FA (Google Authenticator) + Chroot + Windows Share (CIFS) – Runbook</h1>
+<h1 id="plotter-autocad-plt">התקנה מחדש של מדפסת Plotter ב-AutoCAD ליצירת קובצי PLT</h1>
+<p>מדריך זה מתאר כיצד ליצור מחדש Plotter מסוג <strong>HP DesignJet 750C Plus
+C4709B</strong> בתוך AutoCAD, באמצעות דרייבר <strong>HPGL/2 של Autodesk</strong>, לצורך
+יצירת קובצי <code>.PLT</code>.</p>
 <blockquote>
-<p>מסמך תפעולי קצר וברור: נתיבים, פקודות, ניהול משתמשים, 2FA, Mountים ולוגים.</p>
+<p><strong>חשוב:</strong> ה-Plotter במדריך הוא Plotter פנימי של AutoCAD הנשמר כקובץ
+<code>.pc3</code>. הוא אינו חייב להופיע כמדפסת ב-Windows תחת Printers &amp; scanners.</p>
 </blockquote>
-<hr />
-<h2 id="_1">ארכיטקטורה בקצרה</h2>
+<h2 id="1-plotter-manager">1. פתיחת Plotter Manager</h2>
+<p>בשורת הפקודה של AutoCAD הקלד:</p>
+<div class="highlight"><pre><span></span><code>PLOTTERMANAGER
+</code></pre></div>
+<p>לחץ Enter. תיפתח תיקיית <strong>Plotters</strong> של AutoCAD.</p>
+<p>הפעל את:</p>
+<p><strong>Add-A-Plotter Wizard</strong></p>
+<p>ובחר התקנה עבור <strong>My Computer</strong>.</p>
+<h2 id="2-plotter">2. בחירת דגם ה-Plotter</h2>
+<p>במסך <strong>Plotter Model</strong> בחר:</p>
 <ul>
-<li>OpenSSH (SFTP)</li>
-<li>Chroot לכל משתמש</li>
-<li>Bind Mount לתיקיית משתמש בתוך ה־Share</li>
-<li>CIFS Mount לשיתוף Windows (SMB)</li>
-<li>Windows File Server</li>
+<li><strong>Manufacturer:</strong> <code>Hewlett-Packard</code></li>
+<li><strong>Model:</strong> <code>DesignJet 750C Plus C4709B</code></li>
 </ul>
-<hr />
-<h2 id="_2">נתיבים חשובים</h2>
-<h3 id="chroot">Chroot ונתיבי משתמש</h3>
+<p>בתחתית החלון אמור להופיע:</p>
+<p><code>This model is supported by HPGL/2 - by Autodesk</code></p>
+<p><img alt="בחירת HP DesignJet 750C Plus
+C4709B" src="images/01-select-plotter-model.png" /></p>
+<p>לחץ <strong>Next</strong>.</p>
+<h2 id="3-plt">3. הגדרת הפלט לקובץ PLT</h2>
+<p>במסך <strong>Ports</strong> בחר:</p>
+<p><strong>Plot to File</strong></p>
+<p>הגדרה זו מתאימה כאשר המטרה היא ליצור קובץ PLT ולא לשלוח את ההדפסה ישירות
+למדפסת פיזית.</p>
+<p><img alt="בחירת Plot to File" src="images/02-select-plot-to-file.png" /></p>
+<p>המשך עם <strong>Next</strong>.</p>
+<h2 id="4-pc3">4. סיום יצירת ה-PC3</h2>
+<p>בסיום האשף אין צורך לבצע Calibration או לשנות הגדרות נוספות בשלב הראשון.</p>
+<p>לחץ <strong>Finish</strong>.</p>
+<p><img alt="סיום התקנת ה-Plotter" src="images/03-finish-plotter.png" /></p>
+<p>AutoCAD ייצור קובץ כגון:</p>
+<div class="highlight"><pre><span></span><code>DesignJet 750C Plus C4709B.pc3
+</code></pre></div>
+<h2 id="5-plotter">5. בחירת ה-Plotter החדש</h2>
+<p>פתח את חלון ההדפסה באמצעות:</p>
+<div class="highlight"><pre><span></span><code>PLOT
+</code></pre></div>
+<p>תחת <strong>Printer/plotter &gt; Name</strong> בחר את ה-PC3 החדש:</p>
+<div class="highlight"><pre><span></span><code>DesignJet 750C Plus C4709B.pc3
+</code></pre></div>
+<p><img alt="בחירת ה-PC3 החדש" src="images/04-select-new-pc3.png" /></p>
+<p>אם קיימים מספר Plotters בעלי שמות דומים, מומלץ לתת לחדש שם ברור דרך
+<code>PLOTTERMANAGER</code>.</p>
+<h2 id="6">6. הגדרת גודל נייר מותאם אישית</h2>
+<p>אם השרטוט משתמש בגודל שאינו קיים ב-PC3 החדש, AutoCAD עשוי להציג הודעה:</p>
+<p><strong>Plot - Paper Size Not Found</strong></p>
+<p>לדוגמה, עבור גודל:</p>
+<div class="highlight"><pre><span></span><code>914.00 x 2100.00 mm
+</code></pre></div>
+<p>בחר:</p>
+<p><strong>Use a custom paper size and add it to the plotter configuration</strong></p>
+<p>כך הגודל יתווסף להגדרות ה-Plotter ולא יהיה צורך לבחור אותו מחדש בכל
+הדפסה.</p>
+<p><img alt="הוספת Custom Paper Size" src="images/05-custom-paper-size.png" /></p>
+<h2 id="7">7. בדיקת ההדפסה</h2>
+<p>לפני יצירת הקובץ:</p>
+<ol>
+<li>בחר את אזור ההדפסה הרצוי, לדוגמה <code>Window</code>.</li>
+<li>ודא שגודל הנייר וה-Orientation נכונים.</li>
+<li>לחץ <strong>Preview</strong>.</li>
+<li>אם התצוגה המקדימה תקינה, המשך ל-Plot.</li>
+<li>שמור את הקובץ בשם פשוט לבדיקה, לדוגמה:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>TEST.plt
+</code></pre></div>
+<p>מומלץ לבצע את הבדיקה הראשונה בנתיב מקומי פשוט.</p>
+<h2 id="8-plotters">8. מחיקת Plotters ישנים או כפולים</h2>
+<p>כדי להסיר PC3 ישן, הקלד:</p>
+<div class="highlight"><pre><span></span><code>PLOTTERMANAGER
+</code></pre></div>
+<p>בתיקיית Plotters ניתן לראות את קובצי ה-<code>.pc3</code>.</p>
+<p><img alt="קובצי PC3 בתיקיית Plotters" src="images/06-plotter-manager-files.png" /></p>
+<p>אפשר למחוק PC3 ישן שאינו בשימוש. לצורך זהירות, ניתן קודם להעביר אותו
+לתיקיית גיבוי במקום למחוק לצמיתות.</p>
+<p>אין למחוק ללא צורך את Plotters המובנים של AutoCAD, כגון:</p>
 <ul>
-<li><code>/srv/sftp/chroot/{user}</code> – תיקיית ה־chroot של המשתמש  </li>
-<li><code>/srv/sftp/chroot/{user}/uploads</code> – תיקיית העלאות בתוך ה־chroot  </li>
-<li><code>/srv/sftp/chroot/{user}/.ga</code> – תיקיית Google Authenticator  </li>
-<li><code>/srv/sftp/chroot/{user}/.ga/.google_authenticator</code> – קובץ ה־secret של 2FA  </li>
+<li><code>DWG To PDF.pc3</code></li>
+<li><code>AutoCAD PDF (General Documentation).pc3</code></li>
+<li><code>AutoCAD PDF (High Quality Print).pc3</code></li>
+<li><code>DWF6 ePlot.pc3</code></li>
 </ul>
-<h3 id="windows-cifs-bind">שיתוף Windows (CIFS) + Bind</h3>
-<ul>
-<li><code>/srv/sftp-windows</code> – נקודת ה־mount הראשית של ה־Windows share  </li>
-<li><code>/srv/sftp-windows/{user}</code> – תיקיית משתמש בתוך ה־Share (מקור ל־bind)  </li>
-</ul>
-<h3 id="_3">קבצי קונפיגורציה</h3>
-<ul>
-<li><code>/etc/ssh/sshd_config</code> – הגדרות SSH  </li>
-<li><code>/etc/pam.d/sshd</code> – PAM עבור SSH/2FA  </li>
-<li><code>/etc/fstab</code> – מיפויי mount קבועים (CIFS + bind)  </li>
-</ul>
-<h3 id="_4">לוגים</h3>
-<ul>
-<li><code>/var/log/auth.log</code> – לוג התחברויות SSH/2FA  </li>
-<li><code>dmesg</code> – הודעות kernel (כולל CIFS)  </li>
-</ul>
-<hr />
-<h2 id="mount-cifs-bind">Mountים (CIFS + Bind)</h2>
-<h3 id="_5">בדיקה מה מחובר</h3>
-<div class="highlight"><pre><span></span><code>mount<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sftp
+<p>לאחר הניקוי אמור להישאר ה-DesignJet הרלוונטי לצד ה-Plotters המובנים.</p>
+<p><img alt="תיקיית Plotters לאחר ניקוי" src="images/07-clean-plotter-folder.png" /></p>
+<h2 id="9-pc3-plot">9. PC3 שנמחק עדיין מופיע ברשימת PLOT</h2>
+<p>ייתכן שלאחר מחיקת PC3 הוא עדיין יופיע זמנית ברשימת <strong>Printer/plotter</strong>.</p>
+<p><img alt="Plotter ישן שעדיין מופיע
+ברשימה" src="images/08-plotter-list-before-restart.png" /></p>
+<p>במקרה כזה:</p>
+<ol>
+<li>סגור את כל חלונות AutoCAD.</li>
+<li>ודא ש-AutoCAD נסגר לחלוטין.</li>
+<li>פתח את AutoCAD מחדש.</li>
+<li>פתח שוב את <code>PLOT</code>.</li>
+</ol>
+<p>לאחר ההפעלה מחדש הרשימה אמורה להתעדכן.</p>
+<h2 id="_1">בדיקות תקלה שימושיות</h2>
+<p>אם ה-Preview עובד אך קובץ PLT אינו נוצר, אפשר לבדוק את משתנה AutoCAD
+הבא:</p>
+<div class="highlight"><pre><span></span><code>FILEDIA
 </code></pre></div>
-<p>תצוגה היררכית (מומלץ):</p>
-<div class="highlight"><pre><span></span><code>findmnt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sftp
+<p>הערך התקין לעבודה עם חלונות בחירת קבצים הוא:</p>
+<div class="highlight"><pre><span></span><code>1
 </code></pre></div>
-<h3 id="mount-fstab">טעינת mountים מה־fstab</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-a
+<p>לבדיקה מפורטת דרך שורת הפקודה ניתן להשתמש ב:</p>
+<div class="highlight"><pre><span></span><code>_-PLOT
 </code></pre></div>
-<p>בדיקה מפורטת עם פלט:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-av
+<p>כאשר נשאל:</p>
+<div class="highlight"><pre><span></span><code>Write the plot to a file [Yes/No]
 </code></pre></div>
-<h3 id="fstab">אחרי שינוי ב־fstab (חשוב)</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
-sudo<span class="w"> </span>mount<span class="w"> </span>-a
+<p>יש לבחור:</p>
+<div class="highlight"><pre><span></span><code>Yes
 </code></pre></div>
-<h3 id="fstab_1">חיפוש שורות רלוונטיות ב־fstab</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-nE<span class="w"> </span><span class="s1">&#39;\scifs\s|sftp-windows|/srv/sftp/chroot&#39;</span><span class="w"> </span>/etc/fstab
+<h2 id="_2">סיכום</h2>
+<p>המסלול התקין ליצירת PLT בתצורה זו הוא:</p>
+<div class="highlight"><pre><span></span><code>AutoCAD
+  → DesignJet 750C Plus C4709B.pc3
+  → Autodesk HPGL/2
+  → Plot to File
+  → .PLT
 </code></pre></div>
-<h3 id="fstab_2">דוגמה למבנה מומלץ ב־fstab</h3>
-<div class="highlight"><pre><span></span><code>//fs01.meida.int/sftp-uploads /srv/sftp-windows cifs credentials=/etc/samba/sftp-credentials,vers=3.0,uid=0,gid=988,forceuid,forcegid,file_mode=0770,dir_mode=0770,nounix,serverino,noperm 0 0
-/srv/sftp-windows/client1 /srv/sftp/chroot/client1/uploads none bind 0 0
-/srv/sftp-windows/client2 /srv/sftp/chroot/client2/uploads none bind 0 0
-/srv/sftp-windows/oron    /srv/sftp/chroot/oron/uploads    none bind 0 0
-</code></pre></div>
-<blockquote>
-<p>✅ בדיקה מהירה שה־bind באמת bind: בשורת <code>mount</code> על ה־uploads צריך להופיע <code>type none (bind)</code> ולא <code>type cifs</code>.</p>
-</blockquote>
-<hr />
-<h2 id="_6">ניהול משתמשים</h2>
-<h3 id="sftp">יצירת משתמש SFTP חדש (דרך הסקריפט)</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>~/add-sftp-user.sh<span class="w"> </span><span class="o">{</span>user<span class="o">}</span>
-</code></pre></div>
-<p>מה הסקריפט צריך לעשות (במינימום):</p>
-<ul>
-<li>ליצור משתמש</li>
-<li>ליצור תיקיות: <code>chroot</code>, <code>uploads</code>, <code>.ga</code></li>
-<li>ליצור קובץ 2FA בנתיב:</li>
-<li><code>/srv/sftp/chroot/{user}/.ga/.google_authenticator</code></li>
-<li>הרשאות מומלצות:</li>
-<li>תיקיית <code>chroot</code> בבעלות <code>root:root</code></li>
-<li>תיקיית <code>.ga</code> בבעלות המשתמש והרשאה <code>700</code></li>
-<li>קובץ <code>.google_authenticator</code> הרשאה <code>600</code></li>
-</ul>
-<p>בדיקה מהירה:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-la<span class="w"> </span>/srv/sftp/chroot/<span class="o">{</span>user<span class="o">}</span>
-ls<span class="w"> </span>-la<span class="w"> </span>/srv/sftp/chroot/<span class="o">{</span>user<span class="o">}</span>/.ga
-</code></pre></div>
-<h3 id="_7">מחיקת משתמש</h3>
-<p>מחיקה (כולל home רגיל אם קיים):</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>userdel<span class="w"> </span>-r<span class="w"> </span><span class="o">{</span>user<span class="o">}</span>
-</code></pre></div>
-<p>מחיקת תיקיות SFTP (אם נדרש):</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/srv/sftp/chroot/<span class="o">{</span>user<span class="o">}</span>
-sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/srv/sftp-windows/<span class="o">{</span>user<span class="o">}</span>
-</code></pre></div>
-<blockquote>
-<p>⚠️ מחיקה ב־<code>/srv/sftp-windows/{user}</code> תמחק גם מה־Windows share.</p>
-</blockquote>
-<hr />
-<h2 id="2fa-sftp-sftpusers">2FA רק למשתמשי SFTP (קבוצת sftpusers)</h2>
-<h3 id="_8">לראות מי בקבוצה</h3>
-<div class="highlight"><pre><span></span><code>getent<span class="w"> </span>group<span class="w"> </span>sftpusers
-</code></pre></div>
-<p>בדיקת משתמש ספציפי:</p>
-<div class="highlight"><pre><span></span><code>id<span class="w"> </span><span class="o">{</span>user<span class="o">}</span>
-</code></pre></div>
-<h3 id="2fa">הוספה לקבוצה (יחייב 2FA)</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>sftpusers<span class="w"> </span><span class="o">{</span>user<span class="o">}</span>
-</code></pre></div>
-<h3 id="2fa_1">הסרה מהקבוצה (יבטל 2FA)</h3>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gpasswd<span class="w"> </span>-d<span class="w"> </span><span class="o">{</span>user<span class="o">}</span><span class="w"> </span>sftpusers
-</code></pre></div>
-<h3 id="pam-2fa-sftpusers">PAM – החלת 2FA רק על חברי sftpusers</h3>
-<p>קובץ:</p>
-<ul>
-<li><code>/etc/pam.d/sshd</code></li>
-</ul>
-<p>הבלוק המומלץ:</p>
-<div class="highlight"><pre><span></span><code># If NOT in sftpusers -&gt; skip GA line
-auth  [success=1 default=ignore] pam_succeed_if.so user notingroup sftpusers
-auth  required  pam_google_authenticator.so secret=/srv/sftp/chroot/${USER}/.ga/.google_authenticator
-</code></pre></div>
-<p>לאחר שינוי:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
-</code></pre></div>
-<hr />
-<h2 id="troubleshooting">לוגים ו־Troubleshooting</h2>
-<p>צפייה חיה:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/auth.log
-</code></pre></div>
-<p>חיפוש שגיאות נפוצות:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;sshd|pam_google_authenticator|Authentication failure|Invalid verification code|Permission denied&quot;</span><span class="w"> </span>/var/log/auth.log
-</code></pre></div>
-<p>שגיאות CIFS מהקרנל:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>cifs
-</code></pre></div>
-<hr />
-<h2 id="totp">זמן מערכת (קריטי ל־TOTP)</h2>
-<p>בדיקה:</p>
-<div class="highlight"><pre><span></span><code>timedatectl
-</code></pre></div>
-<p>הפעלת NTP:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span><span class="nb">true</span>
-</code></pre></div>
-<hr />
-<h2 id="winscp-upload-permission-denied">WinSCP – “Upload הצליח אבל Permission denied / מבקש סיסמה שוב”</h2>
-<h3 id="_9">למה זה קורה?</h3>
-<ul>
-<li>העלאה רגילה: לרוב רק <code>write</code> → הצלחה.  </li>
-<li>יצירה/עריכה דרך WinSCP Editor: WinSCP מנסה גם:</li>
-<li><code>chmod</code> / <code>SETSTAT</code> (הרשאות)</li>
-<li><code>timestamp</code></li>
-<li><code>rename</code> לקובץ זמני</li>
-</ul>
-<p>כאשר היעד הוא <code>CIFS</code> (Windows share), פעולות POSIX לא תמיד נתמכות → מתקבל <code>Permission denied</code> ואז WinSCP עלול להציג prompt נוסף.</p>
-<h3 id="winscp">פתרון מומלץ בצד הקליינט (WinSCP)</h3>
-<ul>
-<li><strong>Preferences → Transfer</strong></li>
-<li>בטל <strong>Preserve timestamp</strong></li>
-<li><strong>Preferences → Transfer → Endurance</strong></li>
-<li>סמן <strong>Ignore permission errors</strong></li>
-</ul>
-<hr />
-<h2 id="_10">פקודות בדיקה כלליות</h2>
-<p>סטטוס SSH:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
-</code></pre></div>
-<p>Restart:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
-</code></pre></div>
-<p>מי מחובר:</p>
-<div class="highlight"><pre><span></span><code>w
-</code></pre></div>
-<p>בדיקת פורט SSH מאזין:</p>
-<div class="highlight"><pre><span></span><code>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ssh
-</code></pre></div>
-<hr />
-<h2 id="rtl-mkdocs">הערה למראה RTL ב־MkDocs (חשוב)</h2>
-<p>כדי שהתוכן יוצג יפה מימין לשמאל, מומלץ להוסיף <code>extra_css</code> עם קובץ RTL.</p>
-<p>דוגמה (<code>mkdocs.yml</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="nt">extra_css</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stylesheets/rtl.css</span>
-</code></pre></div>
-<p>ותוכן <code>docs/stylesheets/rtl.css</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">md-content</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">direction</span><span class="p">:</span><span class="w"> </span><span class="kc">rtl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="p">.</span><span class="nc">md-typeset</span><span class="w"> </span><span class="nt">code</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">md-typeset</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">direction</span><span class="p">:</span><span class="w"> </span><span class="kc">ltr</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div>
-<blockquote>
-<p>כך עברית תוצג RTL, אבל קוד יישאר LTR (קריא).  </p>
-</blockquote>
+<p>אין צורך להתקין את <strong>HP DesignJet 750C Plus C4709B</strong> כמדפסת Windows כאשר
+משתמשים ב-Plotter הפנימי של AutoCAD לצורך יצירת קובצי PLT.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
